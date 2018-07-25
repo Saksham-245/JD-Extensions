@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+   <name>mod_jdpageheading</name>
+   <author>JoomDev Team</author>
+   <creationDate>July 2018</creationDate>
+   <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
+   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+   <authorEmail>info@joomdev.com</authorEmail>
+   <authorUrl>www.joomdev.com</authorUrl>
+   <version>3.0.0</version>
+   <description>MOD_JDPAGEHEADING_XML_DESCRIPTION</description>
+   <files>
+      <filename module="mod_jdpageheading">mod_jdpageheading.php</filename>
+      <folder>tmpl</folder>
+      <folder>fields</folder>
+      <filename>helper.php</filename>
+   </files>
+   <languages folder="language">
+      <language tag="en-GB">en-GB/en-GB.mod_jdpageheading.ini</language>
+      <language tag="en-GB">en-GB/en-GB.mod_jdpageheading.sys.ini</language>
+   </languages>
+   <config>
+      <fields name="params">
+         <fieldset name="advanced">
+            <field
+               name="layout"
+               type="modulelayout"
+               label="JFIELD_ALT_LAYOUT_LABEL"
+               description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+               default="default"
+            />
+         </fieldset>
+      </fields>
+   </config>
+</extension>

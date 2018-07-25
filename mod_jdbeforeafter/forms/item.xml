@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fieldset name="items_modal" label="Before-After Items">
+      <field name="title"
+             label="MOD_JDBEFOREAFTER_OPTIONS_TITLE_LBL"
+             description="MOD_JDBEFOREAFTER_OPTIONS_TITLE_DESC"
+             type="text"   />
+      <field name="subtitle"
+             label="MOD_JDBEFOREAFTER_OPTIONS_SUBTITLE_LBL"
+             description="MOD_JDBEFOREAFTER_OPTIONS_SUBTITLE_DESC"
+             type="text"   />
+      <field name="summary"
+             type="editor"
+             description="MOD_JDBEFOREAFTER_OPTIONS_SUMMARY_DESC"
+             label="MOD_JDBEFOREAFTER_OPTIONS_SUMMARY_LBL"
+      >
+      </field>
+      <field name="before_image"
+             label="MOD_JDBEFOREAFTER_OPTIONS_BEFORE_IMAGE_LBL"
+             description="MOD_JDBEFOREAFTER_OPTIONS_BEFORE_IMAGE_DESC"
+             type="media"  />
+      <field name="after_image"
+             label="MOD_JDBEFOREAFTER_OPTIONS_AFTER_IMAGE_LBL"
+             description="MOD_JDBEFOREAFTER_OPTIONS_AFTER_IMAGE_DESC"
+             type="media"  />
+   </fieldset>
+</form>

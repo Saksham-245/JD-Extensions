@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+   <name>mod_blank</name>
+   <author>JoomDev Team</author>
+   <creationDate>July 2018</creationDate>
+   <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
+   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+   <authorEmail>info@joomdev.com</authorEmail>
+   <authorUrl>www.joomdev.com</authorUrl>
+   <version>3.0.0</version>
+   <description>MOD_BLANK_XML_DESCRIPTION</description>
+   <files>
+      <filename module="mod_blank">mod_blank.php</filename>
+      <folder>tmpl</folder>
+      <folder>fields</folder>
+      <filename>helper.php</filename>
+   </files>
+   <languages folder="language">
+      <language tag="en-GB">en-GB/en-GB.mod_blank.ini</language>
+      <language tag="en-GB">en-GB/en-GB.mod_blank.sys.ini</language>
+   </languages>
+   <config>
+      <fields name="params">
+         <fieldset name="basic" addfieldpath="/modules/mod_blank/fields">
+         </fieldset>
+         <fieldset name="advanced">
+            <field
+               name="layout"
+               type="modulelayout"
+               label="JFIELD_ALT_LAYOUT_LABEL"
+               description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+               default="default"
+            />
+            <field
+               name="load_bootstrap"
+               type="radio"
+               label="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
+               description="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+         </fieldset>
+      </fields>
+   </config>
+</extension>

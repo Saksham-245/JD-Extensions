@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fieldset name="services_modal" label="Services Showcase Item">
+      <field name="thumbnail"
+             label="MOD_JDSERVICES_SHOWCASE_OPTIONS_IMAGE_LBL"
+             description="MOD_JDSERVICES_SHOWCASE_OPTIONS_IMAGE_DESC"
+             type="media"  />
+      <field name="title"
+             label="MOD_JDSERVICES_SHOWCASE_OPTIONS_TITLE_LBL"
+             description="MOD_JDSERVICES_SHOWCASE_OPTIONS_TITLE_DESC"
+             type="text"   />
+      <field name="subtitle"
+             label="MOD_JDSERVICES_SHOWCASE_OPTIONS_SUBTITLE_LBL"
+             description="MOD_JDSERVICES_SHOWCASE_OPTIONS_SUBTITLE_DESC"
+             type="text"   />
+      <field name="description"
+             label="MOD_JDSERVICES_SHOWCASE_OPTIONS_DESC_LBL"
+             description="MOD_JDSERVICES_SHOWCASE_OPTIONS_DESC_DESC"
+             type="textarea"  />
+      <field name="link"
+             label="MOD_JDSERVICES_SHOWCASE_OPTIONS_LINK_LBL"
+             description="MOD_JDSERVICES_SHOWCASE_OPTIONS_LINK_DESC"
+             type="menuitem"  />
+   </fieldset>
+</form>

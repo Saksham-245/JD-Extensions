@@ -1,0 +1,37 @@
+.jd-services-showcase .jd-services-showcase-link {
+  min-height: 150px; }
+  @media (max-width: 991.98px) {
+    .jd-services-showcase .jd-services-showcase-link {
+      height: inherit !important; } }
+.jd-services-showcase .jdss-item {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+  .jd-services-showcase .jdss-item .jdss-item-opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+    box-shadow: inset 0px 0px 200px #000;
+    opacity: 0.5; }
+  .jd-services-showcase .jdss-item .jdss-item-content {
+    position: relative;
+    z-index: 1; }
+  .jd-services-showcase .jdss-item .jdss-item-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2; }
+  @media (min-width: 992px) {
+    .jd-services-showcase .jdss-item:hover .jdss-item-overlay {
+      display: flex; } }
+@media (max-width: 991.98px) {
+  .jd-services-showcase {
+    height: inherit !important; } }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fieldset name="items_modal" label="Tab Items">
+      <field name="title"
+             label="Title"
+             type="text">
+      </field>
+      <field name="subtitle"
+             label="Subtitle"
+             type="text">
+      </field>
+      <field name="thumbnail"
+             type="media"
+             label="Thumbnail">
+      </field>
+      <field
+         name="content"
+         type="editor"
+         label="Content">
+      </field>
+   </fieldset>
+</form>
