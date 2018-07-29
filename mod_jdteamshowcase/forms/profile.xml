@@ -10,6 +10,9 @@
       <field name="designation"
              label="Designation"
              type="text"   />
+	  <field name="description"
+             label="Description"
+             type="text"   />
       <!--      social profile 1 -->
       <field name="social_profile_1" type="spacer"
              label="&lt;b&gt;Social Profile 1&lt;/b&gt;" 
