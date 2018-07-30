@@ -35,7 +35,7 @@
                    multiple="true"
                    description="MOD_JDSERVICES_SHOWCASE_OPTIONS_SERVICES_DESC"
                    label="MOD_JDSERVICES_SHOWCASE_OPTIONS_SERVICES_LBL"
-                   max="6">
+                   max="9">
             </field>
          </fieldset>
          <fieldset name="advanced">

@@ -4,7 +4,7 @@ $profiles = $params->get('profiles', []);
 ?>
 <div class="row">
    <?php foreach ($profiles as $profile) { ?>
-      <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+      <div class="col-12 col-lg-4 mb-5">
          <div class="trainer-member-wrapper">
             <div class="trainer-member-image text-center">
                <img class="img-fluid" src="<?php echo JURI::root() . $profile->thumbnail; ?>" alt="<?php echo $profile->name; ?>">
@@ -18,7 +18,7 @@ $profiles = $params->get('profiles', []);
                         for ($i = 1; $i <= 5; $i++) {
                            $icon = $profile->{'social_profile_' . $i . '_icon'};
                            $link = $profile->{'social_profile_' . $i . '_link'};
-                           if (!empty($icon)) {
+                           if (!empty($link)) {
                               ?>
                               <li class="list-inline-item">
                                  <a href="<?php echo $link; ?>">
