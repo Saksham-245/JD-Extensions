@@ -5,8 +5,8 @@
 			<option value="color">MOD_JDPRICINGTABLES_COLOR_LABEL</option>
 			<option value="media">MOD_JDPRICINGTABLES_MEDIA_LABEL</option>
 		</field>
-		<field name="headerBacground_upload" label="MOD_JDPRICINGTABLES_UPLOAD_IMAGE_LABEL" showon="headerBacground:media" type="media" />
-		<field name="headerBacground_color" label="MOD_JDPRICINGTABLES_SELECT_COLOR_LABEL" showon="headerBacground:color" type="color" />
+		<field name="headerBacground_upload" label="MOD_JDPRICINGTABLES_UPLOAD_IMAGE_LABEL" description="MOD_JDPRICINGTABLES_UPLOAD_IMAGE_DESC" showon="headerBacground:media" type="media" />
+		<field name="headerBacground_color" label="MOD_JDPRICINGTABLES_SELECT_COLOR_LABEL" description="MOD_JDPRICINGTABLES_SELECT_COLOR_DESC" showon="headerBacground:color" type="color" />
 		<field name="title" label="MOD_JDPRICINGTABLES_TITLE_LABEL" description="MOD_JDPRICINGTABLES_TITLE_DESC" type="text" hint="Lite Plan" />
 		<field name="subtitle" label="MOD_JDPRICINGTABLES_SUB_TITLE_LABEL" description="MOD_JDPRICINGTABLES_SUB_TITLE_DESC" type="text" hint="Individuals and small teams"/>
 		<field name="pricing" label="MOD_JDPRICINGTABLES_PRICE_LABEL" description="MOD_JDPRICINGTABLES_PRICE_DESC" type="text" hint="$9" />
