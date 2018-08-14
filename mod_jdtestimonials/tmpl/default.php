@@ -89,21 +89,26 @@ $active = TRUE;
 		color:<?php echo $hoverColor; ?>
 	}
 	<?php if($params->get('customstyle')=="true"){
-		echo $params->get('customstyle');
+		$params->get('customstyle');
 		$nameColor = $params->get('nameColor');
 		$designationColor = $params->get('designationColor');
 		$reviewColor = $params->get('reviewColor');
 		$nameSize = $params->get('nameSize');
 		$designationSize = $params->get('designationSize');
 		$reviewSize = $params->get('reviewSize');
-		$nameColor='defualt';
+	
 	
 	?>
-		.testimonial-container-<?php echo $module->id; ?> .author-info .name{
+		.testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-info h5{
 			color: <?php  echo $nameColor?>;
 			font-size: <?php  echo $nameSize?>px;
 		}	
-		.testimonial-container-<?php echo $module->id; ?> .author-info{
+		.testimonial-container-<?php echo $module->id; ?> .author-info a{	
+			color: <?php  echo $designationColor?>;
+			font-size: <?php  echo $designationSize?>px;
+		}
+		
+		.testimonial-container-<?php echo $module->id; ?> .author-info{	
 			color: <?php  echo $designationColor?>;
 			font-size: <?php  echo $designationSize?>px;
 		}
@@ -131,8 +136,8 @@ $active = TRUE;
 						<?php if(!empty($item->author_name)) { ?>
 						  <h5 class="name"><?php echo $item->author_name; ?></h5>
 						<?php } ?> 
-						<?php if(!empty($item->author_depart)) { ?>
-						  <div class="author-text"><?php echo $item->author_depart; ?></div>
+						<?php if(!empty($item->author_companyName)) { ?>
+						  <div class="author-text"><?php if(!empty($item->author_companyLink)) { ?><a href="<?php echo $item->author_companyLink; ?>"  target="_blank"  rel="nofollow" ><?php } ?><?php echo $item->author_companyName; ?><?php if(!empty($item->author_companyLink)) { ?></a><?php } ?></div>
 						<?php } ?>
 					</div>
 				 <?php } ?>

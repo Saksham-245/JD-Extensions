@@ -5,10 +5,6 @@
              label="Name"
              type="text">
       </field>
-	  <field name="author_depart"
-             label="Department"
-             type="text">
-      </field>
 	  <field name="author_thumbnail"
              type="media"
              label="Image">

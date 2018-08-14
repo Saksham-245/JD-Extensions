@@ -53,6 +53,7 @@
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field> 
+            <field name="note1" type="note" showon="arrow:true" label="Arrow Style" />
 			<field
                name="NormalColor"
                type="color"
@@ -78,6 +79,7 @@
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
+            <field name="note2" type="note"  showon="bullets:true" label="Bullet Style" />
 			<field
                name="NormalColor1"
                type="color"
@@ -103,10 +105,11 @@
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
+            <field name="note3" type="note" showon="customstyle:true" label="Custom Style" />
 			<field
                name="nameColor"
                type="color"
-               label="name Color"
+               label="Name Color"
                description=""
 			   showon="customstyle:true"
                default="default"
