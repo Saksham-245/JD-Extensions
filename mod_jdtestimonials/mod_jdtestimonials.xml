@@ -105,7 +105,7 @@
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
-            <field name="note3" type="note" showon="customstyle:true" label="Custom Style" />
+            <field name="note3" type="note" showon="customstyle:true" label="Colors" />
 			<field
                name="nameColor"
                type="color"
@@ -130,6 +130,7 @@
 			   showon="customstyle:true"
                default="default"
             />	
+             <field name="note4" type="note" showon="customstyle:true" label="Sizes" />
 			<field
                name="nameSize"
                type="number"
