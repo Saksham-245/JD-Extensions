@@ -16,7 +16,7 @@
                 default="upload"
             >
                 <option value="upload">MOD_JD_SKILLSET_ICON_OPTIONS_UPLOAD</option>
-                <option value="icon">MOD_JD_SKILLSET_ICON_FONTAWESOME</option>
+                <option value="icon">MOD_JD_SKILLSET_ICON_CLASS</option>
         </field>
         <field name="skillset_icon_upload"
                 label="MOD_JD_SKILLSET_ICON_OPTIONS_UPLAOD_LABEL"
@@ -29,7 +29,7 @@
                 type="text" />
         <field
                 name="skillset_enable_symbol"
-                type="list"
+                type="radio"
                 label="MOD_JD_SKILLSET_ENABLE_SYMBOL_LABEL"
                 description="MOD_JD_SKILLSET_ENABLE_SYMBOL_DESC"
                 default="1"
