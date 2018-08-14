@@ -2,21 +2,42 @@
 <form>
    <fieldset name="items_modal" label="Testimonials Items">
       <field name="author_name"
-             label="Author Name"
+             label="Name"
              type="text">
       </field>
-      <field name="author_designation"
-             label="Author Designation"
+	  <field name="author_depart"
+             label="Department"
              type="text">
       </field>
-      <field name="thumbnail"
+	  <field name="author_thumbnail"
              type="media"
-             label="Thumbnail">
+             label="Image">
       </field>
+	  <field name="author_companyName"
+             label="Company Name"
+             type="text">
+      </field>
+	  <field name="author_companyLink"
+             label="Company Link"
+             type="text">
+      </field>
+	 <field
+		   name="rating"
+		   type="list"
+		   label="Rating"
+		   description="Rating"
+		   default="1"
+		>
+		   <option value="1">1</option>
+		   <option value="2">2</option>	   
+		   <option value="3">3</option>
+		   <option value="4">4</option>	   
+		   <option value="5">5</option>
+       </field>
       <field
-         name="content"
-         type="editor"
-         label="Content">
+         name="author_companyReview"
+         type="textarea"
+         label="Review">
       </field>
    </fieldset>
 </form>

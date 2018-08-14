@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.5" client="site" method="upgrade">
-   <name>mod_jdtestimonials</name>
+   <name>Jd Testimonials</name>
    <author>JoomDev Team</author>
    <creationDate>July 2018</creationDate>
    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
@@ -16,6 +16,9 @@
       <folder>forms</folder>
       <filename>helper.php</filename>
    </files>
+   <media folder="media" destination="mod_jdtestimonials">
+		<folder>images</folder>
+	</media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jdtestimonials.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jdtestimonials.sys.ini</language>
@@ -31,7 +34,128 @@
             >
             </field>
          </fieldset>
-         <fieldset name="advanced">
+         <fieldset name="design">
+            <field
+               name="select_view"
+               type="jdthumbnailradio"
+               label="Select View "
+               description=""
+               default="1"
+            >
+			  <option value="1">media/mod_jdtestimonials/images/layouts/layout-1.svg|Style - 1</option>
+			</field>
+			  <field 
+			  name="arrow" 
+			  type="radio" 
+			  default="true"  
+			  class="btn-group btn-group-yesno"
+			  label="Enable Arrow">
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+			</field> 
+			<field
+               name="NormalColor"
+               type="color"
+               label="Normal Color"
+               description=""
+			   showon="arrow:true"
+               default="default"
+            />
+			<field
+               name="hoverColor"
+               type="color"
+               label="Hover Color"
+               description=""
+			   showon="arrow:true"
+               default="default"
+            />
+			<field 
+			name="bullets"
+			type="radio" 
+			default="true" 
+			class="btn-group btn-group-yesno" 
+			label="Enable Bullets">
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+			</field>
+			<field
+               name="NormalColor1"
+               type="color"
+               label="Normal Color"
+               description=""
+			   showon="bullets:true"
+               default="default"
+            />
+			<field
+               name="activeColor"
+               type="color"
+               label="Active Color"
+               description=""
+			   showon="bullets:true"
+               default="default"
+            />		
+			<field 
+			name="customstyle"
+			type="radio" 
+			default="true" 
+			class="btn-group btn-group-yesno" 
+			label="Custom Style">
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+			</field>
+			<field
+               name="nameColor"
+               type="color"
+               label="name Color"
+               description=""
+			   showon="customstyle:true"
+               default="default"
+            />
+			<field
+               name="designationColor"
+               type="color"
+               label="Designation Color"
+               description=""
+			   showon="customstyle:true"
+               default="default"
+            />	
+			<field
+               name="reviewColor"
+               type="color"
+               label="Review Color"
+               description=""
+			   showon="customstyle:true"
+               default="default"
+            />	
+			<field
+               name="nameSize"
+               type="number"
+			   min="10"
+               label="Name Size"
+               description=""
+			   showon="customstyle:true"
+               default="default"
+            />
+			<field
+               name="designationSize"
+               type="number"
+			   min="10"
+               label="Designation Size"
+               description=""
+			   showon="customstyle:true"
+               default="default"
+            />	
+			<field
+               name="reviewSize"
+               type="number"
+			   min="10"
+               label="Review Size"
+               description=""
+			   showon="customstyle:true"
+               default="default"
+            />
+         </fieldset>
+		 <fieldset name="advanced">
             <field
                name="layout"
                type="modulelayout"
