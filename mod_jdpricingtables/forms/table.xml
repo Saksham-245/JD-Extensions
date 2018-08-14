@@ -12,11 +12,11 @@
 		<field name="pricing" label="MOD_JDPRICINGTABLES_PRICE_LABEL" description="MOD_JDPRICINGTABLES_PRICE_DESC" type="text" hint="$9" />
 		<field name="pricingColor" label="MOD_JDPRICINGTABLES_PRICE_COLOR_LABEL" description="MOD_JDPRICINGTABLES_PRICE_COLOR_DESC" type="color" />
 		<field name="period" label="MOD_JDPRICINGTABLES_PERIOD_LABEL" description="MOD_JDPRICINGTABLES_PERIOD_DESC" type="text" hint="/month" />
-		<field name="details" label="MOD_JDPRICINGTABLES_DETAILS_LABEL" description="MOD_JDPRICINGTABLES_DETAILS_DESC" type="textarea" />
+		<field name="description" label="Description" rows="10"  cols="5" filter="raw" type="textarea"   />
 		<field name="button_text" label="MOD_JDPRICINGTABLES_BUTTON_TEXT_LABEL" description="MOD_JDPRICINGTABLES_BUTTON_TEXT_DESC" type="text" hint="Select" />
 		<field name="button_link" label="MOD_JDPRICINGTABLES_BUTTON_URL_LABEL" description="MOD_JDPRICINGTABLES_BUTTON_URL_DESC" type="text" hint="#"/>
 		<field name="bottom_line" label="MOD_JDPRICINGTABLES_BOTTOM_LINE_LABEL" description="MOD_JDPRICINGTABLES_BOTTOM_LINE_DESC" type="text" />
-		<field name="hightlight" type="radio" label="MOD_JDPRICINGTABLES_HIGHLIGHT_LABEL" description="MOD_JDPRICINGTABLES_HIGHLIGHT_DESC" class="btn-group">
+		<field name="hightlight" type="radio" label="MOD_JDPRICINGTABLES_HIGHLIGHT_LABEL" description="MOD_JDPRICINGTABLES_HIGHLIGHT_DESC" class="btn-group" default="0">
 			<option value="1">JYES</option>
 			<option value="0">JNO</option>
 		</field>

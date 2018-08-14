@@ -81,7 +81,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 </style>
 <div class="row counter-sub-container bg-white rounded shadow-lg py-3">
     <?php foreach($skillsets as $skillset) : ?>
-        <div class="col-12 col-lg-<?PHP echo $count; ?> mb-3 mb-lg-0" id="skillset-<?php echo $module->id; ?>">
+        <div class="col-12 col-lg-<?php echo $count;?> mb-3 mb-lg-0" id="skillset-<?php echo $module->id; ?>">
             <div class="counter-wrapper d-lg-flex justify-content-lg-center align-items-lg-center p-3 text-center">
 				<?php if(!empty($skillset->skillset_icon_upload) or !empty($skillset->skillset_icon_icon) ) {?>
                 <div class="counter-icon d-lg-flex align-items-lg-center text-primary pt-lg-2 pr-lg-3 mb-2 mb-lg-0">

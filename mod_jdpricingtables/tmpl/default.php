@@ -20,13 +20,9 @@ background-size: cover;';}?>">
 					<?php } ?>
 				  </div>
 				<?php } ?> 
-				<?php if(!empty($pricingtable->details)){?>
+				<?php if(!empty($pricingtable->description)){?>
 				  <div class="card-body text-center pt-5 px-4">
-					<ul class="list-styled d-inline-block">
-						<?php foreach (explode(',', $pricingtable->details) as $detail) { ?>
-							<li><?php echo $detail; ?></li>	
-						<?php } ?>
-					</ul>
+						<?php echo $pricingtable->description; ?>
 				  </div>
 				<?php }	 ?>
 			<?php if(!empty($pricingtable->pricing) or  !empty($pricingtable->period) or !empty($pricingtable->button_text) or !empty($pricingtable->bottom_line)){?>
