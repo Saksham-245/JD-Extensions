@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
-   <name>MOD_JD_SKILLSET</name>
+   <name>Jd Skillset</name>
    <author>JoomDev Team</author>
    <creationDate>July 2018</creationDate>
    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
@@ -29,6 +29,7 @@
                       formsource="/modules/mod_jd_skillset/forms/jd_skillset.xml"
                       multiple="true"
                       label="MOD_JD_SKILLSET_CREATE_LABEL"
+					  max="4"
                />
             </fieldset>
          </fieldset>
@@ -60,12 +61,100 @@
                 type="list"
                 label="MOD_JD_SKILLSET_SYMBOL_POSITION_LABEL"
                 description="MOD_JD_SKILLSET_SYMBOL_POSITION_DESC"
-                default="default"
+                default="sup"
             >
                 <option value="default">Default</option>
                 <option value="sup">Sup</option>
                 <option value="sub">Sub</option>
             </field>
+			<field 
+				name="customsColor"
+				type="radio" 
+				default="true" 
+				class="btn-group btn-group-yesno" 
+				label="Custom Colors">
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+			</field>
+			<field name="note11"  showon="customsColor:true" type="note" label="Custom Colors" description="Here you can add custom color for below mention fields."  />
+			<field
+               name="titleColor"
+               type="color"
+               label="Title Color"
+               description=""
+			   showon="customsColor:true"
+               default="default"
+            />
+			<field
+               name="numberColor"
+               type="color"
+               label="Number Color"
+               description=""
+			   showon="customsColor:true"
+               default="default"
+            />	
+			<field
+               name="symbolColor"
+               type="color"
+               label="Symbol Color"
+               description=""
+			   showon="customsColor:true"
+               default="default"
+            />
+			<field
+               name="iconColor"
+               type="color"
+               label="Icon Color"
+               description=""
+			   showon="customsColor:true"
+               default="default"
+            />
+			<field 
+				name="customsSize"
+				type="radio" 
+				default="true" 
+				class="btn-group btn-group-yesno" 
+				label="Custom Size">
+				<option value="true">JYES</option>
+				<option value="false">JNO</option>
+			</field>
+			<field name="note12" showon="customsSize:true" type="note" label="Custom Size"  description="Here you can add custom size for below mention fields." />
+			<field
+               name="titleSize"
+               type="number"
+			   min="10"
+               label="Title Size"
+               description=""
+			   showon="customsSize:true"
+               default="default"
+            />
+			<field
+               name="numberSize"
+               type="number"
+			   min="10"
+               label="Number Size"
+               description=""
+			   showon="customsSize:true"
+               default="default"
+            />	
+			<field
+               name="symbolSize"
+               type="number"
+			   min="10"
+               label="Symbol Size"
+               description=""
+			   showon="customsSize:true"
+               default="default"
+            />
+			<field
+               name="iconSize"
+               type="number"
+			   min="10"
+               label="Icon Size"
+               description=""
+			   showon="customsSize:true"
+               default="default"
+            />
          </fieldset>
          <fieldset name="advanced">
             <field

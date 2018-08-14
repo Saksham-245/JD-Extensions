@@ -2,6 +2,7 @@
 <form>
    <fieldset name="jd_skillset" label="MOD_JD_SKILLSET_CREATE_LABE">
         <field name="skillset_title"
+				required="true"
                 label="MOD_JD_SKILLSET_TITLE_LABEL"
                 type="text"  />
         <field name="skillset_number"
@@ -15,14 +16,15 @@
                 default="upload"
             >
                 <option value="upload">MOD_JD_SKILLSET_ICON_OPTIONS_UPLOAD</option>
-                <option value="icon">FontAwesome</option>
+                <option value="icon">MOD_JD_SKILLSET_ICON_FONTAWESOME</option>
         </field>
         <field name="skillset_icon_upload"
                 label="MOD_JD_SKILLSET_ICON_OPTIONS_UPLAOD_LABEL"
                 showon="skillset_icon_option:upload"
                 type="media"  />
         <field name="skillset_icon_icon"
-                label="Enter FontAwesome icon code"
+                label="MOD_JD_SKILLSET_ENTER_FONTAWESOME_ICON_CODE"
+				hint="fab fa-accusoft"
                 showon="skillset_icon_option:icon"
                 type="text" />
         <field
