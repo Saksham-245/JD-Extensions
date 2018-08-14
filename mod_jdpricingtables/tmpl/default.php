@@ -1,38 +1,55 @@
 <?php
 defined('_JEXEC') or die;
 $pricingtables = $params->get('pricingtables', []);
+$itemsInRow = $params->get('itemsInRow');
 ?>
-<div class="row">
-   <?php foreach ($pricingtables as $pricingtable) { ?>
-      <div class="col-12 col-lg-4 d-lg-flex mb-5 mb-lg-0">
-         <div class="panel panel-primary border">
-            <div class="panel-header-img">
-               <img class="mb-0 img-fluid" alt="<?php echo $pricingtable->title; ?>" src="<?php echo JURI::root() . $pricingtable->thumbnail; ?>">
-            </div>
-            <div class="panel-body p-4">
-               <div class="the-price d-flex justify-content-center">
-                  <div class="button rounded-circle text-center">
-                     <span class="subscript"><?php echo $pricingtable->pricing; ?>
-                        <br>
-                        <small><?php echo $pricingtable->unit; ?></small>
-                     </span>
-                  </div>
-               </div>
-               <div class="description-box text-center mt-5">
-                  <div class="description header">
-                     <h4 class="mt-0 mb-4"><?php echo $pricingtable->title; ?></h4>
-                  </div>
-                  <div class="description-body">
-                     <?php foreach (explode(',', $pricingtable->details) as $detail) { ?>
-                        <p class="card-text"><?php echo $detail; ?></p>
-                     <?php } ?>
-                  </div>
-               </div>
-               <div class="panel-footer d-flex justify-content-center mt-5">
-                  <a class="btn btn-secondary btn-lg rounded-0" data-ribbon="" href="<?php echo $pricingtable->link; ?>" role="button"><?php echo $pricingtable->link_text; ?></a>
-               </div>
-            </div>
-         </div>
-      </div>
-   <?php } ?>
+
+<div class="container py-5">
+	<div class="row">
+	  <?php foreach ($pricingtables as $pricingtable) { ?>
+		  <div class="col-md-<?php echo $itemsInRow;  ?> d-flex pricing-card mt-3 <?php if($pricingtable->hightlight) {echo 'hightlight';}?>">
+			<div class="card card-normal shadow-lg text-center w-100 mb-5 mb-lg-0">
+				<?php if(!empty($pricingtable->title) or !empty($pricingtable->subtitle))  { ?>
+				  <div class="card-header <?php if(!$pricingtable->headerBacground=="color") {echo 'bg-primary'; } ?> text-white pt-4" style="<?php if($pricingtable->headerBacground=="color") {echo 'background: ' . $pricingtable->headerBacground_color;} elseif($pricingtable->headerBacground=="media"){ echo 'background: url('.$pricingtable->headerBacground_upload.') no-repeat;
+background-size: cover;';}?>">
+					<?php if(!empty($pricingtable->title))  { ?>
+						<h3 class="text-white"><?php echo $pricingtable->title; ?></h3>
+					<?php } ?>
+					<?php if(!empty($pricingtable->subtitle))  { ?>
+						<p><?php echo $pricingtable->subtitle; ?></p>
+					<?php } ?>
+				  </div>
+				<?php } ?> 
+				<?php if(!empty($pricingtable->details)){?>
+				  <div class="card-body text-center pt-5 px-4">
+					<ul class="list-styled d-inline-block">
+						<?php foreach (explode(',', $pricingtable->details) as $detail) { ?>
+							<li><?php echo $detail; ?></li>	
+						<?php } ?>
+					</ul>
+				  </div>
+				<?php }	 ?>
+			<?php if(!empty($pricingtable->pricing) or  !empty($pricingtable->period) or !empty($pricingtable->button_text) or !empty($pricingtable->bottom_line)){?>
+				  <div class="card-footer border-0 pt-4">
+					  <?php if(!empty($pricingtable->pricing) and !empty($pricingtable->period) ){?>
+						<h3 class="mb-3" style="<?php if($pricingtable->pricingColor) {echo 'color: ' . $pricingtable->pricingColor;}?>"><?php echo $pricingtable->pricing; ?>
+						  <small><?php echo $pricingtable->period; ?></small>
+						</h3>
+					  <?php } ?>
+					  
+						<?php if(!empty($pricingtable->button_text)) {?>
+							<a href="<?php echo ($pricingtable->button_link) ? $pricingtable->button_link : '#'  ?>" class="btn btn-outline-primary btn-block w-75 mx-auto mb-3"><?php echo $pricingtable->button_text; ?></a>
+						<?php } ?>
+						
+						<?php if(!empty($pricingtable->bottom_line)) {?>
+							<p>
+							  <small class="text-gray"><?php echo $pricingtable->bottom_line; ?></small>
+							</p>
+						<?php } ?>
+				  </div>
+			<?php } ?>
+			</div>
+		  </div>
+	  <?php } ?>
+	</div>
 </div>

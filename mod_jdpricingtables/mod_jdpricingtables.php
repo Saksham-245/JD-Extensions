@@ -17,4 +17,6 @@ defined('_JEXEC') or die;
 // Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
 $layout = $params->get('layout', 'default');
+$document = JFactory::getDocument();
+$document->addStyleSheet(JURI::root() . 'modules/mod_jdpricingtables/assets/css/jdpricing.css');
 require JModuleHelper::getLayoutPath('mod_jdpricingtables', $layout);
