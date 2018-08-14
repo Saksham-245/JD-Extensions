@@ -7,7 +7,7 @@ $itemsInRow = $params->get('itemsInRow');
 <div class="container py-5">
 	<div class="row">
 	  <?php foreach ($pricingtables as $pricingtable) { ?>
-		  <div class="col-md-<?php echo $itemsInRow;  ?> d-flex pricing-card mt-3 <?php if($pricingtable->hightlight) {echo 'hightlight';}?>">
+		  <div class="col-12 col-md-6 col-lg-<?php echo $itemsInRow;  ?> d-flex pricing-card mt-3 <?php if($pricingtable->hightlight) {echo 'hightlight';}?>">
 			<div class="card card-normal shadow-lg text-center w-100 mb-5 mb-lg-0">
 				<?php if(!empty($pricingtable->title) or !empty($pricingtable->subtitle))  { ?>
 				  <div class="card-header <?php if(!$pricingtable->headerBacground=="color") {echo 'bg-primary'; } ?> text-white pt-4" style="<?php if($pricingtable->headerBacground=="color") {echo 'background: ' . $pricingtable->headerBacground_color;} elseif($pricingtable->headerBacground=="media"){ echo 'background: url('.$pricingtable->headerBacground_upload.') no-repeat;
