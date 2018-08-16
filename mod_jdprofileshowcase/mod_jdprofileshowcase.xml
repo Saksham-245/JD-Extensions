@@ -15,6 +15,9 @@
       <folder>fields</folder>
       <filename>helper.php</filename>
    </files>
+    <media folder="media" destination="mod_jdprofileshowcase">
+      <folder>assets</folder>
+    </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jdprofileshowcase.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jdprofileshowcase.sys.ini</language>
@@ -27,14 +30,14 @@
                type="list"
                label="Select Template"
                description="Select Template"
-               default="1"
+               default="table"
             >
-               <option value="1">Grid Layout</option>
-               <option value="1">Grid Circle Layout</option>
-               <option value="1">Carousel Layout</option>
-               <option value="1">Carousel Circle Layout</option>
-               <option value="1">List Layout</option>
-               <option value="1">Table</option>
+               <option value="grid_layout">Grid Layout</option>
+               <option value="grid_circle_layout">Grid Circle Layout</option>
+               <option value="carousel_layout">Carousel Layout</option>
+               <option value="carousel_circle_layout">Carousel Circle Layout</option>
+               <option value="list_layout">List Layout</option>
+               <option value="table">Table</option>
             </field>
             <field
                name="enable_link"

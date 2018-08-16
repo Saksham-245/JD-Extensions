@@ -16,5 +16,7 @@
 defined('_JEXEC') or die;
 // Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
-$layout = $params->get('layout', 'default');
+$layout = $params->get('template', 'table');
+$profilesClass  = new modJdprofileShowcaseHelper();
+$profiles = $profilesClass->profiles();
 require JModuleHelper::getLayoutPath('mod_jdprofileshowcase', $layout);
