@@ -13,17 +13,26 @@ defined('_JEXEC') or die;
               <?php foreach($profiles as $profile) { ?>
                 <div class="jd-team-columns col-12 col-md-6 col-lg-3">
                   <div class="card-team jd-team-items">
-                    <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
-                    <div class="card-team-body">
-                      <div class="team-member-content-wrapper">
-                        <h5 class="card-img-overlayteam-member-name">Card title</h5>
-                        <p class="team-member-designation">
-                          <small>Web designer</small>
-                        </p>
-                        <p class="card-img-overlayteam-member-bio">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                          is a little bit longer.</p>
+                    <?php if(!empty($profile->image)) { ?>
+                      <img src="<?php echo $profile->image;  ?>" alt="<?php echo $profile->name;  ?>" class="card-img-top team-mamber-image">
+                    <?php }?>  
+                    <?php if(!empty($profile->name) or !empty($profile->designation) or !empty($profile->sbio)) { ?>
+                      <div class="card-team-body">
+                        <div class="team-member-content-wrapper">
+                            <?php if($params->get('display_name')) { ?>
+                              <h5 class="card-img-overlayteam-member-name"><?php echo $profile->name;  ?></h5>
+                            <?php } ?>
+                            <?php if($params->get('display_designation')) { ?>
+                              <p class="team-member-designation">
+                                <small><?php echo $profile->designation;  ?></small>
+                              </p>
+                            <?php } ?>
+                            <?php if(!empty($profile->sbio)) { ?>
+                                <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                            <?php }?>
+                        </div>
                       </div>
-                    </div>
+                    <?php }?>
                     <div class="card-team-footer social-profile-wrapper">
                       <ul class="social-profile circle">
                         <li>

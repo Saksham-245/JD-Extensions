@@ -17,12 +17,18 @@ defined('_JEXEC') or die;
                     <th scope="team-mamber-image-wrapper">
                         <img src="<?php  echo $profile->image; ?>" alt="<?php  echo $profile->name; ?>">
                     </th>
-                    <td class="team-member-name">
-                        <span><?php  echo $profile->name; ?></span>
-                    </td>
-                    <td class="team-member-designation"><i class="fas fa-stamp"></i> <?php  echo $profile->designation; ?></td>
+                    <?php if($params->get('display_name')) { ?>
+                      <td class="team-member-name"><span><?php  echo $profile->name; ?></span></td>
+                    <?php } ?>  
+
+                    <?php if($params->get('display_designation')) { ?>
+                       <td class="team-member-designation"><i class="fas fa-stamp"></i> <?php  echo $profile->designation; ?></td>
+                    <?php } ?>
+
                     <td class="team-member-address"><i class="fas fa-envelope"></i> <?php  echo $profile->email; ?> </td>
-                    <td class="team-member-email"><i class="fas fa-phone"></i> <?php  echo $profile->phone; ?></td>
+                    <?php if($params->get('show_Contact')) { ?>
+                      <td class="team-member-email"><i class="fas fa-phone"></i> <?php  echo $profile->phone; ?></td>
+                    <?php } ?>
                     </tr>
               <?php } ?>
               </tbody>

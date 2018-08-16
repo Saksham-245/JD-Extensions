@@ -88,7 +88,7 @@
          </fieldset>
          <fieldset name="design">
             <field
-               name="display_ame"
+               name="display_name"
                type="radio"
                label="Display Name"
                description="Display Name"
@@ -121,7 +121,7 @@
                <option value="0">JNO</option>
             </field>
             <field
-               name="show_ContactDetails"
+               name="show_Contact"
                type="radio"
                label="Show Contact Details"
                description="Show Contact Details"
@@ -134,8 +134,8 @@
             <field
                name="show_skills"
                type="radio"
-               label="Show Contact Details"
-               description="Show Contact Details"
+               label="Show Skill Details"
+               description="Show Skill Details"
                default="1"
                class="btn-group btn-group-yesno"
             >
