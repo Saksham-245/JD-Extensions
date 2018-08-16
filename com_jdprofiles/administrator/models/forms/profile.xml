@@ -12,11 +12,11 @@
     </field>
     <field name="email" validate="email" type="email" label="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL" description="COM_JDPROFILES_FORM_DESC_PROFILE_EMAIL" hint="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL"/>
     <field name="phone" filter="safehtml" type="tel" label="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE" description="COM_JDPROFILES_FORM_DESC_PROFILE_PHONE" hint="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE"/>
-    <field name="designation" filter="safehtml" type="text" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_DESIGNATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION"/>
+    <field name="designation"   type="sql"  query="SELECT id, title FROM #__jdprofiles_designation" key_field="id" value_field="title" label="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_DESIGNATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION"/>
     <field name="image" directory="" type="media" label="COM_JDPROFILES_FORM_LBL_PROFILE_IMAGE" description="COM_JDPROFILES_FORM_DESC_PROFILE_IMAGE" hint="COM_JDPROFILES_FORM_LBL_PROFILE_IMAGE"/>
     <field name="sbio" filter="safehtml" type="textarea" label="COM_JDPROFILES_FORM_LBL_PROFILE_SBIO" description="COM_JDPROFILES_FORM_DESC_PROFILE_SBIO" hint="COM_JDPROFILES_FORM_LBL_PROFILE_SBIO"/>
     <field name="lbio" filter="safehtml" type="textarea" label="COM_JDPROFILES_FORM_LBL_PROFILE_LBIO" description="COM_JDPROFILES_FORM_DESC_PROFILE_LBIO" hint="COM_JDPROFILES_FORM_LBL_PROFILE_LBIO"/>
-    <field name="team" filter="safehtml" type="text" label="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM" description="COM_JDPROFILES_FORM_DESC_PROFILE_TEAM" hint="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM"/>
+    <field name="team"  type="sql"  query="SELECT id, title FROM #__jdprofiles_team" key_field="id" value_field="title"  label="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM" description="COM_JDPROFILES_FORM_DESC_PROFILE_TEAM" hint="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM"/>
     <field name="location" filter="safehtml" type="text" label="COM_JDPROFILES_FORM_LBL_PROFILE_LOCATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_LOCATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_LOCATION"/>
     <field name="social" filter="safehtml" type="text" label="COM_JDPROFILES_FORM_LBL_PROFILE_SOCIAL" description="COM_JDPROFILES_FORM_DESC_PROFILE_SOCIAL" hint="COM_JDPROFILES_FORM_LBL_PROFILE_SOCIAL"/>
     <field name="skills" mode="ajax" multiple="true" custom="allow" type="tag" label="COM_JDPROFILES_FORM_LBL_PROFILE_SKILLS" description="COM_JDPROFILES_FORM_DESC_PROFILE_SKILLS" hint="COM_JDPROFILES_FORM_LBL_PROFILE_SKILLS"/>
