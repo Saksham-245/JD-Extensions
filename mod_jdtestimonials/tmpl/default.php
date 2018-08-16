@@ -94,7 +94,7 @@ $active = TRUE;
 .testimonial-container-<?php echo $module->id; ?> .slick-next:hover:before{
 	color:<?php echo $hoverColor; ?>
 }
-<?php if($params->get('customstyle')=="true"){
+<?php if($params->get('customstyle')=="1"){
 		$params->get('customstyle');
 		$nameColor = $params->get('nameColor');
 		$designationColor = $params->get('designationColor');
@@ -139,6 +139,17 @@ $active = TRUE;
 				<?php if(!empty($item->author_companyName)) { ?>
 					<div class="author-text"><?php if(!empty($item->author_companyLink)) { ?><a href="<?php echo $item->author_companyLink; ?>" target="_blank"  rel="nofollow" ><?php } ?><?php echo $item->author_companyName; ?><?php if(!empty($item->author_companyLink)) { ?></a><?php } ?></div>
 				<?php } ?>
+				<?php if(($item->rating !="none")) { ?>
+					<div class="rating">
+						<?php for($i=1; $i<=5; $i++) {
+							if($i <=  $item->rating ){
+								echo '<span class="fa fa-star text-primary"></span>';
+							}else{
+								echo '<span class="fa fa-star"></span>';
+							}
+						 } ?>
+					</div>
+				<?php } ?>
 			</div>
 			<?php } ?>
 		</div>
@@ -156,8 +167,8 @@ $active = TRUE;
 	  (function($){
 	  $(function(){
 		  $('.testimonial-container-<?php echo $module->id; ?>').slick({
-				  arrows: <?php echo $arrow; ?>,
-				  dots: <?php echo $bullets; ?>,
+				  arrows: <?php echo ($arrow==1) ? 'true' : 'false'; ?>,
+				  dots: <?php  echo ($bullets==1) ? 'true' : 'false'; ?>,
 				  infinite: true,
 				  speed: 300,
 				  slidesToShow: 1,

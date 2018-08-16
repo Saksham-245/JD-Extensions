@@ -24,6 +24,7 @@
 		   description="Rating"
 		   default="1"
 		>
+           <option value="none">none</option>
 		   <option value="1">1</option>
 		   <option value="2">2</option>	   
 		   <option value="3">3</option>
