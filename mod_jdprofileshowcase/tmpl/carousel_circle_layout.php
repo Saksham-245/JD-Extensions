@@ -9,220 +9,57 @@ defined('_JEXEC') or die;
         <div class="row">
           <div class="col-12">
             <div class="row jd-team-carousel">
+            <?php foreach($profiles as $profile) { ?>
               <!-- Team Item wrapper start -->
               <div class="jd-team-columns col">
                 <div class="card-team jd-team-items">
                     <div class="team-mamber-image-wrapper">
-                  <img src="images/image1.jpg" alt="" class="card-img-top team-mamber-image">
+                  <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
                   </div>
-                  <div class="card-team-body">
-                    <div class="team-member-content-wrapper">
-                      <h5 class="card-img-overlayteam-member-name">Card title</h5>
-                      <p class="team-member-designation">
-                        <small>Web designer</small>
-                      </p>
-                      <p class="card-img-overlayteam-member-bio">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                        is a little bit longer.</p>
+                  <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+                    <div class="card-team-body">
+                      <div class="team-member-content-wrapper">
+                      <?php if($params->get('display_name')) { ?>
+                        <h5 class="card-img-overlayteam-member-name"><?php echo $profile->name;  ?></h5>
+                      <?php } ?>
+                      <?php if($params->get('display_designation')) { ?>
+                        <p class="team-member-designation">
+                          <small><?php echo $profile->designation;  ?></small>
+                        </p>
+                      <?php } ?>  
+                        <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card-team-footer social-profile-wrapper">
-                    <ul class="social-profile circle">
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-google-plus-g"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  <?php } ?>
+                  <?php if($params->get('show_socialsIcon')) { ?>
+                        <div class="card-team-footer social-profile-wrapper">
+                          <ul class="social-profile  <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-facebook-f"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-linkedin-in"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-google-plus-g"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-instagram"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      <?php } ?>
                 </div>
               </div>
-              <!-- Team Item wrapper end -->
-              <!-- Team Item wrapper start -->
-              <div class="jd-team-columns col">
-                <div class="card-team jd-team-items">
-                    <div class="team-mamber-image-wrapper">
-                  <img src="images/image2.jpg" alt="" class="card-img-top team-mamber-image">
-                  </div>
-                  <div class="card-team-body">
-                    <div class="team-member-content-wrapper">
-                      <h5 class="card-img-overlayteam-member-name">Card title</h5>
-                      <p class="team-member-designation">
-                        <small>Web designer</small>
-                      </p>
-                      <p class="card-img-overlayteam-member-bio">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                        is a little bit longer.</p>
-                    </div>
-                  </div>
-                  <div class="card-team-footer social-profile-wrapper">
-                    <ul class="social-profile rounded">
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-google-plus-g"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Item wrapper end -->
-              <!-- Team Item wrapper start -->
-              <div class="jd-team-columns col">
-                <div class="card-team jd-team-items">
-                    <div class="team-mamber-image-wrapper">
-                  <img src="images/image3.jpg" alt="" class="card-img-top team-mamber-image">
-                  </div>
-                  <div class="card-team-body">
-                    <div class="team-member-content-wrapper">
-                      <h5 class="card-img-overlayteam-member-name">Card title</h5>
-                      <p class="team-member-designation">
-                        <small>Web designer</small>
-                      </p>
-                      <p class="card-img-overlayteam-member-bio">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                        is a little bit longer.</p>
-                    </div>
-                  </div>
-                  <div class="card-team-footer social-profile-wrapper">
-                    <ul class="social-profile square">
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-google-plus-g"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Item wrapper end -->
-              <!-- Team Item wrapper start -->
-              <div class="jd-team-columns col">
-                <div class="card-team jd-team-items">
-                    <div class="team-mamber-image-wrapper">
-                  <img src="images/image4.jpg" alt="" class="card-img-top team-mamber-image">
-                  </div>
-                  <div class="card-team-body">
-                    <div class="team-member-content-wrapper">
-                      <h5 class="card-img-overlayteam-member-name">Card title</h5>
-                      <p class="team-member-designation">
-                        <small>Web designer</small>
-                      </p>
-                      <p class="card-img-overlayteam-member-bio">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                        is a little bit longer.</p>
-                    </div>
-                  </div>
-                  <div class="card-team-footer social-profile-wrapper">
-                    <ul class="social-profile">
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-google-plus-g"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Item wrapper end -->
-              <!-- Team Item wrapper start -->
-              <div class="jd-team-columns col">
-                <div class="card-team jd-team-items">
-                    <div class="team-mamber-image-wrapper">
-                  <img src="images/image5.jpg" alt="" class="card-img-top team-mamber-image">
-                  </div>
-                  <div class="card-team-body">
-                    <div class="team-member-content-wrapper">
-                      <h5 class="card-img-overlayteam-member-name">Card title</h5>
-                      <p class="team-member-designation">
-                        <small>Web designer</small>
-                      </p>
-                      <p class="card-img-overlayteam-member-bio">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                        is a little bit longer.</p>
-                    </div>
-                  </div>
-                  <div class="card-team-footer social-profile-wrapper">
-                    <ul class="social-profile">
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-google-plus-g"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <?php  } ?>
               <!-- Team Item wrapper end -->
             </div>
           </div>
@@ -232,14 +69,14 @@ defined('_JEXEC') or die;
     </div>
   </section>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script>
 (function ($) {
     // Slick Js start
     var intislickSlider = function () {
         $('.jd-team-carousel, .jd-team-carousel-hover').slick({
-            arrows: true,
-            dots: true,
+            arrows: <?php if($params->get('DisplayArrow')){ echo "true"; }else{ echo 'false'; } ?>,
+            dots: <?php if($params->get('DisplayBullit')){ echo "true"; }else{ echo 'false'; } ?>,
             infinite: true,
             speed: 300,
             slidesToShow: 4,

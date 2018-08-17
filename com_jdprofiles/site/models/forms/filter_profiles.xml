@@ -5,7 +5,5 @@
                label="COM_USERS_FILTER_SEARCH_DESC"
                class="js-stools-search-string" />
 
-        
-
     </fields>
 </form>

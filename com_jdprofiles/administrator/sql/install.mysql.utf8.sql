@@ -51,4 +51,5 @@ CREATE TABLE IF NOT EXISTS `#__jdprofiles_team` (
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8mb4_unicode_ci;
 
+
     

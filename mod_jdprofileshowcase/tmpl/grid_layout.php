@@ -11,12 +11,12 @@ defined('_JEXEC') or die;
             <div class="row">
               <!-- Team Item wrapper start -->
               <?php foreach($profiles as $profile) { ?>
-                <div class="jd-team-columns col-12 col-md-6 col-lg-3">
+                <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?>">
                   <div class="card-team jd-team-items">
                     <?php if(!empty($profile->image)) { ?>
                       <img src="<?php echo $profile->image;  ?>" alt="<?php echo $profile->name;  ?>" class="card-img-top team-mamber-image">
                     <?php }?>  
-                    <?php if(!empty($profile->name) or !empty($profile->designation) or !empty($profile->sbio)) { ?>
+                    <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
                       <div class="card-team-body">
                         <div class="team-member-content-wrapper">
                             <?php if($params->get('display_name')) { ?>
@@ -33,31 +33,33 @@ defined('_JEXEC') or die;
                         </div>
                       </div>
                     <?php }?>
-                    <div class="card-team-footer social-profile-wrapper">
-                      <ul class="social-profile circle">
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-google-plus-g"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-instagram"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                    <?php if($params->get('show_socialsIcon')) { ?>
+                        <div class="card-team-footer social-profile-wrapper">
+                          <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                            <li>
+                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>">
+                                <i class="fab fa-facebook-f"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-linkedin-in"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-google-plus-g"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-instagram"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <?php } ?>
+                      </div>
                 </div>
               <?php  } ?>
               <!-- Team Item wrapper end -->

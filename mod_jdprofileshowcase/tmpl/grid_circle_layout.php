@@ -11,48 +11,52 @@ defined('_JEXEC') or die;
             <div class="row">
               <!-- Team Item wrapper start -->
               <?php foreach($profiles as $profile) { ?>
-                  <div class="jd-team-columns col-12 col-md-6 col-lg-3">
+                  <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?">
                     <div class="card-team jd-team-items">
                       <div class="team-mamber-image-wrapper">
                         <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
                       </div>
-                      <div class="card-team-body">
-                        <div class="team-member-content-wrapper">
-                          <?php if($params->get('display_name')) { ?>
-                            <h5 class="card-img-overlayteam-member-name"><?php echo $profile->name;  ?></h5>
-                          <?php } ?>
-                          <?php if($params->get('display_designation')) { ?>
-                            <p class="team-member-designation">
-                              <small><?php echo $profile->designation;  ?></small>
-                            </p>
-                          <?php } ?>
-                          <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                      <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+                        <div class="card-team-body">
+                          <div class="team-member-content-wrapper">
+                            <?php if($params->get('display_name')) { ?>
+                              <h5 class="card-img-overlayteam-member-name"><?php echo $profile->name;  ?></h5>
+                            <?php } ?>
+                            <?php if($params->get('display_designation')) { ?>
+                              <p class="team-member-designation">
+                                <small><?php echo $profile->designation;  ?></small>
+                              </p>
+                            <?php } ?>
+                            <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="card-team-footer social-profile-wrapper">
-                        <ul class="social-profile circle">
-                          <li>
-                            <a href="#">
-                              <i class="fab fa-facebook-f"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fab fa-linkedin-in"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fab fa-google-plus-g"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="fab fa-instagram"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
+                      <?php }?>
+                      <?php if($params->get('show_socialsIcon')) { ?>
+                        <div class="card-team-footer social-profile-wrapper">
+                          <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-facebook-f"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-linkedin-in"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-google-plus-g"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-instagram"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      <?php } ?>
                     </div>
                   </div>
               <?php  } ?>

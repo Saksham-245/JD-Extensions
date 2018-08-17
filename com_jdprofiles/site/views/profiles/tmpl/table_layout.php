@@ -15,6 +15,7 @@ $data = $displayData;
 // Receive overridable options
 $data['options'] = !empty($data['options']) ? $data['options'] : array();
 
+
 // Check if any filter field has been filled
 $filters       = false;
 $filtered      = false;

@@ -58,11 +58,11 @@
                default="1"
                class="btn-group btn-group-yesno"
             >
-               <option value="1">1</option>
-               <option value="1">2</option>
-               <option value="1">3</option>
-               <option value="1">4</option>
-               <option value="1">6</option>
+               <option value="12">1</option>
+               <option value="6">2</option>
+               <option value="4">3</option>
+               <option value="3">4</option>
+               <option value="2">6</option>
             </field> 
             <field
                name="display_all"

@@ -16,53 +16,57 @@ defined('_JEXEC') or die;
                   <div class="team-mamber-image-wrapper">
                     <img src="<?php echo $profile->image; ?>" alt="<?php  echo $profile->name; ?>" class="team-mamber-image">
                   </div>
-                  <div class="card-team-body">
-                    <div class="team-member-content-wrapper">
-                      <?php if($params->get('display_name')) { ?>
-                        <h5 class="team-member-name"><?php  echo $profile->name; ?></h5>
-                      <?php } ?>
-                      <?php if($params->get('display_designation')) { ?>
-                        <p class="team-member-designation">
-                          <small><?php  echo $profile->designation; ?></small>
-                        </p>
-                      <?php } ?>
-                      <p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
-                      <ul class="list-unstyled contact-info">
-                        <?php if($params->get('show_Contact')) { ?>
-                          <li>
-                            <i class="fas fa-phone"></i>  <?php  echo $profile->phone; ?></li>
-                          <li>
+                  <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+                    <div class="card-team-body">
+                      <div class="team-member-content-wrapper">
+                        <?php if($params->get('display_name')) { ?>
+                          <h5 class="team-member-name"><?php  echo $profile->name; ?></h5>
                         <?php } ?>
-                          <i class="fas fa-envelope"></i> <?php  echo $profile->email; ?></li>
-                        <li>
-                          <i class="fas fa-map-marker-alt"></i>
-                          Address:120 Suite, Lexington Avenue, New York, New York 11001</li>
-                      </ul>
-                    </div>
-                    <div class="social-profile-wrapper">
-                      <ul class="social-profile circle">
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-google-plus-g"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-instagram"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                        <?php if($params->get('display_designation')) { ?>
+                          <p class="team-member-designation">
+                            <small><?php  echo $profile->designation; ?></small>
+                          </p>
+                        <?php } ?>
+                        <p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
+                        <ul class="list-unstyled contact-info">
+                          <?php if($params->get('show_Contact')) { ?>
+                            <li>
+                              <i class="fas fa-phone"></i>  <?php  echo $profile->phone; ?></li>
+                            <li>
+                          <?php } ?>
+                            <i class="fas fa-envelope"></i> <?php  echo $profile->email; ?></li>
+                          <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <?php  echo $profile->location; ?></li>
+                        </ul>
+                      </div>
+                    <?php } ?> 
+                    <?php if($params->get('show_socialsIcon')) { ?>
+                        <div class="social-profile-wrapper">
+                          <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-facebook-f"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-linkedin-in"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-google-plus-g"></i>
+                              </a>
+                            </li>
+                              <li>
+                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                <i class="fab fa-instagram"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      <?php } ?>
                     <!-- Social Profile Wrapper End -->
                   </div>
                 </div>
