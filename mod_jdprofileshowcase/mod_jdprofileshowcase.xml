@@ -85,6 +85,27 @@
                default="1"
                class="btn-group btn-group-yesno"
             />
+            <field
+               name="all_Designtion"
+               type="hidden"
+               label="All Designtion"
+               description="All Designtion"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+                name="designations"
+                type="hidden"
+                showon="all_Designtion:0"
+                query="SELECT id, title FROM #__jdprofiles_designation"
+                label="Display Designation"
+                key_field="title"
+                value_field="title"
+                description="Display Designation"
+            />
          </fieldset>
          <fieldset name="design">
             <field
@@ -220,6 +241,7 @@
                name="DisplayBullit"
                type="radio"
                label="Display Bullit"
+               showon="template:carousel_layout[OR]template:carousel_circle_layout"
                description="Display Bullit"
                default="1"
                class="btn-group btn-group-yesno"
@@ -230,6 +252,7 @@
             <field
                name="DisplayArrow"
                type="radio"
+               showon="template:carousel_layout[OR]template:carousel_circle_layout"
                label="Display Arrow"
                description="Display Arrow"
                default="1"

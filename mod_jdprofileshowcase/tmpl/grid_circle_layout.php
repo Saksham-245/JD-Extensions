@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
             <div class="row">
               <!-- Team Item wrapper start -->
               <?php foreach($profiles as $profile) { ?>
-                  <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?">
+                  <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?>">
                     <div class="card-team jd-team-items">
                       <div class="team-mamber-image-wrapper">
                         <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
