@@ -26,17 +26,17 @@
                default="default"
             />
 			<field 
-			name="mijnkalender" 
-			type="calendar" 
-			default="2017-06-02" 
-			label="Dummy" 
-			description=""
-			class="input-small" 
-			required="true" 
-			filter="user_utc"
-			showtime="false" 
-			todaybutton="false" 
-			filltable="false" 
-			translateformat="true" />
+                name="mijnkalender" 
+                type="hidden"
+                default="2017-06-02" 
+                label="Dummy" 
+                description=""
+                class="input-small" 
+                required="true" 
+                filter="user_utc"
+                showtime="false" 
+                todaybutton="false" 
+                filltable="false" 
+                translateformat="true" />
    </fieldset>
 </form>

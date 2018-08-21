@@ -23,37 +23,64 @@
    $canCheckin = $user->authorise('core.manage', 'com_jdprofiles');
    $canChange  = $user->authorise('core.edit.state', 'com_jdprofiles');
    $canDelete  = $user->authorise('core.delete', 'com_jdprofiles');
-    $this->params->get('layout');
-
+   echo  $this->params->get('layout');
    ?>
-<form action="<?php echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post"
+
+  <section>
+    <div class="container py-5">
+      <div class="jd-team-showcase-wrapper jd-carousel-layout-view jd-carousel-hover-layout">
+        <div class="row">
+          <div class="col-12">
+          <form action="<?php echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post"
    name="adminForm" id="adminForm">
-   <?php echo JLayoutHelper::render('default_filter', array('view' => $this), dirname(__FILE__)); ?>
-   <table class="table table-striped" id="profileList">
-      <tbody>
-	  <?php foreach ($this->items as $i => $item) : ?>
-	  <?php $canEdit = $user->authorise('core.edit', 'com_jdprofiles'); ?>
-         <tr>
-			<th scope="team-mamber-image-wrapper">
-				<img src="<?php echo $item->image; ?>" alt="" width="7%">
-			</th>
-			<td class="team-member-name">
-				<span><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>"><?php echo $item->name; ?></a></span>
-			</td>
-			<td class="team-member-designation"><i class="fas fa-stamp"></i><?php echo $item->designation; ?></td>
-			<td class="team-member-address"><i class="fas fa-envelope"></i> <?php echo $item->email; ?></td>
-			<td class="team-member-email"><i class="fas fa-phone"></i> <?php echo $item->phone; ?></td>
-        </tr>
-		<?php endforeach; ?>
-      <tbody>
-      </tbody>
-   </table>
-
-   <?php echo $this->pagination->getListFooter(); ?>
-
-   <input type="hidden" name="task" value=""/>
-   <input type="hidden" name="boxchecked" value="0"/>
-   <input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>"/>
-   <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"/>
-   <?php echo JHtml::_('form.token'); ?>
-</form>
+            <div class="row jd-team-carousel-hover">
+            <?php foreach ($this->items as $i => $item) : ?>
+            
+                <!-- Team Item wrapper start -->
+                <div class="jd-team-columns col col-12 col-md-6 col-lg-3 d-flex">
+                    <div class="card-team jd-team-items">
+                        <img src="<?php echo  $item->image;?>" alt="<?php echo  $item->name;?>" class="team-mamber-image">
+                        <h5 class="team-member-name team-member-name-overlay"><?php echo  $item->name;?></h5>
+                        <!-- Team Member Name Overlay end-->
+                        <div class="card-team-overlay">
+                        <div class="team-member-content-wrapper">
+                            <h5 class="team-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>"><?php echo  $item->name;?></a></h5>
+                            <p class="team-member-designation">
+                            <small><?php echo  $item->designation;?></small>
+                            </p>
+                            <p class="team-member-bio">T<?php echo  $item->sbio;?>.</p>
+                        </div>
+                        <!-- Team Member Content Wrapper End -->
+                        <div class="social-profile-wrapper">
+                            <ul class="social-profile circle">
+                            <?php  $socials=  json_decode($item->social);?>
+                            <?php  foreach($socials as $social){?>
+                                <li>
+                                    <a href="<?php echo $social->link?>">
+                                    <i class="<?php echo $social->icon?>"></i>
+                                    </a>
+                                </li>
+                            <?php } ?>       
+                            </ul>
+                        </div>
+                        <!-- Social Profile Wrapper End -->
+                        </div>
+                        <!-- Card Image overlay End -->
+                    </div>
+                    </div>
+                <!-- Team Item wrapper end -->
+                <?php endforeach; ?>
+            </div>
+            <?php echo $this->pagination->getListFooter(); ?>
+            <input type="hidden" name="task" value=""/>
+            <input type="hidden" name="boxchecked" value="0"/>
+            <input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>"/>
+            <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"/>
+            <?php echo JHtml::_('form.token'); ?>
+        </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Jd Team Showcase wrapper -->
+    </div>
+  </section>

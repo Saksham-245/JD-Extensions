@@ -44,6 +44,12 @@ class JdprofilesHelper
 			$vName == 'teams'
 		);
 
+		JHtmlSidebar::addEntry(
+			JText::_('COM_JDPROFILES_TITLE_SKILLS'),
+			'index.php?option=com_jdprofiles&view=skills',
+			$vName == 'skills'
+		);
+
 	}
 
 	/**

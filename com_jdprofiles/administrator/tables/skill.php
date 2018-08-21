@@ -12,36 +12,13 @@ defined('_JEXEC') or die;
 
 use Joomla\Utilities\ArrayHelper;
 /**
- * profile Table class
+ * skill Table class
  *
  * @since  1.6
  */
-class JdprofilesTableprofile extends JTable
+class JdprofilesTableskill extends JTable
 {
-	/**
-	 * Check if a field is unique
-	 *
-	 * @param   string  $field  Name of the field
-	 *
-	 * @return bool True if unique
-	 */
-	private function isUnique ($field)
-	{
-		$db = JFactory::getDbo();
-		$query = $db->getQuery(true);
-
-		$query
-			->select($db->quoteName($field))
-			->from($db->quoteName($this->_tbl))
-			->where($db->quoteName($field) . ' = ' . $db->quote($this->$field))
-			->where($db->quoteName('id') . ' <> ' . (int) $this->{$this->_tbl_key});
-
-		$db->setQuery($query);
-		$db->execute();
-
-		return ($db->getNumRows() == 0) ? true : false;
-	}
-
+	
 	/**
 	 * Constructor
 	 *
@@ -49,8 +26,8 @@ class JdprofilesTableprofile extends JTable
 	 */
 	public function __construct(&$db)
 	{
-		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'JdprofilesTableprofile', array('typeAlias' => 'com_jdprofiles.profile'));
-		parent::__construct('#__jdprofiles_profiles', 'id', $db);
+		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'JdprofilesTableskill', array('typeAlias' => 'com_jdprofiles.skill'));
+		parent::__construct('#__jdprofiles_skill', 'id', $db);
 	}
 
 	/**
@@ -69,26 +46,8 @@ class JdprofilesTableprofile extends JTable
 	    $date = JFactory::getDate();
 		$task = JFactory::getApplication()->input->get('task');
 	    
-
-		// Support for alias field: alias
-		if (empty($array['alias']))
-		{
-			if (empty($array['name']))
-			{
-				$array['alias'] = JFilterOutput::stringURLSafe(date('Y-m-d H:i:s'));
-			}
-			else
-			{
-				if(JFactory::getConfig()->get('unicodeslugs') == 1)
-				{
-					$array['alias'] = JFilterOutput::stringURLUnicodeSlug(trim($array['name']));
-				}
-				else
-				{
-					$array['alias'] = JFilterOutput::stringURLSafe(trim($array['name']));
-				}
-			}
-		}
+		$input = JFactory::getApplication()->input;
+		$task = $input->getString('task', '');
 
 		if ($array['id'] == 0 && empty($array['created_by']))
 		{
@@ -111,14 +70,6 @@ class JdprofilesTableprofile extends JTable
 			$registry->loadArray($array['params']);
 			$array['params'] = (string) $registry;
 		}
-		
-		if ((!empty($array['social'])&&(is_array($array['social'])))){
-            $this->_jsonEncode[] = "social";
-		  }
-		  
-		if ((!empty($array['skills'])&&(is_array($array['skills'])))){
-			$this->_jsonEncode[] = "skills";
-	  }
 
 		if (isset($array['metadata']) && is_array($array['metadata']))
 		{
@@ -127,13 +78,13 @@ class JdprofilesTableprofile extends JTable
 			$array['metadata'] = (string) $registry;
 		}
 
-		if (!JFactory::getUser()->authorise('core.admin', 'com_jdprofiles.profile.' . $array['id']))
+		if (!JFactory::getUser()->authorise('core.admin', 'com_jdprofiles.skill.' . $array['id']))
 		{
 			$actions         = JAccess::getActionsFromFile(
 				JPATH_ADMINISTRATOR . '/components/com_jdprofiles/access.xml',
-				"/access/section[@name='profile']/"
+				"/access/section[@name='skill']/"
 			);
-			$default_actions = JAccess::getAssetRules('com_jdprofiles.profile.' . $array['id'])->getData();
+			$default_actions = JAccess::getAssetRules('com_jdprofiles.skill.' . $array['id'])->getData();
 			$array_jaccess   = array();
 
 			foreach ($actions as $action)
@@ -198,11 +149,6 @@ class JdprofilesTableprofile extends JTable
 			$this->ordering = self::getNextOrder();
 		}
 		
-		// Check if alias is unique
-		if (!$this->isUnique('alias'))
-		{
-			$this->alias .= '-' . JFilterOutput::stringURLSafe(date('Y-m-d-H:i:s'));
-		}
 		
 
 		return parent::check();
@@ -300,7 +246,7 @@ class JdprofilesTableprofile extends JTable
 	{
 		$k = $this->_tbl_key;
 
-		return 'com_jdprofiles.profile.' . (int) $this->$k;
+		return 'com_jdprofiles.skill.' . (int) $this->$k;
 	}
 
 	/**

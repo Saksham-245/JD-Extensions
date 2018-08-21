@@ -119,47 +119,7 @@ class JdprofilesModelProfile extends JModelItem
                     
                 } 
             }
-        
-            
-
-				if (isset($this->_item->skills))
-				{
-					// Catch the item tags (string with ',' coma glue)
-					$tags = explode(',', $this->_item->skills);
-
-					$db        = Factory::getDbo();
-					$namedTags = array(); // Cleaning and initalization of named tags array
-
-					// Get the tag names of each tag id
-					foreach ($tags as $tag)
-					{
-						$query = $db->getQuery(true);
-
-						$query->select("title");
-						$query->from('`#__tags`');
-						$query->where( "id=" . intval($tag) );
-
-						$db->setQuery($query);
-						$row = $db->loadObjectList();
-
-						// Read the row and get the tag name (title)
-						if (!is_null($row)) {
-							foreach ($row as $value) {
-								if ( $value && isset($value->title) ) {
-									$namedTags[] = trim($value->title);
-								}
-							}
-						}
-
-					}
-
-					// Finally replace the data object with proper information
-					if (!empty($namedTags)) {
-						$this->_item->skills = implode(', ',$namedTags);
-					} else {
-						$this->_item->skills = !empty($this->_item->my_tags) ? ($this->_item->my_tags) : ("");
-					}
-		}
+   
 
 		if (isset($this->_item->created_by))
 		{

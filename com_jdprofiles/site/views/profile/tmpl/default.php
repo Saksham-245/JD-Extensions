@@ -40,26 +40,14 @@ defined('_JEXEC') or die;
                     </div>
                     <div class="social-profile-wrapper">
                       <ul class="social-profile circle">
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-google-plus-g"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fab fa-instagram"></i>
-                          </a>
-                        </li>
+                         <?php  $socials=  json_decode($this->item->social);?>
+                            <?php  foreach($socials as $social){?>
+                                <li>
+                                    <a href="<?php echo $social->link?>">
+                                    <i class="<?php echo $social->icon?>"></i>
+                                    </a>
+                                </li>
+                          <?php } ?>       
                       </ul>
                     </div>
                     <!-- Social Profile Wrapper End -->
@@ -71,6 +59,7 @@ defined('_JEXEC') or die;
               <div class="col-12">
                 <div class="team-single-details-text">
                   <p><?php echo $this->item->lbio; ?></p>
+                  
                   <blockquote class="blockquote text-center">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                     <footer class="blockquote-footer">Someone famous in
@@ -80,34 +69,14 @@ defined('_JEXEC') or die;
                 </div>
               </div>
             </div>
-            <div class="row team-skill-details text-center">
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="team-counter">
-                  <i class="fas fa-code fa-3x"></i>
-                  <h2 class="team-count-number">700</h2>
-                  <p class="team-count-text">Our Customer</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="team-counter">
-                  <i class="fas fa-smile-wink fa-3x"></i>
-                  <h2 class="team-count-number">600</h2>
-                  <p class="team-count-text">Happy Clients</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="team-counter">
-                  <i class="fas fa-project-diagram fa-3x"></i>
-                  <h2 class="team-count-number">500</h2>
-                  <p class="team-count-text">Project Complete</p>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="team-counter">
-                  <i class="fas fa-coffee fa-3x"></i>
-                  <h2 class="team-count-number">159</h2>
-                  <p class="team-count-text">Coffee With Clients</p>
-                </div>
+              <div class="col-12 col-sm-12 col-lg-12">
+                <?php  $skills=  json_decode($this->item->skills);?>
+                <?php  foreach($skills as $skill){?>
+                    <div class="progress mb-3">
+                    <p><?php echo $skill->skill; ?></p>
+                      <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $skill->skill_rating; ?>%" aria-valuenow="<?php echo $skill->skill_rating; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $skill->skill_rating; ?>%</div>
+                    </div>
+                <?php } ?>
               </div>
             </div>
           </div>

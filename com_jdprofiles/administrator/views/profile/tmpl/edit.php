@@ -66,8 +66,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 				<?php echo $this->form->renderField('lbio'); ?>
 				<?php echo $this->form->renderField('team'); ?>
 				<?php echo $this->form->renderField('location'); ?>
-				<?php echo $this->form->renderField('social'); ?>
-				<?php echo $this->form->renderField('skills'); ?>
 				<?php echo $this->form->renderField('details'); ?>
 				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
 				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
@@ -89,7 +87,57 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 		</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
-		
+	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'social', JText::_('Social', true)); ?>
+		<div class="row-fluid">
+			<div class="span10 form-horizontal">
+				<fieldset class="adminform">
+
+
+				<?php echo $this->form->renderField('social'); ?>
+
+
+				<?php echo $this->form->renderField('created_by'); ?>
+				<?php echo $this->form->renderField('modified_by'); ?>				<input type="hidden" name="jform[created_on]" value="<?php echo $this->item->created_on; ?>" />
+				<input type="hidden" name="jform[modified_on]" value="<?php echo $this->item->modified_on; ?>" />
+
+
+					<?php if ($this->state->params->get('save_history', 1)) : ?>
+					<div class="control-group">
+						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
+						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
+					</div>
+					<?php endif; ?>
+				</fieldset>
+			</div>
+		</div>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+
+
+	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'skill', JText::_('Skill', true)); ?>
+		<div class="row-fluid">
+			<div class="span10 form-horizontal">
+				<fieldset class="adminform">
+
+
+				<?php echo $this->form->renderField('skills'); ?>
+
+
+				<?php echo $this->form->renderField('created_by'); ?>
+				<?php echo $this->form->renderField('modified_by'); ?>				<input type="hidden" name="jform[created_on]" value="<?php echo $this->item->created_on; ?>" />
+				<input type="hidden" name="jform[modified_on]" value="<?php echo $this->item->modified_on; ?>" />
+
+
+					<?php if ($this->state->params->get('save_history', 1)) : ?>
+					<div class="control-group">
+						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
+						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
+					</div>
+					<?php endif; ?>
+				</fieldset>
+			</div>
+		</div>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+
 
 		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
 
