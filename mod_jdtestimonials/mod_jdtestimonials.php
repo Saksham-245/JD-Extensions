@@ -16,5 +16,5 @@
 defined('_JEXEC') or die;
 // Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
-$layout = $params->get('layout', 'default');
+$layout = $params->get('select_view', 'default');
 require JModuleHelper::getLayoutPath('mod_jdtestimonials', $layout);

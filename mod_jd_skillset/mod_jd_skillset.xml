@@ -36,7 +36,7 @@
                />
          </fieldset>
          <fieldset name="style">
-            <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="1">
+            <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="default">
                 <option value="default">media/mod_jd_skillset/images/layouts/layout-1.svg|Style - 1</option>
                  <option value="view2">media/mod_jd_skillset/images/layouts/layout-2.svg|Style - 2</option>
             </field>
