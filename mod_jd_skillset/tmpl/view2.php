@@ -1,6 +1,6 @@
 <?php
-// Seattel
-// No direct access 
+// Ngo
+// No direct access
 defined('_JEXEC') or die;
 $skillsets = $params->get('skillsets', []);
 $numberPosition = $params->get('numberPosition','above');
@@ -70,28 +70,15 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 /*# sourceMappingURL=style.css.map */
 
 </style>
-<div class="row counter-sub-container py-3">
+<div class="row counter-sub-container">
     <?php foreach($skillsets as $skillset) : ?>
         <div class="col-12 col-lg-<?php echo $count;?> mb-3 mb-lg-0" id="skillset-<?php echo $module->id; ?>">
-            <div class="counter-wrapper d-lg-flex justify-content-lg-center align-items-lg-center p-3 text-center">
-				<?php if(!empty($skillset->skillset_icon_upload) or !empty($skillset->skillset_icon_icon) ) {?>
-                <div class="counter-icon d-lg-flex align-items-lg-center text-primary pt-lg-2 pr-lg-3 mb-2 mb-lg-0">
-                    <?php  if($skillset->skillset_icon_option == 'upload') { ?>
-						<?php if(!empty($skillset->skillset_icon_upload)) {?>
-							<img src="<?php  echo $skillset->skillset_icon_upload; ?>" class="mx-auto d-block"></img>
-						<?php } ?>
-					 <?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
-						<?php if(!empty($skillset->skillset_icon_icon)) {?>
-							<i class="<?php  echo $skillset->skillset_icon_icon; ?> icon" class="mx-auto d-block" alt="icon"></i>
-						<?php }?>
-					 <?php }?>
-                </div>
-				 <?php }?>
+            <div class="counter-wrapper justify-content-lg-center rounded border py-5">
 				<?php if(!empty($skillset->skillset_title) or !empty($skillset->skillset_number)) { ?>
-					<div class="counter-text-container text-center text-lg-left">
+					<div class="counter-text-container text-center">
 						<?php if($numberPosition=='above'){ ?>
 							<?php if(!empty($skillset->skillset_number)) { ?>
-								<p class="counter-number text-primary d-flex justify-content-center justify-content-lg-start">
+								<p class="counter-number text-primary d-flex justify-content-center">
 									<span class="count"><?php echo $skillset->skillset_number; ?></span>
 									<?php 
 										if(($skillset->skillset_enable_symbol)) { ?>
@@ -107,7 +94,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 						
 						<?php if($numberPosition=='below'){ ?>
 							<?php if(!empty($skillset->skillset_number)) { ?>
-								<p class="counter-number text-primary d-flex justify-content-center justify-content-lg-start">
+								<p class="counter-number text-primary d-flex justify-content-center">
 									<span class="count"><?php echo $skillset->skillset_number; ?></span>
 									<?php 
 										if(($skillset->skillset_enable_symbol)) { ?>
@@ -119,6 +106,19 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 						<?php } ?>
 					</div>
 				<?php } ?>
+				<?php if(!empty($skillset->skillset_icon_upload) or !empty($skillset->skillset_icon_icon) ) {?>
+                <div class="counter-icon d-lg-flex align-items-lg-center text-primary pt-lg-2 pr-lg-3 mb-2 mb-lg-0">
+                    <?php  if($skillset->skillset_icon_option == 'upload') { ?>
+						<?php if(!empty($skillset->skillset_icon_upload)) {?>
+							<img src="<?php  echo $skillset->skillset_icon_upload; ?>" class="mx-auto d-block"></img>
+						<?php } ?>
+					 <?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
+						<?php if(!empty($skillset->skillset_icon_icon)) {?>
+							<i class="<?php  echo $skillset->skillset_icon_icon; ?> icon" class="mx-auto d-block" alt="icon"></i>
+						<?php }?>
+					 <?php }?>
+                </div>
+				 <?php }?>
             </div>
         </div>
     <?php endforeach; ?> 

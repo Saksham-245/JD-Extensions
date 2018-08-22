@@ -14,8 +14,12 @@
       <folder>tmpl</folder>
       <folder>forms</folder>
       <folder>assets</folder>
+      <folder>fields</folder>
       <filename>helper.php</filename>
    </files>
+    <media folder="media" destination="mod_jd_skillset">
+        <folder>images</folder>
+    </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jd_skillset.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jd_skillset.sys.ini</language>
@@ -23,7 +27,6 @@
    <config>
       <fields name="params">
          <fieldset name="basic" addfieldpath="/modules/mod_jd_skillset/fields">
-            <fieldset name="basic" addfieldpath="/modules/mod_jd_skillset/fields">
                <field name="skillsets"
                       type="subform"
                       formsource="/modules/mod_jd_skillset/forms/jd_skillset.xml"
@@ -31,9 +34,12 @@
                       label="MOD_JD_SKILLSET_CREATE_LABEL"
 					  max="4"
                />
-            </fieldset>
          </fieldset>
          <fieldset name="style">
+            <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="1">
+                <option value="default">media/mod_jd_skillset/images/layouts/layout-1.svg|Style - 1</option>
+                 <option value="view2">media/mod_jd_skillset/images/layouts/layout-2.svg|Style - 2</option>
+            </field>
             <field
                 name="numberPosition" 
                 type="list"
@@ -80,7 +86,7 @@
 			<field
                name="titleColor"
                type="color"
-               label="Title Color"
+               label="MOD_JD_SKILLSET_TITLE_COLOR_LABEL"
                description=""
 			   showon="customsColor:true"
                default="default"
@@ -88,7 +94,7 @@
 			<field
                name="numberColor"
                type="color"
-               label="Number Color"
+               label="MOD_JD_SKILLSET_NUMBER_COLOR_LABEL"
                description=""
 			   showon="customsColor:true"
                default="default"
@@ -96,7 +102,7 @@
 			<field
                name="symbolColor"
                type="color"
-               label="Symbol Color"
+               label="MOD_JD_SKILLSET_SYMBOL_COLOR_LABEL"
                description=""
 			   showon="customsColor:true"
                default="default"
@@ -104,7 +110,7 @@
 			<field
                name="iconColor"
                type="color"
-               label="Icon Color"
+               label="MOD_JD_SKILLSET_ICON_COLOR_LABEL"
                description=""
 			   showon="customsColor:true"
                default="default"
@@ -114,7 +120,7 @@
 				type="radio" 
 				default="true" 
 				class="btn-group btn-group-yesno" 
-				label="Custom Size">
+				label="MOD_JD_SKILLSET_CUSTOM_SIZE_LABEL">
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
@@ -123,7 +129,7 @@
                name="titleSize"
                type="number"
 			   min="10"
-               label="Title Size"
+               label="MOD_JD_SKILLSET_TITLE_SIZE_LABEL"
                description=""
 			   showon="customsSize:true"
                default="default"
@@ -132,7 +138,7 @@
                name="numberSize"
                type="number"
 			   min="10"
-               label="Number Size"
+               label="MOD_JD_SKILLSET_NUMBER_SIZE_LABEL"
                description=""
 			   showon="customsSize:true"
                default="default"
@@ -141,7 +147,7 @@
                name="symbolSize"
                type="number"
 			   min="10"
-               label="Symbol Size"
+               label="MOD_JD_SKILLSET_SYMBOL_SIZE_LABEL"
                description=""
 			   showon="customsSize:true"
                default="default"
@@ -150,7 +156,7 @@
                name="iconSize"
                type="number"
 			   min="10"
-               label="Icon Size"
+               label="MOD_JD_SKILLSET_ICON_SIZE_LABEL"
                description=""
 			   showon="customsSize:true"
                default="default"
