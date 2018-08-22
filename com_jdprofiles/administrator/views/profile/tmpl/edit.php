@@ -91,22 +91,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 		<div class="row-fluid">
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">
-
-
 				<?php echo $this->form->renderField('social'); ?>
-
-
-				<?php echo $this->form->renderField('created_by'); ?>
-				<?php echo $this->form->renderField('modified_by'); ?>				<input type="hidden" name="jform[created_on]" value="<?php echo $this->item->created_on; ?>" />
-				<input type="hidden" name="jform[modified_on]" value="<?php echo $this->item->modified_on; ?>" />
-
-
-					<?php if ($this->state->params->get('save_history', 1)) : ?>
-					<div class="control-group">
-						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
-						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
-					</div>
-					<?php endif; ?>
 				</fieldset>
 			</div>
 		</div>
@@ -117,30 +102,12 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 		<div class="row-fluid">
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">
-
-
-				<?php echo $this->form->renderField('skills'); ?>
-
-
-				<?php echo $this->form->renderField('created_by'); ?>
-				<?php echo $this->form->renderField('modified_by'); ?>				<input type="hidden" name="jform[created_on]" value="<?php echo $this->item->created_on; ?>" />
-				<input type="hidden" name="jform[modified_on]" value="<?php echo $this->item->modified_on; ?>" />
-
-
-					<?php if ($this->state->params->get('save_history', 1)) : ?>
-					<div class="control-group">
-						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
-						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
-					</div>
-					<?php endif; ?>
+					<?php echo $this->form->renderField('skills'); ?>
 				</fieldset>
 			</div>
 		</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
-
-
 		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
-
 		<input type="hidden" name="task" value=""/>
 		<?php echo JHtml::_('form.token'); ?>
 
