@@ -87,7 +87,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 		</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
-	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'social', JText::_('Social', true)); ?>
+	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'social', JText::_('COM_JDPROFILES_SOCIAL_PROFILE', true)); ?>
 		<div class="row-fluid">
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">
@@ -98,7 +98,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
-	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'skill', JText::_('Skill', true)); ?>
+	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'skill', JText::_('COM_JDPROFILES_TITLE_SKILLS', true)); ?>
 		<div class="row-fluid">
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">

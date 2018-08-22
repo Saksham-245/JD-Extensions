@@ -2,7 +2,7 @@
 <form>
   <fieldset>
     <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
-    <field name="title" filter="safehtml" type="text" label="COM_JDPROFILES_FORM_LBL_TEAM_TITLE" description="COM_JDPROFILES_FORM_DESC_TEAM_TITLE" hint="COM_JDPROFILES_FORM_LBL_TEAM_TITLE"/>
+    <field name="title" filter="safehtml" required="true" type="text" label="COM_JDPROFILES_FORM_LBL_TEAM_TITLE" description="COM_JDPROFILES_FORM_DESC_TEAM_TITLE" hint="COM_JDPROFILES_FORM_LBL_TEAM_TITLE"/>
     <field name="ordering"/>
     <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
       <option value="1">JPUBLISHED</option>
