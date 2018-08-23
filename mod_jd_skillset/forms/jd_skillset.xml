@@ -2,7 +2,7 @@
 <form>
    <fieldset name="jd_skillset" label="MOD_JD_SKILLSET_CREATE_LABE">
         <field name="skillset_title"
-				required="true"
+		required="true"
                 label="MOD_JD_SKILLSET_TITLE_LABEL"
                 type="text"  />
         <field name="skillset_number"
@@ -10,7 +10,8 @@
                 type="text"  />
         <field
                 name="skillset_icon_option"
-                type="list"
+                type="radio"
+                class="btn-group btn-group-yesno" 
                 label="MOD_JD_SKILLSET_ICON_LABEL"
                 description="MOD_JD_SKILLSET_ICON_DESC"
                 default="upload"
@@ -24,13 +25,14 @@
                 type="media"  />
         <field name="skillset_icon_icon"
                 label="MOD_JD_SKILLSET_ENTER_FONTAWESOME_ICON_CODE"
-				hint="fab fa-accusoft"
+		hint="fab fa-accusoft"
                 showon="skillset_icon_option:icon"
                 type="text" />
         <field
                 name="skillset_enable_symbol"
                 type="radio"
                 label="MOD_JD_SKILLSET_ENABLE_SYMBOL_LABEL"
+                class="btn-group btn-group-yesno" 
                 description="MOD_JD_SKILLSET_ENABLE_SYMBOL_DESC"
                 default="1"
             >
