@@ -13,23 +13,35 @@ defined('_JEXEC') or die;
             <table class="table table-striped">
               <tbody>
               <?php foreach($profiles as $profile) { ?>
-                    <tr>
-                    <th scope="team-mamber-image-wrapper">
-                        <img src="<?php  echo $profile->image; ?>" alt="<?php  echo $profile->name; ?>">
-                    </th>
+                  <tr>
+                    <?php if(!empty($profile->image)) { ?>
+                      <th scope="team-mamber-image-wrapper">
+                          <img src="<?php  echo $profile->image; ?>" alt="<?php  echo $profile->name; ?>">
+                      </th>
+                    <?php } ?>
+
                     <?php if($params->get('display_name')) { ?>
-                      <td class="team-member-name"><span><?php  echo $profile->name; ?></span></td>
+                      <?php if(!empty($profile->name)) { ?>
+                        <td class="team-member-name"><span><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a></span></td>
+                      <?php } ?>
                     <?php } ?>  
 
                     <?php if($params->get('display_designation')) { ?>
-                       <td class="team-member-designation"><i class="fas fa-stamp"></i> <?php  echo $profile->designation; ?></td>
+                      <?php if(!empty($profile->designation)) { ?>
+                        <td class="team-member-designation"><i class="fas fa-stamp"></i> <?php  echo $profile->designation; ?></td>
+                      <?php } ?> 
                     <?php } ?>
 
-                    <td class="team-member-address"><i class="fas fa-envelope"></i> <?php  echo $profile->email; ?> </td>
-                    <?php if($params->get('show_Contact')) { ?>
-                      <td class="team-member-email"><i class="fas fa-phone"></i> <?php  echo $profile->phone; ?></td>
+                    <?php if(!empty($profile->email)) { ?>
+                      <td class="team-member-address"><i class="fas fa-envelope"></i> <?php  echo $profile->email; ?> </td>
                     <?php } ?>
-                    </tr>
+
+                    <?php if($params->get('show_Contact')) { ?>
+                      <?php if(!empty($profile->phone)) { ?>
+                        <td class="team-member-email"><i class="fas fa-phone"></i> <?php  echo $profile->phone; ?></td>
+                      <?php } ?>
+                    <?php } ?>
+                  </tr>
               <?php } ?>
               </tbody>
             </table>

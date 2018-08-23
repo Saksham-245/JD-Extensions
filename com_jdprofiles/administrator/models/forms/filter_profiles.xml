@@ -13,6 +13,28 @@
         >
             <option value="">JOPTION_SELECT_PUBLISHED</option>
         </field>
+         <field name="designation"
+               type="sql"
+                query="SELECT id, title FROM #__jdprofiles_designation"
+                key_field="title"
+                value_field="title"
+               label=""
+               description=""
+               onchange="this.form.submit();"
+        >
+            <option value="">Select Designation</option>
+        </field>
+        <field name="team"
+            type="sql"
+            query="SELECT * FROM #__jdprofiles_team where state=1"
+            key_field="title"
+            value_field="title"
+            label=""
+            description=""
+            onchange="this.form.submit();"
+        >
+            <option value="">Select Team</option>
+        </field>
     </fields>
 
     <fields name="list">

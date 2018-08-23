@@ -4,7 +4,7 @@
                 label="Choose Skill"
 				description="Choose Skill"
                 type="sql"  
-                query="SELECT id, title FROM #__jdprofiles_skill" 
+                query="SELECT id, title, state  FROM #__jdprofiles_skill where state = 1" 
                 key_field="title" 
                 value_field="title"
                  />

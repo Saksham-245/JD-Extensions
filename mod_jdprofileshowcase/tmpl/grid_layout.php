@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
                       <div class="card-team-body">
                         <div class="team-member-content-wrapper">
                             <?php if($params->get('display_name')) { ?>
-                              <h5 class="card-img-overlayteam-member-name"><?php echo $profile->name;  ?></h5>
+                              <h5 class="card-img-overlayteam-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a></h5>
                             <?php } ?>
                             <?php if($params->get('display_designation')) { ?>
                               <p class="team-member-designation">
@@ -34,32 +34,22 @@ defined('_JEXEC') or die;
                       </div>
                     <?php }?>
                     <?php if($params->get('show_socialsIcon')) { ?>
-                        <div class="card-team-footer social-profile-wrapper">
-                          <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
-                            <li>
-                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>">
-                                <i class="fab fa-facebook-f"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                <i class="fab fa-linkedin-in"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                <i class="fab fa-google-plus-g"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                <i class="fab fa-instagram"></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
+                        <?php if(!empty($profile->social)) { ?>
+                            <div class="card-team-footer social-profile-wrapper">
+                              <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                                <?php  $socials=  json_decode($profile->social);?>
+                                  <?php  foreach($socials as $social){?>
+                                      <li>
+                                          <a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                            <i class="<?php echo $social->icon?>"></i>
+                                          </a>
+                                      </li>
+                                  <?php } ?>
+                              </ul>
+                            </div>
+                          <?php } ?> 
                         <?php } ?>
-                      </div>
+                    </div>
                 </div>
               <?php  } ?>
               <!-- Team Item wrapper end -->

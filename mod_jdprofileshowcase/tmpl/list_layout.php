@@ -20,53 +20,51 @@ defined('_JEXEC') or die;
                     <div class="card-team-body">
                       <div class="team-member-content-wrapper">
                         <?php if($params->get('display_name')) { ?>
-                          <h5 class="team-member-name"><?php  echo $profile->name; ?></h5>
+                          <h5 class="team-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a></h5>
                         <?php } ?>
                         <?php if($params->get('display_designation')) { ?>
-                          <p class="team-member-designation">
-                            <small><?php  echo $profile->designation; ?></small>
-                          </p>
+                          <?php if(!empty($profile->designation)) { ?>
+                            <p class="team-member-designation">
+                              <small><?php  echo $profile->designation; ?></small>
+                            </p>
+                          <?php } ?>
                         <?php } ?>
-                        <p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
+                        <?php if(!empty($profile->sbio)) { ?>
+                          <p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
+                        <?php } ?>    
                         <ul class="list-unstyled contact-info">
                           <?php if($params->get('show_Contact')) { ?>
                             <li>
                               <i class="fas fa-phone"></i>  <?php  echo $profile->phone; ?></li>
                             <li>
                           <?php } ?>
+                          <?php if(!empty($profile->email)) { ?>
                             <i class="fas fa-envelope"></i> <?php  echo $profile->email; ?></li>
+                          <?php } ?>
+                          <?php if(!empty($profile->location)) { ?>
                           <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <?php  echo $profile->location; ?></li>
+                          <?php } ?>    
                         </ul>
                       </div>
                     <?php } ?> 
                     <?php if($params->get('show_socialsIcon')) { ?>
-                        <div class="social-profile-wrapper">
-                          <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
-                            <li>
-                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                <i class="fab fa-facebook-f"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                <i class="fab fa-linkedin-in"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                <i class="fab fa-google-plus-g"></i>
-                              </a>
-                            </li>
-                              <li>
-                              <a href="#" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                <i class="fab fa-instagram"></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      <?php } ?>
+                        <?php if(!empty($profile->social)) { ?>
+                            <div class="social-profile-wrapper">
+                              <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                                <?php  $socials=  json_decode($profile->social);?>
+                                  <?php  foreach($socials as $social){?>
+                                      <li>
+                                          <a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                            <i class="<?php echo $social->icon?>"></i>
+                                          </a>
+                                      </li>
+                                  <?php } ?>
+                              </ul>
+                            </div>
+                          <?php } ?> 
+                        <?php } ?>
                     <!-- Social Profile Wrapper End -->
                   </div>
                 </div>

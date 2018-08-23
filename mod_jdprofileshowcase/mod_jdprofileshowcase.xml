@@ -226,11 +226,12 @@
             />
             <field
                name="IconStyle"
-               type="list"
+               type="radio"
                label="Icon Style"
                showon="social_icons:c"
                description="Icon Style"
                default="bc"
+               class="btn-group btn-group-yesno"
             >
                <option value="circle">Circle</option>
                <option value="rounded">Rounded</option> 

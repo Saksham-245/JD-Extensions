@@ -87,12 +87,21 @@ class JdprofilesModelProfiles extends JModelList
 		$published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
 		$this->setState('filter.state', $published);
 
+
+		$designation = $app->getUserStateFromRequest($this->context . '.filter.designation', 'filter_designation');
+		$this->setState('filter.designation', $designation);
+
+		
+		$team = $app->getUserStateFromRequest($this->context . '.filter.designation', 'filter_team');
+		$this->setState('filter.team', $team);
+
 		// Load the parameters.
 		$params = JComponentHelper::getParams('com_jdprofiles');
 		$this->setState('params', $params);
 
 		// List state information.
 		parent::populateState('a.name', 'asc');
+
 	}
 
 	/**
@@ -113,9 +122,8 @@ class JdprofilesModelProfiles extends JModelList
 		// Compile the store id.
 		$id .= ':' . $this->getState('filter.search');
 		$id .= ':' . $this->getState('filter.state');
-
-                
-                    return parent::getStoreId($id);
+		$id .= ':' . $this->getState('filter.designation');
+         return parent::getStoreId($id);
                 
 	}
 
@@ -150,8 +158,16 @@ class JdprofilesModelProfiles extends JModelList
 		// Join over the user field 'modified_by'
 		$query->select('`modified_by`.name AS `modified_by`');
 		$query->join('LEFT', '#__users AS `modified_by` ON `modified_by`.id = a.`modified_by`');
-                
+					 
+		// Join over the user field 'designation'
+		$query->select('`designation`.title AS `designation_by`');
+		$query->join('LEFT', '#__jdprofiles_designation AS `designation` ON `designation`.title = a.`designation`');
 
+
+		// Join over the user field 'team'	
+		$query->select('`team`.title AS `team_by`');
+		$query->join('LEFT', '#__jdprofiles_team AS `team` ON `team`.title = a.`team`');
+		
 		// Filter by published state
 		$published = $this->getState('filter.state');
 
@@ -164,9 +180,26 @@ class JdprofilesModelProfiles extends JModelList
 			$query->where('(a.state IN (0, 1))');
 		}
 
-		// Filter by search in title
-		$search = $this->getState('filter.search');
+		// Filter by designation 
+		 $team = $this->getState('filter.team');
+		if (IS_STRING($team)){
+			$team = $db->Quote('%' . $db->escape($team, true) . '%');
 
+			 $query->where('a.team LIKE'.$team);
+		}
+
+		// Filter by designation 
+		$designation = $this->getState('filter.designation');
+		if (IS_STRING($designation)){
+			$designation = $db->Quote('%' . $db->escape($designation, true) . '%');
+
+			$query->where('a.designation LIKE'.$designation);
+		}
+	
+			
+		// Filter by search in title
+
+		$search = $this->getState('filter.search');
 		if (!empty($search))
 		{
 			if (stripos($search, 'id:') === 0)
@@ -188,7 +221,8 @@ class JdprofilesModelProfiles extends JModelList
 		{
 			$query->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
-
+		//echo $query;
+		// $db->replacePrefix( (string) $query );//debug
 		return $query;
 	}
 
