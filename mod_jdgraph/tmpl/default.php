@@ -40,7 +40,6 @@ $doc->addScript(JURI::root().'media/mod_jdgraph/js/Chart.bundle.js');
             },
             title: {
             display: true,
-            text: '<?php echo $module->title?>'
             },
             animation: {
             animateScale: true,
