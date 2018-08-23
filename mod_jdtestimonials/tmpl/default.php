@@ -71,7 +71,7 @@ $active = TRUE;
 	color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
 	height: 20px; 
 	width: 20px;
-	font-size: 16px;
+	font-size: 36px;
 	line-height: 1;
 	top: 0;
 	opacity: 1;
