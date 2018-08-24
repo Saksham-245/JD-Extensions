@@ -70,7 +70,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 /*# sourceMappingURL=style.css.map */
 
 </style>
-<div class="row counter-sub-container">
+<div id="jd_skillset<?php echo $module->id; ?>" class="row counter-sub-container skillset-not-counted">
     <?php foreach($skillsets as $skillset) : ?>
         <div class="col-12 col-lg-<?php echo $count;?> mb-3 mb-lg-0" id="skillset-<?php echo $module->id; ?>">
             <div class="counter-wrapper justify-content-lg-center rounded border py-5">
@@ -125,15 +125,41 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 </div>
 
 <script>
-	$('.count').each(function() {
-		$(this).prop('Counter', 0).animate({
-			Counter: $(this).text()
-		}, {
-			duration: 4000,
-			easing: 'swing',
-			step: function(now) {
-				$(this).text(Math.ceil(now));
+	(function ($) {
+		// Skillset Number Counter
+		var initskillsetcounter = function (_element) {
+			$(_element).find('.count').each(function () {
+					$(this).prop('Counter', 0).animate({
+						Counter: $(this).text()
+					}, {
+						duration: 3000,
+						easing: 'swing',
+						step: function (now) {
+								$(this).text(Math.ceil(now));
+						}
+					});
+			});
+		};
+		
+		var elementInViewport = function (element) {
+		  var _this = element;
+		  var _this_top = _this.offset().top;
+		  return (_this_top <= window.pageYOffset + parseInt(window.innerHeight)) && (_this_top >= window.pageYOffset);
+	    };
+	   
+		// Events
+		var docReady = function () {
+			//initskillsetcounter();
+		};
+		var winScroll = function(){
+			var _element  = $('#jd_skillset<?php echo $module->id; ?>.skillset-not-counted');
+			if(typeof _element != 'undefined' && _element.length!=0 && elementInViewport(_element)){
+				$(_element).removeClass('skillset-not-counted');
+				initskillsetcounter(_element);
 			}
-		});
-	});
+		};
+		
+		$(docReady);
+		$(window).scroll(winScroll);
+	})(jQuery);
 </script>
