@@ -72,7 +72,7 @@ defined('_JEXEC') or die;
 		<div class="row">
 		  <div class="col-12">
 			<div class="team-single-details-text">
-				<p><?php echo $this->item->details; ?></p>
+				<?php echo $this->item->details; ?>
 			</div>
 		  </div>
 		</div>
