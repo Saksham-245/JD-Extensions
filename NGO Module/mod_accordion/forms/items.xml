@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fieldset name="jd_skillset" label="MOD_JD_SKILLSET_CREATE_LABE">
+			<field
+               name="accordion_panel_title"
+               type="text"
+               label="MOD_ACCORDION_PANEL_TITLE"
+               description=""
+			   required="true"
+               default="default"
+            />	
+			<field
+               name="accordion_panel_description"
+               type="textarea"
+               label="MOD_ACCORDION_PANEL_DESCRIPTION"
+               description=""
+               default=""
+			   required="true"
+			   rows="10" 
+			   cols="5" 
+			   filter="raw"
+            />
+   </fieldset>
+</form>

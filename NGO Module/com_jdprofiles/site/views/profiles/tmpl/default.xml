@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JDPROFILES_TITLE_LIST_VIEW_PROFILES" option="View">
+	<message>
+			<![CDATA[COM_JDPROFILES_TITLE_LIST_VIEW_PROFILES_DESC]]>
+	</message>
+	</layout>
+	<fields name="params">
+		<fieldset name="basic" addfieldpath="/administrator/components/com_categories/models/fields"
+		>
+		<field name="layout" type="list" default="table_layout" required="true" label="Select an Layout" description="">
+			<option value="">Please Select</option>
+			<option value="table_layout">Table Layout</option>
+			<option value="1">Layout 2</option>
+		</field>
+		</fieldset>
+	</fields>
+</metadata>

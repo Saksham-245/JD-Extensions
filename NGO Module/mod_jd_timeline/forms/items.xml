@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fieldset name="timeline" label="">
+			<field
+               name="details"
+               type="text"
+               label="MOD_JD_TIMELINE_TIMELINE_PANEL_DETAILS"
+               description="Enter Only years here"
+               default="2014 - 2018"
+            />	
+			<field
+               name="title"
+               type="text"
+               label="MOD_JD_TIMELINE_TIMELINE_PANEL_TITLE"
+               description=""
+               default="default"
+            />
+			<field
+               name="description"
+               type="textarea"
+               label="MOD_JD_TIMELINE_TIMELINE_PANEL_DESCRIPTION"
+               description=""
+			   rows="10" 
+			   cols="5" 
+			   filter="raw"
+               default="default"
+            />
+			<field 
+			name="mijnkalender" 
+			type="hidden" 
+			default="2017-06-02" 
+			label="Dummy" 
+			description=""
+			class="input-small" 
+			required="true" 
+			filter="user_utc"
+			showtime="false" 
+			todaybutton="false" 
+			filltable="false" 
+			translateformat="true" />
+   </fieldset>
+</form>

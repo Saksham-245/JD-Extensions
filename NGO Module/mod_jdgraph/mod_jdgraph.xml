@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.5" client="site" method="upgrade">
+    <name>MOD_GRAP_XML_NAME</name>
+    <author>JoomDev Team</author>
+    <creationDate>July 2018</creationDate>
+    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>info@joomdev.com</authorEmail>
+    <authorUrl>www.joomdev.com</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_GRAP_XML_NAME</description>
+    <files>
+        <filename module="mod_jdgraph">mod_jdgraph.php</filename>
+        <folder>tmpl</folder>
+        <folder>fields</folder>
+        <folder>forms</folder>
+        <filename>helper.php</filename>
+    </files>
+    <media folder="media" destination="mod_jdgraph">
+        <folder>images</folder>
+        <folder>js</folder>
+    </media>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_jdgraph.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jdgraph.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/modules/mod_jdgraph/fields">
+                <field name="items" type="subform" formsource="/modules/mod_jdgraph/forms/item.xml" multiple="true" label="MOD_GRAPH_TABS_ITEMS"></field>
+            </fieldset>
+             <fieldset name="design">
+                <field name="select_view" type="jdthumbnailradio" label="MOD_GRAPH_SELECT_VIEW" description="" default="default">
+                    <option value="default">media/mod_jdgraph/images/layouts/layout-1.svg|Style - 1</option>
+                </field>
+            </fieldset>    
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
+                <field name="load_bootstrap" type="radio" label="MOD_GRAP_LOAD_BOOTSTRAP" description="MOD_GRAP_LOAD_BOOTSTRAP" default="1" class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            <field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

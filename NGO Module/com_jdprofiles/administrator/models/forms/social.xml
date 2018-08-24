@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fieldset name="social" label="Social Itmes">
+
+        <field name="icon"
+                label="Choose Icon"
+				description="Choose Icon"
+                type="text" />
+      <field name="link"
+             label="Link "
+             description=""
+             type="text"  />
+
+   </fieldset>
+</form>
