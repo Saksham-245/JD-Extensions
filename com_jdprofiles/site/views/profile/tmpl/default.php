@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
   <div class="jd-team-showcase-wrapper team-details-single">
 	<div class="row">
 	  <div class="col-12">
-		<div class="row pb-6">
+		<div class="row pb-4">
 		  <div class="col-12 col-md-3 team-mamber-image-wrapper">
 			<img src="<?php echo $this->item->image; ?>" alt="" class="img-fluid">
 		  </div>
@@ -69,7 +69,7 @@ defined('_JEXEC') or die;
 			</div>
 		  </div>
 		</div>
-		<div class="row">
+		<div class="row pb-5">
 		  <div class="col-12">
 			<div class="team-single-details-text">
 				<?php echo $this->item->details; ?>
