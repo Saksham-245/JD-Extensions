@@ -58,14 +58,14 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 				<?php echo $this->form->renderField('name'); ?>
 				<?php echo $this->form->renderField('alias'); ?>
 				<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
-				<?php echo $this->form->renderField('email'); ?>
-				<?php echo $this->form->renderField('phone'); ?>
-				<?php echo $this->form->renderField('designation'); ?>
 				<?php echo $this->form->renderField('image'); ?>
 				<?php echo $this->form->renderField('sbio'); ?>
 				<?php echo $this->form->renderField('lbio'); ?>
-				<?php echo $this->form->renderField('team'); ?>
+				<?php echo $this->form->renderField('designation'); ?>
+				<?php echo $this->form->renderField('email'); ?>
+				<?php echo $this->form->renderField('phone'); ?>
 				<?php echo $this->form->renderField('location'); ?>
+				<?php echo $this->form->renderField('team'); ?>
 				<?php echo $this->form->renderField('details'); ?>
 				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
 				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />

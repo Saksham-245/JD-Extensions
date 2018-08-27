@@ -3,7 +3,7 @@
   <fieldset addfieldpath="administrator/components/com_jdprofiles/models/fields">
     <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
     <field name="name" filter="safehtml" type="text" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_NAME" description="COM_JDPROFILES_FORM_DESC_PROFILE_NAME" hint="COM_JDPROFILES_FORM_LBL_PROFILE_NAME"/>
-    <field name="alias" readonly="true" type="text" class="inputbox" generator="name"  label="COM_JDPROFILES_FORM_LBL_PROFILE_ALIAS" description="COM_JDPROFILES_FORM_DESC_PROFILE_ALIAS" hint="COM_JDPROFILES_FORM_LBL_PROFILE_ALIAS "/>
+    <field name="alias"  type="text" class="inputbox" generator="name"  label="COM_JDPROFILES_FORM_LBL_PROFILE_ALIAS" description="COM_JDPROFILES_FORM_DESC_PROFILE_ALIAS" />
     <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
       <option value="1">JPUBLISHED</option>
       <option value="0">JUNPUBLISHED</option>

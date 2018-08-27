@@ -39,6 +39,10 @@
                <option value="list_layout">List Layout</option>
                <option value="table">Table</option>
             </field>
+            <field name="select_view" type="jdthumbnailradio" label="Select Layouts"  showon="template:table" description="Select Layouts" default="view2">
+                <option value="default">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|Style - 1</option>
+                <option value="view2">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|Style - 2</option>
+             </field>
             <field
                name="enable_link"
                type="radio"
@@ -50,6 +54,17 @@
                <option value="1">JYES</option>
                <option value="0">JNO</option>
             </field>
+            <field
+               name="gutter_space"
+               type="list"
+               label="Gutter Space"
+               description="Gutter Space"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="noMargin">No Margin</option>
+               <option value="custom">custom</option>
+             </field> 
             <field
                name="grid_coloumns"
                type="list"
