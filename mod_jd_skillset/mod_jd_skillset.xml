@@ -163,13 +163,6 @@
          </fieldset>
          <fieldset name="advanced">
             <field
-               name="layout"
-               type="modulelayout"
-               label="JFIELD_ALT_LAYOUT_LABEL"
-               description="JFIELD_ALT_MODULE_LAYOUT_DESC"
-               default="default"
-            />
-            <field
                name="load_bootstrap"
                type="radio"
                label="MOD_JD_SKILLSET_LOAD_BOOTSTRAP_LBL"

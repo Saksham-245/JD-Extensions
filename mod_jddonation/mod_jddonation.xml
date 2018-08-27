@@ -30,7 +30,7 @@
                 <field name="paypalaccount" label="Paypal Account" type="email"></field>
                 <field name="currency" type="currency" label="Currency " description="Currency"></field>
                 <field name="campaign" type="text" label="Campaign Name" description="Campaign"></field>
-                <field name="buttontext" type="text" label="Button Text" description="Button Text to Show"></field>
+                <field name="buttontext" required="true"  default="Donate Now" type="text" label="Button Text" description="Button Text to Show"></field>
             </fieldset>
              <fieldset name="design">
                 <field name="select_view" type="jdthumbnailradio" label="MOD_DONATION_SELECT_VIEW" description="" default="default">

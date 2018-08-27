@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+   <name>mod_jdprofileshowcase</name>
+   <author>JoomDev Team</author>
+   <creationDate>July 2018</creationDate>
+   <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
+   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+   <authorEmail>info@joomdev.com</authorEmail>
+   <authorUrl>www.joomdev.com</authorUrl>
+   <version>3.0.0</version>
+   <description>MOD_JDPROFILESHOWCASE_XML_DESCRIPTION</description>
+   <files>
+      <filename module="mod_jdprofileshowcase">mod_jdprofileshowcase.php</filename>
+      <folder>tmpl</folder>
+      <folder>fields</folder>
+      <filename>helper.php</filename>
+   </files>
+    <media folder="media" destination="mod_jdprofileshowcase">
+      <folder>assets</folder>
+    </media>
+   <languages folder="language">
+      <language tag="en-GB">en-GB/en-GB.mod_jdprofileshowcase.ini</language>
+      <language tag="en-GB">en-GB/en-GB.mod_jdprofileshowcase.sys.ini</language>
+   </languages>
+   <config>
+      <fields name="params">
+         <fieldset name="basic" addfieldpath="/modules/mod_jdprofileshowcase/fields">
+             <field
+               name="template"
+               type="list"
+               label="Select Template"
+               description="Select Template"
+               default="table"
+            >
+               <option value="grid_layout">Grid Layout</option>
+               <option value="grid_circle_layout">Grid Circle Layout</option>
+               <option value="carousel_layout">Carousel Layout</option>
+               <option value="carousel_circle_layout">Carousel Circle Layout</option>
+               <option value="list_layout">List Layout</option>
+               <option value="table">Table</option>
+            </field>
+            <field name="select_view" type="jdthumbnailradio" label="Select Layouts"  showon="template:table" description="Select Layouts" default="view2">
+                <option value="default">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|Style - 1</option>
+                <option value="view2">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|Style - 2</option>
+             </field>
+            <field
+               name="enable_link"
+               type="radio"
+               label="Enable linking to single members"
+               description=""
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="gutter_space"
+               type="list"
+               label="Gutter Space"
+               description="Gutter Space"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="noMargin">No Margin</option>
+               <option value="custom">custom</option>
+             </field> 
+            <field
+               name="grid_coloumns"
+               type="list"
+               label="Grid Columns"
+               description="Grid Columns"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="12">1</option>
+               <option value="6">2</option>
+               <option value="4">3</option>
+               <option value="3">4</option>
+               <option value="2">6</option>
+            </field> 
+            <field
+               name="display_all"
+               type="radio"
+               label="Display All"
+               description="Display All"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="limit"
+               type="number"
+               min="1"
+               showon="display_all:0"
+               label="Display Profile"
+               description="Display Profile"
+               default="1"
+               class="btn-group btn-group-yesno"
+            />
+            <field
+               name="all_Designtion"
+               type="hidden"
+               label="All Designtion"
+               description="All Designtion"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+                name="designations"
+                type="hidden"
+                showon="all_Designtion:0"
+                query="SELECT id, title FROM #__jdprofiles_designation"
+                label="Display Designation"
+                key_field="title"
+                value_field="title"
+                description="Display Designation"
+            />
+         </fieldset>
+         <fieldset name="design">
+            <field
+               name="display_name"
+               type="radio"
+               label="Display Name"
+               description="Display Name"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="display_designation"
+               type="radio"
+               label="Display Designation"
+               description="Display Name"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="show_socialsIcon"
+               type="radio"
+               label="Show Social Icons"
+               description="Show Social Icons"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="show_Contact"
+               type="radio"
+               label="Show Contact Details"
+               description="Show Contact Details"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="show_skills"
+               type="radio"
+               label="Show Skill Details"
+               description="Show Skill Details"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="new_tab"
+               type="radio"
+               label="Open Social Links in new Tab"
+               description="Open Social Links in new Tab"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="color" type="note" label="Colors" />
+            <field
+               name="NameColor"
+               type="color"
+               label="Name"
+               description="Name"
+            />
+            <field
+               name="designationColor"
+               type="color"
+               label="Designation"
+               description="Designation"
+            />
+            <field
+               name="skill"
+               type="color"
+               label="Skill"
+               description="Skill"
+            />
+            <field
+               name="shortBio"
+               type="color"
+               label="Short Bio"
+               description="Short Bio"
+            />
+            <field
+               name="social_icons"
+               type="radio"
+               label="Social Icons"
+               description="Social Icons"
+               default="bc"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="bc">Brand color</option>
+               <option value="c">Custom</option>
+            </field>
+            <field
+               name="icon_background"
+               type="color"
+               showon="social_icons:c"
+               label="Icon Background "
+               description="Icon Background"
+            />
+            <field
+               name="icon_color"
+               type="color"
+               showon="social_icons:c"
+               label="Icon Color"
+               description="Icon Color"
+            />
+            <field
+               name="IconStyle"
+               type="radio"
+               label="Icon Style"
+               showon="social_icons:c"
+               description="Icon Style"
+               default="bc"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="circle">Circle</option>
+               <option value="rounded">Rounded</option> 
+               <option value="square">Square</option>
+               <option value="none">none</option>
+            </field>
+            <field
+               name="DisplayBullit"
+               type="radio"
+               label="Display Bullit"
+               showon="template:carousel_layout[OR]template:carousel_circle_layout"
+               description="Display Bullit"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="DisplayArrow"
+               type="radio"
+               showon="template:carousel_layout[OR]template:carousel_circle_layout"
+               label="Display Arrow"
+               description="Display Arrow"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+         </fieldset>
+         <fieldset name="advanced">
+            <field
+               name="layout"
+               type="modulelayout"
+               label="JFIELD_ALT_LAYOUT_LABEL"
+               description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+               default="default"
+            />
+            <field
+               name="load_bootstrap"
+               type="radio"
+               label="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
+               description="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+         </fieldset>
+      </fields>
+   </config>
+</extension>
