@@ -21,7 +21,7 @@ $campaign = $params->get('campaign','Demo Campaign');
       <h4 class="title-heading-two col-12 text-center mb-4"><?php echo  $module->title;  ?></h4>
       <div class="col-md-3"></div>
       <div class="col-md-4 py-1">
-         <input class="form-control rounded-control"  name="amount" value="25.00" placeholder="" type="number">
+         <input class="form-control rounded-control"  name="amount" value="25.00" placeholder="" type="text">
       </div>
       <div class="col-md-3 py-1 offset-btn">
             <button class="btn btn-primary" type="submit" name="submit"><?php echo $buttontext; ?></button>

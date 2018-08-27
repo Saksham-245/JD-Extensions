@@ -13,49 +13,7 @@ $items = (array) $items;
 $active = TRUE;
 ?>
 <style type="text/css">
-   .testimonial-<?php echo $module->id; ?> li{
-     
-   }
-   .testimonial-<?php echo $module->id; ?> li.active{
-      background: #000;
-   }
-/* Testimonial Wrapper
-=========================== */
-.testimonial-<?php echo $module->id; ?> {
-	position: relative;
-}
-.testimonial-<?php echo $module->id; ?> .slide-content .author {
-	position: relative;
-	padding: 9px 0px 45px 89px;
-}
-.testimonial-<?php echo $module->id; ?> .slide-content .author .author-img {
-	position: absolute;
-	overflow: hidden;
-	width: 70px;
-	height: 70px;
-	left: 0px;
-	top: 0px;
-}
-.testimonial-<?php echo $module->id; ?> .slide-content .author .author-img img {
-	width: 100%;
-}
-.testimonial-<?php echo $module->id; ?> .slide-content .author .author-info {
-	position: relative;
-	display: inline-block;
-}
-.testimonial-<?php echo $module->id; ?> .slide-content .author .author-info h5 {
-	margin: 0;
-}
-.testimonial-<?php echo $module->id; ?> .slick-dots {
-	position: static;
-}
-.testimonial-<?php echo $module->id; ?> .slick-dots li {
-	
-}
-.testimonial-<?php echo $module->id; ?> .slick-dots li button {
-	padding: 0;
-	line-height: 1;
-}
+
 .testimonial-<?php echo $module->id; ?> .slick-dots li button:before {
 	color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
 }
