@@ -1,0 +1,72 @@
+.slick-dotted.slick-slider {
+  margin: 0px;
+}
+.slick-track {
+  display: flex;
+}
+.slick-prev,  .slick-next {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 100px;
+  border: 1px solid #d3d3d3;
+}
+.slick-prev:hover,  .slick-prev:focus,  .slick-next:hover,  .slick-next:focus {
+  background: #fff;
+}
+.slick-prev:before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-weight: 700;
+  border-radius: 0px;
+  display: inline-block;
+  padding: 4px;
+  line-height: 30px;
+  color: #3c3c3c;
+}
+.slick-next:before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-weight: 700;
+  border-radius: 0px;
+  display: inline-block;
+  padding: 4px;
+  line-height: 30px;
+  color: #3c3c3c;
+}
+.slick-dots {
+  bottom: auto;
+  margin: 40px 0 auto;
+  width: auto;
+  left: 0;
+  right: 0;
+}
+.slick-dots li button:before {
+  color: #06d566;
+  opacity: 1;
+  border: 1px solid transparent;
+}
+.slick-dots li.slick-active button:before {
+  color: #06d566;
+  border-radius: 100px;
+  opacity: 1;
+}
+
+/* Style One Template */
+.style-one{
+	background: #fff;
+	padding: 25px 0px;
+}
+.style-one .author-img{
+	margin-right: 20px;
+}
+.style-one .slide-content{
+	padding: 0 25px;
+}
+/* Style Two Template */
+.style-two .slick-slide {
+  background: #fff;
+  margin: 0px 15px;
+  border: 1px solid #d3d3d3;
+  height: auto;
+}

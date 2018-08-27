@@ -37,26 +37,29 @@
 		$designationSize = $params->get('designationSize');
 		$reviewSize = $params->get('reviewSize');
 	?>
-	.testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-info h5{
+	.testimonial-<?php echo $module->id; ?> .slide-content .author .author-info h5{
 		color: <?php  echo $nameColor?>;
 		font-size: <?php  echo $nameSize?>px;
 	}	
-	.testimonial-container-<?php echo $module->id; ?> .author-info a{	
+	.testimonial-<?php echo $module->id; ?> .author-info a{	
 		color: <?php  echo $designationColor?>;
 		font-size: <?php  echo $designationSize?>px;
 	}
-	.testimonial-container-<?php echo $module->id; ?> .author-info{	
+	.testimonial-<?php echo $module->id; ?> .author-info{	
 		color: <?php  echo $designationColor?>;
 		font-size: <?php  echo $designationSize?>px;
 	}
-	.testimonial-container-<?php echo $module->id; ?> .text{
+	.testimonial-<?php echo $module->id; ?> .text{
 		color: <?php  echo $reviewColor?>;
 		font-size: <?php  echo $reviewSize?>px;
 	}
+	.testimonial-<?php echo $module->id; ?> .slick-dots li.slick-active button:before{
+	    border: 1px solid <?php echo $activeColor; ?>;
+    }
 	<?php } ?>
 </style>
 
-<div class="testimonial-container-<?php echo $module->id; ?> bg-white shadow-lg px-5 py-4 m-0">
+<div class="testimonial-<?php echo $module->id; ?> style-one">
 <?php foreach($items as $item)  { ?>
 	<div class="slide-content">
 		<div class="author d-flex">
@@ -66,7 +69,7 @@
 				</div>
 			<?php } ?>
 		<?php if(!empty($item->author_name) or !empty($item->author_depart)) { ?>
-			<div class="author-info">
+			<div class="author-info my-4">
 				<?php if(!empty($item->author_name)) { ?>
 					<h5 class="name"><?php echo $item->author_name; ?></h5>
 				<?php } ?> 
@@ -100,7 +103,7 @@
  <script>
 	  (function($){
 	  $(function(){
-		  $('.testimonial-container-<?php echo $module->id; ?>').slick({
+		  $('.testimonial-<?php echo $module->id; ?>').slick({
 				  arrows: <?php echo ($arrow==1) ? 'true' : 'false'; ?>,
 				  dots: <?php  echo ($bullets==1) ? 'true' : 'false'; ?>,
 				  infinite: true,

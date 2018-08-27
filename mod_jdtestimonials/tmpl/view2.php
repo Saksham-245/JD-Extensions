@@ -66,7 +66,7 @@ $active = TRUE;
 	<?php } ?>
 </style>
 
-<div class="testimonial testimonial-<?php echo $module->id; ?>">
+<div class="testimonial-<?php echo $module->id; ?> style-two">
 <?php foreach($items as $item)  { ?>
 	<div class="testimonials-wrap text-center px-4 pt-5">
 		<?php if(!empty($item->author_companyReview)) { ?>
@@ -81,7 +81,7 @@ $active = TRUE;
 				</div>
 			<?php } ?>
 		<?php if(!empty($item->author_name) or !empty($item->author_depart)) { ?>
-			<div class="author-info">
+			<div class="author-info my-4">
 				<?php if(!empty($item->author_name)) { ?>
 					<h5 class="name"><?php echo $item->author_name; ?></h5>
 				<?php } ?> 
