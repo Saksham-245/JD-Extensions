@@ -106,7 +106,7 @@ class JFormFieldCurrency extends JFormField
 		
 		foreach($currency as $currencies){
 			$tmp = array(
-					'value'    => $currencies['code'],
+					'value'    => $currencies['code'].','.$currencies['symbol'],
 					'text'     => $currencies['name'],
 			);
 			// Add the option object to the result set.
