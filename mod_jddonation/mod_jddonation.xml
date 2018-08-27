@@ -28,8 +28,8 @@
             <fieldset name="basic" addfieldpath="/modules/mod_jddonation/fields">
                 <field name="items" type="hidden" formsource="/modules/mod_jddonation/forms/item.xml" multiple="true" label="MOD_DONATION_TABS_ITEMS"></field>
                 <field name="paypalaccount" label="Paypal Account" type="email"></field>
-                <field name="currency" type="currency" label="currency " description="currency"></field>
-                <field name="money" type="number" label="Money Want to donate " description="Money Want to donate"></field>
+                <field name="currency" type="currency" label="Currency " description="Currency"></field>
+                <field name="campaign" type="text" label="Campaign Name" description="Campaign"></field>
                 <field name="buttontext" type="text" label="Button Text" description="Button Text to Show"></field>
             </fieldset>
              <fieldset name="design">
