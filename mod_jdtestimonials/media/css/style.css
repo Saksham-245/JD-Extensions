@@ -45,13 +45,19 @@
   color: #06d566;
   opacity: 1;
   border: 1px solid transparent;
+  font-size: 9px;
 }
 .slick-dots li.slick-active button:before {
   color: #06d566;
   border-radius: 100px;
   opacity: 1;
 }
-
+.slick-prev, .slick-next{
+	border: 1px solid #f2f1f1;
+}
+.slick-prev:before, .slick-next:before{
+	font-size: 13px;
+}
 /* Style One Template */
 .style-one{
 	background: #fff;
