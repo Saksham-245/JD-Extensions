@@ -16,6 +16,9 @@
       <folder>forms</folder>
       <filename>helper.php</filename>
    </files>
+	<media folder="media" destination="mod_jdtabs">
+        <folder>css</folder>
+    </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jdtabs.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jdtabs.sys.ini</language>

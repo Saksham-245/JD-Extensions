@@ -70,3 +70,10 @@
   border: 1px solid #d3d3d3;
   height: auto;
 }
+
+/* Responsive Css */
+@media (max-width: 1000px){
+	.slick-prev, .slick-next {
+		display: none !important;
+	}	
+}

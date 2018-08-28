@@ -20,10 +20,10 @@ $campaign = $params->get('campaign','Demo Campaign');
    <div class="row no-gutters input-section pt-5 pb-7">
       <h4 class="title-heading-two col-12 text-center mb-4"><?php echo  $module->title;  ?></h4>
       <div class="col-md-3"></div>
-      <div class="col-md-4 py-1">
+      <div class="col-md-12 col-lg-4 py-1">
          <input class="form-control rounded-control"  name="amount" value="25.00" placeholder="" type="text">
       </div>
-      <div class="col-md-3 py-1 offset-btn">
+      <div class="col-md-12 col-lg-3 py-1 offset-btn">
             <button class="btn btn-primary" type="submit" name="submit"><?php echo $buttontext; ?></button>
       </div>
       <div class="col-md-3"></div>
