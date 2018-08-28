@@ -35,7 +35,7 @@
 					  max="4"
                />
          </fieldset>
-         <fieldset name="style">
+         <fieldset name="options">
             <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="default">
                 <option value="default">media/mod_jd_skillset/images/layouts/layout-1.svg|Style - 1</option>
                  <option value="view2">media/mod_jd_skillset/images/layouts/layout-2.svg|Style - 2</option>
@@ -47,8 +47,8 @@
                 description="MOD_JD_SKILLSET_NUMBER_POSITION_DESC"
                 default="below"
             >
-                <option value="above">Above Title</option>
-                <option value="below">Below Title</option>
+                <option value="above">MOD_JD_SKILLSET_NUMBER_POSITION_ABOVE</option>
+                <option value="below">MOD_JD_SKILLSET_NUMBER_POSITION_BELOW</option>
             </field>
             <field
                 name="iconPosition" 
@@ -69,9 +69,8 @@
                 description="MOD_JD_SKILLSET_SYMBOL_POSITION_DESC"
                 default="sup"
             >
-                <option value="default">Default</option>
-                <option value="sup">Sup</option>
-                <option value="sub">Sub</option>
+                <option value="sup">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
+                <option value="sub">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
             </field>
 			<field 
 				name="customsColor"
@@ -82,7 +81,7 @@
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
-			<field name="note11"  showon="customsColor:true" type="note" label="Custom Colors" description="Here you can add custom color for below mention fields."  />
+			<field name="note11"  showon="customsColor:true" type="note" label="MOD_JD_SKILLSET_CUSTOM_COLORS_label" description="MOD_JD_SKILLSET_CUSTOM_COLORS_DESC"  />
 			<field
                name="titleColor"
                type="color"
@@ -124,7 +123,7 @@
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
-			<field name="note12" showon="customsSize:true" type="note" label="Custom Size"  description="Here you can add custom size for below mention fields." />
+			<field name="note12" showon="customsSize:true" type="note" label="MOD_JD_SKILLSET_CUSTOM_SIZE_LABEL"  description="MOD_JD_SKILLSET_CUSTOM_SIZE_DESC" />
 			<field
                name="titleSize"
                type="number"
@@ -163,13 +162,6 @@
             />
          </fieldset>
          <fieldset name="advanced">
-            <field
-               name="layout"
-               type="modulelayout"
-               label="JFIELD_ALT_LAYOUT_LABEL"
-               description="JFIELD_ALT_MODULE_LAYOUT_DESC"
-               default="default"
-            />
             <field
                name="load_bootstrap"
                type="radio"
