@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
-   <fieldset name="items_modal" label="Tab Items">
+<fieldset name="items_modal" label="Tab Items">
+   <field
+         name="option"
+         type="list"
+         class="btn-group btn-group-yesno" 
+         label="Choose"
+         description=""
+         default="img"
+    >
+         <option value="img">Img</option>
+         <option value="title">Title</option>
+   </field>
       <field name="title"
              label="Title"
-             type="text">
-      </field>
-      <field name="subtitle"
-             label="Subtitle"
+             showon="option:title"
              type="text">
       </field>
       <field name="thumbnail"
              type="media"
+             showon="option:img"
              label="Thumbnail">
       </field>
       <field

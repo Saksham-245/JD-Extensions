@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
-   <fieldset name="items_modal" label="Tab Items">
+<fieldset name="items_modal" label="Tab Items">
+   <field
+         name="option"
+         type="list"
+         class="btn-group btn-group-yesno" 
+         label="Choose"
+         description=""
+         default="img"
+    >
+         <option value="img">Img</option>
+         <option value="title">Title</option>
+   </field>
       <field name="title"
-             label="MOD_JDTABS_XML_TITLE"
+             label="Title"
+             showon="option:title"
              type="text">
       </field>
       <field name="thumbnail"
              type="media"
-             label="MOD_JDTABS_XML_THUMBNAIL">
+             showon="option:img"
+             label="Thumbnail">
       </field>
       <field
          name="content"
          type="editor"
-         label="MOD_JDTABS_XML_CONTENT">
+         label="Content">
       </field>
    </fieldset>
 </form>

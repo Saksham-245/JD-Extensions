@@ -13,11 +13,15 @@ $active = TRUE;
 					 $active = FALSE;
 					 ?>" id="nav-tab-<?php echo $module->id; ?>" data-toggle="tab" href="#nav-<?php echo $module->id; ?>-<?php echo $index; ?>" role="tab" aria-controls="nav-<?php echo $module->id; ?>-<?php echo $index; ?>" aria-selected="true">
 					 
-					<?php  if(!empty($item->thumbnail)){ ?>
-						 <img class="mx-auto d-block" src="<?php echo $item->thumbnail; ?>" alt="memorable">
-					 <?php } ?>
-					 <?php  if(!empty($item->title)){ ?>
-						<?php echo $item->title; ?>
+					<?php  if(($item->option=="img")){ ?> 
+						<?php  if(!empty($item->thumbnail)){ ?>
+							<img class="mx-auto d-block" src="<?php echo $item->thumbnail; ?>" alt="memorable">
+						<?php } ?>
+					<?php } ?>
+					 <?php  if(($item->option=="title")){ ?>
+						<?php  if(!empty($item->title)){ ?>
+							<?php echo $item->title; ?>
+						<?php  }  ?>
 					 <?php  }  ?>
 				 </a>
 			 </li>
