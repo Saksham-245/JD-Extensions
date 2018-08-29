@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
-   <name>Jd Skillset</name>
+   <name>MOD_JD_SKILLSET_XML_DESCRIPTION</name>
    <author>JoomDev Team</author>
    <creationDate>July 2018</creationDate>
    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
