@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
-   <name>mod_jd_timeline</name>
+   <name>MOD_JD_TIMELINE_XML_DESCRIPTION</name>
    <author>JoomDev Team</author>
    <creationDate>July 2018</creationDate>
    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
@@ -8,14 +8,16 @@
    <authorEmail>info@joomdev.com</authorEmail>
    <authorUrl>www.joomdev.com</authorUrl>
    <version>3.0.0</version>
-   <description>mod_jd_timeline</description>
+   <description>MOD_JD_TIMELINE_XML_DESCRIPTION</description>
    <files>
       <filename module="mod_jd_timeline">mod_jd_timeline.php</filename>
       <folder>tmpl</folder>
       <folder>forms</folder>
-      <folder>assets</folder>
       <filename>helper.php</filename>
    </files>
+    <media folder="media" destination="mod_jd_timeline">
+        <folder>css</folder>
+    </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jd_timeline.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jd_timeline.sys.ini</language>
@@ -27,16 +29,16 @@
 			<field
 					name="title"
 					type="text"
-					label="Enter Title"
-					description=""
+					label="MOD_JD_TIMELINE_TITLE_LABEL"
+					description="MOD_JD_TIMELINE_TITLE_DESC"
 					default=""
 					required="true"
 			  />
 			  <field
 					name="subtitle"
 					type="text"
-					label="Enter Sub Title"
-					description=""
+					label="MOD_JD_TIMELINE_SUBTITLE_LABEL"
+					description="MOD_JD_TIMELINE_SUBTITLE_DESC"
 					required="true"
 					default=""
 			  />
@@ -44,7 +46,7 @@
                       type="subform"
                       formsource="/modules/mod_jd_timeline/forms/items.xml"
                       multiple="true"
-                      label="create"
+                      label="MOD_JD_TIMELINE_PANEL_ADD_LABEL"
                />
             </fieldset>
          </fieldset>

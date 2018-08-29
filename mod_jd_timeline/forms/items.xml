@@ -4,22 +4,22 @@
 			<field
                name="details"
                type="text"
-               label="Timeline panel details"
-               description="Enter Only years here"
+               label="MOD_JD_TIMELINE_PANEL_DETAILS_LABEL"
+               description="MOD_JD_TIMELINE_PANEL_DETAILS_DESC"
                default="2014 - 2018"
             />	
 			<field
                name="title"
                type="text"
-               label="Timeline panel title"
-               description=""
+               label="MOD_JD_TIMELINE_PANEL_TITLE_LABEL"
+               description="MOD_JD_TIMELINE_PANEL_TITLE_DESC"
                default="default"
             />
 			<field
                name="description"
                type="textarea"
-               label="Timeline panel description"
-               description=""
+               label="MOD_JD_TIMELINE_PANEL_DESCRIPTION_LABEL"
+               description="MOD_JD_TIMELINE_PANEL_DESCRIPTION_DESC"
 			   rows="10" 
 			   cols="5" 
 			   filter="raw"
