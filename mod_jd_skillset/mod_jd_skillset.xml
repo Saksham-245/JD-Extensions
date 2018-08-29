@@ -77,7 +77,7 @@
 				type="radio" 
 				default="true" 
 				class="btn-group btn-group-yesno" 
-				label="Custom Colors">
+				label="MOD_JD_SKILLSET_CUSTOM_COLORS_label">
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
