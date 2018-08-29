@@ -107,7 +107,7 @@ $nullDate = JFactory::getDbo()->getNullDate();
                             </tr>
                             <?php if(!empty($this->item->location)) { ?>
                                 <tr>
-                                    <th scope="row" class="px-0">Location  : <?php echo JText::_( 'TPL_JDDESIRE_DJEVENT_LOCATION' ); ?></th>
+                                    <th scope="row" class="px-0"><?php echo JText::_( 'TPL_JDDESIRE_DJEVENT_LOCATION' ); ?></th>
                                     <td class="text-left"><?php echo $this->item->location ? $this->item->location.'<br />':'' ?></td>
                                 </tr>
                             <?php } ?>

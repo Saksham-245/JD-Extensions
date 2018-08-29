@@ -3,6 +3,8 @@
   min-width: 100px;
   border-radius: 100px;
   padding: 25px;
+  line-height: 50px;
+  text-align: center;
 }
 @media (max-width: 575.98px) {
   .jd-tabs .nav-pills .nav-link {
@@ -14,6 +16,7 @@
   background: #fff;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   border-radius: 100px;
+  color: #000000;
 }
 .jd-tabs .tab-content #nav-156-items0 {
   border: 1px solid #ececec;

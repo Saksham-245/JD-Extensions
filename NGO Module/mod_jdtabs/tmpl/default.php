@@ -5,7 +5,7 @@ $items = (array) $items;
 $active = TRUE;
 ?>
 <div class="jd-tabs">
-	<ul id="pills-tab" class="nav nav-pills my-5" role="tablist">
+	<ul id="pills-tab" class="nav nav-pills mt-2 mt-lg-5 mt-xl-5 mb-5" role="tablist">
 	  <?php foreach ($items as $index => $item) { ?>
 		  <li class="nav-item" role="tablist">
 				 <a class="nav-item nav-link<?php
