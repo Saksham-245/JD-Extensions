@@ -5,27 +5,27 @@
          name="option"
          type="list"
          class="btn-group btn-group-yesno" 
-         label="Choose"
-         description=""
+         label="MOD_JDTABS_XML_OPTIONS_LABEL"
+         description="MOD_JDTABS_XML_OPTIONS_DESC"
          default="img"
     >
-         <option value="img">Img</option>
-         <option value="title">Title</option>
+         <option value="img">MOD_JDTABS_XML_OPTIONS_IMG</option>
+         <option value="title">MOD_JDTABS_XML_OPTIONS_TITLE</option>
    </field>
       <field name="title"
-             label="Title"
+             label="MOD_JDTABS_XML_TITLE_LABEL"
              showon="option:title"
              type="text">
       </field>
       <field name="thumbnail"
              type="media"
              showon="option:img"
-             label="Thumbnail">
+             label="MOD_JDTABS_XML_TITLE_THUMBNAIL">
       </field>
       <field
          name="content"
          type="editor"
-         label="Content">
+         label="MOD_JDTABS_XML_CONTENT_LABEL">
       </field>
    </fieldset>
 </form>
