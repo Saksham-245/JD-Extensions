@@ -36,10 +36,6 @@
                />
          </fieldset>
          <fieldset name="options">
-            <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="default">
-                <option value="default">media/mod_jd_skillset/images/layouts/layout-1.svg|Style - 1</option>
-                 <option value="view2">media/mod_jd_skillset/images/layouts/layout-2.svg|Style - 2</option>
-            </field>
             <field
                 name="numberPosition" 
                 type="list"
@@ -162,6 +158,7 @@
             />
          </fieldset>
          <fieldset name="advanced">
+             <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
             <field
                name="load_bootstrap"
                type="radio"
