@@ -28,7 +28,12 @@
         <fields name="params">
             <fieldset name="basic" addfieldpath="/modules/mod_jdgraph/fields">
                 <field name="items" type="subform" formsource="/modules/mod_jdgraph/forms/item.xml" multiple="true" label="MOD_GRAPH_TABS_ITEMS"></field>
-            </fieldset>   
+            </fieldset>
+             <fieldset name="design">
+                <field name="select_view" type="jdthumbnailradio" label="MOD_GRAPH_SELECT_VIEW" description="" default="default">
+                    <option value="default">media/mod_jdgraph/images/layouts/layout-1.svg|Style - 1</option>
+                </field>
+            </fieldset>    
             <fieldset name="advanced">
                 <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
                 <field name="load_bootstrap" type="radio" label="MOD_GRAP_LOAD_BOOTSTRAP" description="MOD_GRAP_LOAD_BOOTSTRAP" default="1" class="btn-group btn-group-yesno">

@@ -4,7 +4,7 @@
 			<field
                name="accordion_panel_title"
                type="text"
-               label="Accordion panel Title"
+               label="MOD_ACCORDION_PANEL_TITLE"
                description=""
 			   required="true"
                default="default"
@@ -12,7 +12,7 @@
 			<field
                name="accordion_panel_description"
                type="textarea"
-               label="Accordion panel description"
+               label="MOD_ACCORDION_PANEL_DESCRIPTION"
                description=""
                default=""
 			   required="true"

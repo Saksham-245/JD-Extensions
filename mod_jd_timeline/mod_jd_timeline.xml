@@ -13,11 +13,9 @@
       <filename module="mod_jd_timeline">mod_jd_timeline.php</filename>
       <folder>tmpl</folder>
       <folder>forms</folder>
+      <folder>assets</folder>
       <filename>helper.php</filename>
    </files>
-    <media folder="media" destination="mod_jd_timeline">
-        <folder>css</folder>
-    </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jd_timeline.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jd_timeline.sys.ini</language>
@@ -29,16 +27,16 @@
 			<field
 					name="title"
 					type="text"
-					label="MOD_JD_TIMELINE_TITLE_LABEL"
-					description="MOD_JD_TIMELINE_TITLE_DESC"
+					label="MOD_JD_TIMELINE_ENTER_TITLE"
+					description=""
 					default=""
 					required="true"
 			  />
 			  <field
 					name="subtitle"
 					type="text"
-					label="MOD_JD_TIMELINE_SUBTITLE_LABEL"
-					description="MOD_JD_TIMELINE_SUBTITLE_DESC"
+					label="MOD_JD_TIMELINE_ENTER_SUB_TITLE"
+					description=""
 					required="true"
 					default=""
 			  />
@@ -46,7 +44,7 @@
                       type="subform"
                       formsource="/modules/mod_jd_timeline/forms/items.xml"
                       multiple="true"
-                      label="MOD_JD_TIMELINE_PANEL_ADD_LABEL"
+                      label="MOD_JD_TIMELINE_CREATE"
                />
             </fieldset>
          </fieldset>

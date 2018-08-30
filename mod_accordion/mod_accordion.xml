@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
-   <name>MOD_ACCORDION</name>
+   <name>MOD_ACCORDION_MOD_ACCORDION</name>
    <author>JoomDev Team</author>
    <creationDate>July 2018</creationDate>
    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
@@ -28,7 +28,7 @@
                       type="subform"
                       formsource="/modules/mod_accordion/forms/items.xml"
                       multiple="true"
-                      label="create"
+                      label="MOD_ACCORDION_CREATE"
                />
             </fieldset>
          </fieldset>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.5" client="site" method="upgrade">
-   <name>mod_jdtabs</name>
+   <name>MOD_JDTABS_XML_MOD_JDTABS</name>
    <author>JoomDev Team</author>
    <creationDate>July 2018</creationDate>
    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
@@ -16,6 +16,9 @@
       <folder>forms</folder>
       <filename>helper.php</filename>
    </files>
+	<media folder="media" destination="mod_jdtabs">
+        <folder>css</folder>
+    </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jdtabs.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jdtabs.sys.ini</language>
@@ -27,7 +30,7 @@
                    type="subform"
                    formsource="/modules/mod_jdtabs/forms/item.xml"
                    multiple="true"
-                   label="Tabs Items"
+                   label="MOD_JDTABS_XML_TABS_ITEMS"
             >
             </field>
          </fieldset>
@@ -42,14 +45,15 @@
             <field
                name="load_bootstrap"
                type="radio"
-               label="Load Bootstrap?"
-               description="Load Bootstrap?"
+               label="MOD_JDTABS_XML_LOAD_BOOTSTRAP"
+               description="MOD_JDTABS_XML_LOAD_BOOTSTRAP"
                default="1"
                class="btn-group btn-group-yesno"
             >
                <option value="1">JYES</option>
                <option value="0">JNO</option>
             </field>
+			<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
          </fieldset>
       </fields>
    </config>

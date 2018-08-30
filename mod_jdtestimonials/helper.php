@@ -13,9 +13,6 @@
  * other free or open source software licenses.
  */
 defined('_JEXEC') or die;
-$doc = JFactory::getDocument();
-// Style Sheet
-$doc->addStyleSheet(JURI::root().'media/mod_jdtestimonials/css/style.css');
 
 class modJDTestimonialsHelper {
    
