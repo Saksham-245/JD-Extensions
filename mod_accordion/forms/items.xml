@@ -4,16 +4,16 @@
 			<field
                name="accordion_panel_title"
                type="text"
-               label="Accordion panel Title"
-               description=""
+               label="MOD_JD_LOAD_PANEL_TITLE_LABEL"
+               description="MOD_JD_LOAD_PANEL_TITLE_DESC"
 			   required="true"
                default="default"
             />	
 			<field
                name="accordion_panel_description"
                type="textarea"
-               label="Accordion panel description"
-               description=""
+               label="MOD_JD_LOAD_PANEL_DESCITPION_LABEL"
+               description="MOD_JD_LOAD_PANEL_DESCITPION_DESC"
                default=""
 			   required="true"
 			   rows="10" 
