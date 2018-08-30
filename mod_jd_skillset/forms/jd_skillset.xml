@@ -4,9 +4,11 @@
         <field name="skillset_title"
 		required="true"
                 label="MOD_JD_SKILLSET_TITLE_LABEL"
+                description="MOD_JD_SKILLSET_TITLE_DESC"
                 type="text"  />
         <field name="skillset_number"
                 label="MOD_JD_SKILLSET_NUMBER_LABEL"
+                description="MOD_JD_SKILLSET_NUMBER_DESC"
                 type="text"  />
         <field
                 name="skillset_icon_option"
@@ -22,10 +24,12 @@
         <field name="skillset_icon_upload"
                 label="MOD_JD_SKILLSET_ICON_OPTIONS_UPLAOD_LABEL"
                 showon="skillset_icon_option:upload"
+                description="MOD_JD_SKILLSET_ICON_OPTIONS_UPLAOD_DESC"
                 type="media"  />
         <field name="skillset_icon_icon"
-                label="MOD_JD_SKILLSET_ENTER_FONTAWESOME_ICON_CODE"
+                label="MOD_JD_SKILLSET_ENTER_FONTAWESOME_ICON_CODE_LABEL"
 		hint="fab fa-accusoft"
+                description="MOD_JD_SKILLSET_ENTER_FONTAWESOME_ICON_CODE_DESC"
                 showon="skillset_icon_option:icon"
                 type="text" />
         <field
