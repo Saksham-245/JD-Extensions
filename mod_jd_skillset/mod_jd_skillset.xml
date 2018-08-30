@@ -7,7 +7,7 @@
    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
    <authorEmail>info@joomdev.com</authorEmail>
    <authorUrl>www.joomdev.com</authorUrl>
-   <version>3.0.0</version>
+   <version>1.0.0</version>
    <description>MOD_JD_SKILLSET_XML_DESCRIPTION</description>
    <files>
       <filename module="mod_jd_skillset">mod_jd_skillset.php</filename>
