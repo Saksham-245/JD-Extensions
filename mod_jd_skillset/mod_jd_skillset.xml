@@ -7,15 +7,25 @@
    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
    <authorEmail>info@joomdev.com</authorEmail>
    <authorUrl>www.joomdev.com</authorUrl>
-   <version>3.0.0</version>
+   <version>1.0.0</version>
    <description>MOD_JD_SKILLSET_XML_DESCRIPTION</description>
    <files>
       <filename module="mod_jd_skillset">mod_jd_skillset.php</filename>
       <folder>tmpl</folder>
       <folder>forms</folder>
+<<<<<<< HEAD
       <folder>assets</folder>
       <filename>helper.php</filename>
    </files>
+=======
+      <folder>fields</folder>
+      <filename>helper.php</filename>
+   </files>
+    <media folder="media" destination="mod_jd_skillset">
+        <folder>images</folder>
+        <folder>css</folder>
+    </media>
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jd_skillset.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jd_skillset.sys.ini</language>
@@ -72,7 +82,12 @@
 				type="radio" 
 				default="true" 
 				class="btn-group btn-group-yesno" 
+<<<<<<< HEAD
 				label="Custom Colors">
+=======
+                description="MOD_JD_SKILLSET_CUSTOM_COLORS_DESC"
+				label="MOD_JD_SKILLSET_CUSTOM_COLORS_label">
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
@@ -80,32 +95,52 @@
 			<field
                name="titleColor"
                type="color"
+<<<<<<< HEAD
                label="Title Color"
                description=""
+=======
+               label="MOD_JD_SKILLSET_TITLE_COLOR_LABEL"
+               description="MOD_JD_SKILLSET_TITLE_COLOR_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsColor:true"
                default="default"
             />
 			<field
                name="numberColor"
                type="color"
+<<<<<<< HEAD
                label="Number Color"
                description=""
+=======
+               label="MOD_JD_SKILLSET_NUMBER_COLOR_LABEL"
+               description="MOD_JD_SKILLSET_NUMBER_COLOR_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsColor:true"
                default="default"
             />	
 			<field
                name="symbolColor"
                type="color"
+<<<<<<< HEAD
                label="Symbol Color"
                description=""
+=======
+               label="MOD_JD_SKILLSET_SYMBOL_COLOR_LABEL"
+               description="MOD_JD_SKILLSET_SYMBOL_COLOR_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsColor:true"
                default="default"
             />
 			<field
                name="iconColor"
                type="color"
+<<<<<<< HEAD
                label="Icon Color"
                description=""
+=======
+               label="MOD_JD_SKILLSET_ICON_COLOR_LABEL"
+               description="MOD_JD_SKILLSET_ICON_COLOR_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsColor:true"
                default="default"
             />
@@ -114,7 +149,12 @@
 				type="radio" 
 				default="true" 
 				class="btn-group btn-group-yesno" 
+<<<<<<< HEAD
 				label="Custom Size">
+=======
+                description="MOD_JD_SKILLSET_CUSTOM_SIZE_DESC"
+				label="MOD_JD_SKILLSET_CUSTOM_SIZE_LABEL">
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
 			</field>
@@ -123,8 +163,13 @@
                name="titleSize"
                type="number"
 			   min="10"
+<<<<<<< HEAD
                label="Title Size"
                description=""
+=======
+               label="MOD_JD_SKILLSET_TITLE_SIZE_LABEL"
+               description="MOD_JD_SKILLSET_TITLE_SIZE_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsSize:true"
                default="default"
             />
@@ -132,8 +177,13 @@
                name="numberSize"
                type="number"
 			   min="10"
+<<<<<<< HEAD
                label="Number Size"
                description=""
+=======
+               label="MOD_JD_SKILLSET_NUMBER_SIZE_LABEL"
+               description="MOD_JD_SKILLSET_NUMBER_SIZE_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsSize:true"
                default="default"
             />	
@@ -141,8 +191,13 @@
                name="symbolSize"
                type="number"
 			   min="10"
+<<<<<<< HEAD
                label="Symbol Size"
                description=""
+=======
+               label="MOD_JD_SKILLSET_SYMBOL_SIZE_LABEL"
+               description="MOD_JD_SKILLSET_SYMBOL_SIZE_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsSize:true"
                default="default"
             />
@@ -150,8 +205,13 @@
                name="iconSize"
                type="number"
 			   min="10"
+<<<<<<< HEAD
                label="Icon Size"
                description=""
+=======
+               label="MOD_JD_SKILLSET_ICON_SIZE_LABEL"
+               description="MOD_JD_SKILLSET_ICON_SIZE_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   showon="customsSize:true"
                default="default"
             />

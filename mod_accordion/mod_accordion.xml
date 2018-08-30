@@ -13,9 +13,11 @@
       <filename module="mod_accordion">mod_accordion.php</filename>
       <folder>tmpl</folder>
       <folder>forms</folder>
-      <folder>assets</folder>
       <filename>helper.php</filename>
    </files>
+      <media folder="media" destination="mod_accordion">
+      <folder>css</folder>
+   </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_accordion.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_accordion.sys.ini</language>
@@ -28,7 +30,11 @@
                       type="subform"
                       formsource="/modules/mod_accordion/forms/items.xml"
                       multiple="true"
+<<<<<<< HEAD
                       label="MOD_ACCORDION_CREATE"
+=======
+                      label="MOD_JD_LOAD_PANEL_ADD_ITEMS"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
                />
             </fieldset>
          </fieldset>
@@ -43,8 +49,8 @@
             <field
                name="load_bootstrap"
                type="radio"
-               label="MOD_JD_SKILLSET_LOAD_BOOTSTRAP_LBL"
-               description="MOD_JD_SKILLSET_LOAD_BOOTSTRAP_DESC"
+               label="MOD_JD_LOAD_BOOTSTRAP_LBL"
+               description="MOD_JD_LOAD_BOOTSTRAP_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
