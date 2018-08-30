@@ -21,7 +21,7 @@ $params = $displayData->get('params');
                         <div class="card-team-body">
                           <div class="team-member-content-wrapper">
                             <?php if($params->get('display_name')) { ?>
-                              <h5 class="card-img-overlayteam-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jditems&view=item&id='.(int) $item->id); ?>"><?php  echo $item->name; ?></a></h5>
+                              <h5 class="card-img-overlayteam-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>"><?php  echo $item->name; ?></a></h5>
                             <?php } ?>
                             <?php if($params->get('display_designation')) { ?>
                               <?php if(!empty($item->designation)) { ?>  
