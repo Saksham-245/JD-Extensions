@@ -1,34 +1,100 @@
 <?php
+defined('_JEXEC') or die;
+$items = $params->get('items', []);
+$arrow = $params->get('arrow');
+$bullets = $params->get('bullets');
+$NormalColor1 = $params->get('NormalColor1');
+$NormalColor = $params->get('NormalColor');
+$activeColor = $params->get('activeColor');
+$hoverColor = $params->get('hoverColor');
 
-	defined('_JEXEC') or die;
-	$items = $params->get('items', []);
-	$arrow = $params->get('arrow');
-	$bullets = $params->get('bullets');
-	$NormalColor1 = $params->get('NormalColor1');
-	$NormalColor = $params->get('NormalColor');
-	$activeColor = $params->get('activeColor');
-	$hoverColor = $params->get('hoverColor');
-	$items = (array) $items;
-	$active = TRUE;
 
+$items = (array) $items;
+$active = TRUE;
 ?>
 <style type="text/css">
-	.testimonial-container-<?php echo $module->id; ?> .slick-dots li button:before {
-		color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
-	}
-	.testimonial-container-<?php echo $module->id; ?> .slick-dots li.slick-active button:before, 
-	.testimonial-container-<?php echo $module->id; ?> .slick-dots li button:hover:before {
-		color: <?php echo $activeColor; ?>;
-	}
-	.testimonial-container-<?php echo $module->id; ?> .slick-prev:before, 
-	.testimonial-container-<?php echo $module->id; ?> .slick-next:before{
-		color:<?php echo $NormalColor; ?>
-	}
-	.testimonial-container-<?php echo $module->id; ?> .slick-prev:hover:before, 
-	.testimonial-container-<?php echo $module->id; ?> .slick-next:hover:before{
-		color:<?php echo $hoverColor; ?>
-	}
-	<?php if($params->get('customstyle')=="1"){
+   .jd-testimonial-bullets-<?php echo $module->id; ?> li{
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #000;
+   }
+   .jd-testimonial-bullets-<?php echo $module->id; ?> li.active{
+      background: #000;
+   }
+/* Testimonial Wrapper
+=========================== */
+.testimonial-container-<?php echo $module->id; ?> {
+	overflow: hidden;
+	position: relative;
+}
+.testimonial-container-<?php echo $module->id; ?> .slide-content .author {
+	position: relative;
+	padding: 9px 0px 45px 89px;
+}
+.testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-img {
+	position: absolute;
+	overflow: hidden;
+	width: 70px;
+	height: 70px;
+	left: 0px;
+	top: 0px;
+}
+.testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-img img {
+	width: 100%;
+}
+.testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-info {
+	position: relative;
+	display: inline-block;
+}
+.testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-info h5 {
+	margin: 0;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-dots {
+	position: static;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-dots li {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin: 0 5px;
+	padding: 0;
+	cursor: pointer;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-dots li button {
+	padding: 0;
+	line-height: 1;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-dots li button:before {
+	color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
+	height: 20px; 
+	width: 20px;
+	font-size: 16px;
+	line-height: 1;
+	top: 0;
+	opacity: 1;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-dots li.slick-active button:before, 
+.testimonial-container-<?php echo $module->id; ?> .slick-dots li button:hover:before {
+	color: <?php echo $activeColor; ?>;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-prev {
+	left: 5px;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-next {
+	right: 5px;
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-prev:before, 
+.testimonial-container-<?php echo $module->id; ?> .slick-next:before{
+	color:<?php echo $NormalColor; ?>
+}
+.testimonial-container-<?php echo $module->id; ?> .slick-prev:hover:before, 
+.testimonial-container-<?php echo $module->id; ?> .slick-next:hover:before{
+	color:<?php echo $hoverColor; ?>
+}
+<?php if($params->get('customstyle')=="1"){
 		$params->get('customstyle');
 		$nameColor = $params->get('nameColor');
 		$designationColor = $params->get('designationColor');
@@ -37,29 +103,26 @@
 		$designationSize = $params->get('designationSize');
 		$reviewSize = $params->get('reviewSize');
 	?>
-	.testimonial-<?php echo $module->id; ?> .slide-content .author .author-info h5{
+	.testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-info h5{
 		color: <?php  echo $nameColor?>;
 		font-size: <?php  echo $nameSize?>px;
 	}	
-	.testimonial-<?php echo $module->id; ?> .author-info a{	
+	.testimonial-container-<?php echo $module->id; ?> .author-info a{	
 		color: <?php  echo $designationColor?>;
 		font-size: <?php  echo $designationSize?>px;
 	}
-	.testimonial-<?php echo $module->id; ?> .author-info{	
+	.testimonial-container-<?php echo $module->id; ?> .author-info{	
 		color: <?php  echo $designationColor?>;
 		font-size: <?php  echo $designationSize?>px;
 	}
-	.testimonial-<?php echo $module->id; ?> .text{
+	.testimonial-container-<?php echo $module->id; ?> .text{
 		color: <?php  echo $reviewColor?>;
 		font-size: <?php  echo $reviewSize?>px;
 	}
-	.testimonial-<?php echo $module->id; ?> .slick-dots li.slick-active button:before{
-	    border: 1px solid <?php echo $activeColor; ?>;
-    }
 	<?php } ?>
 </style>
 
-<div class="testimonial-<?php echo $module->id; ?> style-one">
+<div class="testimonial-container-<?php echo $module->id; ?> bg-white shadow-lg px-5 py-4 m-0">
 <?php foreach($items as $item)  { ?>
 	<div class="slide-content">
 		<div class="author d-flex">
@@ -69,7 +132,7 @@
 				</div>
 			<?php } ?>
 		<?php if(!empty($item->author_name) or !empty($item->author_depart)) { ?>
-			<div class="author-info my-4">
+			<div class="author-info">
 				<?php if(!empty($item->author_name)) { ?>
 					<h5 class="name"><?php echo $item->author_name; ?></h5>
 				<?php } ?> 
@@ -103,7 +166,7 @@
  <script>
 	  (function($){
 	  $(function(){
-		  $('.testimonial-<?php echo $module->id; ?>').slick({
+		  $('.testimonial-container-<?php echo $module->id; ?>').slick({
 				  arrows: <?php echo ($arrow==1) ? 'true' : 'false'; ?>,
 				  dots: <?php  echo ($bullets==1) ? 'true' : 'false'; ?>,
 				  infinite: true,

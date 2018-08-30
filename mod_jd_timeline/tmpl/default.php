@@ -8,10 +8,10 @@ $subtitle = $params->get('subtitle');
 <div class="container">
 	<div class="row">
 		<div class="col-12 text-center">
-			<h3 class="title-heading mb-4"><?php echo  $title; ?></h3>
-			<p class="mb-5"><?php echo  $subtitle; ?></p>
+			<h3 class="title-heading"><?php echo  $title; ?></h3>
+			<p><?php echo  $subtitle; ?></p>
 		</div>
-		<div class="col-12">
+		<div class="col-12 pt-5">
 			<ul class="timeline">
 				<?php $i=1; foreach($items_timelines as $items_timeline) {?>
 					<li class="<?php echo ($i%2==0) ? 'timeline-inverted'  : ''?>">

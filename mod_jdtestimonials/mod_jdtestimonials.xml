@@ -18,7 +18,6 @@
     </files>
     <media folder="media" destination="mod_jdtestimonials">
         <folder>images</folder>
-        <folder>css</folder>
     </media>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.mod_jdtestimonials.ini</language>
@@ -31,9 +30,8 @@
                 </field>
             </fieldset>
             <fieldset name="design">
-                <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="view2">
-                    <option value="default">media/mod_jdtestimonials/images/layouts/layout-1.svg|Style - 1</option>
-                     <option value="view2">media/mod_jdtestimonials/images/layouts/layout-2.svg|Style - 2</option>
+                <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="1">
+                    <option value="1">media/mod_jdtestimonials/images/layouts/layout-1.svg|Style - 1</option>
                 </field>
                 <field name="arrow" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_JDTESTIMONIALS_ENABLE_ARROW" description="MOD_JDTESTIMONIALS_ENABLE_ARROW_DESC">
                     <option value="1">JYES</option>

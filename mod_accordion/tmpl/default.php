@@ -3,9 +3,6 @@
 defined('_JEXEC') or die;
 $items_accordions = $params->get('items_accordion', []);
 ?>
-
-<h3 class="title-heading">Common Questions</h3>
-<p>663 million people drink dirty water. Learn how access to clean water can improve health.</p>
 <div class="jd-accordion accordion mt-5" id="accordionExample">
 <?php $i=1; foreach($items_accordions as $items_accordion) { ?>
   <div class="accordion-box">

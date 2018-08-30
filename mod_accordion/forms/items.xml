@@ -4,16 +4,26 @@
 			<field
                name="accordion_panel_title"
                type="text"
+<<<<<<< HEAD
+               label="MOD_ACCORDION_PANEL_TITLE"
+               description=""
+=======
                label="MOD_JD_LOAD_PANEL_TITLE_LABEL"
                description="MOD_JD_LOAD_PANEL_TITLE_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
 			   required="true"
                default="default"
             />	
 			<field
                name="accordion_panel_description"
                type="textarea"
+<<<<<<< HEAD
+               label="MOD_ACCORDION_PANEL_DESCRIPTION"
+               description=""
+=======
                label="MOD_JD_LOAD_PANEL_DESCITPION_LABEL"
                description="MOD_JD_LOAD_PANEL_DESCITPION_DESC"
+>>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
                default=""
 			   required="true"
 			   rows="10" 
