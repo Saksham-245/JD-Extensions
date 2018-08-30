@@ -16,7 +16,7 @@ $pagination = $displayData->get('pagination');
                   </th>
                   <?php if($params->get('display_name')) { ?>
                      <td class="team-member-name">
-                        <span><a href="<?php echo JRoute::_('index.php?option=com_jditems&view=item&id='.(int) $item->id); ?>"><?php echo $item->name; ?></a></span>
+                        <span><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>"><?php echo $item->name; ?></a></span>
                      </td>
                   <?php } ?>
 
