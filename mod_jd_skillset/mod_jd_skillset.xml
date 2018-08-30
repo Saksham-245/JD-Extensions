@@ -13,12 +13,12 @@
       <filename module="mod_jd_skillset">mod_jd_skillset.php</filename>
       <folder>tmpl</folder>
       <folder>forms</folder>
-      <folder>assets</folder>
       <folder>fields</folder>
       <filename>helper.php</filename>
    </files>
     <media folder="media" destination="mod_jd_skillset">
         <folder>images</folder>
+        <folder>css</folder>
     </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jd_skillset.ini</language>
@@ -73,6 +73,7 @@
 				type="radio" 
 				default="true" 
 				class="btn-group btn-group-yesno" 
+                description="MOD_JD_SKILLSET_CUSTOM_COLORS_DESC"
 				label="MOD_JD_SKILLSET_CUSTOM_COLORS_label">
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
@@ -82,7 +83,7 @@
                name="titleColor"
                type="color"
                label="MOD_JD_SKILLSET_TITLE_COLOR_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_TITLE_COLOR_DESC"
 			   showon="customsColor:true"
                default="default"
             />
@@ -90,7 +91,7 @@
                name="numberColor"
                type="color"
                label="MOD_JD_SKILLSET_NUMBER_COLOR_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_NUMBER_COLOR_DESC"
 			   showon="customsColor:true"
                default="default"
             />	
@@ -98,7 +99,7 @@
                name="symbolColor"
                type="color"
                label="MOD_JD_SKILLSET_SYMBOL_COLOR_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_SYMBOL_COLOR_DESC"
 			   showon="customsColor:true"
                default="default"
             />
@@ -106,7 +107,7 @@
                name="iconColor"
                type="color"
                label="MOD_JD_SKILLSET_ICON_COLOR_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_ICON_COLOR_DESC"
 			   showon="customsColor:true"
                default="default"
             />
@@ -115,6 +116,7 @@
 				type="radio" 
 				default="true" 
 				class="btn-group btn-group-yesno" 
+                description="MOD_JD_SKILLSET_CUSTOM_SIZE_DESC"
 				label="MOD_JD_SKILLSET_CUSTOM_SIZE_LABEL">
 				<option value="true">JYES</option>
 				<option value="false">JNO</option>
@@ -125,7 +127,7 @@
                type="number"
 			   min="10"
                label="MOD_JD_SKILLSET_TITLE_SIZE_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_TITLE_SIZE_DESC"
 			   showon="customsSize:true"
                default="default"
             />
@@ -134,7 +136,7 @@
                type="number"
 			   min="10"
                label="MOD_JD_SKILLSET_NUMBER_SIZE_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_NUMBER_SIZE_DESC"
 			   showon="customsSize:true"
                default="default"
             />	
@@ -143,7 +145,7 @@
                type="number"
 			   min="10"
                label="MOD_JD_SKILLSET_SYMBOL_SIZE_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_SYMBOL_SIZE_DESC"
 			   showon="customsSize:true"
                default="default"
             />
@@ -152,7 +154,7 @@
                type="number"
 			   min="10"
                label="MOD_JD_SKILLSET_ICON_SIZE_LABEL"
-               description=""
+               description="MOD_JD_SKILLSET_ICON_SIZE_DESC"
 			   showon="customsSize:true"
                default="default"
             />
