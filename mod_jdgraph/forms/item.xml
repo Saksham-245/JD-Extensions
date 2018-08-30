@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
    <field name="country"
-            label="MOD_GRAP_DONATION_TITLE_LABEL"
-            type="text">
+      label="MOD_GRAP_DONATION_TITLE_LABEL"
+      description="MOD_GRAP_DONATION_TITLE_DESC"
+      type="text">
    </field>
-   <field name="color" type="color" label="MOD_GRAP_COLOR_LABEL" description="MOD_GRAP_COLOR_DESC" default="#fff">
+
+   <field name="color"
+      type="color" 
+      label="MOD_GRAP_COLOR_LABEL" 
+      description="MOD_GRAP_COLOR_DESC"
+      default="#fff">
    </field>
+   
    <field name="donation"
-            type="number"
-            label="MOD_GRAP_DONATION_NUMBER_LABEL">
+      type="number"
+      description="MOD_GRAP_DONATION_NUMBER_DESC"
+      label="MOD_GRAP_DONATION_NUMBER_LABEL">
    </field>
 </form>
