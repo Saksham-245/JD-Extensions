@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 <section>
     <div class="container py-5">
       <div class="jd-team-showcase-wrapper jd-carousel-layout-view jd-carousel-simple-layout">
-        <div class="row">
+        <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
           <div class="col-12">
             <div class="row jd-team-carousel">
               <!-- Team Item wrapper start -->
@@ -18,7 +18,13 @@ defined('_JEXEC') or die;
                         <div class="card-team-body">
                           <div class="team-member-content-wrapper">
                             <?php if($params->get('display_name')) { ?>
-                              <h5 class="card-img-overlayteam-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a></h5>
+                              <h5 class="card-img-overlayteam-member-name">
+                                <?php if($params->get('enable_link')){ ?>
+                                  <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+                                <?php }else {?>
+                                  <?php  echo $profile->name; ?>
+                                <?php  } ?>
+                              </h5>
                             <?php } ?>
                             <?php if($params->get('display_designation')) { ?>
                               <?php if(!empty($profile->designation)) { ?>  

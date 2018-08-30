@@ -8,7 +8,7 @@ defined('_JEXEC') or die;
       <div class="jd-team-showcase-wrapper jd-grid-layout-view jd-grid-simple-layout">
         <div class="row">
           <div class="col-12">
-            <div class="row">
+            <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
               <!-- Team Item wrapper start -->
               <?php foreach($profiles as $profile) { ?>
                 <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?>">
@@ -20,8 +20,14 @@ defined('_JEXEC') or die;
                       <div class="card-team-body">
                         <div class="team-member-content-wrapper">
                             <?php if($params->get('display_name')) { ?>
-                              <h5 class="card-img-overlayteam-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a></h5>
-                            <?php } ?>
+                              <h5 class="card-img-overlayteam-member-name">
+                              <?php if($params->get('enable_link')){ ?>
+                                <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+                              <?php }else {?>
+                                <?php  echo $profile->name; ?>
+                              <?php  } ?>
+                                </h5>
+                             <?php } ?>
                             <?php if($params->get('display_designation')) { ?>
                               <p class="team-member-designation">
                                 <small><?php echo $profile->designation;  ?></small>

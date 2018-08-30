@@ -12,7 +12,7 @@
     </field>
     <field name="email" validate="email" type="email" label="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL" description="COM_JDPROFILES_FORM_DESC_PROFILE_EMAIL" hint="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL"/>
     <field name="phone" filter="safehtml" type="tel" label="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE" description="COM_JDPROFILES_FORM_DESC_PROFILE_PHONE" hint="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE"/>
-    <field name="designation"   type="sql"  query="SELECT id, title FROM #__jdprofiles_designation" key_field="title" value_field="title" label="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_DESIGNATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION"/>
+    <field name="designation"   type="sql"  query="SELECT id, title FROM #__jdprofiles_designation" key_field="id" value_field="title" label="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_DESIGNATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION"/>
     <field name="image" directory="" type="media" label="COM_JDPROFILES_FORM_LBL_PROFILE_IMAGE" description="COM_JDPROFILES_FORM_DESC_PROFILE_IMAGE" hint="COM_JDPROFILES_FORM_LBL_PROFILE_IMAGE"/>
     <field name="sbio" filter="safehtml" type="textarea" label="COM_JDPROFILES_FORM_LBL_PROFILE_SBIO" description="COM_JDPROFILES_FORM_DESC_PROFILE_SBIO" hint="COM_JDPROFILES_FORM_LBL_PROFILE_SBIO"/>
     <field name="lbio" filter="safehtml" type="hidden" label="COM_JDPROFILES_FORM_LBL_PROFILE_LBIO" description="COM_JDPROFILES_FORM_DESC_PROFILE_LBIO" hint="COM_JDPROFILES_FORM_LBL_PROFILE_LBIO"/>

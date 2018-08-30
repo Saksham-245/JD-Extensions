@@ -15,13 +15,13 @@ $doc->addStyleSheet(JURI::root().'media/mod_jdprofileshowcase/assets/css/jd-prof
 $doc->addStyleSheet(JURI::root().'media/mod_jdprofileshowcase/assets/css/jd-profile-style.css.map');
 
 class modJdprofileShowcaseHelper {
-    public function  profiles($limit){
+    public function  profiles($limit,$designations){
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
         $query->select('*');
         $query->from('#__jdprofiles_profiles');
         $query->where('state = 1');
-        $query->order('ordering desc');
+        $query->where($db->quoteName('designation') . ' LIKE '. $db->quote($designations));
         $query->setLimit($limit);
         $db->setQuery($query);
         $results = $db->loadObjectList();

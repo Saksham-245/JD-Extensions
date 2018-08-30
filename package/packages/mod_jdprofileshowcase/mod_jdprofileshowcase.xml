@@ -56,15 +56,23 @@
             </field>
             <field
                name="gutter_space"
-               type="list"
+               type="radio"
                label="Gutter Space"
                description="Gutter Space"
-               default="1"
+               default="nomargin"
                class="btn-group btn-group-yesno"
             >
-               <option value="noMargin">No Margin</option>
+               <option value="nomargin">No Margin</option>
                <option value="custom">custom</option>
              </field> 
+            <field
+               name="margin"
+               type="number"
+               showon="gutter_space:custom"
+               label="Margin"
+               description="Margin"
+               default="1"
+            />
             <field
                name="grid_coloumns"
                type="list"
@@ -113,8 +121,7 @@
             </field>
             <field
                 name="designations"
-                type="hidden"
-                showon="all_Designtion:0"
+                type="sql"
                 query="SELECT id, title FROM #__jdprofiles_designation"
                 label="Display Designation"
                 key_field="title"

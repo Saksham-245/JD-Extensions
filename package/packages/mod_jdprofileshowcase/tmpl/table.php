@@ -7,7 +7,7 @@ defined('_JEXEC') or die;
   <div class="jd-team-showcase-wrapper jd-table-layout-view jd-table-simple-layout">
     <div class="row">
       <div class="col-12">
-        <div class="row">
+        <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
           <!-- Team Item wrapper start -->
           <div class="jd-team-table col-12">
             <table class="table table-striped">
@@ -22,7 +22,13 @@ defined('_JEXEC') or die;
 
                     <?php if($params->get('display_name')) { ?>
                       <?php if(!empty($profile->name)) { ?>
-                        <td class="team-member-name"><span><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a></span></td>
+                        <td class="team-member-name"><span>
+                        <?php if($params->get('enable_link')){ ?>
+                          <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+                        <?php }else {?>
+                          <?php  echo $profile->name; ?>
+                        <?php  } ?>
+                        </span></td>
                       <?php } ?>
                     <?php } ?>  
 
