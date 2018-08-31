@@ -18,7 +18,7 @@ defined('_JEXEC') or die;
 require_once dirname(__FILE__) . '/helper.php';
 $layout = $params->get('template', 'table');
 $display_all = $params->get('display_all');
-$designations = $params->get('designations'); 
+$designations = $params->get('designations');
 $gutter_space = $params->get('gutter_space'); 
 $margin = $params->get('margin'); 
 if($display_all){

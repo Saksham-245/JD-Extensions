@@ -28,17 +28,17 @@
              <field
                name="template"
                type="list"
-               label="MOD_JDSERVICES_SHOWCASE_SELECT_TEMPLATE_LABEL"
-               description="MOD_JDSERVICES_SHOWCASE_SELECT_TEMPLATE_DESC"
+               label="MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_LABEL"
+               description="MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_DESC"
                default="table"
             >
-               <option value="grid_layout">MOD_JDSERVICES_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID</option>
-               <option value="grid_circle_layout">Grid Circle Layout</option>
-               <option value="carousel_layout">Carousel Layout</option>
-               <option value="carousel_circle_layout">Carousel Circle Layout</option>
-               <option value="list_layout">List Layout</option>
-               <option value="table">Table</option>
-            </field>
+               <option value="grid_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID</option>
+               <option value="grid_circle_layout"> MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID_CIRCLE Grid Circle Layout</option>
+               <option value="carousel_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL</option>
+               <option value="carousel_circle_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL_CIRCLE</option>
+               <option value="list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
+               <option value="table">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_TABLE</option>
+            </field>  
             <field name="select_view" type="jdthumbnailradio" label="Select Layouts"  showon="template:table" description="Select Layouts" default="view2">
                 <option value="default">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|Style - 1</option>
                 <option value="view2">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|Style - 2</option>
@@ -46,8 +46,8 @@
             <field
                name="enable_link"
                type="radio"
-               label="Enable linking to single members"
-               description=""
+               label="MOD_PROFILE_SHOWCASE_ENABLE_TO_LINK_LABEL"
+               description="MOD_PROFILE_SHOWCASE_ENABLE_TO_LINK_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -57,13 +57,13 @@
             <field
                name="gutter_space"
                type="radio"
-               label="Gutter Space"
-               description="Gutter Space"
+               label="MOD_PROFILE_SHOWCASE_GUTTER_SPACE_LABEL"
+               description="MOD_PROFILE_SHOWCASE_GUTTER_SPACE_DESC"
                default="nomargin"
                class="btn-group btn-group-yesno"
             >
-               <option value="nomargin">No Margin</option>
-               <option value="custom">custom</option>
+               <option value="nomargin">MOD_PROFILE_SHOWCASE_GUTTER_SPACE_OPTIONS_NOMARGIN</option>
+               <option value="custom">MOD_PROFILE_SHOWCASE_GUTTER_SPACE_OPTIONS_CUSTOM</option>
              </field> 
             <field
                name="margin"
@@ -76,22 +76,22 @@
             <field
                name="grid_coloumns"
                type="list"
-               label="Grid Columns"
-               description="Grid Columns"
-               default="1"
+               label="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_LABEL"
+               description="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_DESC"
+               default="2"
                class="btn-group btn-group-yesno"
             >
-               <option value="12">1</option>
-               <option value="6">2</option>
-               <option value="4">3</option>
-               <option value="3">4</option>
-               <option value="2">6</option>
+               <option value="12">J1</option>
+               <option value="6">J2</option>
+               <option value="4">J3</option>
+               <option value="3">J4</option>
+               <option value="2">J6</option>
             </field> 
             <field
                name="display_all"
                type="radio"
-               label="Display All"
-               description="Display All"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_ALL_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_ALL_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -103,38 +103,29 @@
                type="number"
                min="1"
                showon="display_all:0"
-               label="Display Profile"
-               description="Display Profile"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_PROFILE_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_PROFILE_LABEL"
                default="1"
                class="btn-group btn-group-yesno"
             />
-            <field
-               name="all_Designtion"
-               type="hidden"
-               label="All Designtion"
-               description="All Designtion"
-               default="1"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
+
             <field
                 name="designations"
                 type="sql"
                 query="SELECT id, title FROM #__jdprofiles_designation"
-                label="Display Designation"
+                label="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_LABEL"
                 key_field="title"
                 value_field="title"
-                description="Display Designation"
+                multiple="multiple"
+                description="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_DESC"
             />
          </fieldset>
          <fieldset name="options">
             <field
                name="display_name"
                type="radio"
-               label="Display Name"
-               description="Display Name"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_NAME_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_NAME_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -144,8 +135,8 @@
             <field
                name="display_designation"
                type="radio"
-               label="Display Designation"
-               description="Display Name"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -155,8 +146,8 @@
             <field
                name="show_socialsIcon"
                type="radio"
-               label="Show Social Icons"
-               description="Show Social Icons"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_ICON_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_ICON_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -166,8 +157,8 @@
             <field
                name="show_Contact"
                type="radio"
-               label="Show Contact Details"
-               description="Show Contact Details"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_CONTACT_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_CONTACT_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -177,8 +168,8 @@
             <field
                name="show_skills"
                type="radio"
-               label="Show Skill Details"
-               description="Show Skill Details"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_SKILL_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_SKILL_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -188,8 +179,8 @@
             <field
                name="new_tab"
                type="radio"
-               label="Open Social Links in new Tab"
-               description="Open Social Links in new Tab"
+               label="MOD_PROFILE_SHOWCASE_OPEN_IN_NEW_TAB_LABEL"
+               description="MOD_PROFILE_SHOWCASE_OPEN_IN_NEW_TAB_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -200,72 +191,72 @@
             <field
                name="NameColor"
                type="color"
-               label="Name"
-               description="Name"
+               label="MOD_PROFILE_SHOWCASE_NAME_COLOR_LABEL"
+               description="MOD_PROFILE_SHOWCASE_NAME_COLOR_DESC"
             />
             <field
                name="designationColor"
                type="color"
-               label="Designation"
-               description="Designation"
+               label="MOD_PROFILE_SHOWCASE_DESIGNATION_COLOR_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DESIGNATION_COLOR_DESC"
             />
             <field
                name="skill"
                type="color"
-               label="Skill"
-               description="Skill"
+               label="MOD_PROFILE_SHOWCASE_SKILL_COLOR_LABEL"
+               description="MOD_PROFILE_SHOWCASE_SKILL_COLOR_LABEL"
             />
             <field
                name="shortBio"
                type="color"
-               label="Short Bio"
-               description="Short Bio"
+               label="MOD_PROFILE_SHOWCASE_SBIO_COLOR_LABEL"
+               description="MOD_PROFILE_SHOWCASE_SBIO_COLOR_DESC"
             />
             <field
                name="social_icons"
                type="radio"
-               label="Social Icons"
-               description="Social Icons"
+               label="  "
+               description="MOD_PROFILE_SHOWCASE_SOCIAL_ICONS_COLOR_DESC"
                default="bc"
                class="btn-group btn-group-yesno"
             >
-               <option value="bc">Brand color</option>
-               <option value="c">Custom</option>
+               <option value="bc">MOD_PROFILE_SHOWCASE_SOCIAL_ICONS_COLOR_BRAND</option>
+               <option value="c">MOD_PROFILE_SHOWCASE_SOCIAL_ICONS_COLOR_CUSTOM</option>
             </field>
             <field
                name="icon_background"
                type="color"
                showon="social_icons:c"
-               label="Icon Background "
-               description="Icon Background"
+               label="MOD_PROFILE_SHOWCASE_ICON_BG_COLOR_LABEL"
+               description="MOD_PROFILE_SHOWCASE_ICON_BG_COLOR_DESC"
             />
             <field
                name="icon_color"
                type="color"
                showon="social_icons:c"
-               label="Icon Color"
-               description="Icon Color"
+               label="MOD_PROFILE_SHOWCASE_ICON_COLOR_LABEL"
+               description="MOD_PROFILE_SHOWCASE_ICON_COLOR_LABEL"
             />
             <field
                name="IconStyle"
                type="radio"
-               label="Icon Style"
+               label=" MOD_PROFILE_SHOWCASE_ICON_STYLE_LABEL"
                showon="social_icons:c"
-               description="Icon Style"
+               description="MOD_PROFILE_SHOWCASE_ICON_STYLE_DESC"
                default="bc"
                class="btn-group btn-group-yesno"
             >
-               <option value="circle">Circle</option>
-               <option value="rounded">Rounded</option> 
-               <option value="square">Square</option>
-               <option value="none">none</option>
+               <option value="circle">MOD_PROFILE_SHOWCASE_CIRCLE</option>
+               <option value="rounded">MOD_PROFILE_SHOWCASE_ROUNDED</option> 
+               <option value="square">MOD_PROFILE_SHOWCASE_SQUARE</option>
+               <option value="none">MOD_PROFILE_SHOWCASE_NPNE</option>
             </field>
             <field
                name="DisplayBullit"
                type="radio"
-               label="Display Bullit"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_BULETS_LABEL"
                showon="template:carousel_layout[OR]template:carousel_circle_layout"
-               description="Display Bullit"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_BULETS_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -276,8 +267,8 @@
                name="DisplayArrow"
                type="radio"
                showon="template:carousel_layout[OR]template:carousel_circle_layout"
-               label="Display Arrow"
-               description="Display Arrow"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_ARROW_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_ARROW_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -296,8 +287,8 @@
             <field
                name="load_bootstrap"
                type="radio"
-               label="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
-               description="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
+               label="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
+               description="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >

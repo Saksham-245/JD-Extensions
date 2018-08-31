@@ -20,8 +20,9 @@ class modJdprofileShowcaseHelper {
         $query = $db->getQuery(true);
         $query->select('*');
         $query->from('#__jdprofiles_profiles');
-        $query->where('state = 1');
-        $query->where($db->quoteName('designation') . ' LIKE '. $db->quote($designations));
+        foreach($designations as $designation){
+            $query->Where($db->quoteName('designation') . ' LIKE '. $db->quote($designation),'or');
+        }
         $query->setLimit($limit);
         $db->setQuery($query);
         $results = $db->loadObjectList();
