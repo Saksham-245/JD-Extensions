@@ -38,6 +38,7 @@ $children = $cat->getChildren();
             <div class="col-lg-8">
               <?php  $datas = Mod_jdMegaMenu::getpostAll($child->id,1,'id','desc');?>
               <?php  foreach($datas as $data) { ?>
+<<<<<<< HEAD
                 <?php  $url = JRoute::_(ContentHelperRoute::getArticleRoute(  $data->id,  $data->catid )); ?>
                   <a href="<?php echo $url; ?>">  
                     <?php echo $data->title; ?>
@@ -47,6 +48,24 @@ $children = $cat->getChildren();
                     <?php echo Mod_jdMegaMenu::convertString($data->created);?>
                     <?php  $images =  json_decode($data->images); echo $images->image_intro;?>
                     <img src="<?Php echo  $images->image_intro ?>">
+=======
+					<div class="jd-mega-menu-category-first">
+						<?php  $images =  json_decode($data->images); echo $images->image_intro;?>
+						<img src="<?Php echo  $images->image_intro ?>">
+					</div>
+					<div class="jd-mega-menu-category-first-content">
+						<?php echo $data->title; ?>
+						<div class="post-meta">
+							<div class="jd-mega-menu-category-author">
+								<?php echo $category->title; ?>
+							</div>
+							<div class="jd-mega-menu-category-time">
+								<?php $user = JFactory::getUser($data->created_by); echo $user->name; ?>
+								<?php echo Mod_jdMegaMenu::convertString($data->created);?>
+							</div>
+						</div>
+					</div>
+>>>>>>> 01eb321db6510b6ded5100fafe38e2a7fe438ca9
               <?php } ?>
             </div>
             <div class="col-lg-4"> 
