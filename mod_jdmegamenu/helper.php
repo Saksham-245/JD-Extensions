@@ -7,6 +7,10 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die('Unauthorized Access');
+
+$doc = JFactory::getDocument();
+// Style Sheet
+$doc->addStyleSheet(JURI::root().'media/mod_jdmegamenu/css/style.css');
 class Mod_jdMegaMenu
 {
     public static function getListA(){
