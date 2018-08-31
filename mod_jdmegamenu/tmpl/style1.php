@@ -18,7 +18,6 @@ $children = $cat->getChildren();
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <!-- Nav tabs -->
-<div class="row">
 <div class="col-3">
   <div class="nav flex-column nav-pills" id="tab" role="tablist" aria-orientation="vertical">
     <?php $i=1; foreach($categoies as $category) { ?>
@@ -37,8 +36,7 @@ $children = $cat->getChildren();
               <?php  $datas = Mod_jdMegaMenu::getpostAll($category->id,1,'id','desc');?>
               <?php  foreach($datas as $data) { ?>
 					<div class="jd-mega-menu-category-first">
-						<?php  $images =  json_decode($data->images); echo $images->image_intro;?>
-						<img src="<?Php echo  $images->image_intro ?>">
+						<?php  $images =  json_decode($data->images); ?><img src="<?Php echo  $images->image_intro ?>">
 					</div>
 					<div class="jd-mega-menu-category-first-content">
 						<?php echo $data->title; ?>
@@ -73,7 +71,6 @@ $children = $cat->getChildren();
       <?php $i++; } ?> 
     </div>
   </div>
-</div>
 
 <script>
 	(function ($) {
