@@ -8,6 +8,9 @@
  */
 
 $categoies = Mod_jdMegaMenu::getListA();
+$category = JCategories::getInstance('Content');
+$cat = $category->get($params->get('title'));
+$children = $cat->getChildren();
 
 
 ?>

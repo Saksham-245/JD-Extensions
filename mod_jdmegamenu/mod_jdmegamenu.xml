@@ -14,20 +14,21 @@
       <language tag="en-GB">en-GB/en-GB.mod_jdmegamenu.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jdmegamenu.sys.ini</language>
    </languages>
+	<media folder="media" destination="mod_jdmegamenu">
+      <folder>css</folder>
+   </media>
 	<files>
 		<folder>tmpl</folder>
-		<folder>assets</folder>
 		<filename>helper.php</filename>
 		<filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>
-        <filename>assets/style.css</filename>
+      <filename>tmpl/index.html</filename>
 		<filename module="mod_jdmegamenu">mod_jdmegamenu.php</filename>
 		<filename>mod_jdmegamenu.xml</filename>
 	</files>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="title" type="category" showon="design:style3" extension="com_content"  label="MOD_EB_MAGAMENU_SELECT_ID_LABEL" description="MOD_EB_MAGAMENU_SELECT_ID_DESC">
+				<field name="title" type="category" extension="com_content"  label="MOD_EB_MAGAMENU_SELECT_ID_LABEL" description="MOD_EB_MAGAMENU_SELECT_ID_DESC">
 					<option value="all">All</option>
 				 </field>
 				<field name="design" type="list" default="style1" label="MOD_EB_MAGAMENU_DESIGN_LABEL" description="MOD_EB_MAGAMENU_DESIGN_DESC">
