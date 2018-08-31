@@ -1,0 +1,236 @@
+.ebMegaMenu{}
+
+.ebMegaMenu ul.jd-dropdown-menu{
+	margin: 0;
+	padding: 0;
+	list-style: outside none none;
+}
+
+.ebMegaMenu ul.jd-dropdown-menu li{
+	line-height: normal;
+}
+
+.ebMegaMenu ul.jd-dropdown-menu li:not(:last-child){
+	border-bottom: 1px solid #ddd;
+}
+
+.ebMegaMenu ul.jd-dropdown-menu li a:before{
+	display: none !important;
+}
+
+.ebMegaMenu ul.jd-dropdown-menu li.active{}
+
+.ebMegaMenu ul.jd-dropdown-menu li a{
+	line-height: normal;
+	display: block;
+	padding: 15px;
+}
+
+.ebMegaMenu ul.jd-dropdown-menu li.active a{
+	color: #46c59c;
+}
+
+.jd-mega-menu-category-first,
+.jd-mega-menu-category-last {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+}
+#ebMegaMenu.style-1 .jd-mega-dropdown-child-last{
+	display: flex;
+}
+#ebMegaMenu.style-3 .jd-mega-dropdown-child-last div[class*="col-"]{
+	float: left;
+	margin: 0px;
+	padding: 5px;
+}
+#ebMegaMenu.style-3 .jd-mega-dropdown-child-last{
+	display: flex;
+}
+#ebMegaMenu.style-3 .jd-mega-dropdown-child-last .jd-mega-menu-category-first{
+	min-height: auto;
+}
+#ebMegaMenu.style-3 .jd-mega-menu-category-first:before{
+	background: #fff;
+}
+#ebMegaMenu.style-3 .jd-mega-dropdown-child-last .jd-mega-menu-category-first .jd-mega-menu-category-first-content{
+	padding: 0px;
+}
+#ebMegaMenu.style-3 .jd-mega-dropdown-child-last .jd-mega-menu-category-first .jd-mega-menu-category-first-content .jd-mega-menu-category-title{
+	color: #121212;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+	margin: 5px 0 0;
+}
+#ebMegaMenu.style-3 .jd-mega-dropdown-child-last .post-img-wrap .jd-mega-menu-category-tag:after{
+	z-index: 1;
+}
+.jd-mega-menu-category-first {
+    min-height: 200px;
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.jd-mega-menu-category-first:before{
+	left: 0;
+	bottom: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.jd-mega-menu-category-first-content {
+    width: 100%;
+    padding: 15px 20px 10px;
+    position: relative;
+}
+
+.jd-mega-menu-category-tag {
+    background: #46c49c;
+    color: #fff;
+	line-height: normal;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0px 6px;
+    position: relative;
+    font-size: 14px;
+}
+.jd-mega-menu-category-tag:after {
+    content: "";
+    display: inline-block;
+    border-top: 8px solid #46c49c;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+}
+.jd-mega-menu-category-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    text-transform: none;
+    color: #fff;
+    margin: 0 0 5px;
+    display: block;
+}
+
+.post-meta .jd-mega-menu-category-author img {
+    max-width: 30px;
+	border-radius: 100%;
+}
+.post-meta .jd-mega-menu-category-author .jd-mega-menu-category-author-name {
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 30px;
+    padding-left: 5px;
+    text-decoration: none;
+	overflow: hidden;
+}
+
+.post-meta .jd-mega-menu-category-author .jd-mega-menu-category-author-name a{
+	color: #fff;
+	line-height: normal;
+}
+
+.post-meta .jd-mega-menu-category-author .jd-mega-menu-category-author-img{
+	float: left;
+}
+
+.post-meta .jd-mega-menu-category-author {
+    padding-right: 10px;
+}
+
+.post-meta .jd-mega-menu-category-author,
+.post-meta .jd-mega-menu-category-time {
+    margin-bottom: 5px;
+    font-size: 12px;
+	color: #fff;	
+    line-height: 22px;
+}
+
+.post-meta > div{
+	display: inline-table;
+}
+
+.jd-mega-menu-category-time {
+    position: relative;
+    padding-left: 25px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 22px;
+}
+.jd-mega-menu-category-time:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f017";
+    display: inline-block;
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.jd-mega-menu-category-last .jd-mega-menu-category {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+.jd-mega-menu-category-last .jd-mega-menu-category-content {
+    padding-left: 20px;
+}
+.jd-mega-menu-category-last .jd-mega-menu-category-title {
+    color: #1a191d;
+    font-size: 15px;
+    line-height: 25px;
+	font-weight: 400;
+}
+.jd-mega-menu-category-last .jd-mega-menu-category-time {
+    font-size: 15px;
+    line-height: 1;
+    color: #959595;
+    padding-left: 20px;
+}
+.jd-mega-menu-category-last .jd-mega-menu-category-time:before {
+    font-size: 15px;
+    top: 1px;
+}
+
+/* ----- Style one ----- */
+.ebMegaMenu.style-1 .jd-mega-menu-category-first{
+	min-height: 300px;
+}
+/* ----- Style Two ----- */
+.ebMegaMenu.style-2 div[class*="col-md-"]{
+	padding: 5px;
+	float: left;
+}
+/* ----- Style Three ----- */
+.ebMegaMenu.style-3 div[class*="col-md-"]{
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.ebMegaMenu.style-2 .jd-vertical-tabs row,
+.ebMegaMenu.style-3 .jd-vertical-tabs row{
+	margin: 0px;
+}

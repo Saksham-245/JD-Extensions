@@ -28,11 +28,11 @@
              <field
                name="template"
                type="list"
-               label="Select Template"
-               description="Select Template"
+               label="MOD_JDSERVICES_SHOWCASE_SELECT_TEMPLATE_LABEL"
+               description="MOD_JDSERVICES_SHOWCASE_SELECT_TEMPLATE_DESC"
                default="table"
             >
-               <option value="grid_layout">Grid Layout</option>
+               <option value="grid_layout">MOD_JDSERVICES_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID</option>
                <option value="grid_circle_layout">Grid Circle Layout</option>
                <option value="carousel_layout">Carousel Layout</option>
                <option value="carousel_circle_layout">Carousel Circle Layout</option>
@@ -129,7 +129,7 @@
                 description="Display Designation"
             />
          </fieldset>
-         <fieldset name="design">
+         <fieldset name="options">
             <field
                name="display_name"
                type="radio"

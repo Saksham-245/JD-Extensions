@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>Article Mega Menu</name>
+	<author>Joomdev</author>
+	<creationDate>20th Aug 2018</creationDate>
+	<copyright> Copyright  2008 - 2018 JoomDev.com. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorUrl>http://joomdev.com</authorUrl>
+	<version>1.0</version>
+	<description>
+		<![CDATA[Lists down categories which are created in Joomla articles.]]>
+	</description>
+   <languages folder="language">
+      <language tag="en-GB">en-GB/en-GB.mod_jdmegamenu.ini</language>
+      <language tag="en-GB">en-GB/en-GB.mod_jdmegamenu.sys.ini</language>
+   </languages>
+	<files>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>helper.php</filename>
+		<filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>assets/style.css</filename>
+		<filename module="mod_jdmegamenu">mod_jdmegamenu.php</filename>
+		<filename>mod_jdmegamenu.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="title" type="category" showon="design:style3" extension="com_content"  label="MOD_EB_MAGAMENU_SELECT_ID_LABEL" description="MOD_EB_MAGAMENU_SELECT_ID_DESC">
+					<option value="all">All</option>
+				 </field>
+				<field name="design" type="list" default="style1" label="MOD_EB_MAGAMENU_DESIGN_LABEL" description="MOD_EB_MAGAMENU_DESIGN_DESC">
+					<option value="style1">style1</option>
+					<option value="style2">style2</option>
+					<option value="style3">style3</option>
+				</field>
+				<field name="column" type="number" default="4" label="MOD_EB_MAGAMENU_COLUMN_LABEL" description="MOD_EB_MAGAMENU_COLUMN_DESC" showon="design:style3"/>
+				<field name="count" type="number" default="1" label="MOD_EB_MAGAMENU_LIMIT_LABEL" description="MOD_EB_MAGAMENU_LIMIT_DESC" showon="design:style3"/>
+				<field name="truncate" type="radio" default="0" label="Want truncate title" description="" class="btn-group btn-group-yesno" showon="design:style3">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="title_limit" type="number" min="1" default="25" label="MOD_EB_MAGAMENU_TITLE_LIMIT_LABEL" description="MOD_EB_MAGAMENU_TITLE_LIMIT_DESC" showon="truncate:1"/>
+			</fieldset>
+		</fields>	
+	</config>
+</extension>
