@@ -19,10 +19,7 @@ $children = $cat->getChildren();
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <!-- Nav tabs -->
-<<<<<<< HEAD
-=======
 <div class="row article-magamenu-style-1">
->>>>>>> a3d00b9430ff96e80e134d49cfded995dc8adadb
 <div class="col-3">
   <div class="nav flex-column nav-pills" id="tab" role="tablist" aria-orientation="vertical">
     <a class="nav-link active" data-toggle="pill" href="#tab-all" role="tab" aria-controls="tab" aria-selected="true">All</a>
@@ -41,25 +38,20 @@ $children = $cat->getChildren();
             <div class="col-lg-8">
               <?php  $datas = Mod_jdMegaMenu::getpostAll($child->id,1,'id','desc');?>
               <?php  foreach($datas as $data) { ?>
-<<<<<<< HEAD
                 <?php  $url = JRoute::_(ContentHelperRoute::getArticleRoute(  $data->id,  $data->catid )); ?>
-                  <a href="<?php echo $url; ?>">  
-                    <?php echo $data->title; ?>
-                  </a>
-                    <?php echo $child->title; ?>
-                    <?php $user = JFactory::getUser($data->created_by); echo $user->name; ?>
-                    <?php echo Mod_jdMegaMenu::convertString($data->created);?>
-                    <?php  $images =  json_decode($data->images); echo $images->image_intro;?>
-                    <img src="<?Php echo  $images->image_intro ?>">
-=======
 					<div class="jd-mega-menu-category-first">
-						<?php  $images =  json_decode($data->images); ?><img src="<?Php echo  $images->image_intro ?>">
+						<?php  $images =  json_decode($data->images); ?>
+						<a href="<?php echo $url; ?>">
+							<img src="<?Php echo  $images->image_intro ?>">
+						</a>
 					</div>
 					<div class="jd-mega-menu-category-first-content">
-						<?php echo $data->title; ?>
+						 <a href="<?php echo $url; ?>">  
+							<?php echo $data->title; ?>
+						  </a>
 						<div class="post-meta">
 							<div class="jd-mega-menu-category-author">
-								<?php echo $category->title; ?>
+								<?php echo $child->title; ?>
 							</div>
 							<div class="jd-mega-menu-category-time">
 								<?php $user = JFactory::getUser($data->created_by); echo $user->name; ?>
@@ -67,7 +59,6 @@ $children = $cat->getChildren();
 							</div>
 						</div>
 					</div>
->>>>>>> 01eb321db6510b6ded5100fafe38e2a7fe438ca9
               <?php } ?>
             </div>
             <div class="col-lg-4"> 
@@ -82,7 +73,7 @@ $children = $cat->getChildren();
                   <?php echo $child->title; ?>
                   <?php $user = JFactory::getUser($data->created_by); echo $user->name; ?>
                   <?php echo Mod_jdMegaMenu::convertString($data->created);?>
-                  <?php  $images =  json_decode($data->images); echo $images->image_intro;?>
+                  <?php  $images =  json_decode($data->images);?>
                   <a href="<?php echo $url; ?>"> 
                     <img src="<?Php echo  $images->image_intro ?>">
                   </a>
@@ -95,22 +86,32 @@ $children = $cat->getChildren();
       <div class="tab-pane fade active show" id="tab-all">
         <?php  $datas = Mod_jdMegaMenu::getpostAll($params->get('title'),3,'id','desc');?>
         <?php $i=1; foreach($datas as $data) { ?>
-                   <?php  $url = JRoute::_(ContentHelperRoute::getArticleRoute(  $data->id,  $data->catid )); ?>
-                  <a href="<?php echo $url; ?>">  
-                    <?php echo $data->title; ?>
-                  </a>
-                  <?php echo  Mod_jdMegaMenu::getcatname($params->get('title'));?>
-                  <?php $user = JFactory::getUser($data->created_by); echo $user->name; ?>
-                  <?php echo Mod_jdMegaMenu::convertString($data->created);?>
-                  <?php  $images =  json_decode($data->images); echo $images->image_intro;?>
-                  <a href="<?php echo $url; ?>"> 
-                    <img src="<?Php echo  $images->image_intro ?>">
-                  </a>
+                  <?php  $url = JRoute::_(ContentHelperRoute::getArticleRoute(  $data->id,  $data->catid )); ?>
+					<div class="jd-mega-menu-category-first">
+						<?php  $images =  json_decode($data->images); ?>
+						<a href="<?php echo $url; ?>">
+							<img src="<?Php echo  $images->image_intro ?>">
+						</a>
+					</div>
+					<div class="jd-mega-menu-category-first-content">
+						 <a href="<?php echo $url; ?>">  
+							<?php echo $data->title; ?>
+						  </a>
+						<div class="post-meta">
+							<div class="jd-mega-menu-category-author">
+								<?php echo $child->title; ?>
+							</div>
+							<div class="jd-mega-menu-category-time">
+								<?php $user = JFactory::getUser($data->created_by); echo $user->name; ?>
+								<?php echo Mod_jdMegaMenu::convertString($data->created);?>
+							</div>
+						</div>
+					</div>
               <?php $i++; } ?>
       </div>
     </div>
   </div>
-
+  
 <script>
 	(function ($) {
 		var docReady = function () {
