@@ -46,7 +46,7 @@ class Mod_jdMegaMenu
 			$tag_query = "SELECT * FROM `#__categories` WHERE extension = 'com_content' and id = ".$id."" ;
 			$db->setQuery($tag_query);
 			$result = $db->loadObjectList();
-			return $result;
+			return $result[0]->title;
 		}	
 	
 		//title word limit
