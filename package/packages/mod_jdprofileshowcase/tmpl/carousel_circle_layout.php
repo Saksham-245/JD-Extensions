@@ -3,6 +3,22 @@ defined('_JEXEC') or die;
 //echo "<pre>";
 //print_r($profiles);
 ?>
+<style>
+.card-img-overlayteam-member-name{
+  color:<?php echo  $params->get('NameColor'); ?>;
+}
+.team-member-designation{
+  color:<?php echo  $params->get('designationColor'); ?>;
+}
+.card-img-overlayteam-member-bio{
+  color:<?php echo  $params->get('shortBio'); ?>;
+}
+.jd-team-showcase-wrapper .social-profile li a {
+  color: <?php echo $params->get('icon_color');?>;
+  border: 1px solid <?php echo $params->get('icon_background');?>;
+  background-color: <?php echo $params->get('icon_background');?>;
+}
+</style>
 <section>
     <div class="container py-5">
       <div class="jd-team-showcase-wrapper jd-carousel-layout-view jd-carousel-circle-layout">
@@ -11,7 +27,7 @@ defined('_JEXEC') or die;
             <div class="row jd-team-carousel">
             <?php foreach($profiles as $profile) { ?>
               <!-- Team Item wrapper start -->
-              <div class="jd-team-columns" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
+              <div class="jd-team-columns <?php echo ($params->get('gutter_space')=='') ? 'col' : '' ?>" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
                 <div class="card-team jd-team-items">
                     <div class="team-mamber-image-wrapper">
                   <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">

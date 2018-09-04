@@ -3,6 +3,27 @@ defined('_JEXEC') or die;
 //echo "<pre>";
 //print_r($profiles);
 ?>
+<?php
+defined('_JEXEC') or die;
+//echo "<pre>";
+//print_r($profiles);
+?>
+<style>
+.card-img-overlayteam-member-name{
+  color:<?php echo  $params->get('NameColor'); ?>;
+}
+.team-member-designation{
+  color:<?php echo  $params->get('designationColor'); ?>;
+}
+.card-img-overlayteam-member-bio{
+  color:<?php echo  $params->get('shortBio'); ?>;
+}
+.jd-team-showcase-wrapper .social-profile li a {
+  color: <?php echo $params->get('icon_color');?>;
+  border: 1px solid <?php echo $params->get('icon_background');?>;
+  background-color: <?php echo $params->get('icon_background');?>;
+}
+</style>
   <section>
     <div class="container py-5">
       <div class="jd-team-showcase-wrapper jd-grid-layout-view jd-grid-circle-layout">

@@ -13,14 +13,10 @@ defined('_JEXEC') or die;
 .card-img-overlayteam-member-bio{
   color:<?php echo  $params->get('shortBio'); ?>;
 }
-.jd-team-showcase-wrapper {
-  .social-profile {
-    li {
-      a {
-        color: red;
-      }
-    }
-  }
+.jd-team-showcase-wrapper .social-profile li a {
+  color: <?php echo $params->get('icon_color');?>;
+  border: 1px solid <?php echo $params->get('icon_background');?>;
+  background-color: <?php echo $params->get('icon_background');?>;
 }
 </style>
 <section>
