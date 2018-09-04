@@ -39,6 +39,21 @@
                <option value="list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
                <option value="table">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_TABLE</option>
             </field>  
+			<field
+               name="grid_coloumns"
+               type="list"
+			   showon="template:grid_layout[OR]template:grid_circle_layout"
+               label="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_LABEL"
+               description="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_DESC"
+               default="2"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="12">J1</option>
+               <option value="6">J2</option>
+               <option value="4">J3</option>
+               <option value="3">J4</option>
+               <option value="2">J6</option>
+            </field> 
             <field name="select_view" type="hidden" label="Select Layouts"  showon="template:table" description="Select Layouts" default="view2">
                 <option value="default">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|Style - 1</option>
                 <option value="view2">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|Style - 2</option>
@@ -74,20 +89,7 @@
                description="Margin"
                default="1"
             />
-            <field
-               name="grid_coloumns"
-               type="list"
-               label="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_LABEL"
-               description="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_DESC"
-               default="2"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="12">J1</option>
-               <option value="6">J2</option>
-               <option value="4">J3</option>
-               <option value="3">J4</option>
-               <option value="2">J6</option>
-            </field> 
+            
             <field
                name="display_all"
                type="radio"
