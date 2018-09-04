@@ -31,9 +31,9 @@ defined('_JEXEC') or die;
 						</p>
 					<?php }  ?>
 				<?php }  ?>
-
-					<p class="team-member-bio"><?php echo $this->item->sbio; ?></p>
-
+					<?php if(!empty($this->item->sbio)) {?>
+						<p class="team-member-bio"><?php echo $this->item->sbio; ?></p>
+					<?php } ?>
 				<?php if($this->params->get('show_Contact')) { ?>
 				  <ul class="list-unstyled contact-info">
 					<li>
@@ -71,9 +71,11 @@ defined('_JEXEC') or die;
 		</div>
 		<div class="row pb-5">
 		  <div class="col-12">
+		  <?php if(!empty($this->item->details)) {?>
 			<div class="team-single-details-text">
 				<?php echo $this->item->details; ?>
 			</div>
+		  <?php } ?>	
 		  </div>
 		</div>
 				<?php if($this->params->get('show_skills')) { ?>
