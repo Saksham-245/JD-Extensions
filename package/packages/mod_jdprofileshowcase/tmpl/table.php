@@ -3,6 +3,16 @@ defined('_JEXEC') or die;
 //echo "<pre>";
 //print_r($profiles);
 ?>
+
+<style>
+.team-member-name .name{
+  color:<?php echo  $params->get('NameColor'); ?>;
+}
+.team-member-designation{
+  color:<?php echo  $params->get('designationColor'); ?>;
+}
+</style>
+
 <div class="container py-5">
   <div class="jd-team-showcase-wrapper jd-table-layout-view jd-table-simple-layout">
     <div class="row">
@@ -22,13 +32,15 @@ defined('_JEXEC') or die;
 
                     <?php if($params->get('display_name')) { ?>
                       <?php if(!empty($profile->name)) { ?>
-                        <td class="team-member-name"><span>
-                        <?php if($params->get('enable_link')){ ?>
-                          <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
-                        <?php }else {?>
-                          <?php  echo $profile->name; ?>
-                        <?php  } ?>
-                        </span></td>
+                        <td class="team-member-name">
+                          <span class="name">
+                            <?php if($params->get('enable_link')){ ?>
+                              <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+                            <?php }else {?>
+                              <?php  echo $profile->name; ?>
+                            <?php  } ?>
+                          </span>
+                        </td>
                       <?php } ?>
                     <?php } ?>  
 

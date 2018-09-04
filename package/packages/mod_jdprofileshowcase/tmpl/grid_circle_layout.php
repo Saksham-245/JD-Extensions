@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
             <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
               <!-- Team Item wrapper start -->
               <?php foreach($profiles as $profile) { ?>
-                  <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?>">
+                  <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?>" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
                     <div class="card-team jd-team-items">
                       <div class="team-mamber-image-wrapper">
                         <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">

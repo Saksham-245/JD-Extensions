@@ -3,6 +3,26 @@ defined('_JEXEC') or die;
 //echo "<pre>";
 //print_r($profiles);
 ?>
+<style>
+.card-img-overlayteam-member-name{
+  color:<?php echo  $params->get('NameColor'); ?>;
+}
+.team-member-designation{
+  color:<?php echo  $params->get('designationColor'); ?>;
+}
+.card-img-overlayteam-member-bio{
+  color:<?php echo  $params->get('shortBio'); ?>;
+}
+.jd-team-showcase-wrapper {
+  .social-profile {
+    li {
+      a {
+        color: red;
+      }
+    }
+  }
+}
+</style>
 <section>
     <div class="container py-5">
       <div class="jd-team-showcase-wrapper jd-grid-layout-view jd-grid-simple-layout">
@@ -11,7 +31,7 @@ defined('_JEXEC') or die;
             <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
               <!-- Team Item wrapper start -->
               <?php foreach($profiles as $profile) { ?>
-                <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?>">
+              <div class="jd-team-columns col-12 col-md-6 col-lg-<?php echo  $params->get('grid_coloumns'); ?>" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
                   <div class="card-team jd-team-items">
                     <?php if(!empty($profile->image)) { ?>
                       <img src="<?php echo $profile->image;  ?>" alt="<?php echo $profile->name;  ?>" class="card-img-top team-mamber-image">

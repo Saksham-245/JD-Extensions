@@ -59,9 +59,10 @@
                type="radio"
                label="MOD_PROFILE_SHOWCASE_GUTTER_SPACE_LABEL"
                description="MOD_PROFILE_SHOWCASE_GUTTER_SPACE_DESC"
-               default="nomargin"
+               default=""
                class="btn-group btn-group-yesno"
             >
+              <option value="">MOD_PROFILE_SHOWCASE_GUTTER_SPACE_OPTIONS_DEFAULT</option>
                <option value="nomargin">MOD_PROFILE_SHOWCASE_GUTTER_SPACE_OPTIONS_NOMARGIN</option>
                <option value="custom">MOD_PROFILE_SHOWCASE_GUTTER_SPACE_OPTIONS_CUSTOM</option>
              </field> 
@@ -240,16 +241,16 @@
             <field
                name="IconStyle"
                type="radio"
-               label=" MOD_PROFILE_SHOWCASE_ICON_STYLE_LABEL"
+               label="MOD_PROFILE_SHOWCASE_ICON_STYLE_LABEL"
                showon="social_icons:c"
                description="MOD_PROFILE_SHOWCASE_ICON_STYLE_DESC"
-               default="bc"
+               default="none"
                class="btn-group btn-group-yesno"
             >
                <option value="circle">MOD_PROFILE_SHOWCASE_CIRCLE</option>
                <option value="rounded">MOD_PROFILE_SHOWCASE_ROUNDED</option> 
                <option value="square">MOD_PROFILE_SHOWCASE_SQUARE</option>
-               <option value="none">MOD_PROFILE_SHOWCASE_NPNE</option>
+               <option value="none">MOD_PROFILE_SHOWCASE_NONE</option>
             </field>
             <field
                name="DisplayBullit"

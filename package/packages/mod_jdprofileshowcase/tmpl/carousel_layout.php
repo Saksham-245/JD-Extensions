@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
             <div class="row jd-team-carousel">
               <!-- Team Item wrapper start -->
               <?php foreach($profiles as $profile) { ?>
-                  <div class="jd-team-columns col">
+                  <div class="jd-team-columns" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
                     <div class="card-team jd-team-items">
                       <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
                       <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
