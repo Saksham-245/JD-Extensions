@@ -234,3 +234,124 @@
 .ebMegaMenu.style-3 .jd-vertical-tabs row{
 	margin: 0px;
 }
+
+
+/* Article Style css */
+
+.article-magamenu #tab a{
+	line-height: 30px;
+	font-size: 18px;
+	padding: 10px 20px;
+	transition: all 0.35s ease-in-out 0s;
+	width: 100%;
+	display: block;
+	color: #252525;
+	border-bottom: 1px solid #eaeaea;
+	border-radius: 0;
+}
+.article-magamenu #tab a:hover{
+	padding-left: 30px;
+	padding-left: 30px;
+	background: #f3f3f3;
+	color: #46c59c;
+}
+.article-magamenu #tab a:hover:before{
+	border: none;
+}
+.article-magamenu #tab a.active{
+	padding-left: 30px;
+	background: #f3f3f3;
+	color: #46c59c;
+}
+.article-magamenu #tab a.active:before{
+	border: none;
+}
+.article-magamenu .jd-mega-menu-category-last .jd-mega-menu-category{
+	border-bottom: 1px solid #eaeaea;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 0 0 15px;
+}
+.article-magamenu .jd-mega-menu-category-last .jd-mega-menu-category img{
+	width: 100px;
+}
+.article-magamenu .jd-mega-menu-category-first,
+.article-magamenu .jd-mega-menu-category-last {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+}
+/* ----- Style one ----- */
+.article-magamenu.style-1 .jd-mega-menu-category-first {
+    min-height: 315px;
+}
+.article-magamenu .jd-mega-menu-category-first {
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+/* ----- Style two ----- */
+.article-magamenu.style-2 .jd-mega-menu-category-first {
+    min-height: 200px;
+}
+/* ----- Style two ----- */
+.article-magamenu.style-3 .jd-mega-menu-category-first {
+    min-height: 200px;
+}
+.article-magamenu .jd-mega-menu-category-first:before{
+	left: 0;
+	bottom: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.3);
+}
+.article-magamenu .jd-mega-menu-category-tag {
+    background: #46c49c;
+    color: #fff;
+	line-height: normal;
+    display: table;
+    text-decoration: none;
+    padding: 0px 6px;
+    position: relative;
+    font-size: 14px;
+}
+.article-magamenu .jd-mega-menu-category-tag:after {
+    content: "";
+    display: inline-block;
+    border-top: 8px solid #46c49c;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+}
+.article-magamenu .jd-mega-menu-category-title a{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    text-transform: none;
+    color: #fff;
+    margin: 0 0 5px;
+    display: block;
+}
+.article-magamenu .jd-mega-menu-category-last .jd-mega-menu-category-content {
+    padding-left: 20px;
+}
+.article-magamenu .jd-mega-menu-category-last .title a {
+    color: #1a191d;
+    font-size: 15px;
+    line-height: 25px;
+	font-weight: 400;
+}

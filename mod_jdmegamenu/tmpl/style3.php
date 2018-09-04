@@ -15,23 +15,36 @@ if($catid != 'all'){
 }
 ?>
 
-<div class="row article-magamenu-style-3">
+<div class="row py-3 m-0 article-magamenu style-3">
    <?php foreach($posts  as $post)  {?>
       <div class="col-lg-<?php echo $params->get('column'); ?>">
-          <?php  $url = JRoute::_(ContentHelperRoute::getArticleRoute(  $post->id,  $post->catid )); ?>
-         <a href="<?php echo $url; ?>">  
-            <?php if($params->get('truncate')){
-               echo Mod_jdMegaMenu::limit_text_classic($post->title,$params->get('title_limit'));
-            }else{
-               echo   $post->title;
-            } ?>
-         </a>
-         <?php $user = JFactory::getUser($post->created_by); echo $user->name; ?>
-         <?php echo Mod_jdMegaMenu::convertString($post->created);?>
-         <?php  $images =  json_decode($post->images); echo $images->image_intro;?>
-            <a href="<?php echo $url; ?>"> 
-               <img src="<?Php echo  $images->image_intro ?>">
-            </a>
+		<?php  $url = JRoute::_(ContentHelperRoute::getArticleRoute(  $post->id,  $post->catid )); ?><?php  $url = JRoute::_(ContentHelperRoute::getArticleRoute(  $post->id,  $post->catid )); ?>
+		<?php  $images =  json_decode($post->images); ?>
+		<div class="jd-mega-menu-category-first" style="background-image: url(<?Php echo  $images->image_intro ?>)">
+			<div class="jd-mega-menu-category-first-content">
+				<div class="jd-mega-menu-category-tag">
+					<?php  echo Mod_jdMegaMenu::getcatname($params->get('title'));?>
+				</div>
+				<div class="jd-mega-menu-category-title my-2">
+					<a href="<?php echo $url; ?>">  
+						<?php if($params->get('truncate')){
+						   echo Mod_jdMegaMenu::limit_text_classic($post->title,$params->get('title_limit'));
+						}else{
+						   echo   $post->title;
+						} ?>
+					 </a>
+				</div>
+				<div class="post-meta">
+					<div class="jd-mega-menu-category-author">
+						<i class="fa fa-user"></i> <?php $user = JFactory::getUser($post->created_by); echo $user->name; ?>
+					</div>
+					<div class="jd-mega-menu-category-time">
+						<?php echo Mod_jdMegaMenu::convertString($post->created);?>
+					</div>
+				</div>
+			</div>
+		</div>
+			
       </div>
    <?php } ?>
 </div>
