@@ -3,10 +3,11 @@
 <extension type="package" version="3.1" method="upgrade">
    <name>JD Profile</name>
    <author>JoomDev</author>
+   <packagename>Jd profile</packagename>
    <creationDate>Sept 2018</creationDate>
    <copyright>Copyright (C) 2018 Joomdev, Inc. All rights reserved.</copyright>
    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-   <version>1.0</version>
+   <version>1.0.0</version>
    <authorEmail>info@joomdev.com</authorEmail>
    <authorUrl>https://www.joomdev.com</authorUrl>
    <description></description>

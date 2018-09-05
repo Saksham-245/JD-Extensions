@@ -3,7 +3,7 @@
 /**
  * @package	JD profile Showcase
  * @subpackage  mod_jdprofileshowcase
- * @version	1.0
+ * @version	1.0.0
  * @author	Joomdev.com
  * @copyright	Copyright (C) 2008 - 2018 Joomdev.com. All rights reserved
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
