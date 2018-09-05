@@ -1,8 +1,8 @@
 <?php
 /**
- * @package   package Framework
+ * @package   JD Profile
  * @author    JoomDev https://www.joomdev.com
- * @copyright Copyright (C) 2009 - 2018 JoomDev.
+ * @copyright Copyright (C) 2008 - 2018 JoomDev.
  * @license   GNU/GPLv2 and later
  */
 // no direct access

@@ -12,7 +12,6 @@ defined('_JEXEC') or die;
 $doc = JFactory::getDocument();
 // Style Sheet
 $doc->addStyleSheet(JURI::root().'media/mod_jdprofileshowcase/assets/css/jd-profile-style.css');
-$doc->addStyleSheet(JURI::root().'media/mod_jdprofileshowcase/assets/css/jd-profile-style.css.map');
 
 class modJdprofileShowcaseHelper {
     public function  profiles($limit,$designations){

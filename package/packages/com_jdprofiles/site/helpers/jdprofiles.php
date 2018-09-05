@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
+ * @version    1.0.0
  * @package    Com_Jdprofiles
- * @author     Team Joomdev <info@joomdev.com>
+ * @author     Joomdev <info@joomdev.com>
  * @copyright  Copyright (C) 2018 Joomdev, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -14,7 +14,6 @@ JLoader::register('JdprofilesHelper', JPATH_ADMINISTRATOR . DIRECTORY_SEPARATOR 
 $doc = JFactory::getDocument();
 // Style Sheet
 $doc->addStyleSheet(JURI::root().'media/com_jdprofiles/css/jd-profile-style.css');
-$doc->addStyleSheet(JURI::root().'media/com_jdprofiles/css/jd-profile-style.css.map');
 
 /**
  * Class JdprofilesFrontendHelper

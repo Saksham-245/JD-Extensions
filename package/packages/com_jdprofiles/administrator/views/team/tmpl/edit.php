@@ -1,8 +1,8 @@
 <?php
 /**
- * @version    CVS: 1.0.0
+ * @version    1.0.0
  * @package    Com_Jdprofiles
- * @author     Team Joomdev <info@joomdev.com>
+ * @author     Joomdev <info@joomdev.com>
  * @copyright  Copyright (C) 2018 Joomdev, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -54,7 +54,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 			<div class="span10 form-horizontal">
 				<fieldset class="adminform">
 
-									<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+				<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
 				<?php echo $this->form->renderField('title'); ?>
 				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
 				<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
@@ -74,8 +74,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 			</div>
 		</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
-
-		
 
 		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
 

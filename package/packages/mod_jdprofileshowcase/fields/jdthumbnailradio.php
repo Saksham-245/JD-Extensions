@@ -1,9 +1,9 @@
 <?php
 /**
- * @package   Astroid Framework
+ * @package   JD Profile
  * @author    JoomDev https://www.joomdev.com
  * @copyright Copyright (C) 2009 - 2018 JoomDev.
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
+ * @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
  */
 defined('JPATH_PLATFORM') or die;
 
