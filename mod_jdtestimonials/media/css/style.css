@@ -76,6 +76,9 @@
   border: 1px solid #d3d3d3;
   height: auto;
 }
+.testimonials-wrap {
+	display: none;
+}
 
 /* Responsive Css */
 @media (max-width: 1000px){

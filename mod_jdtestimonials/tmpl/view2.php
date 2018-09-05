@@ -13,7 +13,31 @@ $items = (array) $items;
 $active = TRUE;
 ?>
 <style type="text/css">
-
+.testimonials-wrap {
+	padding: 30px;
+	border: 1px solid #eeeeee;
+}
+.testimonials-wrap .client-img {
+	margin-top: 30px;
+}
+.testimonials-wrap .client-img .author-img img {
+	margin: auto;
+}
+.testimonials-wrap .client-img .author-info {
+	margin-top: 30px;
+}
+.testimonials-wrap .client-img .author-info .name {
+	margin-bottom: 5px;
+}
+.style-two .slick-slide {
+	margin: 0px 15px;
+}
+.style-two .slick-dots {
+	margin-top: 20px;
+}
+.style-two .slick-dots li button:before {
+	font-size: 20px;
+} 
 .testimonial-<?php echo $module->id; ?> .slick-dots li button:before {
 	color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
 }
@@ -68,20 +92,20 @@ $active = TRUE;
 
 <div class="testimonial-<?php echo $module->id; ?> style-two">
 <?php foreach($items as $item)  { ?>
-	<div class="testimonials-wrap text-center px-4 pt-5">
+	<div class="testimonials-wrap text-center">
 		<?php if(!empty($item->author_companyReview)) { ?>
 			<div class="text">
 			<?php echo $item->author_companyReview; ?>
 			</div>
 		<?php } ?>
-		<div class="client-img pb-3 pt-4">
+		<div class="client-img">
 			<?php if(!empty($item->author_thumbnail)) { ?>
 				<div class="author-img">
-					<img src="<?php echo $item->author_thumbnail; ?>" alt="<?php echo $item->author_name; ?>" class="img-fluid m-auto">
+					<img src="<?php echo $item->author_thumbnail; ?>" alt="<?php echo $item->author_name; ?>" class="img-fluid">
 				</div>
 			<?php } ?>
 		<?php if(!empty($item->author_name) or !empty($item->author_depart)) { ?>
-			<div class="author-info my-4">
+			<div class="author-info">
 				<?php if(!empty($item->author_name)) { ?>
 					<h5 class="name"><?php echo $item->author_name; ?></h5>
 				<?php } ?> 

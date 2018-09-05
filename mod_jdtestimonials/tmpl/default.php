@@ -28,18 +28,18 @@ $active = TRUE;
 .testimonial-container-<?php echo $module->id; ?> {
 	overflow: hidden;
 	position: relative;
+	padding: 30px 48px;
+	margin: 0;
 }
 .testimonial-container-<?php echo $module->id; ?> .slide-content .author {
-	position: relative;
-	padding: 9px 0px 45px 89px;
+	padding-bottom: 45px;
+	display: flex;
+	align-items: center;
 }
 .testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-img {
-	position: absolute;
-	overflow: hidden;
 	width: 70px;
 	height: 70px;
-	left: 0px;
-	top: 0px;
+	margin-right: 30px;
 }
 .testimonial-container-<?php echo $module->id; ?> .slide-content .author .author-img img {
 	width: 100%;
@@ -71,7 +71,7 @@ $active = TRUE;
 	color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
 	height: 20px; 
 	width: 20px;
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 1;
 	top: 0;
 	opacity: 1;
@@ -122,10 +122,10 @@ $active = TRUE;
 	<?php } ?>
 </style>
 
-<div class="testimonial-container-<?php echo $module->id; ?> bg-white shadow-lg px-5 py-4 m-0">
+<div class="testimonial-container-<?php echo $module->id; ?> testimonial-wrapper">
 <?php foreach($items as $item)  { ?>
 	<div class="slide-content">
-		<div class="author d-flex">
+		<div class="author">
 			<?php if(!empty($item->author_thumbnail)) { ?>
 				<div class="author-img">
 					<img src="<?php echo $item->author_thumbnail; ?>" alt="<?php echo $item->author_name; ?>" class="img-fluid">
