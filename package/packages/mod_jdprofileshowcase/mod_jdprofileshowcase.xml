@@ -34,15 +34,17 @@
             >
                <option value="grid_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID</option>
                <option value="grid_circle_layout"> MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID_CIRCLE</option>
+               <option value="grid_hover_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID_HOVER </option>
                <option value="carousel_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL</option>
                <option value="carousel_circle_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL_CIRCLE</option>
+               <option value="carousel_hover_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL_HOVER</option>
                <option value="list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
                <option value="table">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_TABLE</option>
             </field>  
 			<field
                name="grid_coloumns"
                type="list"
-			   showon="template:grid_layout[OR]template:grid_circle_layout"
+			         showon="template:grid_layout[OR]template:grid_circle_layout[OR]template:grid_hover_layout"
                label="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_LABEL"
                description="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_DESC"
                default="2"
