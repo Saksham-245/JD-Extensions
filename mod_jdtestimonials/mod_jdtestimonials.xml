@@ -31,7 +31,8 @@
             </fieldset>
             <fieldset name="design">
                 <field name="select_view" type="jdthumbnailradio" label="MOD_JDTESTIMONIALS_SELECT_VIEW" description="" default="1">
-                    <option value="1">media/mod_jdtestimonials/images/layouts/layout-1.svg|Style - 1</option>
+                    <option value="default">media/mod_jdtestimonials/images/layouts/layout-1.svg|Style - 1</option>
+                    <option value="view2">media/mod_jdtestimonials/images/layouts/layout-2.svg|Style - 2</option>
                 </field>
                 <field name="arrow" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_JDTESTIMONIALS_ENABLE_ARROW" description="MOD_JDTESTIMONIALS_ENABLE_ARROW_DESC">
                     <option value="1">JYES</option>
@@ -61,7 +62,7 @@
                 <field name="reviewSize" type="number" min="10" label="MOD_JDTESTIMONIALS_REVIEW_SIZE" description="MOD_JDTESTIMONIALS_REVIEW_SIZE_DESC" showon="customstyle:1" default="10" />
             </fieldset>
             <fieldset name="advanced">
-                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
+                 
                 <field name="load_bootstrap" type="radio" label="MOD_JDTESTIMONIALS_LOAD_BOOTSTRAP" description="MOD_JDTESTIMONIALS_LOAD_BOOTSTRAP" default="1" class="btn-group btn-group-yesno">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>

@@ -28,21 +28,12 @@
 		   description="MOD_JDTESTIMONIALS_PERSON_DESCRIPTION_RATING"
 		   default="MOD_JDTESTIMONIALS_NONE"
 		>
-<<<<<<< HEAD
            <option value="none">MOD_JDTESTIMONIALS_NONE</option>
 		   <option value="1">J1</option>
 		   <option value="2">J2</option>	   
 		   <option value="3">J3</option>
 		   <option value="4">J4</option>	   
 		   <option value="5">J5</option>
-=======
-         <option value="none">MOD_JDTESTIMONIALS_NONE</option>
-		   <option value="MOD_JDTESTIMONIALS_ONE">MOD_JDTESTIMONIALS_ONE</option>
-		   <option value="MOD_JDTESTIMONIALS_TWO">MOD_JDTESTIMONIALS_TWO</option>	   
-		   <option value="MOD_JDTESTIMONIALS_THREE">MOD_JDTESTIMONIALS_THREE</option>
-		   <option value="MOD_JDTESTIMONIALS_FOUR">MOD_JDTESTIMONIALS_FOUR</option>	   
-		   <option value="MOD_JDTESTIMONIALS_FIVE">MOD_JDTESTIMONIALS_FIVE</option>
->>>>>>> b85b90d91e3a1118d2097d41b89e8418d2047b2e
        </field>
       <field
          name="author_companyReview"
