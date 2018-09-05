@@ -1,9 +1,10 @@
 <?php
-/**
- * @package     Joomla.Platform
+/** 
+ * @version    1.0.0
+ * @package   Com_jdprofiles
+ * @author    Joomdev <info@joomdev.com>
  * @subpackage  Form
- *
- * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2018 Joomdev, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 

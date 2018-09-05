@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>com_jdprofiles</name>
-    <creationDate>2018-08-13</creationDate>
+    <creationDate>Sept 2018</creationDate>
     <copyright>Copyright (C) 2018 Joomdev, Inc. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <author>Team Joomdev</author>
+    <author>Joomdev</author>
     <authorEmail>info@joomdev.com</authorEmail>
-    <authorUrl>http://www.joomdev.com</authorUrl>
-    <version>CVS: 1.0.0</version>
+    <authorUrl>https://www.joomdev.com</authorUrl>
+    <version>1.0.0</version>
     <description></description>
-    
-    
     
     <install> <!-- Runs on install -->
         <sql>
@@ -88,7 +86,4 @@
     <plugins>
         <plugin group="search" plugin="jdprofiles"/>
     </plugins>
-    
 </extension>
-<!-- Component built by the Joomla Component Creator -->
-<!-- http://www.component-creator.com/ -->

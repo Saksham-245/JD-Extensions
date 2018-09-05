@@ -7,7 +7,7 @@
    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
    <authorEmail>info@joomdev.com</authorEmail>
    <authorUrl>www.joomdev.com</authorUrl>
-   <version>3.0.0</version>
+   <version>1.0.0</version>
    <description>MOD_JDPROFILESHOWCASE_XML_DESCRIPTION</description>
    <files>
       <filename module="mod_jdprofileshowcase">mod_jdprofileshowcase.php</filename>
@@ -30,19 +30,21 @@
                type="list"
                label="MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_LABEL"
                description="MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_DESC"
-               default="table"
+               default="grid_layout"
             >
                <option value="grid_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID</option>
                <option value="grid_circle_layout"> MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID_CIRCLE</option>
+               <option value="grid_hover_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID_HOVER </option>
                <option value="carousel_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL</option>
                <option value="carousel_circle_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL_CIRCLE</option>
+               <option value="carousel_hover_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL_HOVER</option>
                <option value="list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
                <option value="table">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_TABLE</option>
             </field>  
 			<field
                name="grid_coloumns"
                type="list"
-			   showon="template:grid_layout[OR]template:grid_circle_layout"
+			         showon="template:grid_layout[OR]template:grid_circle_layout[OR]template:grid_hover_layout"
                label="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_LABEL"
                description="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_DESC"
                default="2"
@@ -85,6 +87,8 @@
                name="margin"
                type="number"
                showon="gutter_space:custom"
+               min="1"
+               max="100"
                label="Margin"
                description="Margin"
                default="1"
