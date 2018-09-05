@@ -23,11 +23,8 @@ use Joomla\Utilities\ArrayHelper;
  */
 class JdprofilesModelProfile extends JModelItem
 {
-    public $_item;
+   public $_item;
 
-        
-    
-        
 	/**
 	 * Method to auto-populate the model state.
 	 *
@@ -130,9 +127,8 @@ class JdprofilesModelProfile extends JModelItem
 		{
 			$this->_item->modified_by_name = Factory::getUser($this->_item->modified_by)->name;
 		}
-
-            return $this->_item;
-        }
+      return $this->_item;
+   }
 
 	/**
 	 * Get an instance of JTable class

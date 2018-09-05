@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
 	  <div class="col-12">
 		<div class="row pb-4">
 		  <div class="col-12 col-md-3 team-mamber-image-wrapper">
-			<img src="<?php echo $this->item->image; ?>" alt="" class="img-fluid">
+			<img src="<?php echo $this->item->image; ?>" alt="<?php echo $this->item->name; ?>" class="img-fluid">
 		  </div>
 		  <div class="col-12 col-md-9">
 			<div class="card-team jd-team-items">

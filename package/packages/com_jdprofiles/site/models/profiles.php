@@ -60,8 +60,6 @@ class JdprofilesModelProfiles extends JModelList
 		parent::__construct($config);
 	}
 
-        
-        
 	/**
 	 * Method to auto-populate the model state.
 	 *
@@ -130,10 +128,10 @@ class JdprofilesModelProfiles extends JModelList
 
             // Select the required fields from the table.
             $query->select(
-                        $this->getState(
-                                'list.select', 'DISTINCT a.*'
-                        )
-                );
+             $this->getState(
+               'list.select', 'DISTINCT a.*'
+            )
+            );
 
             $query->from('`#__jdprofiles_profiles` AS a');
             
@@ -161,15 +159,14 @@ class JdprofilesModelProfiles extends JModelList
             {
                 if (stripos($search, 'id:') === 0)
                 {
-                    $query->where('a.id = ' . (int) substr($search, 3));
+                  $query->where('a.id = ' . (int) substr($search, 3));
                 }
                 else
                 {
-                    $search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('( a.name LIKE ' . $search . '  OR  a.email LIKE ' . $search . '  OR  a.phone LIKE ' . $search . ' )');
-                }
+               	$search = $db->Quote('%' . $db->escape($search, true) . '%');
+						$query->where('( a.name LIKE ' . $search . '  OR  a.email LIKE ' . $search . '  OR  a.phone LIKE ' . $search . ' )');
+               }
             }
-            
 
             // Add the list ordering clause.
             $orderCol  = $this->state->get('list.ordering', "a.id");
@@ -177,9 +174,8 @@ class JdprofilesModelProfiles extends JModelList
 
             if ($orderCol && $orderDirn)
             {
-                $query->order($db->escape($orderCol . ' ' . $orderDirn));
+               $query->order($db->escape($orderCol . ' ' . $orderDirn));
             }
-
             return $query;
 	}
 
