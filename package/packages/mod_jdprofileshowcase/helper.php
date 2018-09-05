@@ -14,12 +14,12 @@ $doc = JFactory::getDocument();
 $doc->addStyleSheet(JURI::root().'media/mod_jdprofileshowcase/assets/css/jd-profile-style.css');
 
 class modJdprofileShowcaseHelper {
-    public function  profiles($limit,$designations){
+    public function profiles($limit,$designations){
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
         $query->select('*');
         $query->from('#__jdprofiles_profiles');
-        foreach($designations as $designation){
+        foreach ($designations as $designation){
             $query->Where($db->quoteName('designation') . ' LIKE '. $db->quote($designation),'or');
         }
         $query->setLimit($limit);
