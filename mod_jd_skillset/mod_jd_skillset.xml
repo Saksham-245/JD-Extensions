@@ -38,7 +38,8 @@
          <fieldset name="options">
             <field
                 name="numberPosition" 
-                type="list"
+                type="radio"
+				class="btn-group btn-group-yesno"
                 label="MOD_JD_SKILLSET_NUMBER_POSITION_LABEL"
                 description="MOD_JD_SKILLSET_NUMBER_POSITION_DESC"
                 default="below"

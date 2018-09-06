@@ -10,7 +10,7 @@
                 type="text"  />
         <field
                 name="skillset_icon_option"
-                type="list"
+                type="radio"
                 class="btn-group btn-group-yesno" 
                 label="MOD_JD_SKILLSET_ICON_LABEL"
                 description="MOD_JD_SKILLSET_ICON_DESC"
