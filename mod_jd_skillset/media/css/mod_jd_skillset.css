@@ -7,18 +7,26 @@
 }
 /* Skill Counter
 =========================== */
+.counter-sub-container .counter-wrapper .counter-text-container .counter-number {
+	line-height: 1;
+	margin: 0;
+}
+.counter-sub-container .counter-wrapper .counter-text-container .counter-number sup {
+	top: -0.1rem;
+}
+.counter-sub-container .counter-wrapper .counter-text-container .counter-number + .counter-title {
+	margin-top: 10px;
+}
+.counter-sub-container .counter-wrapper .counter-text-container .counter-title + .counter-number {
+	margin-top: 20px;
+}
+.counter-sub-container .counter-wrapper .counter-text-container .counter-title {
+	margin: 0;
+}
 .counter-sub-container .counter-wrapper .counter-icon {
 	line-height: 1;
 	text-align: center;
 	margin-top: 20px;
-}
-.counter-sub-container .counter-wrapper .counter-text-container .counter-number {
-	font-size: 40px;
-	line-height: 1;
-	margin: 0;
-}
-.counter-sub-container .counter-wrapper .counter-text-container .counter-title {
-	margin: 0;
 }
 .counter-sub-container .counter-wrapper .counter-icon img {
 	display: inline-block;
