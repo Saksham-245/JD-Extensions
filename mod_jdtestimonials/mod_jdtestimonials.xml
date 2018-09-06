@@ -55,11 +55,11 @@
                 </field>
                 <field name="note3" type="note" showon="customstyle:1" label="MOD_JDTESTIMONIALS_COLORS" description="MOD_JDTESTIMONIALS_COLORS_DESC" />
                 <field name="nameColor" type="color" label="MOD_JDTESTIMONIALS_NAME_COLOR" description="MOD_JDTESTIMONIALS_NAME_COLOR_DESC" showon="customstyle:1" default="#e80e0e" />
-                <field name="designationColor" type="color" label="MOD_JDTESTIMONIALS_DESIGNATION_COLOR" description="MOD_JDTESTIMONIALS_DESIGNATION_COLOR_DESC" showon="customstyle:1" default="#e80e0e" />
+                <field name="designationColor" type="color" label="MOD_JDTESTIMONIALS_COMPANY_COLOR" description="MOD_JDTESTIMONIALS_COMPANY_COLOR_DESC" showon="customstyle:1" default="#e80e0e" />
                 <field name="reviewColor" type="color" label="MOD_JDTESTIMONIALS_REVIEW_COLOR" description="MOD_JDTESTIMONIALS_REVIEW_COLOR_DESC" showon="customstyle:1" default="#e80e0e" />
                 <field name="note4" type="note" showon="customstyle:1" label="MOD_JDTESTIMONIALS_SIZES" description="MOD_JDTESTIMONIALS_SIZES_DESC" />
                 <field name="nameSize" type="number" min="10" label="MOD_JDTESTIMONIALS_NAME_SIZE" description="MOD_JDTESTIMONIALS_NAME_SIZE_DESC" showon="customstyle:1" default="10" />
-                <field name="designationSize" type="number" min="10" label="MOD_JDTESTIMONIALS_DESIGNATION_SIZE" description="MOD_JDTESTIMONIALS_DESIGNATION_SIZE_DESC" showon="customstyle:1" default="10" />
+                <field name="designationSize" type="number" min="10" label="MOD_JDTESTIMONIALS_COMPANY_NAME_SIZE" description="MOD_JDTESTIMONIALS_COMPANY_NAME_SIZE" showon="customstyle:1" default="10" />
                 <field name="reviewSize" type="number" min="10" label="MOD_JDTESTIMONIALS_REVIEW_SIZE" description="MOD_JDTESTIMONIALS_REVIEW_SIZE_DESC" showon="customstyle:1" default="10" />
             </fieldset>
             <fieldset name="advanced">
