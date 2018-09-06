@@ -61,13 +61,14 @@
             </field>
             <field
                 name="symbolPosition" 
-                type="list"
+                type="radio"
                 label="MOD_JD_SKILLSET_SYMBOL_POSITION_LABEL"
+				class="btn-group btn-group-yesno"
                 description="MOD_JD_SKILLSET_SYMBOL_POSITION_DESC"
-                default="sup"
+                default="default"
             >
+                <option value="default">default</option>
                 <option value="sup">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
-                <option value="sub">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
             </field>
 			<field 
 				name="customsColor"

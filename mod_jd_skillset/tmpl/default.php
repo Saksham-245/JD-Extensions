@@ -93,7 +93,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 						<?php } ?>
 					</div>
 				<?php } ?>
-				<?php if(!empty($skillset->skillset_icon_upload) or !empty($skillset->skillset_icon_icon) ) {?>
+				<?php if(!empty($skillset->skillset_icon_upload) AND !empty($skillset->skillset_icon_icon) ) {?>
                 <div class="counter-icon">
                     <?php  if($skillset->skillset_icon_option == 'upload') { ?>
 						<?php if(!empty($skillset->skillset_icon_upload)) {?>

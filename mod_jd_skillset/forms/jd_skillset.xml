@@ -2,7 +2,7 @@
 <form>
    <fieldset name="jd_skillset" label="MOD_JD_SKILLSET_CREATE_LABE">
         <field name="skillset_title"
-		required="true"
+				required="true"
                 label="MOD_JD_SKILLSET_TITLE_LABEL"
                 type="text"  />
         <field name="skillset_number"
