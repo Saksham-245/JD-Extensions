@@ -13,12 +13,12 @@
       <filename module="mod_jd_skillset">mod_jd_skillset.php</filename>
       <folder>tmpl</folder>
       <folder>forms</folder>
-      <folder>assets</folder>
       <folder>fields</folder>
       <filename>helper.php</filename>
    </files>
     <media folder="media" destination="mod_jd_skillset">
         <folder>images</folder>
+         <folder>css</folder>
     </media>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jd_skillset.ini</language>

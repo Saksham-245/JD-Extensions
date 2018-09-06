@@ -1,0 +1,21 @@
+
+@media (min-width: 992px){
+	.border-lg-right {
+		border-right: 1px solid #dee2e6 !important;
+	}
+}
+
+/* Skill Counter
+=========================== */
+.counter-sub-container .counter-wrapper .counter-icon {
+	font-size: 52px;
+	line-height: 1;
+}
+.counter-sub-container .counter-wrapper .counter-text-container .counter-title {
+	margin: 0 0 5px;
+}
+.counter-sub-container .counter-wrapper .counter-text-container .counter-number {
+	font-size: 40px;
+	line-height: 1;
+	margin: 0;
+}

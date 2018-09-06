@@ -23,20 +23,7 @@ $i=0; foreach($skillsets as $skillset){$i++;}
 if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==4){$count=3;}
 ?>
 <style>
-/* Skill Counter
-=========================== */
-.counter-sub-container .counter-wrapper .counter-icon {
-	font-size: 52px;
-	line-height: 1;
-}
-.counter-sub-container .counter-wrapper .counter-text-container .counter-title {
-	margin: 0 0 5px;
-}
-.counter-sub-container .counter-wrapper .counter-text-container .counter-number {
-	font-size: 40px;
-	line-height: 1;
-	margin: 0;
-}
+
   <?php if($customsSize=="true") {?>
 	 #skillset-<?php echo $module->id; ?> .counter-title{
 		font-size:<?php echo $titleSize; ?>px;
