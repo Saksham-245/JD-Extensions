@@ -14,22 +14,6 @@ $active = TRUE;
 ?>
 
 <style type="text/css">
-.testimonials-wrap {
-	padding: 30px;
-	border: 1px solid #eeeeee;
-}
-.testimonials-wrap .client-img {
-	margin-top: 30px;
-}
-.testimonials-wrap .client-img .author-img img {
-	margin: auto;
-}
-.testimonials-wrap .client-img .author-info {
-	margin-top: 30px;
-}
-.testimonials-wrap .client-img .author-info .name {
-	margin-bottom: 5px;
-}
 .testimonial-<?php echo $module->id; ?> .slick-dots li button:before {
 	color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
 }

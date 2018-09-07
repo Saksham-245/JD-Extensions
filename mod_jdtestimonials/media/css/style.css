@@ -15,14 +15,23 @@
 /* Style Two Template */
 .style-two .slick-slide {
   background: #fff;
+  padding: 30px;
   margin: 0px 15px;
   border: 1px solid #d3d3d3;
   height: auto;
 }
-.testimonials-wrap {
-	display: none;
+.style-two .testimonials-wrap .client-img {
+	margin-top: 30px;
 }
-
+.style-two .testimonials-wrap .client-img .author-img img {
+	margin: auto;
+}
+.style-two .testimonials-wrap .client-img .author-info {
+	margin-top: 30px;
+}
+.style-two .testimonials-wrap .client-img .author-info .name {
+	margin-bottom: 5px;
+}
 /* Responsive Css */
 @media (max-width: 1000px){
 	.slick-prev, .slick-next {
