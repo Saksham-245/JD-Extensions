@@ -61,6 +61,21 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
     <?php foreach($skillsets as $skillset) : ?>
         <div class="col-12 col-lg-<?php echo $count;?>" id="skillset-<?php echo $module->id; ?>">
             <div class="counter-wrapper">
+				<?php if($params->get('IconPosition') == 'above') { ?>
+						<?php  if($skillset->skillset_icon_option == 'upload') { ?>
+							<?php if(!empty($skillset->skillset_icon_upload)) {?>
+								<div class="counter-icon">
+									<img src="<?php  echo $skillset->skillset_icon_upload; ?>"></img>
+								</div>
+							<?php } ?>
+						<?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
+							<?php if(!empty($skillset->skillset_icon_icon)) {?>
+									<div class="counter-icon">
+										<i class="<?php  echo $skillset->skillset_icon_icon; ?> count-icon" alt="icon"></i>
+									</div>
+							<?php }?>
+						<?php }?>
+					<?php } ?>
 				<?php if(!empty($skillset->skillset_title) or !empty($skillset->skillset_number)) { ?>
 					<div class="counter-text-container">
 						<?php if($numberPosition=='above'){ ?>
@@ -93,19 +108,21 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 						<?php } ?>
 					</div>
 				<?php } ?>
-				<?php if(!empty($skillset->skillset_icon_upload) AND !empty($skillset->skillset_icon_icon) ) {?>
-                <div class="counter-icon">
-                    <?php  if($skillset->skillset_icon_option == 'upload') { ?>
-						<?php if(!empty($skillset->skillset_icon_upload)) {?>
-							<img src="<?php  echo $skillset->skillset_icon_upload; ?>"></img>
-						<?php } ?>
-					 <?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
-						<?php if(!empty($skillset->skillset_icon_icon)) {?>
-							<i class="<?php  echo $skillset->skillset_icon_icon; ?> count-icon" alt="icon"></i>
+				<?php if($params->get('IconPosition') == 'below') { ?>
+						<?php  if($skillset->skillset_icon_option == 'upload') { ?>
+							<?php if(!empty($skillset->skillset_icon_upload)) {?>
+								<div class="counter-icon">
+									<img src="<?php  echo $skillset->skillset_icon_upload; ?>"></img>
+								</div>
+							<?php } ?>
+						<?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
+							<?php if(!empty($skillset->skillset_icon_icon)) {?>
+									<div class="counter-icon">
+										<i class="<?php  echo $skillset->skillset_icon_icon; ?> count-icon" alt="icon"></i>
+									</div>
+							<?php }?>
 						<?php }?>
-					 <?php }?>
-                </div>
-				 <?php }?>
+					<?php } ?>
             </div>
         </div>
     <?php endforeach; ?> 

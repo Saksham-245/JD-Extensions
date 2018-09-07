@@ -37,6 +37,17 @@
          </fieldset>
          <fieldset name="options">
             <field
+                name="IconPosition" 
+                type="radio"
+				class="btn-group btn-group-yesno"
+                label="MOD_JD_SKILLSET_ICON_POSITION_LABEL"
+                description="MOD_JD_SKILLSET_ICON_POSITION_LABEL"
+                default="below"
+            >
+                <option value="above">MOD_JD_SKILLSET_NUMBER_POSITION_ABOVE</option>
+                <option value="below">MOD_JD_SKILLSET_NUMBER_POSITION_BELOW</option>
+            </field>
+            <field
                 name="numberPosition" 
                 type="radio"
 				class="btn-group btn-group-yesno"
@@ -67,7 +78,7 @@
                 description="MOD_JD_SKILLSET_SYMBOL_POSITION_DESC"
                 default="default"
             >
-                <option value="default">default</option>
+                <option value="default">MOD_JD_SKILLSET_SYMBOL_POSITION_DEFAULT</option>
                 <option value="sup">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
             </field>
 			<field 
