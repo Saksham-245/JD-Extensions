@@ -84,7 +84,7 @@ class JFormFieldJdthumbnailradio extends JFormFieldList
 				$label = explode('|',$option->text);
 				
 				
-                $html .= '<label for="' . $oid . '" ' . $optionClass . '><img src="'.JURI::root().$label[0].'" width="150" />'  . $label[1] . '</label>';
+                $html .= '<label for="' . $oid . '" ' . $optionClass . ' style="font-size:0; margin-right: 25px; float: left; "><img src="'.JURI::root().$label[0].'" width="150" />'  . $label[1] . '</label>';
             endforeach;
         endif;
         $html .= '</fieldset>';

@@ -33,11 +33,7 @@
                default="grid_layout"
             >
                <option value="grid_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID</option>
-               <option value="grid_circle_layout"> MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID_CIRCLE</option>
-               <option value="grid_hover_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID_HOVER </option>
                <option value="carousel_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL</option>
-               <option value="carousel_circle_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL_CIRCLE</option>
-               <option value="carousel_hover_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL_HOVER</option>
                <option value="list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
                <option value="table">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_TABLE</option>
             </field>  
@@ -56,9 +52,13 @@
                <option value="3">J4</option>
                <option value="2">J6</option>
             </field> 
-            <field name="select_view" type="hidden" label="Select Layouts"  showon="template:table" description="Select Layouts" default="view2">
-                <option value="default">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|Style - 1</option>
-                <option value="view2">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|Style - 2</option>
+            <field name="grid_template" type="jdthumbnailradio" label="Select Layouts"  showon="template:grid_layout" description="Select Layouts" default="grid_circle_layout">
+                <option value="grid_circle_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|  Grid Circle Layout</option>
+                <option value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|   Grid Hover Layout </option>
+             </field>
+            <field name="carousel_template" type="jdthumbnailradio" label="Select Layouts"  showon="template:carousel_layout" description="Select Layouts" default="carousel_circle_layout">
+                <option value="carousel_circle_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
+                <option value="carousel_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
             <field
                name="enable_link"
@@ -118,13 +118,13 @@
 
             <field
                 name="designations"
-                type="sql"
+                type="hidden"
                 query="SELECT id, title FROM #__jdprofiles_designation"
-                label="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_LABEL"
+                label="MOD_PROFILE_SHOWCASE_FILTER_DESIGNATION_LABEL"
                 key_field="title"
                 value_field="title"
                 multiple="multiple"
-                description="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_DESC"
+                description="MOD_PROFILE_SHOWCASE_FILTER_DESIGNATION_DESC"
             />
          </fieldset>
          <fieldset name="options">
@@ -285,15 +285,8 @@
          </fieldset>
          <fieldset name="advanced">
             <field
-               name="layout"
-               type="modulelayout"
-               label="JFIELD_ALT_LAYOUT_LABEL"
-               description="JFIELD_ALT_MODULE_LAYOUT_DESC"
-               default="default"
-            />
-            <field
                name="load_bootstrap"
-               type="radio"
+               type="hidden"
                label="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
                description="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
                default="1"
@@ -302,6 +295,7 @@
                <option value="1">JYES</option>
                <option value="0">JNO</option>
             </field>
+             <field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
          </fieldset>
       </fields>
    </config>

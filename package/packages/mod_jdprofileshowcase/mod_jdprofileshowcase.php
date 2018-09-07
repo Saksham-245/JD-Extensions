@@ -16,9 +16,16 @@
 defined('_JEXEC') or die;
 // Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
-$layout = $params->get('template', 'table');
+
+if($params->get('template') == 'grid_layout'){
+    $layout=$params->get('grid_template');
+}elseif($params->get('template') == 'carousel_layout'){
+    $layout=$params->get('carousel_template');
+}else{
+    $layout=$params->get('template');
+}
 $display_all = $params->get('display_all');
-$designations = $params->get('designations');
+//$designations = $params->get('designations');
 $gutter_space = $params->get('gutter_space'); 
 $margin = $params->get('margin'); 
 if($display_all){
@@ -29,6 +36,6 @@ if($display_all){
 }
 
 $profilesClass  = new modJdprofileShowcaseHelper();
-$profiles = $profilesClass->profiles($limit,$designations);
+$profiles = $profilesClass->profiles($limit);
          
 require JModuleHelper::getLayoutPath('mod_jdprofileshowcase', $layout);
