@@ -2,6 +2,7 @@
 <form>
   <fieldset addfieldpath="administrator/components/com_jdprofiles/models/fields">
     <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="note1" type="note" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC" description="COM_JDPROFILES_FORM_DESC_PROFILE_BASIC" hint="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC"/>
     <field name="name" filter="safehtml" type="text" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_NAME" description="COM_JDPROFILES_FORM_DESC_PROFILE_NAME" hint="COM_JDPROFILES_FORM_LBL_PROFILE_NAME"/>
     <field name="alias"  type="text" class="inputbox" generator="name"  label="COM_JDPROFILES_FORM_LBL_PROFILE_ALIAS" description="COM_JDPROFILES_FORM_DESC_PROFILE_ALIAS" />
     <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
@@ -10,6 +11,7 @@
       <option value="2">JARCHIVED</option>
       <option value="-2">JTRASHED</option>
     </field>
+    <field name="note2" type="note" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_CONTACT" description="COM_JDPROFILES_FORM_DESC_PROFILE_CONTACT" hint="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC"/>
     <field name="email" validate="email" type="email" label="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL" description="COM_JDPROFILES_FORM_DESC_PROFILE_EMAIL" hint="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL"/>
     <field name="phone" filter="safehtml" type="tel" label="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE" description="COM_JDPROFILES_FORM_DESC_PROFILE_PHONE" hint="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE"/>
     <field name="designation" type="sql"  query="SELECT id, title FROM #__jdprofiles_designation" key_field="title" value_field="title" label="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_DESIGNATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION"/>

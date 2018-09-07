@@ -8,6 +8,9 @@
     <authorEmail>info@joomdev.com</authorEmail>
     <authorUrl>https://www.joomdev.com</authorUrl>
     <version>1.0.0</version>
+    <updateservers>
+		<server type="extension" name="com_jdprofiles" priority="1">https://cdn.joomdev.com/extensionupdates/com_jdprofiles.xml</server>
+	</updateservers>
     <description></description>
     
     <install> <!-- Runs on install -->
