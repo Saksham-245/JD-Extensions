@@ -10,6 +10,8 @@ defined('_JEXEC') or die;
 // Style Sheet
 $doc = JFactory::getDocument();
 $doc->addStyleSheet(JURI::root().'media/mod_jdtestimonials/css/style.css');
+$doc->addStyleSheet(JURI::root().'media/mod_jdtestimonials/css/slick.css');
+$doc->addStyleSheet(JURI::root().'media/mod_jdtestimonials/css/slick-theme.css');
 class modJDTestimonialsHelper {
    
 }

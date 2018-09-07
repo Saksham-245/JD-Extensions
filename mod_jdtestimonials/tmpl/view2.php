@@ -12,6 +12,7 @@ $hoverColor = $params->get('hoverColor');
 $items = (array) $items;
 $active = TRUE;
 ?>
+
 <style type="text/css">
 .testimonials-wrap {
 	padding: 30px;
@@ -29,15 +30,6 @@ $active = TRUE;
 .testimonials-wrap .client-img .author-info .name {
 	margin-bottom: 5px;
 }
-.style-two .slick-slide {
-	margin: 0px 15px;
-}
-.style-two .slick-dots {
-	margin-top: 20px;
-}
-.style-two .slick-dots li button:before {
-	font-size: 20px;
-} 
 .testimonial-<?php echo $module->id; ?> .slick-dots li button:before {
 	color: <?php if($NormalColor1=="defualt") { echo '#1c60ff'; }else {echo $NormalColor1; } ?>;
 }

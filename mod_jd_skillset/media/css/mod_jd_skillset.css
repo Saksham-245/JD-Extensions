@@ -1,24 +1,26 @@
+.counter-sub-container > div {
+	margin: 40px 0;
+}
 .counter-wrapper .counter-text-container {
 	text-align: center;
 }
-.counter-wrapper .counter-text-container .counter-number {
-	display: flex;
-	justify-content: center;
-}
-/* Skill Counter
-=========================== */
 .counter-sub-container .counter-wrapper .counter-text-container .counter-number {
 	line-height: 1;
 	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+.counter-sub-container .counter-wrapper .counter-text-container .counter-number .symbol {
+	margin-left: 5px;
 }
 .counter-sub-container .counter-wrapper .counter-text-container .counter-number sup {
-	top: -0.1rem;
+	top: -8px;
 }
 .counter-sub-container .counter-wrapper .counter-text-container .counter-number + .counter-title {
 	margin-top: 10px;
 }
 .counter-sub-container .counter-wrapper .counter-text-container .counter-title + .counter-number {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .counter-sub-container .counter-wrapper .counter-text-container .counter-title {
 	margin: 0;
@@ -26,8 +28,14 @@
 .counter-sub-container .counter-wrapper .counter-icon {
 	line-height: 1;
 	text-align: center;
+}
+.counter-sub-container .counter-wrapper .counter-text-container + .counter-icon {
+	margin-top: 20px;
+}
+.counter-sub-container .counter-wrapper .counter-icon + .counter-text-container {
 	margin-top: 20px;
 }
 .counter-sub-container .counter-wrapper .counter-icon img {
 	display: inline-block;
 }
+

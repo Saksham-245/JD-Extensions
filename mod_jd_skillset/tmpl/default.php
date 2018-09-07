@@ -59,7 +59,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 </style>
 <div id="jd_skillset<?php echo $module->id; ?>" class="row counter-sub-container skillset-not-counted">
     <?php foreach($skillsets as $skillset) : ?>
-        <div class="col-12 col-lg-<?php echo $count;?>" id="skillset-<?php echo $module->id; ?>">
+        <div class="col-12 col-md-6  col-lg-<?php echo $count;?>" id="skillset-<?php echo $module->id; ?>">
             <div class="counter-wrapper">
 				<?php if($params->get('IconPosition') == 'above') { ?>
 						<?php  if($skillset->skillset_icon_option == 'upload') { ?>
