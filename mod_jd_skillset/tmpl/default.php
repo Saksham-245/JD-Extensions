@@ -108,18 +108,13 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 						<?php } ?>
 					</div>
 				<?php } ?>
-<<<<<<< HEAD
 				<?php if($params->get('IconPosition') == 'below') { ?>
 						<?php  if($skillset->skillset_icon_option == 'upload') { ?>
-=======
-				<?php  if($skillset->skillset_icon_option == 'upload') { ?>
->>>>>>> 7960f6190e849d436253cfef6d2f3a5bc5fa2df1
 							<?php if(!empty($skillset->skillset_icon_upload)) {?>
 								<div class="counter-icon">
 									<img src="<?php  echo $skillset->skillset_icon_upload; ?>"></img>
 								</div>
 							<?php } ?>
-<<<<<<< HEAD
 						<?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
 							<?php if(!empty($skillset->skillset_icon_icon)) {?>
 									<div class="counter-icon">
@@ -128,15 +123,6 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 							<?php }?>
 						<?php }?>
 					<?php } ?>
-=======
-					<?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
-						<?php if(!empty($skillset->skillset_icon_icon)) {?>
-							<div class="counter-icon">
-								<i class="<?php  echo $skillset->skillset_icon_icon; ?> count-icon" alt="icon"></i>
-							</div>
-						<?php }?>
-					<?php }?>
->>>>>>> 7960f6190e849d436253cfef6d2f3a5bc5fa2df1
             </div>
         </div>
     <?php endforeach; ?> 
