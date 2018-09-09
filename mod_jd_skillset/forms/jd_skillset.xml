@@ -30,7 +30,7 @@
                 type="text" />
         <field
                 name="skillset_enable_symbol"
-                type="list"
+                type="radio"
                 label="MOD_JD_SKILLSET_ENABLE_SYMBOL_LABEL"
                 class="btn-group btn-group-yesno" 
                 description="MOD_JD_SKILLSET_ENABLE_SYMBOL_DESC"
