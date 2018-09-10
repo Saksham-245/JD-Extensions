@@ -24,7 +24,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 ?>
 <style>
 
-  <?php if($customsSize=="true") {?>
+  <?php if($customsSize) {?>
 	 #skillset-<?php echo $module->id; ?> .counter-title{
 		font-size:<?php echo $titleSize; ?>px;
 	 } 
@@ -39,7 +39,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 	 }
   <?php } ?>
   
-  <?php if($customsColor=="true") {?>
+  <?php if($customsColor) {?>
 	 #skillset-<?php echo $module->id; ?> .counter-title{
 		color:<?php echo $titleColor; ?>;
 	 } 
