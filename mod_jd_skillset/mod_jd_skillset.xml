@@ -23,6 +23,11 @@
 		<language tag="en-GB">en-GB/en-GB.mod_jd_skillset.ini</language>
 		<language tag="en-GB">en-GB/en-GB.mod_jd_skillset.sys.ini</language>
 	</languages>
+
+   <updateservers>
+		<server type="extension" name="mod_jd_skillset" priority="1">https://cdn.joomdev.com/extensionupdates/mod_jd_skillset.xml</server>
+	</updateservers>
+
 	<config>
 		<fields name="params">
 			<fieldset name="basic" addfieldpath="/modules/mod_jd_skillset/fields">
