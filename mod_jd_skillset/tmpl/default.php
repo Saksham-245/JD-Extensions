@@ -123,6 +123,21 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 							<?php }?>
 						<?php }?>
 					<?php } ?>
+					<?php if($params->get('IconPosition') == 'left' or $params->get('IconPosition') == 'right') { ?>
+						<?php  if($skillset->skillset_icon_option == 'upload') { ?>
+							<?php if(!empty($skillset->skillset_icon_upload)) {?>
+								<div class="counter-icon">
+									<img src="<?php  echo $skillset->skillset_icon_upload; ?>"></img>
+								</div>
+							<?php } ?>
+						<?php }elseif($skillset->skillset_icon_option == 'icon'){ ?>
+							<?php if(!empty($skillset->skillset_icon_icon)) {?>
+									<div class="counter-icon">
+										<i class="<?php  echo $skillset->skillset_icon_icon; ?> count-icon" alt="icon"></i>
+									</div>
+							<?php }?>
+						<?php }?>
+					<?php } ?>
             </div>
         </div>
     <?php endforeach; ?> 
