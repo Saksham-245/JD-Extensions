@@ -59,18 +59,6 @@
                 <option value="below">MOD_JD_SKILLSET_NUMBER_POSITION_BELOW</option>
             </field>
             <field
-                name="iconPosition" 
-                type="hidden"
-                label="MOD_JD_SKILLSET_ICON_POSITION_LABEL"
-                description="MOD_JD_SKILLSET_ICON_POSITION_DESC"
-                default="top"
-            >
-                <option value="top">Top</option>
-                <option value="right">Right</option>
-                <option value="bottom">Bottom</option>
-                <option value="left">Left</option>
-            </field>
-            <field
                 name="symbolPosition" 
                 type="radio"
                 label="MOD_JD_SKILLSET_SYMBOL_POSITION_LABEL"
@@ -78,7 +66,7 @@
                 description="MOD_JD_SKILLSET_SYMBOL_POSITION_DESC"
                 default="default"
             >
-                <option value="default">MOD_JD_SKILLSET_SYMBOL_POSITION_DEFAULT</option>
+                <option value="default">JDEFAULT</option>
                 <option value="sup">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
             </field>
 			<field 
