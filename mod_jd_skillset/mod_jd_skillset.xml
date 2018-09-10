@@ -36,9 +36,9 @@
 			<fieldset name="options">
 				<field name="IconPosition" type="radio" class="btn-group btn-group-yesno" label="MOD_JD_SKILLSET_ICON_POSITION_LABEL" description="MOD_JD_SKILLSET_ICON_POSITION_LABEL" default="top">
 					<option value="top">MOD_JD_SKILLSET_ICON_POSITION_TOP</option>
+					<option value="right">JGLOBAL_RIGHT</option>
 					<option value="bottom">MOD_JD_SKILLSET_ICON_POSITION_BOTTOM</option>
 					<option value="left">JGLOBAL_LEFT</option>
-					<option value="right">JGLOBAL_RIGHT</option>
 				</field>
 				<field name="numberPosition" type="radio" class="btn-group btn-group-yesno" label="MOD_JD_SKILLSET_NUMBER_POSITION_LABEL" description="MOD_JD_SKILLSET_NUMBER_POSITION_DESC" default="below">
 					<option value="above">MOD_JD_SKILLSET_NUMBER_POSITION_ABOVE</option>

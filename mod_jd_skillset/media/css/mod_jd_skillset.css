@@ -86,5 +86,5 @@
 	text-align: left;
 }
 .counter-sub-container.jd-icon-position-right .counter-wrapper .counter-text-container .counter-number {
-	justify-content: start;
+	justify-content: flex-end;
 }
