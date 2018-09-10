@@ -48,7 +48,7 @@
 					<option value="default">JDEFAULT</option>
 					<option value="sup">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
 				</field>
-				<field name="customsColor" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_JD_SKILLSET_CUSTOM_COLORS_label">
+				<field name="customsColor" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_JD_SKILLSET_CUSTOM_COLORS_label">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
@@ -57,7 +57,7 @@
 				<field name="numberColor" type="color" label="MOD_JD_SKILLSET_NUMBER_COLOR_LABEL" description="" showon="customsColor:1" default="#373738" />
 				<field name="symbolColor" type="color" label="MOD_JD_SKILLSET_SYMBOL_COLOR_LABEL" description="" showon="customsColor:1" default="#373738" />
 				<field name="iconColor" type="color" label="MOD_JD_SKILLSET_ICON_COLOR_LABEL" description="" showon="customsColor:1" default="#03a9f5" />
-				<field name="customsSize" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_JD_SKILLSET_CUSTOM_SIZE_LABEL">
+				<field name="customsSize" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_JD_SKILLSET_CUSTOM_SIZE_LABEL">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
