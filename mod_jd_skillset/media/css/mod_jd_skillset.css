@@ -42,49 +42,49 @@
 	display: inline-block;
 }
 /** if icon left **/
-.counter-sub-container.icon-position-left .counter-wrapper {
+.counter-sub-container.jd-icon-position-left .counter-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.counter-sub-container.icon-position-left .counter-wrapper .counter-icon {
+.counter-sub-container.jd-icon-position-left .counter-wrapper .counter-icon {
 	text-align: left;
 	margin-right: 15px;
 }
-.counter-sub-container.icon-position-left .counter-wrapper .counter-text-container {
+.counter-sub-container.jd-icon-position-left .counter-wrapper .counter-text-container {
 	margin-top: 0px;
 	text-align: left;
 }
-.counter-sub-container.icon-position-left .counter-wrapper .counter-text-container .counter-number {
+.counter-sub-container.jd-icon-position-left .counter-wrapper .counter-text-container .counter-number {
 	justify-content: start;
 }
 @media only screen and (max-width:767px) {
-	.counter-sub-container.icon-position-left, .counter-sub-container.icon-position-right {
+	.counter-sub-container.jd-icon-position-left, .counter-sub-container.jd-icon-position-right {
 		max-width: 300px;
 		margin: 0 auto;
 	}
-	.counter-sub-container.icon-position-left .counter-wrapper,  
-	.counter-sub-container.icon-position-right .counter-wrapper{
+	.counter-sub-container.jd-icon-position-left .counter-wrapper,  
+	.counter-sub-container.jd-icon-position-right .counter-wrapper{
 	display: flex;
 	align-items: center;
 	justify-content: start;
 	}
 }
 /** if icon right **/
-.counter-sub-container.icon-position-right .counter-wrapper {
+.counter-sub-container.jd-icon-position-right .counter-wrapper {
 	display: flex;
 	align-items: center;
 	flex-direction: row-reverse; 
 	justify-content: center;
 }
-.counter-sub-container.icon-position-right .counter-wrapper .counter-icon {
+.counter-sub-container.jd-icon-position-right .counter-wrapper .counter-icon {
 	text-align: left;
 	margin-left: 15px;
 }
-.counter-sub-container.icon-position-right .counter-wrapper .counter-text-container {
+.counter-sub-container.jd-icon-position-right .counter-wrapper .counter-text-container {
 	margin-top: 0px;
 	text-align: left;
 }
-.counter-sub-container.icon-position-right .counter-wrapper .counter-text-container .counter-number {
+.counter-sub-container.jd-icon-position-right .counter-wrapper .counter-text-container .counter-number {
 	justify-content: start;
 }
