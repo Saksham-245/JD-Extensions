@@ -48,6 +48,14 @@
 					<option value="default">JDEFAULT</option>
 					<option value="sup">MOD_JD_SKILLSET_SYMBOL_POSITION_SUP</option>
 				</field>
+				<field name="load_bootstrap" type="radio" label="MOD_JD_SKILLSET_LOAD_BOOTSTRAP_LBL" description="MOD_JD_SKILLSET_LOAD_BOOTSTRAP_DESC" default="1" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="load_fontawesome" type="radio" label="MOD_JD_SKILLSET_LOAD_FONT_AWESOME_LBL" description="MOD_JD_SKILLSET_LOAD_FONT_AWESOME_DESC" default="1" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field name="customsColor" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_JD_SKILLSET_CUSTOM_COLORS_label">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
@@ -69,10 +77,6 @@
 			</fieldset>
 			<fieldset name="advanced">
 				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
-				<field name="load_bootstrap" type="radio" label="MOD_JD_SKILLSET_LOAD_BOOTSTRAP_LBL" description="MOD_JD_SKILLSET_LOAD_BOOTSTRAP_DESC" default="1" class="btn-group btn-group-yesno">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
 				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
 			</fieldset>
 		</fields>
