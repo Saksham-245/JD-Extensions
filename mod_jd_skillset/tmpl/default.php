@@ -57,11 +57,11 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 /*# sourceMappingURL=style.css.map */
 
 </style>
-<div id="jd_skillset<?php echo $module->id; ?>" class="row counter-sub-container skillset-not-counted">
+<div id="jd_skillset<?php echo $module->id; ?>" class="row counter-sub-container skillset-not-counted <?php if($params->get('IconPosition')=='left') echo 'left'; ?><?php if($params->get('IconPosition')=='right') echo 'right'; ?> ">
     <?php foreach($skillsets as $skillset) : ?>
         <div class="col-12 col-md-6  col-lg-<?php echo $count;?>" id="skillset-<?php echo $module->id; ?>">
             <div class="counter-wrapper">
-				<?php if($params->get('IconPosition') == 'above') { ?>
+				<?php if($params->get('IconPosition') == 'top') { ?>
 						<?php  if($skillset->skillset_icon_option == 'upload') { ?>
 							<?php if(!empty($skillset->skillset_icon_upload)) {?>
 								<div class="counter-icon">
@@ -108,7 +108,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 						<?php } ?>
 					</div>
 				<?php } ?>
-				<?php if($params->get('IconPosition') == 'below') { ?>
+				<?php if($params->get('IconPosition') == 'bottom') { ?>
 						<?php  if($skillset->skillset_icon_option == 'upload') { ?>
 							<?php if(!empty($skillset->skillset_icon_upload)) {?>
 								<div class="counter-icon">

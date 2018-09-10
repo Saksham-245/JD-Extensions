@@ -42,10 +42,12 @@
 				class="btn-group btn-group-yesno"
                 label="MOD_JD_SKILLSET_ICON_POSITION_LABEL"
                 description="MOD_JD_SKILLSET_ICON_POSITION_LABEL"
-                default="below"
+                default="top"
             >
-                <option value="above">MOD_JD_SKILLSET_NUMBER_POSITION_ABOVE</option>
-                <option value="below">MOD_JD_SKILLSET_NUMBER_POSITION_BELOW</option>
+                <option value="top">MOD_JD_SKILLSET_ICON_POSITION_TOP</option>
+                <option value="bottom">MOD_JD_SKILLSET_ICON_POSITION_BOTTOM</option>
+                <option value="left">MOD_JD_SKILLSET_ICON_POSITION_LEFT</option>
+                <option value="right">MOD_JD_SKILLSET_ICON_POSITION_RIGHT</option>
             </field>
             <field
                 name="numberPosition" 
