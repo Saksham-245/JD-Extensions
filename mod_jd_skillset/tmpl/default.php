@@ -57,7 +57,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 /*# sourceMappingURL=style.css.map */
 
 </style>
-<div id="jd_skillset<?php echo $module->id; ?>" class="row counter-sub-container skillset-not-counted <?php if($params->get('IconPosition')=='left') echo 'left'; ?><?php if($params->get('IconPosition')=='right') echo 'right'; ?> ">
+<div id="jd_skillset<?php echo $module->id; ?>" class="row counter-sub-container skillset-not-counted <?php if($params->get('IconPosition')=='left') echo 'icon-position-left'; ?><?php if($params->get('IconPosition')=='right') echo 'icon-position-right'; ?> ">
     <?php foreach($skillsets as $skillset) : ?>
         <div class="col-12 col-md-6  col-lg-<?php echo $count;?>" id="skillset-<?php echo $module->id; ?>">
             <div class="counter-wrapper">
@@ -162,7 +162,6 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 				initskillsetcounter(_element);
 			}
 		};
-		
 		$(docReady);
 		$(window).scroll(winScroll);
 	})(jQuery);
