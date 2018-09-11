@@ -17,14 +17,14 @@ $numberSize = $params->get('numberSize',40);
 $symbolSize = $params->get('symbolSize',40);
 $iconSize = $params->get('iconSize',52);
 
-$customsColor = $params->get('customsColor');
-$customsSize = $params->get('customsSize');
+$customsStyle = $params->get('customsStyle');
+$customsStyle = $params->get('customsStyle');
 $i=0; foreach($skillsets as $skillset){$i++;}
 if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==4){$count=3;}
 ?>
 <style>
 
-<?php if($customsSize) {?>
+<?php if($customsStyle) {?>
 	 #skillset-<?php echo $module->id; ?> .counter-title{
 		font-size:<?php echo $titleSize; ?>px;
 	 } 
@@ -39,7 +39,7 @@ if($i==1){$count=12;}elseif($i==2){$count=6;}elseif($i==3){$count=4;}elseif($i==
 	 }
 <?php } ?>
 
-<?php if($customsColor) {?>
+<?php if($customsStyle) {?>
 	#skillset-<?php echo $module->id; ?> .counter-title{
 		color:<?php echo $titleColor; ?>;
 	 } 
