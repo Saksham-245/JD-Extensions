@@ -88,3 +88,8 @@
 .counter-sub-container.jd-icon-position-right .counter-wrapper .counter-text-container .counter-number {
 	justify-content: flex-end;
 }
+@media only screen and (max-width:767px) {
+	.counter-sub-container.jd-icon-position-right .counter-wrapper {
+		justify-content: normal;
+	}
+}
