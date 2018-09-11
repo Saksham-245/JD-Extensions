@@ -1,0 +1,70 @@
+/*module me default class ye honi chahiye jd-pericing-table*/
+.pricing-card {
+	
+}
+.pricing-card .card {
+	border: 1px solid #f0f4fd;
+	border-radius: 0;
+	box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.07)
+}
+.pricing-card .card .card-header  {
+	border-radius: 0;
+	border-bottom: 0;
+	padding: 40px 20px;
+	text-align: center;
+	/* delet karna hai */color: #fff;
+}
+.pricing-card .card .card-header h2 {
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 10px;
+	/* delet karna hai */color: #fff;
+}
+.pricing-card .card .card-header p {
+	margin-bottom: 0;
+}
+.pricing-card .card .card-body {
+	padding: 0;
+	background: #fff;
+}
+.pricing-card .card .card-body ul {
+	padding-left: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+.pricing-card .card .card-body ul li {
+	border-bottom: 1px solid #dee2e6;
+	padding: 20px 20px;
+}
+.pricing-card .card .card-footer {
+	border-radius: 0;
+	border-top: 0;
+	padding: 20px 20px;
+	background: #fff;
+	text-align: center;
+}
+.pricing-card .card .card-footer .price {
+	margin-bottom: 20px;
+	/* delet karna hai */font-size: 36px;
+}
+.pricing-card .card .card-footer .price small {
+	font-size: 60%;
+}
+.pricing-card .card .card-footer .btn {
+	/* delet karna hai */background: transparent;
+	/* delet karna hai */border: solid 1px #000;
+	/* delet karna hai */color: #5e5e5f;
+	border-radius: 0;
+	padding: 15px 20px;
+}
+.pricing-card .card .card-footer .btn:hover,
+.pricing-card .card .card-footer .btn:focus {
+	/* delet karna hai */background: #1c60ff;
+	/* delet karna hai */color: #fff;
+	border-color: transparent;
+	box-shadow: none;
+}
+.pricing-card .card .card-footer .bottom-line {
+	    margin-top: 20px;
+		margin-bottom: 0;
+}

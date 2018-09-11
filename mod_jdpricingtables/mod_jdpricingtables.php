@@ -18,5 +18,5 @@ defined('_JEXEC') or die;
 require_once dirname(__FILE__) . '/helper.php';
 $layout = $params->get('layout', 'default');
 $document = JFactory::getDocument();
-$document->addStyleSheet(JURI::root() . 'modules/mod_jdpricingtables/assets/css/jdpricing.css');
+$document->addStyleSheet(JURI::root() . 'media/mod_jdpricingtables/css/jdpricing.css');
 require JModuleHelper::getLayoutPath('mod_jdpricingtables', $layout);

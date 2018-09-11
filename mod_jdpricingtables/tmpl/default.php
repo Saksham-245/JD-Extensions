@@ -13,7 +13,7 @@ $itemsInRow = $params->get('itemsInRow');
 				  <div class="card-header <?php if(!$pricingtable->headerBacground=="color") {echo 'bg-primary'; } ?>" style="<?php if($pricingtable->headerBacground=="color") {echo 'background: ' . $pricingtable->headerBacground_color;} elseif($pricingtable->headerBacground=="media"){ echo 'background: url('.$pricingtable->headerBacground_upload.') no-repeat;
 background-size: cover;';}?>">
 					<?php if(!empty($pricingtable->title))  { ?>
-						<h3 class=""><?php echo $pricingtable->title; ?></h3>
+						<h2 class=""><?php echo $pricingtable->title; ?></h2>
 					<?php } ?>
 					<?php if(!empty($pricingtable->subtitle))  { ?>
 						<p><?php echo $pricingtable->subtitle; ?></p>
@@ -23,23 +23,28 @@ background-size: cover;';}?>">
 				<?php if(!empty($pricingtable->description)){?>
 				  <div class="card-body">
 						<?php echo $pricingtable->description; ?>
+						<ul>
+							<li>Access to all templates</li>
+							<li>Access to all templates</li>
+							<li>Access to all templates</li>
+						</ul>
 				  </div>
 				<?php }	 ?>
 			<?php if(!empty($pricingtable->pricing) or  !empty($pricingtable->period) or !empty($pricingtable->button_text) or !empty($pricingtable->bottom_line)){?>
 				  <div class="card-footer">
 					  <?php if(!empty($pricingtable->pricing) and !empty($pricingtable->period) ){?>
-						<h3 class="mb-3" style="<?php if($pricingtable->pricingColor) {echo 'color: ' . $pricingtable->pricingColor;}?>"><?php echo $pricingtable->pricing; ?>
+						<div class="price" style="<?php if($pricingtable->pricingColor) {echo 'color: ' . $pricingtable->pricingColor;}?>"><?php echo $pricingtable->pricing; ?>
 						  <small><?php echo $pricingtable->period; ?></small>
-						</h3>
+						</div>
 					  <?php } ?>
 					  
 						<?php if(!empty($pricingtable->button_text)) {?>
-							<a href="<?php echo ($pricingtable->button_link) ? $pricingtable->button_link : '#'  ?>" class="btn btn-outline-primary btn-block"><?php echo $pricingtable->button_text; ?></a>
+							<a href="<?php echo ($pricingtable->button_link) ? $pricingtable->button_link : '#'  ?>" class="btn btn-block"><?php echo $pricingtable->button_text; ?></a>
 						<?php } ?>
 						
 						<?php if(!empty($pricingtable->bottom_line)) {?>
-							<p>
-							  <small class=""><?php echo $pricingtable->bottom_line; ?></small>
+							<p class="bottom-line">
+							  <?php echo $pricingtable->bottom_line; ?>
 							</p>
 						<?php } ?>
 				  </div>
