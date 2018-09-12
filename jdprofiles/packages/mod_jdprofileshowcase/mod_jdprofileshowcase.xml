@@ -42,11 +42,11 @@
             </field>   
             <field name="grid_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:grid_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="grid_circle_layout">
                 <option value="grid_circle_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|  Grid Circle Layout</option>
-                <option value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|   Grid Hover Layout </option>
+                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|   Grid Hover Layout </option>
              </field>
             <field name="carousel_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:carousel_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="carousel_circle_layout">
                 <option value="carousel_circle_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
-                <option value="carousel_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option  disabled="true" value="carousel_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
             <field
                name="grid_coloumns"
@@ -114,7 +114,7 @@
                min="1"
                showon="display_all:0"
                label="MOD_PROFILE_SHOWCASE_DISPLAY_PROFILE_LABEL"
-               description="MOD_PROFILE_SHOWCASE_DISPLAY_PROFILE_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_PROFILE_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             />

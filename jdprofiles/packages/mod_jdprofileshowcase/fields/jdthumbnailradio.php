@@ -54,7 +54,7 @@ class JFormFieldJdthumbnailradio extends JFormFieldList
             'relative' => true,
             'conditional' => 'lt IE 9'
         ));
-        $format = '<input type="radio" id="%1$s" name="%2$s" value="%3$s" %4$s />';
+        $format = '<input type="radio"  id="%1$s" name="%2$s" value="%3$s" %4$s />';
         $alt    = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $this->name);
         
         $html = '';
@@ -64,7 +64,7 @@ class JFormFieldJdthumbnailradio extends JFormFieldList
                 $checked     = ((string) $option->value === $this->value) ? 'checked="checked"' : '';
                 $optionClass = !empty($option->class) ? 'class="' . $option->class . '"' : '';
                 $disabled    = !empty($option->disable) || ($this->disabled && !$checked) ? 'disabled' : '';
-            // Initialize some JavaScript option attributes.
+                 // Initialize some JavaScript option attributes.
                 $onclick    = !empty($option->onclick) ? 'onclick="' . $option->onclick . '"' : '';
                 $onchange   = !empty($option->onchange) ? 'onchange="' . $option->onchange . '"' : '';
                 $oid        = $this->id . $i;
@@ -84,7 +84,7 @@ class JFormFieldJdthumbnailradio extends JFormFieldList
 				$label = explode('|',$option->text);
 				
 				
-                $html .= '<label for="' . $oid . '" ' . $optionClass . ' style="font-size:0; margin-right: 25px; float: left; "><img src="'.JURI::root().$label[0].'" width="150" />'  . $label[1] . '</label>';
+                $html .= '<label for="' . $oid . '" ' . $optionClass . ' style="font-size:0; margin-right: 25px; float: left;' . (!empty($disabled) ? 'opacity:0.6; background: #eee' : '') . ' "><img src="'.JURI::root().$label[0].'" width="150" />'  . $label[1] . '</label>';
             endforeach;
         endif;
         $html .= '</fieldset>';
