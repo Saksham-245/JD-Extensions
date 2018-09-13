@@ -18,11 +18,13 @@ defined('_JEXEC') or die;
 .card-img-overlayteam-member-bio{
   color:<?php echo  $params->get('shortBio'); ?>;
 }
+<?php if($params->get('social_icons')=="c") { ?>
 .jd-team-showcase-wrapper .social-profile li a {
   color: <?php echo $params->get('icon_color');?>;
   border: 1px solid <?php echo $params->get('icon_background');?>;
   background-color: <?php echo $params->get('icon_background');?>;
 }
+<?php } ?>
 </style>
   <section>
     <div class="container py-5">

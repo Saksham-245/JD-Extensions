@@ -143,6 +143,17 @@
                <option value="0">JNO</option>
             </field>
             <field
+               name="display_sbio"
+               type="radio"
+               label="Display Sbio"
+               description="Display Sbio"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
                name="display_designation"
                type="radio"
                label="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_LABEL"

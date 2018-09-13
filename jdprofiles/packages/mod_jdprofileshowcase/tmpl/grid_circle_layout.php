@@ -18,11 +18,13 @@ defined('_JEXEC') or die;
 .card-img-overlayteam-member-bio{
   color:<?php echo  $params->get('shortBio'); ?>;
 }
+<?php if($params->get('social_icons')=="c") { ?>
 .jd-team-showcase-wrapper .social-profile li a {
   color: <?php echo $params->get('icon_color');?>;
   border: 1px solid <?php echo $params->get('icon_background');?>;
   background-color: <?php echo $params->get('icon_background');?>;
 }
+<?php } ?>
 </style>
   <section>
     <div class="container py-5">
@@ -56,8 +58,10 @@ defined('_JEXEC') or die;
                                 </p>
                               <?php } ?>
                             <?php } ?>
-                            <?php if(!empty($profile->sbio)) { ?>    
-                              <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                            <?php if(!empty($profile->sbio)) { ?>
+                              <?php if($params->get('display_sbio')) { ?>
+                                <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                              <?php } ?>
                             <?php } ?>
                           </div>
                         </div>
@@ -65,7 +69,7 @@ defined('_JEXEC') or die;
                       <?php if($params->get('show_socialsIcon')) { ?>
                         <?php if(!empty($profile->social)) { ?>
                             <div class="card-team-footer social-profile-wrapper">
-                              <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                              <ul class="social-profile <?php echo $params->get('IconStyle'); ?>">
                                 <?php  $socials=  json_decode($profile->social);?>
                                   <?php  foreach($socials as $social){?>
                                       <li>
