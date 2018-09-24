@@ -27,9 +27,10 @@
     <config>
         <fields name="params">
             <fieldset name="basic" addfieldpath="/modules/mod_jdgraph/fields">
+                 <field name="label" type="text" label="MOD_GRAPH_TEXT_LABEL" required="true" description="MOD_GRAPH_TEXT_DESC" default="" />
                 <field name="items" type="subform" formsource="/modules/mod_jdgraph/forms/item.xml" multiple="true" label="MOD_GRAPH_TABS_ITEMS"></field>
             </fieldset>
-             <fieldset name="design">
+             <fieldset name="options">
                 <field name="select_view" type="jdthumbnailradio" label="MOD_GRAPH_SELECT_VIEW" description="" default="default">
                     <option value="default">media/mod_jdgraph/images/layouts/layout-1.svg|Style - 1</option>
                 </field>

@@ -2,11 +2,13 @@
 defined('_JEXEC') or die;
 $items = $params->get('items', []);
 
+
+
 $doc = JFactory::getDocument();
 $doc->addScript(JURI::root().'media/mod_jdgraph/js/utils.js');
 $doc->addScript(JURI::root().'media/mod_jdgraph/js/Chart.bundle.js');
 ?>
-<div id="canvas-holder" style="width: 100%; height: 100%;">
+<div id="canvas-holder" style="width:100%">
       <canvas id="chart-area-<?php echo $module->id; ?>"></canvas>
 </div>
 
@@ -16,8 +18,8 @@ $doc->addScript(JURI::root().'media/mod_jdgraph/js/Chart.bundle.js');
       data: {
             datasets: [{
             data: [
-                  <?php foreach($items as $item){ ?>
-                        <?php echo $item->donation; ?>,
+                  <?php $total=0; foreach($items as $item){ ?>
+                        <?php echo $item->donation; $total = $total+$item->donation;?>,
                   <?php } ?>
             ],
             backgroundColor: [
@@ -40,6 +42,7 @@ $doc->addScript(JURI::root().'media/mod_jdgraph/js/Chart.bundle.js');
             },
             title: {
             display: true,
+            text: '<?php echo $params->get('label').' '.$total; ?>'
             },
             animation: {
             animateScale: true,
