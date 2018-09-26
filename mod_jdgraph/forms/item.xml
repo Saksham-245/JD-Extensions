@@ -15,6 +15,7 @@
    
    <field name="donation"
       type="number"
+      required="true"
       description="MOD_GRAP_DONATION_NUMBER_DESC"
       label="MOD_GRAP_DONATION_NUMBER_LABEL">
    </field>
