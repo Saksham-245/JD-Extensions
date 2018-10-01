@@ -51,11 +51,8 @@
     <administration>
         <menu>COM_JDPROFILES</menu>
         <submenu>
-            
 			<menu link="option=com_jdprofiles&amp;view=profiles" view="profiles" alt="Jdprofiles/Profiles">COM_JDPROFILES_TITLE_PROFILES</menu>
-			<menu link="option=com_jdprofiles&amp;view=designations" view="designations" alt="Jdprofiles/Designations">COM_JDPROFILES_TITLE_DESIGNATIONS</menu>
             <menu link="option=com_jdprofiles&amp;view=teams" view="teams" alt="Jdprofiles/teams">COM_JDPROFILES_TITLE_TEAMS</menu>
-
         </submenu>
         <files folder="administrator">
             <filename>access.xml</filename>

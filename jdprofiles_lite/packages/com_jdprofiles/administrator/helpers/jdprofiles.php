@@ -33,12 +33,6 @@ class JdprofilesHelper
 		);
 		
 		JHtmlSidebar::addEntry(
-			JText::_('COM_JDPROFILES_TITLE_DESIGNATIONS'),
-			'index.php?option=com_jdprofiles&view=designations',
-			$vName == 'designations'
-		);
-		
-		JHtmlSidebar::addEntry(
 			JText::_('COM_JDPROFILES_TITLE_TEAMS'),
 			'index.php?option=com_jdprofiles&view=teams',
 			$vName == 'teams'

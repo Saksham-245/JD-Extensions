@@ -64,17 +64,6 @@
                <option value="2">J6</option>
             </field>
             <field
-               name="enable_link"
-               type="radio"
-               label="MOD_PROFILE_SHOWCASE_ENABLE_TO_LINK_LABEL"
-               description="MOD_PROFILE_SHOWCASE_ENABLE_TO_LINK_DESC"
-               default="1"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
-            <field
                name="gutter_space"
                type="radio"
                label="MOD_PROFILE_SHOWCASE_GUTTER_SPACE_LABEL"
@@ -187,17 +176,6 @@
                <option value="0">JNO</option>
             </field>
             <field
-               name="show_skills"
-               type="radio"
-               label="MOD_PROFILE_SHOWCASE_DISPLAY_SKILL_LABEL"
-               description="MOD_PROFILE_SHOWCASE_DISPLAY_SKILL_DESC"
-               default="1"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
-            <field
                name="new_tab"
                type="radio"
                label="MOD_PROFILE_SHOWCASE_OPEN_IN_NEW_TAB_LABEL"
@@ -208,49 +186,6 @@
                <option value="1">JYES</option>
                <option value="0">JNO</option>
             </field>
-            <field name="color" type="note" label="MOD_PROFILE_SHOWCASE_COLOR_LABEL" />
-            <field
-               name="NameColor"
-               type="color"
-               label="MOD_PROFILE_SHOWCASE_NAME_COLOR_LABEL"
-               description="MOD_PROFILE_SHOWCASE_NAME_COLOR_DESC"
-            />
-            <field
-               name="designationColor"
-               type="color"
-               label="MOD_PROFILE_SHOWCASE_DESIGNATION_COLOR_LABEL"
-               description="MOD_PROFILE_SHOWCASE_DESIGNATION_COLOR_DESC"
-            />
-            <field
-               name="skill"
-               type="color"
-               label="MOD_PROFILE_SHOWCASE_SKILL_COLOR_LABEL"
-               description="MOD_PROFILE_SHOWCASE_SKILL_COLOR_DESC"
-            />
-            <field
-               name="shortBio"
-               type="color"
-               label="MOD_PROFILE_SHOWCASE_SBIO_COLOR_LABEL"
-               description="MOD_PROFILE_SHOWCASE_SBIO_COLOR_DESC"
-            />
-            <field
-               name="social_icons"
-               type="radio"
-               label="MOD_PROFILE_SHOWCASE_SOCIAL_ICONS_COLOR_LABEL"
-               description="MOD_PROFILE_SHOWCASE_SOCIAL_ICONS_COLOR_DESC"
-               default="bc"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="bc">MOD_PROFILE_SHOWCASE_SOCIAL_ICONS_COLOR_BRAND</option>
-               <option value="c">MOD_PROFILE_SHOWCASE_SOCIAL_ICONS_COLOR_CUSTOM</option>
-            </field>
-            <field
-               name="icon_background"
-               type="color"
-               showon="social_icons:c"
-               label="MOD_PROFILE_SHOWCASE_ICON_BG_COLOR_LABEL"
-               description="MOD_PROFILE_SHOWCASE_ICON_BG_COLOR_DESC"
-            />
             <field
                name="icon_color"
                type="color"

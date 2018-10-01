@@ -48,6 +48,10 @@
                 <option value="carousel_circle_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
                 <option  disabled="true" value="carousel_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
+              <field name="navigation" type="list" label="Select Navigation Style"  showon="template:carousel_layout" description="" default="carousel_circle_layout">
+                <option value="1">Styl1</option>
+                <option value="2">Styl2</option>
+             </field>
             <field
                name="grid_coloumns"
                type="list"
