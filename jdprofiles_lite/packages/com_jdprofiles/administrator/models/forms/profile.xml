@@ -4,7 +4,7 @@
     <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
     <field name="note1" type="note" label="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC" description="COM_JDPROFILES_FORM_DESC_PROFILE_BASIC" hint="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC"/>
     <field name="name" filter="safehtml" type="text" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_NAME" description="COM_JDPROFILES_FORM_DESC_PROFILE_NAME" hint="COM_JDPROFILES_FORM_LBL_PROFILE_NAME"/>
-    <field name="alias"  type="text" class="inputbox" generator="name"  label="COM_JDPROFILES_FORM_LBL_PROFILE_ALIAS" description="COM_JDPROFILES_FORM_DESC_PROFILE_ALIAS" />
+    <field name="alias"  type="hidden" class="inputbox" generator="name"  label="COM_JDPROFILES_FORM_LBL_PROFILE_ALIAS" description="COM_JDPROFILES_FORM_DESC_PROFILE_ALIAS" />
     <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
       <option value="1">JPUBLISHED</option>
       <option value="0">JUNPUBLISHED</option>
@@ -21,7 +21,6 @@
     <field name="team"  type="sql"  query="SELECT id, title FROM #__jdprofiles_team where state=1" key_field="title" value_field="title"  label="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM" description="COM_JDPROFILES_FORM_DESC_PROFILE_TEAM" hint="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM"/>
     <field name="location" filter="safehtml" type="text" label="COM_JDPROFILES_FORM_LBL_PROFILE_LOCATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_LOCATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_LOCATION"/>
     <field name="social" type="subform" formsource="administrator/components/com_jdprofiles/models/forms/social.xml" multiple="true" description="COM_JDPROFILES_FORM_DESC_PROFILE_SOCIAL" label="COM_JDPROFILES_FORM_DESC_PROFILE_SOCIAL"></field>
-    <field name="skills"   type="subform" formsource="administrator/components/com_jdprofiles/models/forms/skill_subform.xml" multiple="true"  label="COM_JDPROFILES_FORM_LBL_PROFILE_SKILLS" description="COM_JDPROFILES_FORM_DESC_PROFILE_SKILLS" hint="COM_JDPROFILES_FORM_LBL_PROFILE_SKILLS"/>
     <field name="details" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_JDPROFILES_FORM_LBL_PROFILE_DETAILS" description="COM_JDPROFILES_FORM_DESC_PROFILE_DETAILS" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DETAILS"/>
     <field name="ordering"/>
     <field name="checked_out" type="hidden" filter="unset"/>

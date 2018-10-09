@@ -1,4 +1,6 @@
 <?php 
+defined('_JEXEC') or die;
+// Licensed under the GPL v3
 $items = $displayData->get('items');
 $params = $displayData->get('params');
 ?>

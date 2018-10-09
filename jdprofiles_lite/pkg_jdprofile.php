@@ -165,7 +165,7 @@ class pkg_jdprofileInstallerScript {
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
 			</div>
 			<div class="package-install-actions">
-				<a href="index.php?option=com_jdprofiles" class="btn btn-default">Get started</a>
+				<a href="#" class="btn btn-default">Get started</a>
 			</div>
 			<div class="package-poweredby">
 				<a href="http://joomdev.com" target="_blank">

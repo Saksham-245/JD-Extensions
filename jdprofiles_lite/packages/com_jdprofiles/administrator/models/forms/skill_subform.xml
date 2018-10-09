@@ -3,15 +3,14 @@
 <field name="skill"
             label="COM_JDPROFILES_SKILL_LABEL"
             description="COM_JDPROFILES_SKILL_DESC"
-            type="sql"  
-            query="SELECT id, title, state  FROM #__jdprofiles_skill where state = 1" 
-            key_field="title" 
-            value_field="title"
+            type="text"
+            hint="Php"  
                 />
     <field name="skill_rating"
             label="Skill Rating in %"
             min="1"
             max="100"
+            hint="10"
             description=""
             type="number"  />
 </form>

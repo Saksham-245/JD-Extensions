@@ -2,12 +2,12 @@
 <extension type="module" version="3.1" client="site" method="upgrade">
    <name>mod_jdprofileshowcase</name>
    <author>JoomDev</author>
-   <creationDate>July 2018</creationDate>
+   <creationDate>Oct 2018</creationDate>
    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
    <authorEmail>info@joomdev.com</authorEmail>
    <authorUrl>www.joomdev.com</authorUrl>
-   <version>1.0.0</version>
+   <version>1.0</version>
    <description>MOD_JDPROFILESHOWCASE_XML_DESCRIPTION</description>
    <updateservers>
 		<server type="extension" name="mod_jdprofileshowcase" priority="1">https://cdn.joomdev.com/extensionupdates/mod_jdprofileshowcase.xml</server>
@@ -134,8 +134,8 @@
             <field
                name="display_sbio"
                type="radio"
-               label="Display Sbio"
-               description="Display Sbio"
+               label="Display Short Bio"
+               description="Display Short Bio"
                default="1"
                class="btn-group btn-group-yesno"
             >

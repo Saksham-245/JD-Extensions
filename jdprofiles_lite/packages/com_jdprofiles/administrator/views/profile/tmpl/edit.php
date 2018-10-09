@@ -100,17 +100,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 			</div>
 		</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
-
-
-	<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'skill', JText::_('COM_JDPROFILES_TITLE_SKILLS', true)); ?>
-		<div class="row-fluid">
-			<div class="span10 form-horizontal">
-				<fieldset class="adminform">
-					<?php echo $this->form->renderField('skills'); ?>
-				</fieldset>
-			</div>
-		</div>
-		<?php echo JHtml::_('bootstrap.endTab'); ?>
 		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
 		<input type="hidden" name="task" value=""/>
 		<?php echo JHtml::_('form.token'); ?>

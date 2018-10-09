@@ -13,7 +13,6 @@
 				<option value="grid_circle_layout">Grid Circle Layout</option>
 				<option value="list_layout">List Layout</option>
 				<option value="carsousel_layout">Carsousel Layout</option>
-				<option value="desire_layout">Desire</option>
 			</field>
 			<field name="display_name" type="radio" label="Display Name" description="Display Name" default="1" class="btn-group btn-group-yesno">
 				<option value="1">JYES</option>
@@ -31,10 +30,6 @@
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
 			</field>
-			<field name="show_skills" type="radio" label="Show Skill Details" description="Show Skill Details" default="1" class="btn-group btn-group-yesno">
-				<option value="1">JYES</option>
-				<option value="0">JNO</option>
-			</field>
 			<field name="new_tab" type="radio" label="Open Social Links in new Tab" description="Open Social Links in new Tab" default="1" class="btn-group btn-group-yesno">
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
@@ -46,11 +41,11 @@
 				<option value="square">Square</option>
 				<option value="none">none</option>
 			</field>
-			<field name="DisplayBullit" type="radio" label="Display Bullit" description="Display Bullit" showon="layout:carsousel" default="1" class="btn-group btn-group-yesno">
+			<field name="DisplayBullit" type="radio" label="Display Bullit" description="Display Bullit" showon="layout:carsousel_layout" default="1" class="btn-group btn-group-yesno">
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
 			</field>
-			<field name="DisplayArrow" type="radio" showon="layout:carsousel" label="Display Arrow" description="Display Arrow" default="1" class="btn-group btn-group-yesno">
+			<field name="DisplayArrow" type="radio" showon="layout:carsousel_layout" label="Display Arrow" description="Display Arrow" default="1" class="btn-group btn-group-yesno">
 				<option value="1">JYES</option>
 				<option value="0">JNO</option>
 			</field>

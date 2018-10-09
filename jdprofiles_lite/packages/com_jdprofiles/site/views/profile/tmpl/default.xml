@@ -63,17 +63,7 @@
                <option value="1">JYES</option>
                <option value="0">JNO</option>
             </field>
-            <field
-               name="show_skills"
-               type="radio"
-               label="Show Skill Details"
-               description="Show Skill Details"
-               default="1"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
+ 
 				 <field
                name="new_tab"
                type="radio"

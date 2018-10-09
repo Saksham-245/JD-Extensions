@@ -1,4 +1,6 @@
 <?php 
+defined('_JEXEC') or die;
+// Licensed under the GPL v3
 $items = $displayData->get('items');
 $params = $displayData->get('params');
 $pagination = $displayData->get('pagination');
@@ -12,28 +14,28 @@ $pagination = $displayData->get('pagination');
 				<th scope="team-mamber-image-wrapper">
 					<img src="<?php echo $item->image; ?>" alt="" width="7%">
 				</th>
-				<?php if($params->get('display_name')) { ?>
-				<td class="team-member-name">
-					<span>
-						<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>">
-							<?php echo $item->name; ?>
-						</a>
-					</span>
-				</td>
+				<?php if($params->get('display_name',1)) { ?>
+					<td class="team-member-name">
+						<span>
+							<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>">
+								<?php echo $item->name; ?>
+							</a>
+						</span>
+					</td>
 				<?php } ?>
 
-				<?php if($params->get('display_designation')) { ?>
-				<td class="team-member-designation"><i class="fas fa-stamp"></i>
-					<?php echo $item->designation; ?>
-				</td>
+				<?php if($params->get('display_designation',1)) { ?>
+					<td class="team-member-designation"><i class="fas fa-stamp"></i>
+						<?php echo $item->designation; ?>
+					</td>
 				<?php } ?>
-				<?php if($params->get('show_Contact')) { ?>
-				<td class="team-member-address"><i class="fas fa-envelope"></i>
-					<?php echo $item->email; ?>
-				</td>
-				<td class="team-member-email"><i class="fas fa-phone"></i>
-					<?php echo $item->phone; ?>
-				</td>
+				<?php if($params->get('show_Contact',1)) { ?>
+					<td class="team-member-address"><i class="fas fa-envelope"></i>
+						<?php echo $item->email; ?>
+					</td>
+					<td class="team-member-email"><i class="fas fa-phone"></i>
+						<?php echo $item->phone; ?>
+					</td>
 				<?php } ?>
 			</tr>
 			<?php endforeach; ?>
