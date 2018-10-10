@@ -46,8 +46,10 @@ defined('_JEXEC') or die;
                                 </p>
                               <?php } ?>
                             <?php } ?>
-                            <?php if(!empty($profile->sbio)) { ?>    
-                              <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                            <?php if($params->get('display_sbio',1)) { ?>
+                              <?php if(!empty($profile->sbio)) { ?>    
+                                <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                              <?php } ?>
                             <?php } ?>
                           </div>
                         </div>
@@ -79,7 +81,9 @@ defined('_JEXEC') or die;
       <!-- End Jd Team Showcase wrapper -->
     </div>
   </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
 (function ($) {
     // Slick Js start
