@@ -28,26 +28,6 @@
             <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
         </sql>
     </uninstall>
-
-    <files folder="site">
-        <filename>index.html</filename>
-        <filename>jdprofiles.php</filename>
-        <filename>controller.php</filename>
-        <filename>router.php</filename>
-        <folder>views</folder>
-        <folder>models</folder>
-        <folder>layouts</folder>
-        <folder>controllers</folder>
-        <folder>helpers</folder>
-    </files>
-    <media destination="com_jdprofiles" folder="media">
-        <folder>js</folder>
-        <folder>css</folder>
-    </media>
-    <languages folder="site/languages">
-			<language tag="en-GB">en-GB/en-GB.com_jdprofiles.ini</language>
-			<language tag="ru-RU">ru-RU/ru-RU.com_jdprofiles.ini</language>
-    </languages>
     <administration>
         <menu>COM_JDPROFILES</menu>
         <submenu>

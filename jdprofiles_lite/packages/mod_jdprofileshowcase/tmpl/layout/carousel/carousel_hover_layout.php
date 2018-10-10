@@ -31,10 +31,10 @@ defined('_JEXEC') or die;
                   <div class="jd-team-columns <?php echo ($params->get('gutter_space')=='') ? 'col' : '' ?>" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
                     <div class="card-team jd-team-items">
                       <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
-                      <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+                      <?php if($params->get('display_name',1) or $params->get('display_designation',1) ) { ?>
                         <div class="card-team-overlay">
                           <div class="team-member-content-wrapper">
-                            <?php if($params->get('display_name')) { ?>
+                            <?php if($params->get('display_name',1)) { ?>
                               <h5 class="card-img-overlayteam-member-name">
                                 <?php if($params->get('enable_link')){ ?>
                                   <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
@@ -43,7 +43,7 @@ defined('_JEXEC') or die;
                                 <?php  } ?>
                               </h5>
                             <?php } ?>
-                            <?php if($params->get('display_designation')) { ?>
+                            <?php if($params->get('display_designation',1)) { ?>
                               <?php if(!empty($profile->designation)) { ?>  
                                 <p class="team-member-designation">
                                   <small><?php echo $profile->designation;  ?></small>
@@ -55,9 +55,9 @@ defined('_JEXEC') or die;
                             <?php } ?>
                           </div>
                       <?php } ?>
-                      <?php if($params->get('show_socialsIcon')) { ?>
+                      <?php if($params->get('show_socialsIcon',1)) { ?>
                         <div class="card-team-footer social-profile-wrapper">
-                          <ul class="social-profile  <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                          <ul class="social-profile  <?php echo $params->get('IconStyle');?>">
                             <?php if(!empty($profile->social)) { ?>
                               <?php  $socials=  json_decode($profile->social);?>
                                 <?php  foreach($socials as $social){?>

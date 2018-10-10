@@ -70,7 +70,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdprofiles/css/form.css');
 				<?php echo $this->form->renderField('phone'); ?>
 				<?php echo $this->form->renderField('location'); ?>
 		
-				<?php echo $this->form->renderField('details'); ?>
+				 
 				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
 				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
 				<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />

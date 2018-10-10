@@ -37,16 +37,16 @@
             >
                <option value="grid_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_GRID</option>
                <option value="carousel_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_CAROUSEL</option>
-               <option value="layout/table/list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
+               <option value="layout/list/list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
                <option value="layout/table/table">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_TABLE</option>
             </field>   
             <field name="grid_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:grid_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/grid/grid_circle_layout">
-                <option value="layout/grid/grid_circle_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|  Grid Circle Layout</option>
+                <option value="layout/grid/grid_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|  Grid Circle Layout</option>
                 <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|   Grid Hover Layout </option>
              </field>
             <field name="carousel_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:carousel_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/carousel/carousel_circle_layout">
-                <option value="layout/carousel/carousel_circle_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="carousel_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
+                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
             <field
                name="grid_coloumns"
@@ -233,17 +233,14 @@
             </field>
          </fieldset>
          <fieldset name="advanced">
-            <field
-               name="load_bootstrap"
-               type="hidden"
-               label="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
-               description="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
-               default="1"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
+           	<field name="load_bootstrap" type="radio" label="MOD_JD_LOAD_BOOTSTRAP_LABEL" description="MOD_JD_LOAD_BOOTSTRAP_LABEL" default="0" class="btn-group btn-group-yesno">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+			</field>
+			<field name="load_fontawesome" type="radio" label="MOD_JD_LOAD_FONT_AWESOME_LABEL" description="MOD_JD_LOAD_BOOTSTRAP_DESC" default="0" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
              <field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
          </fieldset>
       </fields>
