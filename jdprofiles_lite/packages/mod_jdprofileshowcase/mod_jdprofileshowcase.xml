@@ -28,6 +28,15 @@
    <config>
       <fields name="params">
          <fieldset name="basic" addfieldpath="/modules/mod_jdprofileshowcase/fields">
+            <field
+                name="team"
+                type="sql"
+                query="SELECT id, title FROM #__jdprofiles_team  where state=1"
+                label="MOD_PROFILE_SELECT_TEAM_LABEL"
+                key_field="title"
+                value_field="title"
+                description="MOD_PROFILE_SHOWCASE_FILTER_DESIGNATION_DESC"
+            />
              <field
                name="template"
                type="list"
@@ -106,16 +115,6 @@
                description="MOD_PROFILE_SHOWCASE_DISPLAY_PROFILE_DESC"
                default="1"
                class="btn-group btn-group-yesno"
-            />
-
-            <field
-                name="team"
-                type="sql"
-                query="SELECT id, title FROM #__jdprofiles_team  where state=1"
-                label="MOD_PROFILE_SELECT_TEAM_LABEL"
-                key_field="title"
-                value_field="title"
-                description="MOD_PROFILE_SHOWCASE_FILTER_DESIGNATION_DESC"
             />
          </fieldset>
          <fieldset name="options">
