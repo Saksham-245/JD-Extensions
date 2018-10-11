@@ -25,7 +25,7 @@ if($params->get('template') == 'grid_layout'){
     $layout=$params->get('template');
 }
 $display_all = $params->get('display_all');
-//$designations = $params->get('designations');
+$team = $params->get('team');
 $gutter_space = $params->get('gutter_space'); 
 $margin = $params->get('margin'); 
 if($display_all){
@@ -36,6 +36,6 @@ if($display_all){
 }
 
 $profilesClass  = new modJdprofileShowcaseHelper();
-$profiles = $profilesClass->profiles($limit);
+$profiles = $profilesClass->profiles($team,$limit);
          
 require JModuleHelper::getLayoutPath('mod_jdprofileshowcase', $layout);

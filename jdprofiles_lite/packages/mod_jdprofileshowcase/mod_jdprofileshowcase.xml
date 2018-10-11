@@ -40,11 +40,11 @@
                <option value="layout/list/list_layout">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_LIST</option>
                <option value="layout/table/table">MOD_PROFILE_SHOWCASE_SELECT_TEMPLATE_OPTION_TABLE</option>
             </field>   
-            <field name="grid_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:grid_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/grid/grid_circle_layout">
+            <field name="grid_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:grid_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/grid/grid_layout">
                 <option value="layout/grid/grid_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|  Grid Circle Layout</option>
                 <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|   Grid Hover Layout </option>
              </field>
-            <field name="carousel_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:carousel_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/carousel/carousel_circle_layout">
+            <field name="carousel_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:carousel_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/carousel/carousel_layout">
                 <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
                 <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
@@ -109,13 +109,12 @@
             />
 
             <field
-                name="designations"
-                type="hidden"
-                query="SELECT id, title FROM #__jdprofiles_designation"
+                name="team"
+                type="sql"
+                query="SELECT id, title FROM #__jdprofiles_team  where state=1"
                 label="MOD_PROFILE_SHOWCASE_FILTER_DESIGNATION_LABEL"
                 key_field="title"
                 value_field="title"
-                multiple="multiple"
                 description="MOD_PROFILE_SHOWCASE_FILTER_DESIGNATION_DESC"
             />
          </fieldset>

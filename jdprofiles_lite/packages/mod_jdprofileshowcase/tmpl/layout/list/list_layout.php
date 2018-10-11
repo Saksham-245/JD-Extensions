@@ -57,9 +57,11 @@ defined('_JEXEC') or die;
                         <?php } ?>    
                         <ul class="list-unstyled contact-info">
                           <?php if($params->get('show_Contact',1)) { ?>
-                            <li>
-                              <i class="fas fa-phone fa-rotate-90"></i>  <?php  echo $profile->phone; ?></li>
-                            <li>
+                            <?php if(!empty($profile->phone)) { ?>
+                              <li>
+                                <i class="fas fa-phone fa-rotate-90"></i>  <?php  echo $profile->phone; ?></li>
+                              <li>
+                            <?php } ?>
                           <?php } ?>
                           <?php if(!empty($profile->email)) { ?>
                             <i class="fas fa-envelope"></i> <?php  echo $profile->email; ?></li>
