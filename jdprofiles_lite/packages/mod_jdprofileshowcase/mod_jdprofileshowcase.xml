@@ -51,11 +51,27 @@
             </field>   
             <field name="grid_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:grid_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/grid/grid_layout">
                 <option value="layout/grid/grid_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|  Grid Circle Layout</option>
-                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg|   Grid Hover Layout </option>
+                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg|   Grid Hover Layout </option>
+                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg|   Grid Hover Layout </option>
+                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg|   Grid Hover Layout </option>
              </field>
             <field name="carousel_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:carousel_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/carousel/carousel_layout">
-                <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg| Carousel Circle Layout</option>
+                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+             </field>
+            <field name="list_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:layout/list/list_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/list/list_template">
+                <option value="layout/list/list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
+                <option  disabled="true" value="list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+                <option  disabled="true" value="list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+                <option  disabled="true" value="list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+             </field>
+             <field name="table_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:layout/table/table" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/template/table_template">
+                <option value="layout/template/table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
+                <option  disabled="true" value="table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+                <option  disabled="true" value="table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
+                <option  disabled="true" value="table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.jpg| Carousel Circle Layout</option>
              </field>
             <field
                name="grid_coloumns"
@@ -75,6 +91,7 @@
             <field
                name="gutter_space"
                type="radio"
+                showon="template:grid_layout[OR]template:carousel_layout"
                label="MOD_PROFILE_SHOWCASE_GUTTER_SPACE_LABEL"
                description="MOD_PROFILE_SHOWCASE_GUTTER_SPACE_DESC"
                default=""
@@ -130,17 +147,6 @@
                <option value="0">JNO</option>
             </field>
             <field
-               name="display_sbio"
-               type="radio"
-               label="Display Short Bio"
-               description="Display Short Bio"
-               default="1"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
-            <field
                name="display_designation"
                type="radio"
                label="MOD_PROFILE_SHOWCASE_DISPLAY_DESIGNATION_LABEL"
@@ -152,10 +158,10 @@
                <option value="0">JNO</option>
             </field>
             <field
-               name="show_socialsIcon"
+               name="display_sbio"
                type="radio"
-               label="MOD_PROFILE_SHOWCASE_DISPLAY_ICON_LABEL"
-               description="MOD_PROFILE_SHOWCASE_DISPLAY_ICON_DESC"
+               label="Display Short Bio"
+               description="Display Short Bio"
                default="1"
                class="btn-group btn-group-yesno"
             >
@@ -174,8 +180,20 @@
                <option value="0">JNO</option>
             </field>
             <field
+               name="show_socialsIcon"
+               type="radio"
+               label="MOD_PROFILE_SHOWCASE_DISPLAY_ICON_LABEL"
+               description="MOD_PROFILE_SHOWCASE_DISPLAY_ICON_DESC"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
                name="new_tab"
                type="radio"
+               showon="show_socialsIcon:1"
                label="MOD_PROFILE_SHOWCASE_OPEN_IN_NEW_TAB_LABEL"
                description="MOD_PROFILE_SHOWCASE_OPEN_IN_NEW_TAB_DESC"
                default="1"
@@ -185,17 +203,10 @@
                <option value="0">JNO</option>
             </field>
             <field
-               name="icon_color"
-               type="color"
-               showon="social_icons:c"
-               label="MOD_PROFILE_SHOWCASE_ICON_COLOR_LABEL"
-               description="MOD_PROFILE_SHOWCASE_ICON_COLOR_LABEL"
-            />
-            <field
                name="IconStyle"
                type="radio"
+               showon="show_socialsIcon:1"
                label="MOD_PROFILE_SHOWCASE_ICON_STYLE_LABEL"
-
                description="MOD_PROFILE_SHOWCASE_ICON_STYLE_DESC"
                default="none"
                class="btn-group btn-group-yesno"
