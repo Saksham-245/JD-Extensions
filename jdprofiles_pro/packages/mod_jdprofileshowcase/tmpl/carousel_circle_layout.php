@@ -19,71 +19,67 @@ defined('_JEXEC') or die;
   background-color: <?php echo $params->get('icon_background');?>;
 }
 </style>
-<section>
-    <div class="container py-5">
-      <div class="jd-team-showcase-wrapper jd-carousel-layout-view jd-carousel-circle-layout">
-        <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
-          <div class="col-12">
-            <div class="row jd-team-carousel">
-            <?php foreach($profiles as $profile) { ?>
-              <!-- Team Item wrapper start -->
-              <div class="jd-team-columns <?php echo ($params->get('gutter_space')=='') ? 'col' : '' ?>" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
-                <div class="card-team jd-team-items">
-                    <div class="team-mamber-image-wrapper">
-                  <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
-                  </div>
-                  <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
-                    <div class="card-team-body">
-                      <div class="team-member-content-wrapper">
-                      <?php if($params->get('display_name')) { ?>
-                        <h5 class="card-img-overlayteam-member-name">
-                        <?php if($params->get('enable_link')){ ?>
-                          <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
-                        <?php }else {?>
-                          <?php  echo $profile->name; ?>
-                        <?php  } ?>
-                        </h5>
+<div class="jd-team-showcase-wrapper jd-carousel-layout-view jd-carousel-circle-layout">
+  <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
+    <div class="col-12">
+      <div class="row jd-team-carousel">
+      <?php foreach($profiles as $profile) { ?>
+        <!-- Team Item wrapper start -->
+        <div class="jd-team-columns <?php echo ($params->get('gutter_space')=='') ? 'col' : '' ?>" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
+          <div class="card-team jd-team-items">
+              <div class="team-mamber-image-wrapper">
+            <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
+            </div>
+            <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+              <div class="card-team-body">
+                <div class="team-member-content-wrapper">
+                <?php if($params->get('display_name')) { ?>
+                  <h5 class="card-img-overlayteam-member-name">
+                  <?php if($params->get('enable_link')){ ?>
+                    <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+                  <?php }else {?>
+                    <?php  echo $profile->name; ?>
+                  <?php  } ?>
+                  </h5>
+                <?php } ?>
+                  <?php if($params->get('display_designation')) { ?>
+                      <?php if(!empty($profile->designation)) { ?>  
+                        <p class="team-member-designation">
+                          <small><?php echo $profile->designation;  ?></small>
+                        </p>
                       <?php } ?>
-                        <?php if($params->get('display_designation')) { ?>
-                            <?php if(!empty($profile->designation)) { ?>  
-                              <p class="team-member-designation">
-                                <small><?php echo $profile->designation;  ?></small>
-                              </p>
-                            <?php } ?>
-                          <?php } ?>
-                          <?php if(!empty($profile->sbio)) { ?>    
-                            <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
-                        <?php } ?>
-                      </div>
-                    </div>
-                  <?php } ?>
-                  <?php if($params->get('show_socialsIcon')) { ?>
-                      <div class="card-team-footer social-profile-wrapper">
-                        <ul class="social-profile  <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
-                          <?php if(!empty($profile->social)) { ?>
-                            <?php  $socials=  json_decode($profile->social);?>
-                              <?php  foreach($socials as $social){?>
-                                  <li>
-                                      <a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                        <i class="<?php echo $social->icon?>"></i>
-                                      </a>
-                                  </li>
-                              <?php } ?>
-                          <?php } ?>      
-                        </ul>
-                      </div>
                     <?php } ?>
+                    <?php if(!empty($profile->sbio)) { ?>    
+                      <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                  <?php } ?>
                 </div>
               </div>
-              <?php  } ?>
-              <!-- Team Item wrapper end -->
-            </div>
+            <?php } ?>
+            <?php if($params->get('show_socialsIcon')) { ?>
+                <div class="card-team-footer social-profile-wrapper">
+                  <ul class="social-profile  <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                    <?php if(!empty($profile->social)) { ?>
+                      <?php  $socials=  json_decode($profile->social);?>
+                        <?php  foreach($socials as $social){?>
+                            <li>
+                                <a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                  <i class="<?php echo $social->icon?>"></i>
+                                </a>
+                            </li>
+                        <?php } ?>
+                    <?php } ?>      
+                  </ul>
+                </div>
+              <?php } ?>
           </div>
         </div>
+        <?php  } ?>
+        <!-- Team Item wrapper end -->
       </div>
-      <!-- End Jd Team Showcase wrapper -->
     </div>
-  </section>
+  </div>
+</div>
+<!-- End Jd Team Showcase wrapper -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script>
