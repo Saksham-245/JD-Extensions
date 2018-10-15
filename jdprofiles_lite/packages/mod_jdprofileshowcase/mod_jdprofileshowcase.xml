@@ -79,7 +79,7 @@
 			         showon="template:grid_layout[OR]template:carousel_layout"
                label="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_LABEL"
                description="MOD_PROFILE_SHOWCASE_GRID_COLUMNS_DESC"
-               default="2"
+               default="4"
                class="btn-group btn-group-yesno"
             >
                <option value="12">J1</option>

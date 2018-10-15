@@ -68,9 +68,6 @@ $sortFields = $this->getSortFields();
 </th>
 					<?php endif; ?>
 
-									<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_ID', 'a.`id`', $listDirn, $listOrder); ?>
-				</th>
 				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_NAME', 'a.`name`', $listDirn, $listOrder); ?>
 				</th>
@@ -83,7 +80,9 @@ $sortFields = $this->getSortFields();
 				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_DESIGNATION', 'a.`designation`', $listDirn, $listOrder); ?>
 				</th>
-
+				<th class='left'>
+				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_ID', 'a.`id`', $listDirn, $listOrder); ?>
+				</th>
 					
 				</tr>
 				</thead>
@@ -137,9 +136,6 @@ $sortFields = $this->getSortFields();
 						<?php endif; ?>
 
 										<td>
-
-					<?php echo $item->id; ?>
-				</td>				<td>
 				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
 					<?php //echo JHtml::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'profiles.', $canCheckin); ?>
 				<?php endif; ?>
@@ -160,7 +156,10 @@ $sortFields = $this->getSortFields();
 
 					<?php echo $item->designation; ?>
 				</td>
+				<td>
 
+<?php echo $item->id; ?>
+</td>				
 					</tr>
 				<?php endforeach; ?>
 				</tbody>
