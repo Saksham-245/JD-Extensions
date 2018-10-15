@@ -14,14 +14,14 @@ $params = $displayData->get('params');
 							<?php if(!empty($item->image)) { ?>
 							<img src="<?php echo $item->image;  ?>" alt="<?php echo $item->name;  ?>" class="card-img-top team-mamber-image">
 							<?php }?>
-							<?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+							<?php if($params->get('display_name',1) or $params->get('display_designation',1) ) { ?>
 							<div class="card-team-body">
 								<div class="team-member-content-wrapper">
-									<?php if($params->get('display_name')) { ?>
+									<?php if($params->get('display_name',1)) { ?>
 									<h5 class="card-img-overlayteam-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>">
 											<?php  echo $item->name; ?></a></h5>
 									<?php } ?>
-									<?php if($params->get('display_designation')) { ?>
+									<?php if($params->get('display_designation',1)) { ?>
 									<p class="team-member-designation">
 										<small>
 											<?php echo $item->designation;  ?></small>

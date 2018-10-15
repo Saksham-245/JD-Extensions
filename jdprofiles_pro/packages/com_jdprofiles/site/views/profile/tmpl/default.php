@@ -1,8 +1,8 @@
 <?php
 /**
- * @version    1.0.0
- * @package    Com_Jdprofiles
- * @author     Joomdev <info@joomdev.com>
+ 
+ * @package    JD Profile 
+ * @author     Joomdev
  * @copyright  Copyright (C) 2018 Joomdev, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -21,10 +21,10 @@ defined('_JEXEC') or die;
 			<div class="card-team jd-team-items">
 			  <div class="card-team-body">
 				<div class="team-member-content-wrapper">
-				<?php if($this->params->get('display_name')) { ?>
+				<?php if($this->params->get('display_name',1)) { ?>
 					<h3 class="title-heading m-0"><?php echo $this->item->name; ?></h3>
 				<?php } ?>
-				<?php if($this->params->get('display_designation')) { ?>
+				<?php if($this->params->get('display_designation',1)) { ?>
 					<?php if(!empty($this->item->designation)){ ?>
 						<p class="team-member-designation">
 								<?php echo $this->item->designation; ?>
@@ -34,20 +34,28 @@ defined('_JEXEC') or die;
 					<?php if(!empty($this->item->sbio)) {?>
 						<p class="team-member-bio"><?php echo $this->item->sbio; ?></p>
 					<?php } ?>
-				<?php if($this->params->get('show_Contact')) { ?>
+				<?php if($this->params->get('show_Contact',1)) { ?>
 				  <ul class="list-unstyled contact-info">
-					<li>
-					  <i class="fas fa-phone mr-2"></i><?php echo $this->item->phone; ?></li>
-					<li>
-					  <i class="fas fa-envelope mr-2"></i> <?php echo $this->item->email; ?></li>
-					<li>
-					  <i class="fas fa-map-marker-alt mr-2"></i>
-					  <?php echo $this->item->location; ?></li>
+						<?php if(!empty($this->item->phone)) { ?>	
+								<li>
+									<i class="fas fa-phone fa-rotate-90 mr-2"></i><?php echo $this->item->phone; ?></li>
+								<li>
+						<?php } ?>
+						<?php if(!empty($this->item->email)) { ?>	
+							<li>
+								<i class="fas fa-envelope mr-2"></i> <?php echo $this->item->email; ?></li>
+							</li>
+						<?php  } ?>
+						<?php if(!empty($this->item->location)) { ?>	
+							<li>
+								<i class="fas fa-map-marker-alt mr-2"></i><?php echo $this->item->location; ?>
+							</li>
+						<?php } ?>
 					</ul>
 				<?php } ?>
 				</div>
 
-				<?php if($this->params->get('show_socialsIcon')) { ?>
+				<?php if($this->params->get('show_socialsIcon',1)) { ?>
 					<?php if(!empty($this->item->social)) { ?>
 							<div class="social-profile-wrapper">
 								<ul class="team-social <?php echo $this->params->get('IconStyle');  ?> list-unstyled ">

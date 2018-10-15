@@ -1,6 +1,6 @@
 <?php
 /** 
- * @version    1.0.0
+ 
  * @package   Com_jdprofiles
  * @author    Joomdev <info@joomdev.com>
  * @subpackage  Form

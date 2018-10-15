@@ -60,27 +60,27 @@
             </field>   
             <field name="grid_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:grid_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/grid/grid_layout">
                 <option value="layout/grid/grid_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-1.svg|  Grid Circle Layout</option>
-                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg|   Grid Hover Layout </option>
-                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg|   Grid Hover Layout </option>
-                <option disabled="true" value="grid_hover_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg|   Grid Hover Layout </option>
+                <option  value="layout/grid/grid_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg|   Grid Hover Layout </option>
+                <option  value="layout/grid/grid_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg|   Grid Hover Layout </option>
+                <option  value="layout/grid/grid_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg|   Grid Hover Layout </option>
              </field>
             <field name="carousel_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:carousel_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/carousel/carousel_layout">
                 <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-2.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/carousel/carousel_layout">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
             <field name="list_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:layout/list/list_layout" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/list/list_template">
                 <option value="layout/list/list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/list/list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/list/list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/list/list_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
              <field name="table_template" type="jdthumbnailradio" label="MOD_PROFILE_SHOWCASE_SELECT_VIEW"  showon="template:layout/table/table" description="MOD_PROFILE_SHOWCASE_SELECT_VIEW" default="layout/template/table_template">
                 <option value="layout/template/table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-3.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
-                <option  disabled="true" value="table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/template/table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/template/table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
+                <option value="layout/template/table_template">media/mod_jdprofileshowcase/assets/images/layouts/layout-4.svg| Carousel Circle Layout</option>
              </field>
             <field
                name="grid_coloumns"

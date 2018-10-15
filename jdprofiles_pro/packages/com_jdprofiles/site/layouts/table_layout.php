@@ -12,7 +12,7 @@ $pagination = $displayData->get('pagination');
 				<th scope="team-mamber-image-wrapper">
 					<img src="<?php echo $item->image; ?>" alt="" width="7%">
 				</th>
-				<?php if($params->get('display_name')) { ?>
+				<?php if($params->get('display_name',1)) { ?>
 				<td class="team-member-name">
 					<span>
 						<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>">
@@ -22,18 +22,24 @@ $pagination = $displayData->get('pagination');
 				</td>
 				<?php } ?>
 
-				<?php if($params->get('display_designation')) { ?>
-				<td class="team-member-designation"><i class="fas fa-stamp"></i>
-					<?php echo $item->designation; ?>
-				</td>
+				<?php if($params->get('display_designation',1)) { ?>
+					<?php if(!empty($item->designation)) { ?>
+						<td class="team-member-designation"><i class="fas fa-stamp"></i>
+							<?php echo $item->designation; ?>
+						</td>
+					<?php } ?>
 				<?php } ?>
-				<?php if($params->get('show_Contact')) { ?>
-				<td class="team-member-address"><i class="fas fa-envelope"></i>
-					<?php echo $item->email; ?>
-				</td>
-				<td class="team-member-email"><i class="fas fa-phone"></i>
-					<?php echo $item->phone; ?>
-				</td>
+				<?php if($params->get('show_Contact',1)) { ?>
+					<?php if(!empty($item->email)) { ?>
+						<td class="team-member-address"><i class="fas fa-envelope"></i>
+							<?php echo $item->email; ?>
+						</td>
+					<?php } ?>
+					<?php if(!empty($item->phone)) { ?>
+						<td class="team-member-email"><i class="fas fa-phone fa-rotate-90"></i>
+							<?php echo $item->phone; ?>
+						</td>
+					<?php }  ?>
 				<?php } ?>
 			</tr>
 			<?php endforeach; ?>

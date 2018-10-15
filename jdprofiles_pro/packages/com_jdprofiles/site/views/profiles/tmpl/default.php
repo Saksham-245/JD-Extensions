@@ -1,6 +1,6 @@
 <?php
    /**
-    * @version    1.0.0
+    
     * @package    Com_JdProfiles
     * @author     Joomdev <info@joomdev.com>
     * @copyright  Copyright (C) 2018 Joomdev, Inc. All rights reserved.

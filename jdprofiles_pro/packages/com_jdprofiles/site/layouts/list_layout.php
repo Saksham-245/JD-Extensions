@@ -15,24 +15,24 @@ $params = $displayData->get('params');
 							<div class="team-mamber-image-wrapper">
 								<img src="<?php echo $item->image; ?>" alt="<?php  echo $item->name; ?>" class="team-mamber-image">
 							</div>
-							<?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+							<?php if($params->get('display_name',1) or $params->get('display_designation',1) ) { ?>
 							<div class="card-team-body">
 								<div class="team-member-content-wrapper">
-									<?php if($params->get('display_name')) { ?>
-									<h5 class="team-member-name">
-										<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>">
-											<?php  echo $item->name; ?>
-										</a>
-									</h5>
+									<?php if($params->get('display_name',1)) { ?>
+										<h5 class="team-member-name">
+											<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>">
+												<?php  echo $item->name; ?>
+											</a>
+										</h5>
 									<?php } ?>
-									<?php if($params->get('display_designation')) { ?>
-									<?php if(!empty($item->designation)) { ?>
-									<p class="team-member-designation">
-										<small>
-											<?php  echo $item->designation; ?>
-										</small>
-									</p>
-									<?php } ?>
+									<?php if($params->get('display_designation',1)) { ?>
+										<?php if(!empty($item->designation)) { ?>
+											<p class="team-member-designation">
+												<small>
+													<?php  echo $item->designation; ?>
+												</small>
+											</p>
+										<?php } ?>
 									<?php } ?>
 									<?php if(!empty($item->sbio)) { ?>
 									<p class="team-member-bio">
@@ -41,10 +41,12 @@ $params = $displayData->get('params');
 									<?php } ?>
 									<ul class="list-unstyled contact-info">
 										<?php if($params->get('show_Contact')) { ?>
+											<?php if(!empty($item->phone)) { ?>
 										<li>
-											<i class="fas fa-phone"></i>
+											<i class="fas fa-phone fa-rotate-90"></i>
 											<?php  echo $item->phone; ?>
 										</li>
+											<?php }  ?>
 										<li>
 											<?php } ?>
 											<?php if(!empty($item->email)) { ?>

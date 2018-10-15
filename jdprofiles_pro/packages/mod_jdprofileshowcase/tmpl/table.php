@@ -54,7 +54,7 @@ defined('_JEXEC') or die;
 
                   <?php if($params->get('show_Contact')) { ?>
                     <?php if(!empty($profile->phone)) { ?>
-                      <td class="team-member-email"><i class="fas fa-phone"></i> <?php  echo $profile->phone; ?></td>
+                      <td class="team-member-email"><i class="fas fa-phone fa-rotate-90"></i> <?php  echo $profile->phone; ?></td>
                     <?php } ?>
                   <?php } ?>
                 </tr>
