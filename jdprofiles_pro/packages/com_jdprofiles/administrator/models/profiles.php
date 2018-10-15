@@ -160,13 +160,13 @@ class JdprofilesModelProfiles extends JModelList
 		$query->join('LEFT', '#__users AS `modified_by` ON `modified_by`.id = a.`modified_by`');
 					 
 		// Join over the user field 'designation'
-		$query->select('`designation`.title AS `designation_by`');
-		$query->join('LEFT', '#__jdprofiles_designation AS `designation` ON `designation`.title = a.`designation`');
+		$query->select('`designation`.title AS `designation`');
+		$query->join('LEFT', '#__jdprofiles_designation AS `designation` ON `designation`.id = a.`designation`');
 
 
 		// Join over the user field 'team'	
-		$query->select('`team`.title AS `team_by`');
-		$query->join('LEFT', '#__jdprofiles_team AS `team` ON `team`.title = a.`team`');
+		$query->select('`team`.title AS `team`');
+		$query->join('LEFT', '#__jdprofiles_team AS `team` ON `team`.id = a.`team`');
 		
 		// Filter by published state
 		$published = $this->getState('filter.state');

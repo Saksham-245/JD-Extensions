@@ -1,8 +1,10 @@
 <?php
 defined('_JEXEC') or die;
+// Licensed under the GPL v3
 //echo "<pre>";
 //print_r($profiles);
 ?>
+
 <style>
 .card-img-overlayteam-member-name{
   color:<?php echo  $params->get('NameColor'); ?>;
@@ -28,34 +30,32 @@ defined('_JEXEC') or die;
             <div class="jd-team-columns <?php echo ($params->get('gutter_space')=='') ? 'col' : '' ?>" <?php if($params->get('gutter_space')=='custom') { ?> style="padding-right:<?php echo $params->get('margin');?>px; padding-left:<?php echo $params->get('margin');?>px;" <?php } ?>>
               <div class="card-team jd-team-items">
                 <img src="<?php echo $profile->image;  ?>" alt="" class="card-img-top team-mamber-image">
-                <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+                <?php if($params->get('display_name',1) or $params->get('display_designation',1) ) { ?>
                   <div class="card-team-body">
                     <div class="team-member-content-wrapper">
-                      <?php if($params->get('display_name')) { ?>
+                      <?php if($params->get('display_name',1)) { ?>
                         <h5 class="card-img-overlayteam-member-name">
-                          <?php if($params->get('enable_link')){ ?>
-                            <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles &view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
-                          <?php }else {?>
-                            <?php  echo $profile->name; ?>
-                          <?php  } ?>
+                          <?php  echo $profile->name; ?>
                         </h5>
                       <?php } ?>
-                      <?php if($params->get('display_designation')) { ?>
-                        <?php if(!empty($profile->designation)) { ?>  
+                      <?php if($params->get('display_designation',1)) { ?>
+                        <?php if(!empty($profile->title)) { ?>  
                           <p class="team-member-designation">
-                            <small><?php echo $profile->designation;  ?></small>
+                            <small><?php echo $profile->title;  ?></small>
                           </p>
                         <?php } ?>
                       <?php } ?>
-                      <?php if(!empty($profile->sbio)) { ?>    
-                        <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                      <?php if($params->get('display_sbio',1)) { ?>
+                        <?php if(!empty($profile->sbio)) { ?>    
+                          <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                        <?php } ?>
                       <?php } ?>
                     </div>
                   </div>
                 <?php } ?>
-                <?php if($params->get('show_socialsIcon')) { ?>
+                <?php if($params->get('show_socialsIcon',1)) { ?>
                   <div class="card-team-footer social-profile-wrapper">
-                    <ul class="social-profile  <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                    <ul class="social-profile <?php echo $params->get('IconStyle'); ?>">
                       <?php if(!empty($profile->social)) { ?>
                         <?php  $socials=  json_decode($profile->social);?>
                           <?php  foreach($socials as $social){?>
@@ -78,7 +78,10 @@ defined('_JEXEC') or die;
   </div>
 </div>
 <!-- End Jd Team Showcase wrapper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
 (function ($) {
     // Slick Js start

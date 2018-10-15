@@ -146,7 +146,16 @@ class JdprofilesModelProfiles extends JModelList
 
 		// Join over the created by field 'modified_by'
 		$query->join('LEFT', '#__users AS modified_by ON modified_by.id = a.modified_by');
-            
+			
+		// Join over the user field 'designation'
+		$query->select('`designation`.title AS `designation`');
+		$query->join('LEFT', '#__jdprofiles_designation AS `designation` ON `designation`.id = a.`designation`');
+
+
+		// Join over the user field 'team'	
+		$query->select('`team`.title AS `team`');
+		$query->join('LEFT', '#__jdprofiles_team AS `team` ON `team`.id = a.`team`'); 
+		
 		if (!Factory::getUser()->authorise('core.edit', 'com_jdprofiles'))
 		{
 			$query->where('a.state = 1');

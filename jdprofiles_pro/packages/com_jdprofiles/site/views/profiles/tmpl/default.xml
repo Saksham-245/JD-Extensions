@@ -13,7 +13,6 @@
 				<option value="grid_circle_layout">Grid Circle Layout</option>
 				<option value="list_layout">List Layout</option>
 				<option value="carsousel_layout">Carsousel Layout</option>
-				<option value="desire_layout">Desire</option>
 			</field>
 			<field name="display_name" type="radio" label="Display Name" description="Display Name" default="1" class="btn-group btn-group-yesno">
 				<option value="1">JYES</option>

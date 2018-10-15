@@ -1,24 +1,26 @@
 <?php
 defined('_JEXEC') or die;
+// Licensed under the GPL v3
 //echo "<pre>";
 //print_r($profiles);
 ?>
 <style>
-.team-member-name{
+.card-img-overlayteam-member-name{
   color:<?php echo  $params->get('NameColor'); ?>;
 }
 .team-member-designation{
   color:<?php echo  $params->get('designationColor'); ?>;
 }
-.team-member-bio{
+.card-img-overlayteam-member-bio{
   color:<?php echo  $params->get('shortBio'); ?>;
 }
-.team-mamber-image-wrapper .social-profile li a {
+.jd-team-showcase-wrapper .social-profile li a {
   color: <?php echo $params->get('icon_color');?>;
   border: 1px solid <?php echo $params->get('icon_background');?>;
   background-color: <?php echo $params->get('icon_background');?>;
 }
 </style>
+
 <div class="jd-team-showcase-wrapper jd-list-layout-view jd-list-simple-layout">
   <div class="row">
     <div class="col-12">
@@ -30,22 +32,22 @@ defined('_JEXEC') or die;
             <div class="team-mamber-image-wrapper">
               <img src="<?php echo $profile->image; ?>" alt="<?php  echo $profile->name; ?>" class="team-mamber-image">
             </div>
-            <?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
+            <?php if($params->get('display_name',1) or $params->get('display_designation',1) ) { ?>
               <div class="card-team-body">
                 <div class="team-member-content-wrapper">
-                  <?php if($params->get('display_name')) { ?>
+                  <?php if($params->get('display_name',1)) { ?>
                     <h5 class="team-member-name">
                       <?php if($params->get('enable_link')){ ?>
-                        <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles &view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+                        <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
                       <?php }else {?>
                         <?php  echo $profile->name; ?>
                       <?php  } ?>
                     </h5>
                   <?php } ?>
-                  <?php if($params->get('display_designation')) { ?>
-                    <?php if(!empty($profile->designation)) { ?>
+                  <?php if($params->get('display_designation',1)) { ?>
+                    <?php if(!empty($profile->title)) { ?>
                       <p class="team-member-designation">
-                        <small><?php  echo $profile->designation; ?></small>
+                        <small><?php  echo $profile->title; ?></small>
                       </p>
                     <?php } ?>
                   <?php } ?>
@@ -53,10 +55,12 @@ defined('_JEXEC') or die;
                     <p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
                   <?php } ?>    
                   <ul class="list-unstyled contact-info">
-                    <?php if($params->get('show_Contact')) { ?>
-                      <li>
-                        <i class="fas fa-phone"></i>  <?php  echo $profile->phone; ?></li>
-                      <li>
+                    <?php if($params->get('show_Contact',1)) { ?>
+                      <?php if(!empty($profile->phone)) { ?>
+                        <li>
+                          <i class="fas fa-phone fa-rotate-90"></i>  <?php  echo $profile->phone; ?></li>
+                        <li>
+                      <?php } ?>
                     <?php } ?>
                     <?php if(!empty($profile->email)) { ?>
                       <i class="fas fa-envelope"></i> <?php  echo $profile->email; ?></li>
@@ -69,10 +73,10 @@ defined('_JEXEC') or die;
                   </ul>
                 </div>
               <?php } ?> 
-              <?php if($params->get('show_socialsIcon')) { ?>
+              <?php if($params->get('show_socialsIcon',1)) { ?>
                   <?php if(!empty($profile->social)) { ?>
                       <div class="social-profile-wrapper">
-                        <ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle'); } ?>">
+                        <ul class="social-profile <?php echo $params->get('IconStyle','none'); ?>">
                           <?php  $socials=  json_decode($profile->social);?>
                             <?php  foreach($socials as $social){?>
                                 <li>

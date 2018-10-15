@@ -68,12 +68,14 @@ $sortFields = $this->getSortFields();
 </th>
 					<?php endif; ?>
 
-									<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_ID', 'a.`id`', $listDirn, $listOrder); ?>
-				</th>
+				
 				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_NAME', 'a.`name`', $listDirn, $listOrder); ?>
 				</th>
+
+				<th class='left'>
+				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_IMAGE', 'a.`image`', $listDirn, $listOrder); ?>
+				</th> 
 				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_EMAIL', 'a.`email`', $listDirn, $listOrder); ?>
 				</th>
@@ -83,7 +85,9 @@ $sortFields = $this->getSortFields();
 				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_DESIGNATION', 'a.`designation`', $listDirn, $listOrder); ?>
 				</th>
-
+				<th class='left'>
+				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_PROFILES_ID', 'a.`id`', $listDirn, $listOrder); ?>
+				</th>
 					
 				</tr>
 				</thead>
@@ -134,32 +138,40 @@ $sortFields = $this->getSortFields();
 							<td class="center">
 								<?php echo JHtml::_('jgrid.published', $item->state, $i, 'profiles.', $canChange, 'cb'); ?>
 </td>
-						<?php endif; ?>
-
-										<td>
-
-					<?php echo $item->id; ?>
-				</td>				<td>
+						<?php endif; ?>	
+						<td>
 				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
 					<?php //echo JHtml::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'profiles.', $canCheckin); ?>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&task=profile.edit&id='.(int) $item->id); ?>">
+					<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles &task=profile.edit&id='.(int) $item->id); ?>">
 					<?php echo $this->escape($item->name); ?></a>
 				<?php else : ?>
 					<?php echo $this->escape($item->name); ?>
 				<?php endif; ?>
 
-				</td>				<td>
+				</td>			
+
+					<td>
+					 	<img width="90" src="<?php echo dirname(juri::base()).'/'.$item->image; ?>" />
+					</td>	
+				
+					<td>
 
 					<?php echo $item->email; ?>
-				</td>				<td>
+				</td>		
+				
+						<td>
 
 					<?php echo $item->phone; ?>
 				</td>				<td>
 
 					<?php echo $item->designation; ?>
 				</td>
+				<td>
+
+				<?php echo $item->id; ?>
+				</td>	
 
 					</tr>
 				<?php endforeach; ?>

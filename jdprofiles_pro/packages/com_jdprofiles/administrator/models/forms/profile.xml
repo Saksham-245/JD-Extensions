@@ -2,7 +2,7 @@
 <form>
   <fieldset addfieldpath="administrator/components/com_jdprofiles/models/fields">
     <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
-    <field name="note1" type="note" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC" description="COM_JDPROFILES_FORM_DESC_PROFILE_BASIC" hint="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC"/>
+    <field name="note1" type="note" label="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC" description="COM_JDPROFILES_FORM_DESC_PROFILE_BASIC" hint="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC"/>
     <field name="name" filter="safehtml" type="text" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_NAME" description="COM_JDPROFILES_FORM_DESC_PROFILE_NAME" hint="COM_JDPROFILES_FORM_LBL_PROFILE_NAME"/>
     <field name="alias"  type="text" class="inputbox" generator="name"  label="COM_JDPROFILES_FORM_LBL_PROFILE_ALIAS" description="COM_JDPROFILES_FORM_DESC_PROFILE_ALIAS" />
     <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
@@ -11,14 +11,14 @@
       <option value="2">JARCHIVED</option>
       <option value="-2">JTRASHED</option>
     </field>
-    <field name="note2" type="note" required="true" label="COM_JDPROFILES_FORM_LBL_PROFILE_CONTACT" description="COM_JDPROFILES_FORM_DESC_PROFILE_CONTACT" hint="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC"/>
+    <field name="note2" type="note" label="COM_JDPROFILES_FORM_LBL_PROFILE_CONTACT" description="COM_JDPROFILES_FORM_DESC_PROFILE_CONTACT" hint="COM_JDPROFILES_FORM_LBL_PROFILE_BASIC"/>
     <field name="email" validate="email" type="email" label="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL" description="COM_JDPROFILES_FORM_DESC_PROFILE_EMAIL" hint="COM_JDPROFILES_FORM_LBL_PROFILE_EMAIL"/>
     <field name="phone" filter="safehtml" type="tel" label="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE" description="COM_JDPROFILES_FORM_DESC_PROFILE_PHONE" hint="COM_JDPROFILES_FORM_LBL_PROFILE_PHONE"/>
-    <field name="designation" type="sql"  query="SELECT id, title FROM #__jdprofiles_designation" key_field="title" value_field="title" label="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_DESIGNATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION"/>
+    <field name="designation" type="sql"  query="SELECT id, title FROM #__jdprofiles_designation" key_field="id" value_field="title" label="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_DESIGNATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_DESIGNATION"/>
     <field name="image" directory="" type="media" label="COM_JDPROFILES_FORM_LBL_PROFILE_IMAGE" description="COM_JDPROFILES_FORM_DESC_PROFILE_IMAGE" hint="COM_JDPROFILES_FORM_LBL_PROFILE_IMAGE"/>
     <field name="sbio" filter="safehtml" type="textarea" label="COM_JDPROFILES_FORM_LBL_PROFILE_SBIO" description="COM_JDPROFILES_FORM_DESC_PROFILE_SBIO" hint="COM_JDPROFILES_FORM_LBL_PROFILE_SBIO"/>
     <field name="lbio" filter="safehtml" type="hidden" label="COM_JDPROFILES_FORM_LBL_PROFILE_LBIO" description="COM_JDPROFILES_FORM_DESC_PROFILE_LBIO" hint="COM_JDPROFILES_FORM_LBL_PROFILE_LBIO"/>
-    <field name="team"  type="sql"  query="SELECT id, title FROM #__jdprofiles_team where state=1" key_field="title" value_field="title"  label="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM" description="COM_JDPROFILES_FORM_DESC_PROFILE_TEAM" hint="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM"/>
+    <field name="team"  type="sql"  query="SELECT id, title FROM #__jdprofiles_team where state=1" key_field="id" value_field="title"  label="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM" description="COM_JDPROFILES_FORM_DESC_PROFILE_TEAM" hint="COM_JDPROFILES_FORM_LBL_PROFILE_TEAM"/>
     <field name="location" filter="safehtml" type="text" label="COM_JDPROFILES_FORM_LBL_PROFILE_LOCATION" description="COM_JDPROFILES_FORM_DESC_PROFILE_LOCATION" hint="COM_JDPROFILES_FORM_LBL_PROFILE_LOCATION"/>
     <field name="social" type="subform" formsource="administrator/components/com_jdprofiles/models/forms/social.xml" multiple="true" description="COM_JDPROFILES_FORM_DESC_PROFILE_SOCIAL" label="COM_JDPROFILES_FORM_DESC_PROFILE_SOCIAL"></field>
     <field name="skills"   type="subform" formsource="administrator/components/com_jdprofiles/models/forms/skill_subform.xml" multiple="true"  label="COM_JDPROFILES_FORM_LBL_PROFILE_SKILLS" description="COM_JDPROFILES_FORM_DESC_PROFILE_SKILLS" hint="COM_JDPROFILES_FORM_LBL_PROFILE_SKILLS"/>

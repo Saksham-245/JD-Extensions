@@ -127,7 +127,21 @@ class JdprofilesModelProfile extends JModelItem
 		{
 			$this->_item->modified_by_name = Factory::getUser($this->_item->modified_by)->name;
 		}
-      return $this->_item;
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->select('*');
+    	$query->from('`#__jdprofiles_designation` AS designation'); 
+		$query->where($db->quoteName('id') . ' = '. $db->quote($this->_item->designation));
+
+		$db->setQuery($query);
+		$results = $db->loadObjectList();
+
+		if (isset($this->_item->designation))
+		{
+			 $this->_item->designation =$results[0]->title;
+		}
+
+		return $this->_item;
    }
 
 	/**

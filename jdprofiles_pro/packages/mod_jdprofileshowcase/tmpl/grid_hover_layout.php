@@ -36,7 +36,7 @@ defined('_JEXEC') or die;
 					<?php if($params->get('display_name')) { ?>
 						<h5 class="card-img-overlayteam-member-name">
 						<?php if($params->get('enable_link')){ ?>
-						<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+						<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles &view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
 						<?php }else {?>
 						<?php  echo $profile->name; ?>
 						<?php  } ?>

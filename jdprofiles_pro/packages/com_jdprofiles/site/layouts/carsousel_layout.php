@@ -62,7 +62,8 @@ $params = $displayData->get('params');
 	</div>
 	<!-- End Jd Team Showcase wrapper -->
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
 	(function ($) {
 		// Slick Js start
