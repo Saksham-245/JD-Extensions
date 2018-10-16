@@ -4,23 +4,6 @@ defined('_JEXEC') or die;
 //echo "<pre>";
 //print_r($profiles);
 ?>
-<style>
-.team-member-name{
-  color:<?php echo  $params->get('NameColor'); ?>;
-}
-.team-member-designation{
-  color:<?php echo  $params->get('designationColor'); ?>;
-}
-.team-member-bio{
-  color:<?php echo  $params->get('shortBio'); ?>;
-}
-.team-mamber-image-wrapper .social-profile li a {
-  color: <?php echo $params->get('icon_color');?>;
-  border: 1px solid <?php echo $params->get('icon_background');?>;
-  background-color: <?php echo $params->get('icon_background');?>;
-}
-</style>
-
 <div class="jd-team-showcase-wrapper jd-list-layout-view jd-list-simple-layout">
   <div class="row">
     <div class="col-12">
