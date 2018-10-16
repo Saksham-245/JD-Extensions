@@ -33,7 +33,7 @@
                 type="sql"
                 query="SELECT id, title FROM #__jdprofiles_team  where state=1"
                 label="MOD_PROFILE_SELECT_TEAM_LABEL"
-                key_field="title"
+                key_field="id"
                 value_field="title"
                 description="MOD_PROFILE_SHOWCASE_FILTER_DESIGNATION_DESC"
             />
