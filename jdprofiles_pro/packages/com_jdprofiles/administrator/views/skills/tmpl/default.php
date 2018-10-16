@@ -2,7 +2,7 @@
 /**
  
  * @package    Com_Jdprofiles
- * @author     Joomdev <info@joomdev.com>
+ * @author     Joomdev
  * @copyright  Copyright (C) 2018 Joomdev, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -68,12 +68,13 @@ $sortFields = $this->getSortFields();
 						</th>
 					<?php endif; ?>
 
-					<th class='left'>
-						<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_SKILLS_ID', 'a.`id`', $listDirn, $listOrder); ?>
-					</th>
+				
 
 					<th class='left'>
 						<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_SKILLS_TITLE', 'a.`title`', $listDirn, $listOrder); ?>
+					</th>
+					<th class='left'>
+						<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_SKILLS_ID', 'a.`id`', $listDirn, $listOrder); ?>
 					</th>
 				
 			</tr>
@@ -127,12 +128,13 @@ $sortFields = $this->getSortFields();
 						</td>
 						<?php endif; ?>
 
-						<td>
-
-					<?php echo $item->id; ?>
-				</td>
+						
 				<td>
 				<a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&task=skill.edit&id='.(int) $item->id); ?>"><?php echo $item->title; ?></a>
+				</td>
+				<td>
+
+					<?php echo $item->id; ?>
 				</td>
 
 					</tr>

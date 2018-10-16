@@ -1,6 +1,5 @@
 <?php
 /**
- 
  * @package    Com_Jdprofiles
  * @author     Joomdev <info@joomdev.com>
  * @copyright  Copyright (C) 2018 Joomdev, Inc. All rights reserved.
@@ -68,13 +67,13 @@ $sortFields = $this->getSortFields();
 </th>
 					<?php endif; ?>
 
-									<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_TEAMS_ID', 'a.`id`', $listDirn, $listOrder); ?>
+		
+				<th class='left'>
+					<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_TEAMS_TITLE', 'a.`title`', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_TEAMS_TITLE', 'a.`title`', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILES_TEAMS_ID', 'a.`id`', $listDirn, $listOrder); ?>
 				</th>
-
 					
 				</tr>
 				</thead>
@@ -127,10 +126,7 @@ $sortFields = $this->getSortFields();
 </td>
 						<?php endif; ?>
 
-										<td>
-
-					<?php echo $item->id; ?>
-				</td>				<td>
+													<td>
 				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
 					<?php echo JHtml::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'teams.', $canCheckin); ?>
 				<?php endif; ?>
@@ -142,7 +138,9 @@ $sortFields = $this->getSortFields();
 				<?php endif; ?>
 
 				</td>
-
+				<td>
+					<?php echo $item->id; ?>
+				</td>	
 					</tr>
 				<?php endforeach; ?>
 				</tbody>
