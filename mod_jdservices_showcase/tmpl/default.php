@@ -39,6 +39,9 @@ $showReadMoreText = $params->get('showReadMoreText');
 										<?php } ?> 
 									</h4>
 								<?php } ?>
+								<?php if(!empty($service->title)){ ?>
+									<p><?php echo $service->subtitle ?></p>
+								<?php } ?>
 								<?php if(!empty($service->description)){ ?>
 									<p class="short-description"><?php echo $service->description; ?></p>
 								<?php } ?>
