@@ -11,18 +11,20 @@ $showReadMoreText = $params->get('showReadMoreText');
 		<?php foreach ($services as $service) { ?>
 			<div class="col-lg-4">
 				<?php if($LinkOn =="fullBox") { ?> <a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php } ?>
-					<div class="features-box-icon-wrapper">
+					<div class="features-box-icon-wrapper">	
 					<?php if(!empty($service->serveices_icon_upload) or !empty($service->serveices_icon_class) ) {?>
 							<div class="features-box-icon">
 								<?php if($service->serveices_iconOption ==  "icon") { ?>
-									<i class="<?php echo $service->serveices_icon_class; ?>"></i>
+									<?php if($LinkOn  =="titleAndMedia") { ?> <a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php } ?>
+										<i class="<?php echo $service->serveices_icon_class; ?>"></i>
+									<?php if($LinkOn  =="titleAndMedia") { ?> </a> <?php } ?> 
 								<?php }  ?>
 								<?php if($service->serveices_iconOption ==  "upload") { ?>
-									<?php if($LinkOn  =="titleAndMedia") { ?> <a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php } ?>
-										<?php if(!empty($service->serveices_icon_upload)) {?>
+									<?php if(!empty($service->serveices_icon_upload)) {?>
+										<?php if($LinkOn  =="titleAndMedia") { ?> <a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php } ?>
 											<img src="<?php echo $service->serveices_icon_upload; ?>">
-										<?php } ?>
-									<?php if($LinkOn  =="titleAndMedia") { ?> </a> <?php } ?> 
+										<?php if($LinkOn  =="titleAndMedia") { ?> </a> <?php } ?> 
+									<?php } ?>
 								<?php }  ?>
 							</div>
 						<?php }  ?>
@@ -47,7 +49,7 @@ $showReadMoreText = $params->get('showReadMoreText');
 								<?php } ?>
 								<?php if(($showReadMore)){ ?>
 									<?php if(!empty($showReadMoreText)){ ?>
-										<p><a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php echo $showReadMoreText; ?></a></p>
+										<p><?php echo $showReadMoreText; ?></p>
 									<?php } ?>
 								<?php } ?>
 							</div>
