@@ -49,7 +49,7 @@ $showReadMoreText = $params->get('showReadMoreText');
 								<?php } ?>
 								<?php if(($showReadMore)){ ?>
 									<?php if(!empty($showReadMoreText)){ ?>
-										<p><?php echo $showReadMoreText; ?></p>
+										<p class="mb-0"><?php echo $showReadMoreText; ?></p>
 									<?php } ?>
 								<?php } ?>
 							</div>
