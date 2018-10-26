@@ -3,7 +3,7 @@
 <extension type="package" version="3.1" method="upgrade">
    <name>JD Profile</name>
    <author>JoomDev</author>
-   <packagename>Jd profile</packagename>
+   <packagename>JD Profile</packagename>
    <creationDate>Oct 2018</creationDate>
    <copyright>Copyright (C) 2018 Joomdev, Inc. All rights reserved.</copyright>
    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
