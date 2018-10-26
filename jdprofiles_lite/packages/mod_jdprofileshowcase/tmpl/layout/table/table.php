@@ -6,8 +6,6 @@ defined('_JEXEC') or die;
 ?>
 <?php if(!empty($profiles)){ ?>
 <div class="jd-team-showcase-wrapper jd-table-layout-view jd-table-simple-layout">
-    <div class="row">
-      <div class="col-12">
       <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
           <!-- Team Item wrapper start -->
           <div class="jd-team-table col-12">
@@ -53,8 +51,6 @@ defined('_JEXEC') or die;
           </div>
           <!-- Team Item wrapper end -->
       </div>
-      </div>
-    </div>
 </div>
 <?php  }else{ ?>
    <div class="alert alert-warning">

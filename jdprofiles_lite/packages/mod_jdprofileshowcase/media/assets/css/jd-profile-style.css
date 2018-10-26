@@ -64,6 +64,7 @@
 .jd-team-showcase-wrapper .social-profile li {
   display: inline-block;
   margin: 0 5px;
+  border: none;
 }
 
 .jd-team-showcase-wrapper .social-profile li:first-child {
@@ -83,6 +84,9 @@
   height: 40px;
   font-size: 16px;
   line-height: 1.1;
+}
+.jd-team-showcase-wrapper .social-profile li a:before{
+ content: none;
 }
 
 .jd-team-showcase-wrapper .social-profile.square li a {
@@ -111,6 +115,7 @@
 
 .jd-team-showcase-wrapper .contact-info li {
   padding: 5px 0;
+  border: none;
 }
 
 .jd-team-showcase-wrapper .contact-info li i {
@@ -156,6 +161,14 @@
   margin: auto;
   right: 0;
   bottom: 0;
+}
+.jd-team-showcase-wrapper .slick-dots{
+	bottom: auto;
+	position: relative;
+}
+.jd-team-showcase-wrapper .slick-dots li{
+	display: inline-block;
+	border: none;
 }
 
 .jd-carousel-layout-view.jd-carousel-simple-layout .jd-team-columns .jd-team-items .social-profile-wrapper,
