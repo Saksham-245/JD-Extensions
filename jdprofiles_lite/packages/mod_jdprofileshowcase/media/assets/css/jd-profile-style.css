@@ -1,9 +1,9 @@
-.jd-team-showcase-wrapper .jd-team-columns {
+.jd-profiler-wrapper .jd-team-columns {
   display: -ms-flexbox;
   display: flex;
 }
 
-.jd-team-showcase-wrapper .jd-team-columns .card-team {
+.jd-profiler-wrapper .jd-team-columns .card-team {
   width: 100%;
   position: relative;
   display: -ms-flexbox;
@@ -22,17 +22,17 @@
   overflow: hidden;
 }
 
-.jd-team-showcase-wrapper .jd-team-columns .card-team .team-mamber-image {
+.jd-profiler-wrapper .jd-team-columns .card-team .team-mamber-image {
   width: 100%;
 }
 
-.jd-team-showcase-wrapper .jd-team-columns .card-team .card-team-body {
+.jd-profiler-wrapper .jd-team-columns .card-team .card-team-body {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1rem;
 }
 
-.jd-team-showcase-wrapper .jd-team-columns .card-team .card-team-overlay {
+.jd-profiler-wrapper .jd-team-columns .card-team .card-team-overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -41,41 +41,41 @@
   padding: 1rem;
 }
 
-.jd-team-showcase-wrapper .jd-team-columns .card-team .card-team-footer {
+.jd-profiler-wrapper .jd-team-columns .card-team .card-team-footer {
   padding: .75rem 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.jd-team-showcase-wrapper .jd-team-columns .card-team .team-member-name {
+.jd-profiler-wrapper .jd-team-columns .card-team .team-member-name {
   margin-bottom: 4px;
 }
 
-.jd-team-showcase-wrapper .jd-team-columns .card-team .team-member-designation small {
+.jd-profiler-wrapper .jd-team-columns .card-team .team-member-designation small {
   font-size: 90%;
   line-height: 1.2;
 }
 
-.jd-team-showcase-wrapper .social-profile {
+.jd-profiler-wrapper .social-profile {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.jd-team-showcase-wrapper .social-profile li {
+.jd-profiler-wrapper .social-profile li {
   display: inline-block;
   margin: 0 5px;
   border: none;
 }
 
-.jd-team-showcase-wrapper .social-profile li:first-child {
+.jd-profiler-wrapper .social-profile li:first-child {
   margin-left: 0;
 }
 
-.jd-team-showcase-wrapper .social-profile li:last-child {
+.jd-profiler-wrapper .social-profile li:last-child {
   margin-right: 0;
 }
 
-.jd-team-showcase-wrapper .social-profile li a {
+.jd-profiler-wrapper .social-profile li a {
   display: block;
   padding: 10px 5px;
   text-align: center;
@@ -85,72 +85,72 @@
   font-size: 16px;
   line-height: 1.1;
 }
-.jd-team-showcase-wrapper .social-profile li a:before{
+.jd-profiler-wrapper .social-profile li a:before{
  content: none;
 }
 
-.jd-team-showcase-wrapper .social-profile.square li a {
+.jd-profiler-wrapper .social-profile.square li a {
   border: 1px solid currentColor;
 }
 
-.jd-team-showcase-wrapper .social-profile.circle li a {
+.jd-profiler-wrapper .social-profile.circle li a {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
   border: 1px solid currentColor;
 }
 
-.jd-team-showcase-wrapper .social-profile.rounded li a {
+.jd-profiler-wrapper .social-profile.rounded li a {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid currentColor;
 }
 
-.jd-team-showcase-wrapper .contact-info {
+.jd-profiler-wrapper .contact-info {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.jd-team-showcase-wrapper .contact-info li {
+.jd-profiler-wrapper .contact-info li {
   padding: 5px 0;
   border: none;
 }
 
-.jd-team-showcase-wrapper .contact-info li i {
+.jd-profiler-wrapper .contact-info li i {
   margin-right: 10px;
 }
 
-.jd-team-showcase-wrapper .slick-arrow {
+.jd-profiler-wrapper .slick-arrow {
   padding: 5px 8px;
   height: auto;
   width: auto;
   font-size: 0;
 }
 
-.jd-team-showcase-wrapper .slick-arrow::before {
+.jd-profiler-wrapper .slick-arrow::before {
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
   font-size: 30px;
   color: #000;
 }
 
-.jd-team-showcase-wrapper .slick-arrow.slick-prev::before {
+.jd-profiler-wrapper .slick-arrow.slick-prev::before {
   content: "\f104";
 }
 
-.jd-team-showcase-wrapper .slick-arrow.slick-next::before {
+.jd-profiler-wrapper .slick-arrow.slick-next::before {
   content: "\f105";
 }
 
-.jd-team-showcase-wrapper .slick-dots li,
-.jd-team-showcase-wrapper .slick-dots button {
+.jd-profiler-wrapper .slick-dots li,
+.jd-profiler-wrapper .slick-dots button {
   height: 30px;
   width: 30px;
 }
 
-.jd-team-showcase-wrapper .slick-dots li button:before {
+.jd-profiler-wrapper .slick-dots li button:before {
   content: "";
   height: 12px;
   width: 12px;
@@ -162,11 +162,11 @@
   right: 0;
   bottom: 0;
 }
-.jd-team-showcase-wrapper .slick-dots{
+.jd-profiler-wrapper .slick-dots{
 	bottom: auto;
 	position: relative;
 }
-.jd-team-showcase-wrapper .slick-dots li{
+.jd-profiler-wrapper .slick-dots li{
 	display: inline-block;
 	border: none;
 }

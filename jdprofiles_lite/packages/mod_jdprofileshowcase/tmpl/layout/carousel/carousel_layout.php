@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 ?>
 <section>
     <div class="container py-5">
-      <div class="jd-team-showcase-wrapper jd-carousel-layout-view jd-carousel-simple-layout">
+      <div class="jd-profiler-wrapper jd-carousel-layout-view jd-carousel-simple-layout">
         <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
           <div class="col-12">
             <div class="row jd-team-carousel">

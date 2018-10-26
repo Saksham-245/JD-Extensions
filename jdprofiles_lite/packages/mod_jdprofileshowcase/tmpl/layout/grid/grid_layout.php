@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 //echo "<pre>";
 //print_r($profiles);
 ?>
-<div class="jd-team-showcase-wrapper jd-grid-layout-view jd-grid-simple-layout">
+<div class="jd-profiler-wrapper jd-grid-layout-view jd-grid-simple-layout">
   <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
 	<!-- Team Item wrapper start -->
 	<?php foreach($profiles as $profile) { ?>
