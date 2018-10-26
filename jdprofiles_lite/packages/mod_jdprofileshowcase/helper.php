@@ -19,6 +19,7 @@ if($params->get('load_bootstrap', 1)){
 if($params->get('load_fontawesome', 1)){
 	$doc->addStyleSheet('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 }
+
 class modJdprofileShowcaseHelper {
     public function profiles($team,$limit){
         $db = JFactory::getDBO();
