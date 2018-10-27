@@ -39,20 +39,20 @@ defined('_JEXEC') or die;
                         </div>
                       <?php } ?>
                       <?php if($params->get('show_socialsIcon',1)) { ?>
+                        <?php if(!empty($profile->social)) { ?>
                         <div class="card-team-footer social-profile-wrapper">
                           <ul class="social-profile <?php echo $params->get('IconStyle'); ?>">
-                            <?php if(!empty($profile->social)) { ?>
-                              <?php  $socials=  json_decode($profile->social);?>
-                                <?php  foreach($socials as $social){?>
-                                    <li>
-                                        <a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
-                                          <i class="<?php echo $social->icon?>"></i>
-                                        </a>
-                                    </li>
-                                <?php } ?>
-                            <?php } ?>      
+                            <?php  $socials=  json_decode($profile->social);?>
+                              <?php  foreach($socials as $social){?>
+                                  <li>
+                                      <a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>" >
+                                        <i class="<?php echo $social->icon?>"></i>
+                                      </a>
+                                  </li>
+                              <?php } ?>
                           </ul>
                         </div>
+                        <?php } ?>   
                       <?php } ?>
                     </div>
                   </div>

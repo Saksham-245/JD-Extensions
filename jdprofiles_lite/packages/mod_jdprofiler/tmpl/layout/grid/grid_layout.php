@@ -31,7 +31,9 @@ defined('_JEXEC') or die;
 					</p>
 				  <?php } ?>
 				  <?php if(!empty($profile->sbio)) { ?>
-					  <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+						<?php if($params->get('display_sbio',1)) { ?>
+					  	<p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+						<?php } ?>
 				  <?php }?>
 			  </div>
 			</div>
