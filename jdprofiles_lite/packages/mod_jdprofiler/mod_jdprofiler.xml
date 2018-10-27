@@ -31,7 +31,7 @@
             <field
                 name="team"
                 type="sql"
-                query="SELECT id, title FROM #__jdprofiles_team  where state=1"
+                query="SELECT id, title FROM #__jdprofiler_team  where state=1"
                 label="MOD_PROFILE_SELECT_TEAM_LABEL"
                 key_field="id"
                 value_field="title"
