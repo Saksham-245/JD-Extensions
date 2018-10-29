@@ -175,8 +175,8 @@
             <field
                name="display_sbio"
                type="radio"
-               label="Display Short Bio"
-               description="Display Short Bio"
+               label="MOD_JDPROFILER_DISPLAY_SHORT_BIO"
+               description="MOD_JDPROFILER_DISPLAY_SHORT_BIO_DESC"
                default="1"
                class="btn-group btn-group-yesno"
             >
