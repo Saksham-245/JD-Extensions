@@ -147,8 +147,8 @@
 
 .jd-profiler-wrapper .slick-dots li,
 .jd-profiler-wrapper .slick-dots button {
-	height: 30px;
-	width: 30px;
+	height: auto;
+	width: auto;
 }
 
 .jd-profiler-wrapper .slick-dots li button:before {
