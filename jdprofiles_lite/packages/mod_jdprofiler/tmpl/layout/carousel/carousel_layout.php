@@ -78,7 +78,7 @@ defined('_JEXEC') or die;
             dots: <?php if($params->get('DisplayBullit')){ echo "true"; }else{ echo 'false'; } ?>,
             infinite: true,
             speed: 300,
-            slidesToShow: 4,
+            slidesToShow: <?php echo  $params->get('grid_coloumns_carosuel',3); ?>,
             adaptiveHeight: true,
             responsive: [{
                     breakpoint: 1200,

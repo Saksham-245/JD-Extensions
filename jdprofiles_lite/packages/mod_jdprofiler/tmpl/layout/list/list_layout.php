@@ -26,15 +26,17 @@ defined('_JEXEC') or die;
 				</h5>
 			  <?php } ?>
 			  <?php if($params->get('display_designation',1)) { ?>
-				<?php if(!empty($profile->designation)) { ?>
-				  <p class="team-member-designation">
-					<small><?php  echo $profile->designation; ?></small>
-				  </p>
-				<?php } ?>
+					<?php if(!empty($profile->designation)) { ?>
+						<p class="team-member-designation">
+						<small><?php  echo $profile->designation; ?></small>
+						</p>
+					<?php } ?>
 			  <?php } ?>
-			  <?php if(!empty($profile->sbio)) { ?>
-				<p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
-			  <?php } ?>    
+				<?php if($params->get('display_sbio',1)) { ?>
+					<?php if(!empty($profile->sbio)) { ?>
+					<p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
+					<?php } ?>    
+				<?php if($params->get('display_designation',1)) { ?>
 			  <ul class="list-unstyled contact-info">
 				<?php if($params->get('show_Contact',1)) { ?>
 				  <?php if(!empty($profile->phone)) { ?>
