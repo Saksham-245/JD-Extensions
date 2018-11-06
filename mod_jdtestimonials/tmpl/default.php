@@ -121,45 +121,46 @@ $active = TRUE;
 	}
 	<?php } ?>
 </style>
-
-<div class="testimonial-container-<?php echo $module->id; ?> testimonial-wrapper">
-<?php foreach($items as $item)  { ?>
-	<div class="slide-content">
-		<div class="author">
-			<?php if(!empty($item->author_thumbnail)) { ?>
-				<div class="author-img">
-					<img src="<?php echo $item->author_thumbnail; ?>" alt="<?php echo $item->author_name; ?>" class="img-fluid">
-				</div>
-			<?php } ?>
-		<?php if(!empty($item->author_name) or !empty($item->author_depart)) { ?>
-			<div class="author-info">
-				<?php if(!empty($item->author_name)) { ?>
-					<h5 class="name"><?php echo $item->author_name; ?></h5>
-				<?php } ?> 
-				<?php if(!empty($item->author_companyName)) { ?>
-					<div class="author-text"><?php if(!empty($item->author_companyLink)) { ?><a href="<?php echo $item->author_companyLink; ?>" target="_blank"  rel="nofollow" ><?php } ?><?php echo $item->author_companyName; ?><?php if(!empty($item->author_companyLink)) { ?></a><?php } ?></div>
-				<?php } ?>
-				<?php if(($item->rating !="none")) { ?>
-					<div class="rating">
-						<?php for($i=1; $i<=5; $i++) {
-							if($i <=  $item->rating ){
-								echo '<span class="fa fa-star text-primary"></span>';
-							}else{
-								echo '<span class="fa fa-star"></span>';
-							}
-						 } ?>
+<div class="jd-testimonial">
+	<div class="testimonial-container-<?php echo $module->id; ?> testimonial-wrapper">
+	<?php foreach($items as $item)  { ?>
+		<div class="slide-content">
+			<div class="author">
+				<?php if(!empty($item->author_thumbnail)) { ?>
+					<div class="author-img">
+						<img src="<?php echo $item->author_thumbnail; ?>" alt="<?php echo $item->author_name; ?>" class="img-fluid">
 					</div>
 				<?php } ?>
+			<?php if(!empty($item->author_name) or !empty($item->author_depart)) { ?>
+				<div class="author-info">
+					<?php if(!empty($item->author_name)) { ?>
+						<h5 class="name"><?php echo $item->author_name; ?></h5>
+					<?php } ?> 
+					<?php if(!empty($item->author_companyName)) { ?>
+						<div class="author-text"><?php if(!empty($item->author_companyLink)) { ?><a href="<?php echo $item->author_companyLink; ?>" target="_blank"  rel="nofollow" ><?php } ?><?php echo $item->author_companyName; ?><?php if(!empty($item->author_companyLink)) { ?></a><?php } ?></div>
+					<?php } ?>
+					<?php if(($item->rating !="none")) { ?>
+						<div class="rating">
+							<?php for($i=1; $i<=5; $i++) {
+								if($i <=  $item->rating ){
+									echo '<span class="fa fa-star text-primary"></span>';
+								}else{
+									echo '<span class="fa fa-star"></span>';
+								}
+							 } ?>
+						</div>
+					<?php } ?>
+				</div>
+				<?php } ?>
 			</div>
+			<?php if(!empty($item->author_companyReview)) { ?>
+				<div class="text">
+				<?php echo $item->author_companyReview; ?>
+				</div>
 			<?php } ?>
 		</div>
-		<?php if(!empty($item->author_companyReview)) { ?>
-			<div class="text">
-			<?php echo $item->author_companyReview; ?>
-			</div>
-		<?php } ?>
+	<?php } ?>
 	</div>
-<?php } ?>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
