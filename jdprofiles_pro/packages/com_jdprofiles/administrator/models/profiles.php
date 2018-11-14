@@ -180,7 +180,7 @@ class JdprofilesModelProfiles extends JModelList
 			$query->where('(a.state IN (0, 1))');
 		}
 
-		// Filter by designation 
+		// Filter by Team 
 		 $team = $this->getState('filter.team');
 		if (IS_STRING($team)){
 			$team = $db->Quote('%' . $db->escape($team, true) . '%');

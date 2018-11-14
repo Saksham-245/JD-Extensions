@@ -30,7 +30,7 @@ defined('_JEXEC') or die;
                     <div class="team-member-content-wrapper">
                       <?php if($params->get('display_name',1)) { ?>
                         <h5 class="card-img-overlayteam-member-name">
-                          <?php  echo $profile->name; ?>
+                          <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>  
                         </h5>
                       <?php } ?>
                       <?php if($params->get('display_designation',1)) { ?>

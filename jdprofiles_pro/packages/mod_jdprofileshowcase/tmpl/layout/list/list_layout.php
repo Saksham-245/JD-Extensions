@@ -5,21 +5,21 @@ defined('_JEXEC') or die;
 //print_r($profiles);
 ?>
 <style>
-.card-img-overlayteam-member-name{
-  color:<?php echo  $params->get('NameColor'); ?>;
+.jd-team-showcase-wrapper .jd-team-columns .card-team .team-member-name{
+  color:<?php echo  $params->get('NameColor',""); ?>;
 }
-.team-member-designation{
-  color:<?php echo  $params->get('designationColor'); ?>;
+.jd-team-showcase-wrapper .jd-team-columns .card-team .team-member-designation small{
+  color:<?php echo  $params->get('designationColor',""); ?>;
 }
-.card-img-overlayteam-member-bio{
-  color:<?php echo  $params->get('shortBio'); ?>;
+.team-member-bio{
+  color:<?php echo  $params->get('shortBio',""); ?>;
 }
 </style>
 
 <div class="jd-team-showcase-wrapper jd-list-layout-view jd-list-simple-layout">
   <div class="row">
     <div class="col-12">
-      <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
+      <div class="row">
       <?php foreach($profiles as $profile) { ?>
         <!-- Team Item wrapper start -->
         <div class="jd-team-columns col-12">
@@ -46,9 +46,11 @@ defined('_JEXEC') or die;
                       </p>
                     <?php } ?>
                   <?php } ?>
-                  <?php if(!empty($profile->sbio)) { ?>
-                    <p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
-                  <?php } ?>    
+                  <?php if($params->get('display_sbio',1)) { ?>
+                    <?php if(!empty($profile->sbio)) { ?>
+                      <p class="team-member-bio"><?php echo $profile->sbio;  ?></p>
+                    <?php } ?>    
+                  <?php } ?> 
                   <ul class="list-unstyled contact-info">
                     <?php if($params->get('show_Contact',1)) { ?>
                       <?php if(!empty($profile->phone)) { ?>
@@ -94,7 +96,9 @@ defined('_JEXEC') or die;
     </div>
   </div>
 </div>
-
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
 (function ($) {
     // Slick Js start
