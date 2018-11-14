@@ -57,12 +57,22 @@
                default="0"
                class="btn-group btn-group-yesno"
             >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
+               <option value="0">JNONE</option>
+               <option value="1">Text Only</option>
+               <option value="2">Icon Only</option>
             </field>
             <field name="showReadMoreText"
-                label="Read More Text"
+                label="Text Only"
+                required="true"
                 showon="showReadMore:1"
+                default="Read More"
+                type="text" />
+                
+            <field name="showReadMoreIcon"
+                label="Icon"
+                required="true"
+                showon="showReadMore:2"
+                default="fas fa-chevron-right"
                 type="text" />
             <field name="showcase_height"
                 type="text"
