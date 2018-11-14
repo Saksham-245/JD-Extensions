@@ -7,13 +7,13 @@ defined('_JEXEC') or die;
 
 <style>
 .card-img-overlayteam-member-name{
-  color:<?php echo  $params->get('NameColor'); ?>;
+  color:<?php echo  $params->get('NameColor',""); ?>;
 }
 .team-member-designation{
-  color:<?php echo  $params->get('designationColor'); ?>;
+  color:<?php echo  $params->get('designationColor',""); ?>;
 }
 .card-img-overlayteam-member-bio{
-  color:<?php echo  $params->get('shortBio'); ?>;
+  color:<?php echo  $params->get('shortBio',""); ?>;
 }
  
 </style>
@@ -21,7 +21,7 @@ defined('_JEXEC') or die;
 <div class="jd-team-showcase-wrapper jd-table-layout-view jd-table-simple-layout">
     <div class="row">
       <div class="col-12">
-      <div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
+      <div class="row">
           <!-- Team Item wrapper start -->
           <div class="jd-team-table col-12">
             <table class="table table-striped">
@@ -34,17 +34,21 @@ defined('_JEXEC') or die;
                       </th>
                   <?php } ?>
 
-                  <?php if($params->get('display_name')) { ?>
+                  <?php if($params->get('display_name',1)) { ?>
                       <?php if(!empty($profile->name)) { ?>
                         <td class="team-member-name">
-                        <span class="name">
-                            <?php  echo $profile->name; ?>
-                        </span>
+                          <span class="name">
+                            <?php if($params->get('enable_link',1)) { ?>
+                                <a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $profile->id); ?>"><?php  echo $profile->name; ?></a>
+                            <?php }else{ ?>
+                              <?php  echo $profile->name; ?>
+                            <?php } ?>
+                          </span>
                         </td>
                       <?php } ?>
                   <?php } ?>  
 
-                  <?php if($params->get('display_designation')) { ?>
+                  <?php if($params->get('display_designation',1)) { ?>
                       <?php if(!empty($profile->title)) { ?>
                         <td class="team-member-designation"><i class="fas fa-stamp"></i> <?php  echo $profile->title; ?></td>
                       <?php } ?> 
@@ -54,7 +58,7 @@ defined('_JEXEC') or die;
                       <td class="team-member-address"><i class="fas fa-envelope"></i> <?php  echo $profile->email; ?> </td>
                   <?php } ?>
 
-                  <?php if($params->get('show_Contact')) { ?>
+                  <?php if($params->get('show_Contact',1)) { ?>
                       <?php if(!empty($profile->phone)) { ?>
                         <td class="team-member-email"><i class="fas fa-phone fa-rotate-90"></i> <?php  echo $profile->phone; ?></td>
                       <?php } ?>

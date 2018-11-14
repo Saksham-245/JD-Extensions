@@ -10,7 +10,6 @@
 			<field name="layout" type="list" default="desire" required="true" label="Select an Layout" description="">
 				<option value="table_layout">Table Layout</option>
 				<option value="grid_layout">Grid Layout</option>
-				<option value="grid_circle_layout">Grid Circle Layout</option>
 				<option value="list_layout">List Layout</option>
 				<option value="carsousel_layout">Carsousel Layout</option>
 			</field>

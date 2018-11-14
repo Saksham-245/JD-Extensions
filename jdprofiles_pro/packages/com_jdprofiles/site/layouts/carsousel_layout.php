@@ -15,11 +15,11 @@ $params = $displayData->get('params');
 							<?php if($params->get('display_name') or $params->get('display_designation') ) { ?>
 							<div class="card-team-body">
 								<div class="team-member-content-wrapper">
-									<?php if($params->get('display_name')) { ?>
+									<?php if($params->get('display_name',1)) { ?>
 									<h5 class="card-img-overlayteam-member-name"><a href="<?php echo JRoute::_('index.php?option=com_jdprofiles&view=profile&id='.(int) $item->id); ?>">
 											<?php  echo $item->name; ?></a></h5>
 									<?php } ?>
-									<?php if($params->get('display_designation')) { ?>
+									<?php if($params->get('display_designation',1)) { ?>
 									<?php if(!empty($item->designation)) { ?>
 									<p class="team-member-designation">
 										<small>
@@ -35,22 +35,22 @@ $params = $displayData->get('params');
 								</div>
 							</div>
 							<?php } ?>
-							<?php if($params->get('show_socialsIcon')) { ?>
-							<div class="card-team-footer social-item-wrapper">
-								<ul class="social-item  <?php if($params->get('social_icons')==" c"){ echo $params->get('IconStyle');
-									} ?>">
-									<?php if(!empty($item->social)) { ?>
-									<?php  $socials=  json_decode($item->social);?>
-									<?php  foreach($socials as $social){?>
-									<li>
-										<a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>">
-											<i class="<?php echo $social->icon?>"></i>
-										</a>
-									</li>
-									<?php } ?>
-									<?php } ?>
-								</ul>
-							</div>
+							<?php if(!empty($item->social)) { ?>
+								<?php if($params->get('show_socialsIcon',1)) { ?>
+									<div class="card-team-footer social-item-wrapper">
+										<ul class="social-profile <?php if($params->get('social_icons')=="c"){ echo $params->get('IconStyle');
+											} ?>">
+											<?php  $socials=  json_decode($item->social);?>
+											<?php  foreach($socials as $social){?>
+											<li>
+												<a href="<?php echo $social->link?>" target="<?php if($params->get('new_tab')){echo '1'; } ?>">
+													<i class="<?php echo $social->icon?>"></i>
+												</a>
+											</li>
+											<?php } ?>
+										</ul>
+									</div>
+								<?php } ?>
 							<?php } ?>
 						</div>
 					</div>

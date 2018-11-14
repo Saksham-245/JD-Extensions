@@ -38,12 +38,13 @@ defined('_JEXEC') or die;
 				  <ul class="list-unstyled contact-info">
 						<?php if(!empty($this->item->phone)) { ?>	
 								<li>
-									<i class="fas fa-phone fa-rotate-90 mr-2"></i><?php echo $this->item->phone; ?></li>
-								<li>
+									<i class="fas fa-phone fa-rotate-90 mr-2"></i><?php echo $this->item->phone; ?>
+								</li>
+					
 						<?php } ?>
 						<?php if(!empty($this->item->email)) { ?>	
 							<li>
-								<i class="fas fa-envelope mr-2"></i> <?php echo $this->item->email; ?></li>
+								<i class="fas fa-envelope mr-2"></i> <?php echo $this->item->email; ?>
 							</li>
 						<?php  } ?>
 						<?php if(!empty($this->item->location)) { ?>	
@@ -58,7 +59,7 @@ defined('_JEXEC') or die;
 				<?php if($this->params->get('show_socialsIcon',1)) { ?>
 					<?php if(!empty($this->item->social)) { ?>
 							<div class="social-profile-wrapper">
-								<ul class="team-social <?php echo $this->params->get('IconStyle');  ?> list-unstyled ">
+								<ul class="social-profile <?php echo $this->params->get('IconStyle');  ?> list-unstyled ">
 									<?php  $socials=  json_decode($this->item->social);?>
 										<?php  foreach($socials as $social){?>
 												<li>
@@ -79,11 +80,11 @@ defined('_JEXEC') or die;
 		</div>
 		<div class="row pb-5">
 		  <div class="col-12">
-		  <?php if(!empty($this->item->details)) {?>
-			<div class="team-single-details-text">
-				<?php echo $this->item->details; ?>
-			</div>
-		  <?php } ?>	
+				<?php if(!empty($this->item->details)) {?>
+					<div class="team-single-details-text">
+						<?php echo $this->item->details; ?>
+					</div>
+				<?php } ?>	
 		  </div>
 		</div>
 				<?php if($this->params->get('show_skills')) { ?>
@@ -94,8 +95,10 @@ defined('_JEXEC') or die;
 									<?php  foreach($skills as $skill){?>
 										<?php if($skill->skill_rating >= 0 AND $skill->skill_rating <= 100) { ?>
 												<div class="progress mb-3">
-													<p><?php echo $skill->skill; ?></p>
-													<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $skill->skill_rating; ?>%" aria-valuenow="<?php echo $skill->skill_rating; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $skill->skill_rating; ?>%</div>
+													
+													<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $skill->skill_rating; ?>%" aria-valuenow="<?php echo $skill->skill_rating; ?>" aria-valuemin="0" aria-valuemax="100">
+													<?php echo $skill->skill; ?> 
+													<?php echo $skill->skill_rating; ?>%</div>
 												</div>
 										<?php } ?>
 									<?php } ?>

@@ -66,7 +66,7 @@ $params = $displayData->get('params');
 								<?php if($params->get('show_socialsIcon')) { ?>
 								<?php if(!empty($item->social)) { ?>
 								<div class="social-item-wrapper">
-									<ul class="social-item <?php echo $params->get('IconStyle');  ?>">
+									<ul class="social-profile <?php echo $params->get('IconStyle');  ?>">
 										<?php  $socials=  json_decode($item->social);?>
 										<?php  foreach($socials as $social){?>
 										<li>

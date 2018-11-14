@@ -39,13 +39,15 @@ defined('_JEXEC') or die;
                         <?php  } ?>
                           </h5>
                         <?php } ?>
-                      <?php if($params->get('display_designation',1)) { ?>
+                      <?php if($params->get('display_sbio',1)) { ?>
                         <p class="team-member-designation">
                           <small><?php echo $profile->title;  ?></small>
                         </p>
                       <?php } ?>
-                      <?php if(!empty($profile->sbio)) { ?>
-                          <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                      <?php if($params->get('display_sbio',1)) { ?>
+                        <?php if(!empty($profile->sbio)) { ?>
+                            <p class="card-img-overlayteam-member-bio"><?php echo $profile->sbio;  ?></p>
+                        <?php }?>
                       <?php }?>
                   </div>
                 </div>
