@@ -2,18 +2,21 @@
 defined('_JEXEC') or die;
 $items = $params->get('items', []);
 $items = (array) $items;
+$count = count($items);
 ?>
 <div class="py-6">
    <div class="row">
       <div style="max-width: 50px" class="col tab-button button-border transform-up mb-5 mb-lg-0 d-lg-flex justify-content-center d-none d-lg-block">
-         <div class="nav flex-lg-column justify-content-center nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link mb-lg-2" role="button" data-slide="prev" href="#before-after-slider-<?php echo $module->id; ?>">
-               <i class="fa fa-angle-up" aria-hidden="true"></i>
-            </a>
-            <a class="nav-link" role="button" data-slide="next" href="#before-after-slider-<?php echo $module->id; ?>">
-               <i class="fa fa-angle-down" aria-hidden="true"></i>
-            </a>
-         </div>
+         <?php if($count != 1) { ?>
+            <div class="nav flex-lg-column justify-content-center nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+               <a class="nav-link mb-lg-2" role="button" data-slide="prev" href="#before-after-slider-<?php echo $module->id; ?>">
+                  <i class="fa fa-angle-up" aria-hidden="true"></i>
+               </a>
+               <a class="nav-link" role="button" data-slide="next" href="#before-after-slider-<?php echo $module->id; ?>">
+                  <i class="fa fa-angle-down" aria-hidden="true"></i>
+               </a>
+            </div>
+         <?php } ?>   
       </div>
       <div class="col">
          <div class="carousel slide" data-ride="carousel" id="before-after-slider-<?php echo $module->id; ?>">
@@ -25,14 +28,20 @@ $items = (array) $items;
                   $active = false;
                   ?>">
                      <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 mb-5 mb-md-5 mb-lg-0">
-                           <h3 class="mb-4"><?php echo $item->title; ?></h3>
-                           <div class="row">
-                              <div class="col">
-   <?php echo $item->summary; ?>
-                              </div>
+                        <?php if(!empty($item->title)and !empty($item->summary)) { ?>
+                           <div class="col-sm-12 col-md-12 col-lg-6 mb-5 mb-md-5 mb-lg-0">
+                              <?php if(!empty($item->title)){ ?>
+                                 <h3 class="mb-4"><?php echo $item->title; ?></h3>
+                              <?php } ?>
+                              <?php if(!empty($item->summary)){ ?>
+                                 <div class="row">
+                                    <div class="col">
+                                       <?php echo $item->summary; ?>
+                                    </div>
+                                 </div>
+                              <?php } ?>
                            </div>
-                        </div>
+                        <?php } ?>
                         <div class="col-sm-12 col-md-12 col-lg-6">
                            <div class="twentytwenty-container twentytwenty-container-<?php echo $module->id; ?>">
                               <img width="100%" src="<?php echo JURI::root() . $item->before_image; ?>" />
@@ -44,7 +53,7 @@ $items = (array) $items;
                      </div>
                      <div class="clearfix"></div>
                   </div>
-<?php } ?>
+               <?php } ?>
             </div>
          </div>
       </div>
