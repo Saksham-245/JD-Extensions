@@ -28,7 +28,7 @@ $count = count($items);
                   $active = false;
                   ?>">
                      <div class="row">
-                        <?php if(!empty($item->title)and !empty($item->summary)) { ?>
+                        <?php if(!empty($item->title) or !empty($item->summary)) { ?>
                            <div class="col-sm-12 col-md-12 col-lg-6 mb-5 mb-md-5 mb-lg-0">
                               <?php if(!empty($item->title)){ ?>
                                  <h3 class="mb-4"><?php echo $item->title; ?></h3>
