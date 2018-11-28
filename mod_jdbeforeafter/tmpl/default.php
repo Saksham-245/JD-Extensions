@@ -29,7 +29,7 @@ $count = count($items);
                   ?>">
                      <div class="row">
                         <?php if(!empty($item->title) or !empty($item->summary) or  !empty($item->subtitle)) { ?>
-                           <div class="col-sm-12 col-md-12 col-lg-6 mb-5 mb-md-5 mb-lg-0">
+                           <div class="col mb-5 mb-md-5 mb-lg-0">
                               <?php if(!empty($item->title)){ ?>
                                  <h3 class="mb-4"><?php echo $item->title; ?></h3>
                               <?php } ?>
@@ -50,7 +50,7 @@ $count = count($items);
                            </div>
                         <?php } ?>
                         <?php if(!empty($item->before_image) or !empty($item->after_image)) {?>
-                           <div class="col-sm-12 col-md-12 col-lg-6">
+                           <div class="col">
                               <div class="twentytwenty-container twentytwenty-container-<?php echo $module->id; ?>">
                                     <?php if(!empty($item->before_image)) {?>
                                        <img width="100%" src="<?php echo JURI::root() . $item->before_image; ?>" />
