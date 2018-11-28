@@ -28,7 +28,7 @@ $count = count($items);
                   $active = false;
                   ?>">
                      <div class="row">
-                        <?php if(!empty($item->title) or !empty($item->summary)) { ?>
+                        <?php if(!empty($item->title) or !empty($item->summary) or  !empty($item->subtitle)) { ?>
                            <div class="col-sm-12 col-md-12 col-lg-6 mb-5 mb-md-5 mb-lg-0">
                               <?php if(!empty($item->title)){ ?>
                                  <h3 class="mb-4"><?php echo $item->title; ?></h3>
@@ -40,15 +40,28 @@ $count = count($items);
                                     </div>
                                  </div>
                               <?php } ?>
+                              <?php if(!empty($item->subtitle)){ ?>
+                                 <div class="row">
+                                    <div class="col">
+                                       <?php echo $item->subtitle; ?>
+                                    </div>
+                                 </div>
+                              <?php } ?>
                            </div>
                         <?php } ?>
-                        <div class="col-sm-12 col-md-12 col-lg-6">
-                           <div class="twentytwenty-container twentytwenty-container-<?php echo $module->id; ?>">
-                              <img width="100%" src="<?php echo JURI::root() . $item->before_image; ?>" />
-                              <img width="100%" src="<?php echo JURI::root() . $item->after_image; ?>" />
+                        <?php if(!empty($item->before_image) or !empty($item->after_image)) {?>
+                           <div class="col-sm-12 col-md-12 col-lg-6">
+                              <div class="twentytwenty-container twentytwenty-container-<?php echo $module->id; ?>">
+                                    <?php if(!empty($item->before_image)) {?>
+                                       <img width="100%" src="<?php echo JURI::root() . $item->before_image; ?>" />
+                                    <?php } ?>
+                                    <?php if(!empty($item->after_image)) {?>
+                                       <img width="100%" src="<?php echo JURI::root() . $item->after_image; ?>" />
+                                    <?php } ?>
+                              </div>
+                              <div class="clearfix"></div>
                            </div>
-                           <div class="clearfix"></div>
-                        </div>
+                        <?php } ?>
                         <div class="clearfix"></div>
                      </div>
                      <div class="clearfix"></div>
@@ -58,18 +71,20 @@ $count = count($items);
          </div>
       </div>
    </div>
-   <div class="row d-block d-lg-none">
-      <div class="col-12 tab-button button-border transform-up mb-5 mb-lg-0 d-lg-flex justify-content-center">
-         <div class="nav justify-content-center nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link mb-lg-2 mr-2" role="button" data-slide="prev" href="#before-after-slider-<?php echo $module->id; ?>">
-               <i class="fa fa-angle-left" aria-hidden="true"></i>
-            </a>
-            <a class="nav-link" role="button" data-slide="next" href="#before-after-slider-<?php echo $module->id; ?>">
-               <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
+   <?php if($count != 1) { ?>
+      <div class="row d-block d-lg-none">
+         <div class="col-12 tab-button button-border transform-up mb-5 mb-lg-0 d-lg-flex justify-content-center">
+            <div class="nav justify-content-center nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+               <a class="nav-link mb-lg-2 mr-2" role="button" data-slide="prev" href="#before-after-slider-<?php echo $module->id; ?>">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+               </a>
+               <a class="nav-link" role="button" data-slide="next" href="#before-after-slider-<?php echo $module->id; ?>">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+               </a>
+            </div>
          </div>
       </div>
-   </div>
+   <?php } ?>
 </div>
 
 <script>
@@ -79,7 +94,7 @@ $count = count($items);
          var init = function () {
             $(".twentytwenty-container-<?php echo $module->id; ?>").each(function () {
                $(this).twentytwenty({
-                  default_offset_pct: 0.7
+                  default_offset_pct: 0.5
                });
             });
          };

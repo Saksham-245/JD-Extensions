@@ -46,7 +46,7 @@
                type="radio"
                label="MOD_JDBEFOREAFTER_OPTIONS_LOAD_BOOTSTRAP_LBL"
                description="MOD_JDBEFOREAFTER_OPTIONS_LOAD_BOOTSTRAP_DESC"
-               default="1"
+               default="0"
                class="btn-group btn-group-yesno"
             >
                <option value="1">JYES</option>

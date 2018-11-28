@@ -16,10 +16,12 @@
       >
       </field>
       <field name="before_image"
+              required="true"
              label="MOD_JDBEFOREAFTER_OPTIONS_BEFORE_IMAGE_LBL"
              description="MOD_JDBEFOREAFTER_OPTIONS_BEFORE_IMAGE_DESC"
              type="media"  />
       <field name="after_image"
+              required="true"
              label="MOD_JDBEFOREAFTER_OPTIONS_AFTER_IMAGE_LBL"
              description="MOD_JDBEFOREAFTER_OPTIONS_AFTER_IMAGE_DESC"
              type="media"  />
