@@ -108,7 +108,7 @@ $count = count($items);
          initBeforeAfter();
       };
       var winLoad = function () {
-
+         $(window).trigger("resize.twentytwenty");
       };
       var winScroll = function () {
 
