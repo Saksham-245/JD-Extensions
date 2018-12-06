@@ -9,3 +9,4 @@
  */
 defined('_JEXEC') or die('Restricted access');
 $doc = JFactory::getDocument();
+$doc->addStyleSheet(JURI::root().'media/mod_gallery/css/mod_jd_gallery.css');

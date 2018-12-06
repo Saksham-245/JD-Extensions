@@ -38,10 +38,14 @@ $size_lx = 12 / $photo_in_row_lx;
 $size_md = 12 / $photo_in_row_md;
 $size_sm = 12 / $photo_in_row_sm;
 ?>
-<div class="col-lg-<?php echo $size_lx; ?> col-md-<?php echo $size_md; ?> col-sm-<?php echo $size_sm; ?> p-0">
+<div class="col-lg-<?php echo $size_lx; ?> col-md-<?php echo $size_md; ?> col-sm-<?php echo $size_sm; ?> p-2">
 	<a data-fancybox="gallery" href="<?php echo JURI::root().$desktop_item["photo_gallery_image"]; ?>">
 	<img class="img-fluid" src="<?php echo JURI::root().$desktop_item["photo_gallery_image"]; ?>">
-	<div class="overlay"><i class="far fa-eye"></i></div>
+	<div class="overlay">
+		<div class="overlay-border">
+			<i class="fas fa-search-plus">
+		</div>
+	</i></div>
 	</a>
 </div>
 <?php } ?>

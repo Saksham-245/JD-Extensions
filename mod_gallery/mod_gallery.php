@@ -9,6 +9,7 @@
  */
 defined('_JEXEC') or die;
 require_once (dirname ( __FILE__ ) . '/' . 'helper.php');
-
+$doc = JFactory::getDocument();
+$doc->addStyleSheet(JURI::root().'media/mod_gallery/css/mod_jd_gallery.css');
 $app = JFactory::getApplication();
 require JModuleHelper::getLayoutPath('mod_gallery', $params->get('layout', 'default'));
