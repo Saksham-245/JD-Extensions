@@ -12,7 +12,6 @@
    <files>
       <filename module="mod_jdcountdown">mod_jdcountdown.php</filename>
       <folder>tmpl</folder>
-      <folder>fields</folder>
       <filename>helper.php</filename>
    </files>
    <scriptfile>script.php</scriptfile>
