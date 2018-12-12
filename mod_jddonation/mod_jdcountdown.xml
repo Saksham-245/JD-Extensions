@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+   <name>mod_jdcountdown</name>
+	<author>JoomDev</author>
+	<creationDate>Sept 2018</creationDate>
+	<version>1.0.0</version>
+	<authorEmail>info@joomdev.com</authorEmail>
+	<authorUrl>https://www.joomdev.com</authorUrl>
+	<description>MOD_JDCOUNTDOWN_XML_DESCRIPTION</description>
+	<copyright>Copyright (C) 2018 Joomdev, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+   <files>
+      <filename module="mod_jdcountdown">mod_jdcountdown.php</filename>
+      <folder>tmpl</folder>
+      <folder>fields</folder>
+      <filename>helper.php</filename>
+   </files>
+   <scriptfile>script.php</scriptfile>
+   <languages folder="language">
+      <language tag="en-GB">en-GB/en-GB.mod_jdcountdown.ini</language>
+      <language tag="en-GB">en-GB/en-GB.mod_jdcountdown.sys.ini</language>
+   </languages>
+   <media folder="media" destination="mod_jdcountdown">
+		<folder>css</folder>
+		<folder>images</folder>
+	</media>
+   <config>
+      <fields name="params">
+         <fieldset name="basic" addfieldpath="/modules/mod_jdcountdown/fields">
+          <field
+               name="discount_title"
+               type="text"
+               filter="safehtml"
+               label="DISCOUNT_LABEL"
+               description="DISCOUNT_DESCRIPTION"
+               default="1"
+            />
+          <field
+               name="summary"
+               type="textarea"
+               filter="safehtml"
+               label="SUMMARY_LABEL"
+               description="SUMMARY_DESCRIPTION"
+               default="1"
+            />
+          <field name="countdown_date" 
+                  type="calendar"
+                  default="2018-12-12" 
+                  label="SELECT_A_DATE_LABEL" 
+                  description="SELECT_A_DATE_DESCRIPTION"
+                  class="input-medium" 
+                  required="true"
+                  filter="user_utc"
+                  format="%Y-%m-%d"
+                  singleheader="true" 
+                  showtime="true" 
+                  timeformat="12" 
+                  todaybutton="true"
+                  weeknumbers="true"
+                  filltable="true" 
+                  minyear="-3"
+                  maxyear="5" 
+               /> 
+            <field
+               name="button"
+               type="text"
+               filter="safehtml"
+               label="BUTTON_TEXT_LABEL"
+               description="BUTTON_TEXT_DESCRIPTION"
+               default="Get Hour"
+            />
+            <field 
+               name="button_link" 
+               type="menuitem"
+               label="SELECT_A_MENU_LABEL" 
+               description="SELECT_A_MENU_DESCRIPTION" 
+            />
+            <field 
+               name="countdown_message" 
+               type="text"
+               label="COUNTDOWN_EX_MESSAGE_LABEL" 
+               description="COUNTDOWN_EX_MESSAGE_DESCRIPTION" 
+            />
+         </fieldset>
+         <fieldset name="advanced">
+            <field
+               name="layout"
+               type="modulelayout"
+               label="JFIELD_ALT_LAYOUT_LABEL"
+               description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+               default="default"
+            />
+            <field
+               name="load_bootstrap"
+               type="radio"
+               label="MOD_OPTIONS_LOAD_BOOTSTRAP_LBL"
+               description="MOD_OPTIONS_LOAD_BOOTSTRAP_DESC"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field
+               name="load_fontawesome"
+               type="radio"
+               label="MOD_OPTIONS_LOAD_BOOTSTRAP_LBL"
+               description="MOD_OPTIONS_LOAD_BOOTSTRAP_DESC"
+               default="1"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+         </fieldset>
+      </fields>
+   </config>
+</extension>
