@@ -2,40 +2,31 @@
 defined('_JEXEC') or die;
 $button_link=$params->get('button_link','#');
 ?>
-<style>
-span:empty {
-   display: none;
-}
-</style>
 <div class="row">
    <div class="col-12">
       
       <?php if(!empty($params->get('discount_title'))){ ?>
-         <h3 class=""><?php echo $params->get('discount_title','');?></h3>
+         <div class="heading-count"><?php echo $params->get('discount_title','');?></div>
       <?php } ?>
 
       <?php if(!empty($params->get('summary'))){ ?>
-         <p class="summary"><?php echo $params->get('summary','');?></p>
+         <p class="count-summary"><?php echo $params->get('summary','');?></p>
       <?php } ?>
-
-      <?php if(!empty($params->get('countdown_date'))){ ?>
-         <p class="summary"><?php echo $params->get('countdown_date','');?></p>
-      <?php } ?>
-
-      <?php if(!empty($params->get('button'))){ ?>
-         <a href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><button class="btn btn-primary"><?php echo $params->get('button','');?></button></a>
-      <?php } ?>
-        
-      <div id="countdown-<?php echo $module->id;?>" class="">
-         <span class="p-4 border border-primary" id="days-<?php echo $module->id;?>"></span>
-         <span class="p-4 border border-primary" id="hours-<?php echo $module->id;?>"></span>
-         <span class="p-4 border border-primary" id="minutes-<?php echo $module->id;?>"></span>
-         <span class="p-4 border border-primary" id="seconds-<?php echo $module->id;?>"></span>
-      </div>
-       
+		<div class="row time-countdown justify-content-start">
+			<div class="col-12 col-lg-12">
+				<div id="countdown-<?php echo $module->id;?>" class="countdown">
+					<span class="" id="days-<?php echo $module->id;?>"></span>
+					<span class="" id="hours-<?php echo $module->id;?>"></span>
+					<span class="" id="minutes-<?php echo $module->id;?>"></span>
+					<span class="" id="seconds-<?php echo $module->id;?>"></span>
+				</div>
+			</div>
+		</div>
    </div>
 </div>
-
+ <?php if(!empty($params->get('button'))){ ?>
+	 <a class="btn btn-outline-primary mt-5" href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><?php echo $params->get('button','');?></a>
+  <?php } ?>
 
 <script>
 
@@ -64,7 +55,7 @@ span:empty {
          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+		 
          // Display the result in the element with id="demo"
          document.getElementById("days-<?php  echo $module->id;?>").innerHTML = days;
          document.getElementById("hours-<?php echo $module->id;?>").innerHTML = hours;

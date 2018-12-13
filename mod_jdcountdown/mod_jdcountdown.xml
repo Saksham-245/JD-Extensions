@@ -12,6 +12,7 @@
    <files>
       <filename module="mod_jdcountdown">mod_jdcountdown.php</filename>
       <folder>tmpl</folder>
+      <folder>fields</folder>
       <filename>helper.php</filename>
    </files>
    <scriptfile>script.php</scriptfile>
@@ -21,6 +22,7 @@
    </languages>
    <media folder="media" destination="mod_jdcountdown">
 		<folder>css</folder>
+		<folder>images</folder>
 	</media>
    <config>
       <fields name="params">
@@ -29,23 +31,23 @@
                name="discount_title"
                type="text"
                filter="safehtml"
-               label="Discount Title"
-               description="Discount Title"
+               label="DISCOUNT_LABEL"
+               description="DISCOUNT_DESCRIPTION"
                default="1"
             />
           <field
                name="summary"
                type="textarea"
                filter="safehtml"
-               label="Summary"
-               description="Summary "
+               label="SUMMARY_LABEL"
+               description="SUMMARY_DESCRIPTION"
                default="1"
             />
           <field name="countdown_date" 
                   type="calendar"
                   default="2018-12-12" 
-                  label="Select a date" 
-                  description=""
+                  label="SELECT_A_DATE_LABEL" 
+                  description="SELECT_A_DATE_DESCRIPTION"
                   class="input-medium" 
                   required="true"
                   filter="user_utc"
@@ -63,21 +65,21 @@
                name="button"
                type="text"
                filter="safehtml"
-               label="Button Text"
-               description="Summary "
+               label="BUTTON_TEXT_LABEL"
+               description="BUTTON_TEXT_DESCRIPTION"
                default="Get Hour"
             />
             <field 
                name="button_link" 
                type="menuitem"
-               label="Select a menu" 
-               description="Select a menu" 
+               label="SELECT_A_MENU_LABEL" 
+               description="SELECT_A_MENU_DESCRIPTION" 
             />
             <field 
                name="countdown_message" 
                type="text"
-               label="Countdown Ex Message" 
-               description="Countdown Ex Message" 
+               label="COUNTDOWN_EX_MESSAGE_LABEL" 
+               description="COUNTDOWN_EX_MESSAGE_DESCRIPTION" 
             />
          </fieldset>
          <fieldset name="advanced">
