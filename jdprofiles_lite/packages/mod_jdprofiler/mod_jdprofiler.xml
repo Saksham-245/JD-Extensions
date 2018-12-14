@@ -148,6 +148,32 @@
                default="1"
                class="btn-group btn-group-yesno"
             />
+           
+            <field
+               name="order"
+               type="radio"
+               label="MOD_JDPROFILER_ORDER_LABEL"
+               description="MOD_JDPROFILER_ORDER_DESC"
+               default="id"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="id">MOD_JDPROFILER_ORDER_OPTION_LATEST</option>
+               <option value="ordering">MOD_JDPROFILER_ORDER_OPTION_ORDERING</option>
+               <option value="name">MOD_JDPROFILER_ORDER_OPTION_ALPHABETICALLY</option>
+               <option value="random">MOD_JDPROFILER_ORDER_OPTION_RANDOM</option>
+            </field>
+             <field
+               name="sort"
+               type="radio"
+               label="Sort by"
+               showon="order:id[OR]order:ordering[OR]order:name"
+               description="MOD_JDPROFILER_SORT_BY_LABEL"
+               default="MOD_JDPROFILER_SORT_BY_DESC"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="ASC">MOD_JDPROFILER_SORT_BY_OPTIONS_ASC</option>
+               <option value="DESC">MOD_JDPROFILER_SORT_BY_OPTIONS_DESC</option>
+            </field>
          </fieldset>
          <fieldset name="options">
             <field

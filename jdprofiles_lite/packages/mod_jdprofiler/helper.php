@@ -20,15 +20,19 @@ if($params->get('load_fontawesome', 1)){
 }
 
 class modJdprofilerHelper {
-    public function profiles($team,$limit){
+    public function profiles($team,$limit,$sort,$order){
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
         $query->select('*');
         $query->from('#__jdprofiler_profiles');
         $query->Where($db->quoteName('state') . ' = '. $db->quote(1));
         $query->Where($db->quoteName('team') . ' = '. $db->quote($team));
-        $query->order('id DESC');
-        $query->setLimit($limit);
+        if($order=="random"){
+            $query->order('RAND() LIMIT '.$limit); 
+        }else{
+            $query->order($order.' '.$sort);
+            $query->setLimit($limit);
+        }
         $db->setQuery($query);
         $results = $db->loadObjectList();
         return $results;
