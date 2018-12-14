@@ -18,7 +18,7 @@
     <field name="created_by" type="createdby" default="0" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_CREATED_BY" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_CREATED_BY" hidden="true" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_CREATED_BY"/>
     <field name="modified_by" type="modifiedby" default="0" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_MODIFIED_BY" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_MODIFIED_BY" hidden="true" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_MODIFIED_BY"/>
     <field name="tour_image" directory="" type="media" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_TOUR_IMAGE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_TOUR_IMAGE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_TOUR_IMAGE"/>
-    <field name="price" filter="safehtml" type="number" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_PRICE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_PRICE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_PRICE"/>
+    <field name="price" filter="safehtml" type="text" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_PRICE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_PRICE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_PRICE"/>
 
     <field name="price_postfix"  type="text" label="Price Postfix" description="Price Postfix"/>
 
@@ -35,17 +35,22 @@
     <field name="discount_value"   showon="show_discount:1"  type="number" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DISCOUNT_VALUE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE"/>
     
     <field name="discount_value"  filter="safehtml" type="number" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DISCOUNT_VALUE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE"/>
-
-    <field name="feature"  type="subform" formsource="administrator/components/com_jdtoursshowcase/models/forms/features.xml" multiple="true"  label="Feature" description="Feature" />
+   
+    <field name="feature"  default='{"feature0":{"icon_class":"fab fa-accessible-icon","tool_tip":"accessible"}}' type="subform" formsource="administrator/components/com_jdtoursshowcase/models/forms/features.xml" multiple="true"  label="Feature" description="Feature" />
 
     <field name="duration" filter="safehtml" type="text" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DURATION" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DURATION" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DURATION"/>
     <field name="destination" filter="safehtml" type="text" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DESTINATION" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DESTINATION" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DESTINATION"/>
-    <field name="gallery" directory="" type="media" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_GALLERY" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_GALLERY" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_GALLERY"/>
+    <field name="gallery"  type="subform" formsource="administrator/components/com_jdtoursshowcase/models/forms/gallery.xml" multiple="true"  label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_GALLERY" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_GALLERY" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_GALLERY"/>
     <field name="tour_description" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_TOUR_DESCRIPTION" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_TOUR_DESCRIPTION" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_TOUR_DESCRIPTION"/>
     <field name="facilities_description" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_FACILITIES_DESCRIPTION" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_FACILITIES_DESCRIPTION" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_FACILITIES_DESCRIPTION"/>
-    <field name="facilities_features" filter="safehtml" type="text" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_FACILITIES_FEATURES" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_FACILITIES_FEATURES" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_FACILITIES_FEATURES"/>
-    <field name="schedule_title" filter="safehtml" type="text" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_SCHEDULE_TITLE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_SCHEDULE_TITLE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_SCHEDULE_TITLE"/>
+
+    <field name="facilities_features" type="subform"  multiple="true" formsource="administrator/components/com_jdtoursshowcase/models/forms/facilities_features.xml" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_FACILITIES_FEATURES" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_FACILITIES_FEATURES" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_FACILITIES_FEATURES"/>
+<field type="spacer" name="schedule_spacer" class="text" label="&lt;hr/&gt;Schedule&lt;hr/&gt;"/>
+
     <field name="schedule_description" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_SCHEDULE_DESCRIPTION" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_SCHEDULE_DESCRIPTION" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_SCHEDULE_DESCRIPTION"/>
+
+    <field name="schedule"  type="subform" formsource="administrator/components/com_jdtoursshowcase/models/forms/schedule.xml" multiple="true"  label="schedule" description="schedule"/>
+
     <field name="hits" filter="safehtml" type="number" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_HITS" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_HITS" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_HITS"/>
     <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
 

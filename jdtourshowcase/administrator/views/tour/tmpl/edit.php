@@ -63,7 +63,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/form.css'
 				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
 
 				<?php echo $this->form->renderField('created_by'); ?>
-				
+			
 				<?php echo $this->form->renderField('modified_by'); ?>				
 				<?php echo $this->form->renderField('tour_image'); ?>
 				<?php echo $this->form->renderField('price'); ?>
@@ -71,30 +71,43 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/form.css'
 				<?php echo $this->form->renderField('show_discount'); ?>
 				<?php echo $this->form->renderField('discount_type'); ?>
 				<?php echo $this->form->renderField('discount_value'); ?>
+				<?php echo $this->form->renderField('myspacer'); ?>
 				<?php echo $this->form->renderField('feature'); ?>
+			
+				</fieldset>
+			</div>
+		</div>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+
+		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'deatils', JText::_('Detail Page', true)); ?>
+		
 				<?php echo $this->form->renderField('duration'); ?>
 				<?php echo $this->form->renderField('destination'); ?>
 				<?php echo $this->form->renderField('gallery'); ?>
 				<?php echo $this->form->renderField('tour_description'); ?>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+
+		<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'facilities', JText::_('Facilities & Schedule', true)); ?>
 				<?php echo $this->form->renderField('facilities_description'); ?>
 				<?php echo $this->form->renderField('facilities_features'); ?>
-				<?php echo $this->form->renderField('schedule_title'); ?>
+				
+				<?php echo $this->form->renderField('schedule_spacer'); ?>
+ 
 				<?php echo $this->form->renderField('schedule_description'); ?>
-				<?php //echo $this->form->renderField('hits'); ?>
+				<?php echo $this->form->renderField('schedule'); ?>
+
 				<?php echo $this->form->renderField('enable_sidebar'); ?>
 				<?php echo $this->form->renderField('module_position'); ?>
 				<?php echo $this->form->renderField('created_on'); ?>
 
 
-					<?php if ($this->state->params->get('save_history', 1)) : ?>
-					<div class="control-group">
-						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
-						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
-					</div>
-					<?php endif; ?>
-				</fieldset>
-			</div>
-		</div>
+				<?php if ($this->state->params->get('save_history', 1)) : ?>
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
+					<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
+				</div>
+				<?php endif; ?>
+
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 		

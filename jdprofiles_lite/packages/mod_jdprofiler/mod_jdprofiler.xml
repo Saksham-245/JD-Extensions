@@ -166,7 +166,7 @@
                name="sort"
                type="radio"
                label="Sort by"
-               showon="order:id[OR]order:ordering[OR]order:name"
+               showon="order:id[OR]order:name"
                description="MOD_JDPROFILER_SORT_BY_LABEL"
                default="MOD_JDPROFILER_SORT_BY_DESC"
                class="btn-group btn-group-yesno"

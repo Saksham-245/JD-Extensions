@@ -6,7 +6,7 @@
             type="faicons"  
             />
     <field name="tool_tip"
-            label="Tooltip"
+            label="Caption"
             description=""
             type="text" 
              />

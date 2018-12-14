@@ -29,7 +29,11 @@ class modJdprofilerHelper {
         $query->Where($db->quoteName('team') . ' = '. $db->quote($team));
         if($order=="random"){
             $query->order('RAND() LIMIT '.$limit); 
-        }else{
+        }elseif($order=="ordering"){
+            $query->order($order);
+            $query->setLimit($limit);
+        }
+        else{
             $query->order($order.' '.$sort);
             $query->setLimit($limit);
         }

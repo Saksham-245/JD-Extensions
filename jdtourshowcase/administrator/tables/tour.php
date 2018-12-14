@@ -98,6 +98,15 @@ class JdtoursshowcaseTabletour extends JTable
 		if ((!empty($array['feature'])&&(is_array($array['feature'])))){
 			$this->_jsonEncode[] = "feature";
 	  }
+		if ((!empty($array['gallery'])&&(is_array($array['gallery'])))){
+			$this->_jsonEncode[] = "gallery";
+	  }
+		if ((!empty($array['facilities_features'])&&(is_array($array['facilities_features'])))){
+			$this->_jsonEncode[] = "facilities_features";
+	  }
+		if ((!empty($array['schedule'])&&(is_array($array['schedule'])))){
+			$this->_jsonEncode[] = "schedule";
+	  }
 
 
 		if (isset($array['metadata']) && is_array($array['metadata']))
