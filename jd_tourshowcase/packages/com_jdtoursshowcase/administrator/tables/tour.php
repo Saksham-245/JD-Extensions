@@ -26,8 +26,12 @@ class JdtoursshowcaseTabletour extends JTable
 	 */
 	public function __construct(&$db)
 	{
-		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'JdtoursshowcaseTabletour', array('typeAlias' => 'com_jdtoursshowcase.tour'));
 		parent::__construct('#__jdtoursshowcase_tours', 'id', $db);
+
+		JTableObserverContenthistory::createObserver($this, array('typeAlias' => 'com_jdtoursshowcase.tour'));
+
+		$this->created = JFactory::getDate()->toSql();
+		$this->setColumnAlias('published', 'state');
 	}
 
 	/**

@@ -12,8 +12,9 @@ $button_link=$params->get('button_link','#');
       <?php if(!empty($params->get('summary'))){ ?>
          <p class="count-summary"><?php echo $params->get('summary','');?></p>
       <?php } ?>
-		<div class="row time-countdown justify-content-start">
+		<div class="row time-countdown justify-content-start" id="time-countdown-<?php  echo $module->id;?>">
 			<div class="col-12 col-lg-12">
+         <div id="countdown_loder-<?php echo $module->id;?>"></div>
 				<div id="countdown-<?php echo $module->id;?>" class="countdown">
 					<span class="" id="days-<?php echo $module->id;?>"></span>
 					<span class="" id="hours-<?php echo $module->id;?>"></span>
@@ -34,7 +35,7 @@ $button_link=$params->get('button_link','#');
 
       var countdown = function(){
       
-         if( $('span').is(':empty') ) {$("#countdown-<?php echo $module->id;?>").addClass("fas fa-spinner fa-pulse"); } 
+         if( $('span').is(':empty') ) {$("#countdown_loder-<?php echo $module->id;?>").addClass("fas fa-spinner fa-pulse"); } 
 
          // Set the date we're counting down to
          var countDownDate = new Date("<?php echo $params->get('countdown_date','');?>").getTime();
@@ -42,7 +43,7 @@ $button_link=$params->get('button_link','#');
          // Update the count down every 1 second
          var x = setInterval(function() {
 
-         $("#countdown-<?php echo $module->id;?>").removeClass("fas fa-spinner fa-pulse");
+         $("#countdown_loder-<?php echo $module->id;?>").removeClass("fas fa-spinner fa-pulse");
 
          // Get todays date and time
          var now = new Date().getTime();
@@ -63,10 +64,10 @@ $button_link=$params->get('button_link','#');
          document.getElementById("seconds-<?php echo $module->id;?>").innerHTML = seconds;
 
          // If the count down is finished, write some text 
-         if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-         }
+            if (distance < 0) {
+               clearInterval(x);
+               document.getElementById("time-countdown-<?php  echo $module->id;?>").innerHTML = "<p><?php echo (!empty($params->get('countdown_message'))) ?  $params->get('countdown_message') : JText::_("JD_COUNTDOWN_EXPARIED");  ?></p>";
+            }
          }, 1000);
       }
 

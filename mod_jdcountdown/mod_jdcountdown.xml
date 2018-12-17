@@ -51,7 +51,7 @@
                   class="input-medium" 
                   required="true"
                   filter="user_utc"
-                  format="%Y-%m-%d"
+                  format="%Y-%m-%d %H:%M:%S"
                   singleheader="true" 
                   showtime="true" 
                   timeformat="12" 

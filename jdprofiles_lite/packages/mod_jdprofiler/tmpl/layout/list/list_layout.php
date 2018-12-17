@@ -75,7 +75,7 @@ defined('_JEXEC') or die;
 						</p>
 
 						<?php } ?>
-					<?php if(!empty($profile->phone) and !empty($profile->email)  and  !empty($profile->location)  {?>			
+					<?php if(!empty($profile->phone) and !empty($profile->email)  and  !empty($profile->location)) {?>			
 						<ul class="list-unstyled contact-info">
 
 							<?php if($params->get('show_Contact',1)) { ?>

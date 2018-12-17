@@ -97,18 +97,18 @@ class JdtoursshowcaseModelTours extends JModelList
  
 		$this->setState('params', $params);
 
-                parent::populateState("a.id", "ASC");
+		parent::populateState("a.id", "ASC");
 
-                $start = $app->getUserStateFromRequest($this->context . '.limitstart', 'limitstart', 0, 'int');
-                $limit = $app->getUserStateFromRequest($this->context . '.limit', 'limit', 0, 'int');
+		// $start = $app->getUserStateFromRequest($this->context . '.limitstart', 'limitstart', 0, 'int');
+		// $limit = $app->getUserStateFromRequest($this->context . '.limit', 'limit', 0, 'int');
 
-                if ($limit == 0)
-                {
-                    $limit = $app->get('list_limit', 0);
-                }
+		// if ($limit == 0)
+		// {
+		// 	$limit = $app->get('list_limit', 0);
+		// }
 
-                $this->setState('list.limit', $limit);
-                $this->setState('list.start', $start);
+		// $this->setState('list.limit', $limit);
+		// $this->setState('list.start', $start);
         
 	}
 
@@ -132,7 +132,7 @@ class JdtoursshowcaseModelTours extends JModelList
 		$id .= ':' . $this->getState('filter.state');
 
                 
-                    return parent::getStoreId($id);
+      return parent::getStoreId($id);
                 
 	}
 
