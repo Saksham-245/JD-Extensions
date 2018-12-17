@@ -54,7 +54,7 @@ class JdprofilerTableprofile extends JTable
 
 		JTableObserverContenthistory::createObserver($this, array('typeAlias' => 'com_jdprofiler.profile'));
 
-		$this->created = JFactory::getDate()->toSql();
+		$this->created_on = JFactory::getDate()->toSql();
 		$this->setColumnAlias('published', 'state');
 	}
 

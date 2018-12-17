@@ -27,14 +27,14 @@
 				<option value="0">JNO</option>
     </field>
 
-    <field name="discount_type" showon="show_discount:1" type="radio" class="btn-group btn-group-yesno" label="Show Discount" description="Show Discoun">
+    <field name="discount_type" showon="show_discount:1" type="list" class="btn-group btn-group-yesno" label="Show Discount" description="Show Discoun">
     		<option value="percentage">Percentage</option>
 				<option value="fixed_amount">Fixed Amount</option>
     </field>
 
-    <field name="discount_value"   showon="show_discount:1"  type="number" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DISCOUNT_VALUE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE"/>
-    
-    <field name="discount_value"  filter="safehtml" type="number" label="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DISCOUNT_VALUE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE"/>
+    <field name="percentage"   showon="discount_type:percentage[AND]show_discount:1"  type="number" label="percentage" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DISCOUNT_VALUE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE"/>
+
+    <field name="fixed_amount" showon="discount_type:fixed_amount[AND]show_discount:1"  type="number" label="Fixed Amount" description="COM_JDTOURSSHOWCASE_FORM_DESC_TOUR_DISCOUNT_VALUE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_TOUR_DISCOUNT_VALUE"/>
    
     <field name="feature"  default='{"feature0":{"icon_class":"fab fa-accessible-icon","tool_tip":"accessible"}}' type="subform" formsource="administrator/components/com_jdtoursshowcase/models/forms/features.xml" multiple="true"  label="Feature" description="Feature" />
 

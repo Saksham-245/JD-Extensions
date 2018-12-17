@@ -30,7 +30,7 @@ class JdtoursshowcaseTabletour extends JTable
 
 		JTableObserverContenthistory::createObserver($this, array('typeAlias' => 'com_jdtoursshowcase.tour'));
 
-		$this->created = JFactory::getDate()->toSql();
+		$this->created_on = JFactory::getDate()->toSql();
 		$this->setColumnAlias('published', 'state');
 	}
 

@@ -70,7 +70,8 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/form.css'
 				<?php echo $this->form->renderField('price_postfix'); ?>
 				<?php echo $this->form->renderField('show_discount'); ?>
 				<?php echo $this->form->renderField('discount_type'); ?>
-				<?php echo $this->form->renderField('discount_value'); ?>
+				<?php echo $this->form->renderField('percentage'); ?>
+				<?php echo $this->form->renderField('fixed_amount'); ?>
 				<?php echo $this->form->renderField('myspacer'); ?>
 				<?php echo $this->form->renderField('feature'); ?>
 			
@@ -99,7 +100,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/form.css'
 
 				<?php echo $this->form->renderField('enable_sidebar'); ?>
 				<?php echo $this->form->renderField('module_position'); ?>
-				<?php echo $this->form->renderField('created_on'); ?>
 
 
 				<?php if ($this->state->params->get('save_history', 1)) : ?>
