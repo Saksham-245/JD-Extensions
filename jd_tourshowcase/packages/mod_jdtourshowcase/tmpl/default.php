@@ -4,11 +4,11 @@ defined('_JEXEC') or die;
 echo "<pre>";
 
 ?>
-<div class="row">
+<div class="jd-row">
 	<?php foreach ($tours as $i => $item) :  ?>
-      <div class="col-lg-4 d-flex">
+      <div class="jd-col-lg-4 d-flex">
          <div class="card">
-         <a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations" class="card-img-top img-fluid"></a>
+         <a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations" class="card-img-top"></a>
             <div class="card-body text-center">
                   <a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">
                      <h5 class="card-title">
@@ -33,4 +33,4 @@ echo "<pre>";
          </div>
       </div>
    <?php endforeach; ?>
-</div>  
+</div>
