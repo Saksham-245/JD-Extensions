@@ -17,6 +17,8 @@ CREATE TABLE IF NOT EXISTS `#__jdtoursshowcase_tours` (
 `created_on` TEXT NOT NULL ,
 `percentage` DOUBLE,
 `fixed_amount` DOUBLE,
+`discount_type` VARCHAR(255)  NOT NULL ,
+`show_discount` VARCHAR(255)  NOT NULL ,
 `duration` VARCHAR(255)  NOT NULL ,
 `destination` VARCHAR(255)  NOT NULL ,
 `gallery` VARCHAR(255)  NOT NULL ,

@@ -22,12 +22,12 @@
 
     <field name="price_postfix"  type="text" label="Price Postfix" description="Price Postfix"/>
 
-    <field name="show_discount" type="radio" default="0" class="btn-group btn-group-yesno" label="Show Discount" description="Show Discount">
+    <field name="show_discount" type="radio" default="1" class="btn-group btn-group-yesno" label="Show Discount" description="Show Discount">
     		<option value="1">JYES</option>
 				<option value="0">JNO</option>
     </field>
 
-    <field name="discount_type" showon="show_discount:1" type="list" class="btn-group btn-group-yesno" label="Show Discount" description="Show Discoun">
+    <field name="discount_type" showon="show_discount:1" type="list" class="btn-group btn-group-yesno" label="Discount Type" description="Show Discoun">
     		<option value="percentage">Percentage</option>
 				<option value="fixed_amount">Fixed Amount</option>
     </field>

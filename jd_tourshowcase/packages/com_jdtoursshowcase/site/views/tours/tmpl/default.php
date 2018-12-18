@@ -52,7 +52,20 @@ $db = JFactory::getDbo();
 									<?php echo $this->escape($item->title); ?>
 								</h5>
 							</a>
-							<p class="card-text"><b><?php echo $item->price; ?></b> <del>$2600</del><br>
+							
+							<p class="card-text"><b>
+							$<?php
+								if($item->show_discount){
+									if($item->discount_type=="percentage"){
+										 
+										$percentage =  (($item->price*$item->percentage)/100);
+										echo $price =  ($item->price - $percentage);
+									}elseif($item->discount_type=="fixed_amount"){
+										$fixed_amount = $item->fixed_amount;
+										echo $price = ($item->price - $fixed_amount);
+									}
+								}
+							?></b> <del>$<?php echo  $item->price; ?></del><br>
 								<?php if(!empty($item->price_postfix)) { ?>
 									<span class="text-muted"><?php echo $item->price_postfix; ?></span>
 								<?php } ?>

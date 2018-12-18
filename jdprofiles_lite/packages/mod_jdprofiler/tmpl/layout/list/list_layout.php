@@ -12,13 +12,13 @@ defined('_JEXEC') or die;
 
 <div class="jd-profiler-wrapper jd-list-layout-view jd-list-simple-layout">
 
-	<div class="row <?php echo ($params->get('gutter_space')=='nomargin') ? 'no-gutters' : '' ?>">
+	<div class="jd-row <?php echo ($params->get('gutter_space')=='nomargin') ? 'jd-nogutters' : '' ?>">
 
 		<?php foreach($profiles as $profile) { ?>
 
 		<!-- Team Item wrapper start -->
 
-		<div class="jd-team-columns col-12">
+		<div class="jd-team-columns jd-col-12">
 
 			<div class="card-team jd-team-items">
 

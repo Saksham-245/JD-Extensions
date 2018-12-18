@@ -18,7 +18,20 @@ echo "<pre>";
                   <p class="card-text"><b><?php echo $item->price; ?></b> <del>$2600</del><br>
                      <?php if(!empty($item->price_postfix)) { ?>
                         <span class="text-muted"><?php echo $item->price_postfix; ?></span>
+                        
                      <?php } ?>
+                     <?php
+								if($item->show_discount){
+									if($item->discount_type=="percentage"){
+										 
+										$percentage =  (($item->price*$item->percentage)/100);
+										echo $price =  ($item->price - $percentage);
+									}elseif($item->discount_type=="fixed_amount"){
+										$fixed_amount = $item->fixed_amount;
+										echo $price = ($item->price - $fixed_amount);
+									}
+                        }
+                     ?>
                   </p>
                   <p class="card-text">
                         <?php $features = json_decode($item->feature); foreach($features as $feature){ ?>
