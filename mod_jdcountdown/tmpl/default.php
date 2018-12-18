@@ -1,5 +1,6 @@
 <?php
 defined('_JEXEC') or die;
+//GPL icense
 $button_link=$params->get('button_link','#');
 ?>
 <div class="row">

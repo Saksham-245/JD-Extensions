@@ -15,7 +15,9 @@
       <folder>fields</folder>
       <filename>helper.php</filename>
    </files>
-   <scriptfile>script.php</scriptfile>
+   <updateservers>
+		<server type="extension" name="mod_jdcountdown" priority="1">https://www.joomdev.com/extensionupdates/mod_jdcountdown.xml</server>
+	</updateservers>
    <languages folder="language">
       <language tag="en-GB">en-GB/en-GB.mod_jdcountdown.ini</language>
       <language tag="en-GB">en-GB/en-GB.mod_jdcountdown.sys.ini</language>
@@ -33,7 +35,7 @@
                filter="safehtml"
                label="DISCOUNT_LABEL"
                description="DISCOUNT_DESCRIPTION"
-               default="1"
+               default="title"
             />
           <field
                name="summary"
@@ -41,7 +43,7 @@
                filter="safehtml"
                label="SUMMARY_LABEL"
                description="SUMMARY_DESCRIPTION"
-               default="1"
+               default="summary"
             />
           <field name="countdown_date" 
                   type="calendar"
