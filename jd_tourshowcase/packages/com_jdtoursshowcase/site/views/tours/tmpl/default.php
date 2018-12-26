@@ -57,12 +57,18 @@ $db = JFactory::getDbo();
 							$<?php
 								if($item->show_discount){
 									if($item->discount_type=="percentage"){
-										 
+										echo "<br>";	
+										echo '%'.$item->percentage;
+										echo "<br>";	
 										$percentage =  (($item->price*$item->percentage)/100);
-										echo $price =  ($item->price - $percentage);
+										echo '$'.$price =  ($item->price - $percentage);
+										
 									}elseif($item->discount_type=="fixed_amount"){
+										echo "<br>";	
+										echo 'Flat '.$item->percentage.' Off';
+										echo "<br>";
 										$fixed_amount = $item->fixed_amount;
-										echo $price = ($item->price - $fixed_amount);
+										echo '$'.$price = ($item->price - $fixed_amount);
 									}
 								}
 							?></b> <del>$<?php echo  $item->price; ?></del><br>
