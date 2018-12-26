@@ -54,11 +54,11 @@ $db = JFactory::getDbo();
 							</a>
 							
 							<p class="card-text"><b>
-							$<?php
+							<?php
 								if($item->show_discount){
 									if($item->discount_type=="percentage"){
 										echo "<br>";	
-										echo '%'.$item->percentage;
+										echo $item->percentage. '%' .' <br> Off';
 										echo "<br>";	
 										$percentage =  (($item->price*$item->percentage)/100);
 										echo '$'.$price =  ($item->price - $percentage);
