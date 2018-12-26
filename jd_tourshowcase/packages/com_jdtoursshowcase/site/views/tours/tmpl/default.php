@@ -31,7 +31,7 @@ $db = JFactory::getDbo();
 <form action="<?php echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post"
       name="adminForm" id="adminForm">
 
-	<?php echo JLayoutHelper::render('default_filter', array('view' => $this), dirname(__FILE__)); ?>
+	<?php // echo JLayoutHelper::render('default_filter', array('view' => $this), dirname(__FILE__)); ?>
 	<table class="table table-striped" id="tourList">
 		<tfoot>
 		<tr>
@@ -65,15 +65,18 @@ $db = JFactory::getDbo();
 										
 									}elseif($item->discount_type=="fixed_amount"){
 										echo "<br>";	
-										echo 'Flat '.$item->percentage.' Off';
+										echo 'Flat '.$item->fixed_amount.' Off';
 										echo "<br>";
 										$fixed_amount = $item->fixed_amount;
 										echo '$'.$price = ($item->price - $fixed_amount);
 									}
 								}
-							?></b> <del>$<?php echo  $item->price; ?></del><br>
+							?>
+							</b> <?php  if($item->show_discount){ ?>   <del>$<?php echo  $item->price; ?></del><br> <?php }  ?>
+							</b> <?php  if(!$item->show_discount){ ?>  $<?php echo  $item->price; ?><br> <?php }  ?>
 								<?php if(!empty($item->price_postfix)) { ?>
 									<span class="text-muted"><?php echo $item->price_postfix; ?></span>
+									<span class="text-muted"><?php echo $item->tour_type; ?></span>
 								<?php } ?>
 							</p>
 							<p class="card-text">
