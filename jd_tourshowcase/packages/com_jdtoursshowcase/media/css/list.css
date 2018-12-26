@@ -98,3 +98,39 @@ button.open{
 div.field-filter:first-of-type{
     margin-left: 0;
 }
+
+/* ---- Custom CSS JD ---- */
+.tour-view-img{
+	position: relative;
+	margin-bottom: 20px;
+}
+.tour-view-img .tour-discount{
+	display: -webkit-flex; /* Safari */
+	-webkit-align-items: center; /* Safari 7.0+ */
+	display: flex;
+	align-items: center;
+	bottom: -20px;
+    position: absolute;
+    right: 15px;
+	text-align: center;
+	background: #ffe500;
+	color: #000000;
+	width: 80px;
+	height: 80px;
+	line-height: normal;
+	border-radius: 100px;
+}
+.off_percentage,.off_fixed_amount{
+	-webkit-flex: 1; /* Safari 6.1+ */
+	flex: 1;
+}
+.off_percentage span,.off_fixed_amount span{
+	font-size: 16px;
+	font-weight: 800;
+}
+.tour-title a{
+	color: #000;
+}
+.tour-title h5{
+	margin: 0px;
+}
