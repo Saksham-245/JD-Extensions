@@ -50,4 +50,33 @@ class modJDServicesShowcaseHelper {
       return $return;
    }
 
+   function get_post($id,$order,$sort){
+
+      // Get a db connection.
+      $db = JFactory::getDbo();
+
+      // Create a new query object.
+      $query = $db->getQuery(true);
+
+      // Select all records from the user profile table where key begins with "custom.".
+      // Order it by the ordering field.
+      $query->select("*");
+      $query->from($db->quoteName('#__content'));
+      $query->where($db->quoteName('id') . ' = '. $db->quote($id));
+
+
+      // Reset the query using our newly populated query object.
+      $db->setQuery($query);
+
+      // Load the results as a list of stdClass objects (see later for more options on retrieving data).
+      $results = $db->loadObjectList();
+      $items = array();
+      foreach($results as $result){
+         $items['title']=$result->title;
+         $items['intro']=$result->introtext;
+         $items['images']=$result->images;
+      }
+      
+      return $items;
+   }
 }

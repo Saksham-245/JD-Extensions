@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
    <fieldset name="services_modal" label="Services Showcase Item">
+       <field
+            name="switch"
+            type="list"
+            label="USe"
+            description=""
+            default="1"
+            >
+            <option value="1">Article</option>
+            <option value="2">Custom</option>
+        </field>
         <field
             name="serveices_iconOption"
             type="list"
+            showon="switch:2"
             label="MOD_JDSERVICES_SHOWCASE_UPLOAD_SELECT_MEDIA"
             description="MOD_JDSERVICES_SHOWCASE_UPLOAD_SELECT_MEDIA"
             default="upload"
@@ -13,29 +24,44 @@
         </field>
         <field name="serveices_icon_upload"
                 label="Upload Media"
-                showon="serveices_iconOption:upload"
+                showon="serveices_iconOption:upload[AND]switch:2"
 				
                 type="media"  />
         <field name="serveices_icon_class"
                 label="MOD_JDSERVICES_SHOWCASE_ICON_CLASS"
-				description="MOD_JDSERVICES_SHOWCASE_ICON_CLASS_DESCRIPTION"
-				showon="serveices_iconOption:icon"
+		  description="MOD_JDSERVICES_SHOWCASE_ICON_CLASS_DESCRIPTION"
+		  showon="serveices_iconOption:icon[AND]switch:2"
                 type="text" />
       <field name="title"
              label="MOD_JDSERVICES_SHOWCASE_OPTIONS_TITLE_LBL"
+              showon="switch:2"
              description="MOD_JDSERVICES_SHOWCASE_OPTIONS_TITLE_DESC"
              type="text"   />
       <field name="subtitle"
              label="MOD_JDSERVICES_SHOWCASE_OPTIONS_SUBTITLE_LBL"
+              showon="switch:2"
              description="MOD_JDSERVICES_SHOWCASE_OPTIONS_SUBTITLE_DESC"
              type="text"   />
       <field name="description"
              label="MOD_JDSERVICES_SHOWCASE_OPTIONS_DESC_LBL"
+              showon="switch:2"
              description="MOD_JDSERVICES_SHOWCASE_OPTIONS_DESC_DESC"
              type="textarea"  />
       <field name="link"
              label="MOD_JDSERVICES_SHOWCASE_OPTIONS_LINK_LBL"
+              showon="switch:2"
              description="MOD_JDSERVICES_SHOWCASE_OPTIONS_LINK_DESC"
              type="menuitem"  />
+       <field
+              name="article_id"
+              type="sql"
+               showon="switch:1"
+              default=""
+              label="Select an article"
+              query="SELECT id, title FROM #__content"
+              key_field="id"
+              value_field="title"
+        />
+
    </fieldset>
 </form>
