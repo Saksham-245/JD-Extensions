@@ -24,7 +24,7 @@ $hits_one = $hits+1;
 
 JdtoursshowcaseHelpersJdtoursshowcase::hits($hits_one,$this->item->id);
 $tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->id);
-
+jimport('joomla.application.module.helper');
 ?>
 
 <div class="row">
@@ -89,12 +89,19 @@ $tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->id);
 			<div>
 	</div>
 	<?php }?> 
-		
-	<div class="module-position">
-		<h1>Tesimng</h1>
-		 
-		
-	</div>
+
+
+	<?php if($this->item->enable_sidebar){ ?>		
+		<div class="module-position">
+			<?php if(!empty($this->item->module_position)) { ?>
+				<?php
+					$outputModules = '{loadposition '.$this->item->module_position.'}';
+
+					echo JHtml::_('content.prepare', $outputModules);
+				?>
+			<?php }else{ echo "Module is not here";} ?>	
+		</div>
+	<?php } ?>
 	<?php $features = json_decode($this->item->facilities_features); ?>
 	<?php  if(!empty($features)) { ?>
 		<?php  foreach($features as $feature) {?>
