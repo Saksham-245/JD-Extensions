@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    CVS: 1.0.0
+ .0
  * @package    Com_Jdtoursshowcase
  * @author     JoomDev <info@gmail.com>
  * @copyright  2018

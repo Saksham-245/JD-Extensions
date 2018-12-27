@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+   <field name="show_img_feature" type="radio" class="btn-group btn-group-yesno" label="Want" default="1" description="Show">
+    	<option value="1">Icon</option>
+	<option value="2">Image</option>
+    </field>
+
+    <field name="icon_class"
+            label="Icon Class"
+            showon="show_img_feature:1"
+            description="Icon Class"
+            type="faicons"  
+            />
+
+        <field name="icon_img"
+            label="img"
+            showon="show_img_feature:2"
+            description="Icon Img"
+            type="media"  
+            />
+    <field name="caption"
+            label="Caption"
+            description=""
+            type="text" 
+             />
+</form>
