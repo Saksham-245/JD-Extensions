@@ -43,3 +43,11 @@
 .tour-title h5{
 	margin: 0px;
 }
+.tour-show-discount strong{
+	font-size: 18px;
+	font-weight: 800;
+}
+.tour-show-discount span del{
+	font-size: 12px;
+	font-weight: normal;
+}

@@ -63,7 +63,7 @@ $db = JFactory::getDbo();
 					<div class="tour-sub-title">
 						<span class="text-muted"><?php echo $item->tour_type; ?></span>
 					</div>
-						<div class="tour-percentage">
+						<div class="tour-show-discount">
 							<strong>
 								<?php
 									if($item->show_discount){
@@ -78,7 +78,7 @@ $db = JFactory::getDbo();
 									}
 								?>
 							</strong> 
-							<span><?php  if($item->show_discount){ ?>   <del>$<?php echo  $item->price; ?></del><br> <?php }  ?>
+							<span><?php  if($item->show_discount){ ?>   <del>$<?php echo  $item->price; ?></del> <?php }  ?>
 							<?php  if(!$item->show_discount){ ?>  $<?php echo  $item->price; ?><br> <?php }  ?></span>
 							<p class="tour-person">
 							<?php if(!empty($item->price_postfix)) { ?>
