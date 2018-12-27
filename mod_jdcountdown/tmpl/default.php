@@ -17,17 +17,25 @@ $button_link=$params->get('button_link','#');
 			<div class="col-12 col-lg-12">
          <div id="countdown_loder-<?php echo $module->id;?>"></div>
 				<div id="countdown-<?php echo $module->id;?>" class="countdown">
-					<span class="" id="days-<?php echo $module->id;?>"></span>
-					<span class="" id="hours-<?php echo $module->id;?>"></span>
-					<span class="" id="minutes-<?php echo $module->id;?>"></span>
-					<span class="" id="seconds-<?php echo $module->id;?>"></span>
+					<div class="days"><span class="" id="days-<?php echo $module->id;?>"></span>
+						<p>Days</p>
+					</div>
+					<div class="hours"><span class="" id="hours-<?php echo $module->id;?>"></span>
+						<p>Hours</p>
+					</div>
+					<div class="minutes"><span class="" id="minutes-<?php echo $module->id;?>"></span>
+						<p>Minutes</p>
+					</div>
+					<div class="seconds"><span class="" id="seconds-<?php echo $module->id;?>"></span>
+						<p>Seconds</p>
+					</div>
 				</div>
 			</div>
 		</div>
    </div>
 </div>
  <?php if(!empty($params->get('button'))){ ?>
-	 <a class="btn btn-outline-primary mt-5" href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><?php echo $params->get('button','');?></a>
+	 <a class="btn btn-outline-primary mt-4" href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><?php echo $params->get('button','');?></a>
   <?php } ?>
 
 <script>

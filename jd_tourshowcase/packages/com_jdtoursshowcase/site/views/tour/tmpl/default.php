@@ -12,7 +12,6 @@ defined('_JEXEC') or die;
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'administrator/components/com_jdtoursshowcase/assets/css/jdtoursshowcase.css');
 $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/list.css');
-$document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/jdgrid.css');
 $canEdit = JFactory::getUser()->authorise('core.edit', 'com_jdtoursshowcase');
 
 if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_jdtoursshowcase'))
@@ -28,32 +27,32 @@ $tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->id);
 
 ?>
 
-<div class="jd-row">
-	<div class="jd-col-12 tour-title">
+<div class="row">
+	<div class="col-12 tour-title">
 		<h3 class""><?php echo  $this->item->title; ?></h3>
 	</div>
 </div>
-	<div class="jd-row tour-details">
-			<div class="jd-col-3">
+	<div class="row tour-details">
+			<div class="col-3">
 				<p><?php echo JText::_( 'Tour Type' ) ?></p>
 				<p><?php echo $tour_type; ?></p>
 			</div>
-			<div class="jd-col-3">
+			<div class="col-3">
 				<p><?php echo JText::_( 'Duration' ) ?></p>
 				<p><?php echo  $this->item->duration; ?></p>
 			</div>
-			<div class="jd-col-3">
+			<div class="col-3">
 				<p><?php echo JText::_( 'Price' ) ?></p>
 				<p><?php echo  $this->item->price; ?></p>
 			</div>
-			<div class="jd-col-3">
+			<div class="col-3">
 				<p><?php echo JText::_( 'Destination' ) ?></p>
 				<p><?php echo  $this->item->destination; ?></p>
 			</div>
 	</div>
 
-	<div class="jd-row">
-			<div class="jd-col-12">
+	<div class="row">
+			<div class="col-12">
 				<?php $galleis = json_decode($this->item->gallery); ?>
 				<?php if(!empty($galleis)) { ?>
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -94,7 +93,14 @@ $tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->id);
 	<?php $features = json_decode($this->item->facilities_features); ?>
 	<?php  if(!empty($features)) { ?>
 		<?php  foreach($features as $feature) {?>
-			<i class="<?php echo $feature->icon_class; ?>"></i><span><?php echo $feature->caption; ?></span>
+			<?php  if($feature->show_img_feature == 1){ ?>
+				<i class="<?php echo $feature->icon_class; ?>"></i>
+			<?php } ?>
+
+			<?php  if($feature->show_img_feature == 2){ ?>
+				<img src="<?php echo $feature->icon_img; ?>"/><span><?php echo $feature->caption; ?></span>
+			<?php } ?>
+
 		<?php } ?>
 	<?php } ?>
 

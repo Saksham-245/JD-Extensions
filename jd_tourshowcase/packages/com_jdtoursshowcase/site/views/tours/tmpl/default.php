@@ -18,7 +18,7 @@ JHtml::_('formbehavior.chosen', 'select');
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'administrator/components/com_jdtoursshowcase/assets/css/jdtoursshowcase.css');
 $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/list.css');
-$document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/jdgrid.css');
+
 
 $user       = JFactory::getUser();
 $userId     = $user->get('id');
@@ -36,7 +36,7 @@ $db = JFactory::getDbo();
 
 <div class="row">
 	<?php foreach ($this->items as $i => $item) :  ?>
-		<div class="jd-col-lg-4 d-flex">
+		<div class="col-lg-4 d-flex">
 			<div class="tour-wrap">
 				<div class="tour-view-img">
 					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations" class="card-img-top img-fluid">
@@ -88,7 +88,12 @@ $db = JFactory::getDbo();
 						</div>
 						<div class="tour-showcase-icon">
 								<?php $features = json_decode($item->feature); foreach($features as $feature){ ?>
-									<i class="<?php echo $feature->icon_class; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"></i>
+									<?php  if($feature->show_img_feature == 1){ ?>
+										<i class="<?php echo $feature->icon_class; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"></i>
+									<?php } ?>
+									<?php  if($feature->show_img_feature == 2){ ?>
+										<img src="<?php echo $feature->icon_img; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"/>
+									<?php } ?>
 								<?php } ?>
 						</div>		
 						<hr>
