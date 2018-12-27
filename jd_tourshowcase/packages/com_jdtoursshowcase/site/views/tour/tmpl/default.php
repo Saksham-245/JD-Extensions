@@ -89,7 +89,12 @@ $tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->id);
 			<div>
 	</div>
 	<?php }?> 
-
+		
+	<div class="module-position">
+		<h1>Tesimng</h1>
+		 
+		
+	</div>
 	<?php $features = json_decode($this->item->facilities_features); ?>
 	<?php  if(!empty($features)) { ?>
 		<?php  foreach($features as $feature) {?>

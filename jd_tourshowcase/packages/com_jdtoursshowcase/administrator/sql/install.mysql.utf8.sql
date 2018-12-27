@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS `#__jdtoursshowcase_tours` (
 `facilities_features` VARCHAR(255)  NOT NULL ,
 `tour_schedule` VARCHAR(255)  NOT NULL ,
 `schedule_description` TEXT NOT NULL ,
+`module_position` VARCHAR(255)  NOT NULL ,
+`enable_sidebar` VARCHAR(255)  NOT NULL ,
 `hits` DOUBLE,
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8mb4_unicode_ci;

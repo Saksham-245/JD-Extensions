@@ -5,7 +5,7 @@ defined('_JEXEC') or die;
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'administrator/components/com_jdtoursshowcase/assets/css/jdtoursshowcase.css');
 $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/list.css');
-
+$button_link=$params->get('button_link','#');
 
 ?>
 <div class="row">
@@ -60,16 +60,19 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/list.css'
 								<?php } ?>
 							</p>
 						</div>
-						<div class="tour-showcase-icon">
-								<?php $features = json_decode($item->feature); foreach($features as $feature){ ?>
-									<?php  if($feature->show_img_feature == 1){ ?>
-										<i class="<?php echo $feature->icon_class; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"></i>
+						<?php $features = json_decode($item->feature); ?>
+						<?php if(!empty($features)){ ?>
+							<div class="tour-showcase-icon">
+									<?php foreach($features as $feature){ ?>
+										<?php  if($feature->show_img_feature == 1){ ?>
+											<i class="<?php echo $feature->icon_class; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"></i>
+										<?php } ?>
+										<?php  if($feature->show_img_feature == 2){ ?>
+											<img src="<?php echo $feature->icon_img; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"/>
+										<?php } ?>
 									<?php } ?>
-									<?php  if($feature->show_img_feature == 2){ ?>
-										<img src="<?php echo $feature->icon_img; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"/>
-									<?php } ?>
-								<?php } ?>
-						</div>		
+							</div>
+						<?php } ?>		
 						<hr>
 						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" class="top-destinations-see-more">
 							<b>See More <i class="fa fa-angle-right" aria-hidden="true"></i></b>
@@ -81,6 +84,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/list.css'
 </div>
 <div class="row">
 	<div class="col-12 alignment-center">	
-		<a href="<?php echo $params->get('button_link'); ?>"><button class="btn btn-primary"><?php echo $params->get('button'); ?></button></a>
+		<a href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><button class="btn btn-primary"><?php echo $params->get('button','See More'); ?></button></a>
 	</div>
 </div>

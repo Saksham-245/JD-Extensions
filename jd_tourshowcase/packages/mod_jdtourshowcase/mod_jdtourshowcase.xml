@@ -111,7 +111,7 @@
                default="Get Hour"
             />
             <field 
-               name="button_link" 
+               name="button_link"
                type="menuitem"
                label="SELECT_A_MENU_LABEL" 
                description="SELECT_A_MENU_DESCRIPTION" 
