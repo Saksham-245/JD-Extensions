@@ -121,4 +121,26 @@ class JdtoursshowcaseHelpersJdtoursshowcase
 
 		$result = $db->execute();
 	}
+	function tour_type($id){
+		// Get a db connection.
+		$db = JFactory::getDbo();
+
+		// Create a new query object.
+		$query = $db->getQuery(true);
+
+		// Select all records from the user profile table where key begins with "custom.".
+		// Order it by the ordering field.
+		$query->select($db->quoteName(array('title')));
+		$query->from($db->quoteName('#__jdtoursshowcase_tour_type'));
+		$query->where($db->quoteName('id') . ' = '. $db->quote($id));
+		$query->order('ordering ASC');
+
+		// Reset the query using our newly populated query object.
+		$db->setQuery($query);
+
+		
+		return $result = $db->loadResult();
+		 
+
+	}
 }
