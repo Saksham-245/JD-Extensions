@@ -8,7 +8,9 @@
 
 
 /* ---- Custom CSS JD ---- */
-
+.tour-wrap{
+	border: 1px solid #f3f3f3;
+}
 .tour-view-img{
 	position: relative;
 }
@@ -31,6 +33,20 @@
 .tour-body{
 	background: #fff;
 	padding-top: 35px;
+}
+.tour-showcase-icon > img{
+	padding: 0px 15px;
+}
+.tour-showcase-icon{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f3f3f3;
+}
+.tour-showcase-see-more {
+    color: #000000;
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
 }
 .off_percentage,.off_fixed_amount{
 	-webkit-flex: 1; /* Safari 6.1+ */

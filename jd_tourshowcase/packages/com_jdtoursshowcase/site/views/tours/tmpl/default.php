@@ -36,7 +36,7 @@ $db = JFactory::getDbo();
 
 <div class="row">
 	<?php foreach ($this->items as $i => $item) :  ?>
-		<div class="col-lg-4 d-flex">
+		<div class="col-lg-4 d-md-flex">
 			<div class="tour-wrap">
 				<div class="tour-view-img">
 					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations" class="card-img-top img-fluid">
@@ -95,10 +95,9 @@ $db = JFactory::getDbo();
 										<img src="<?php echo $feature->icon_img; ?>"  data-toggle="tooltip" data-placement="top" title="<?php echo $feature->tool_tip; ?>" aria-hidden="true"/>
 									<?php } ?>
 								<?php } ?>
-						</div>		
-						<hr>
-						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" class="top-destinations-see-more">
-							<b>See More <i class="fa fa-angle-right" aria-hidden="true"></i></b>
+						</div>
+						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" class="tour-showcase-see-more">
+							See More <i class="fa fa-angle-right pl-2" style="color: #ff2424;" aria-hidden="true"></i>
 						</a>
 				</div>
 			</div>

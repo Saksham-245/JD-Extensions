@@ -10,7 +10,7 @@ $button_link=$params->get('button_link','#');
 ?>
 <div class="row">
 	<?php foreach ($tours as $i => $item) :  ?>
-   <div class="col-lg-<?php echo  $params->get('grid_coloumns',1);?> d-flex">
+   <div class="col-lg-<?php echo  $params->get('grid_coloumns',1);?> d-md-flex">
 			<div class="tour-wrap">
 				<div class="tour-view-img">
 					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations">
@@ -73,17 +73,16 @@ $button_link=$params->get('button_link','#');
 									<?php } ?>
 							</div>
 						<?php } ?>		
-						<hr>
-						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" class="top-destinations-see-more">
-							<b>See More <i class="fa fa-angle-right" aria-hidden="true"></i></b>
+						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" class="tour-showcase-see-more">
+							See More <i class="fa fa-angle-right pl-2" style="color: #ff2424;" aria-hidden="true"></i>
 						</a>
 				</div>
 			</div>
 		</div>
    <?php endforeach; ?>					
 </div>
-<div class="row">
-	<div class="col-12 alignment-center">	
-		<a href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><button class="btn btn-primary"><?php echo $params->get('button','See More'); ?></button></a>
+<div class="row pt-7">
+	<div class="col-12 d-flex justify-content-center">	
+		<a href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><button class="btn btn-outline-primary"><?php echo $params->get('button','See More'); ?></button></a>
 	</div>
 </div>
