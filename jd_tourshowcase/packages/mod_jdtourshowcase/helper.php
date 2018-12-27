@@ -37,7 +37,7 @@ class modJdToursrHelper {
                 $query->order($order.' '.$sort);
                 $query->setLimit($limit);
             }
-            echo $query;
+             $query;
             $db->setQuery($query);
             $results = $db->loadObjectList();
          return $results;

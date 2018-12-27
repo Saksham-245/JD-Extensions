@@ -95,12 +95,27 @@
                label="Sort by"
                showon="order:id[OR]order:name"
                description="MOD_JDTOURSHOWCASE_SORT_BY_LABEL"
-               default="MOD_JDTOURSHOWCASE_SORT_BY_DESC"
+               default="ASC"
                class="btn-group btn-group-yesno"
             >
                <option value="ASC">MOD_JDTOURSHOWCASE_SORT_BY_OPTIONS_ASC</option>
                <option value="DESC">MOD_JDTOURSHOWCASE_SORT_BY_OPTIONS_DESC</option>
             </field>
+
+            <field
+               name="button"
+               type="text"
+               filter="safehtml"
+               label="BUTTON_TEXT_LABEL"
+               description="BUTTON_TEXT_DESCRIPTION"
+               default="Get Hour"
+            />
+            <field 
+               name="button_link" 
+               type="menuitem"
+               label="SELECT_A_MENU_LABEL" 
+               description="SELECT_A_MENU_DESCRIPTION" 
+            />
          </fieldset>
          <fieldset name="advanced">
             <field

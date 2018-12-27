@@ -18,7 +18,7 @@ JHtml::_('formbehavior.chosen', 'select');
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'administrator/components/com_jdtoursshowcase/assets/css/jdtoursshowcase.css');
 $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/list.css');
-
+$document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/jdgrid.css');
 
 $user       = JFactory::getUser();
 $userId     = $user->get('id');
