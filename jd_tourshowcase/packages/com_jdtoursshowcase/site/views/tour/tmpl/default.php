@@ -89,6 +89,13 @@ jimport('joomla.application.module.helper');
 			<div>
 	</div>
 	<?php }?> 
+	<?php if(!empty($this->item->schedule_description)) { ?>
+		<div class="jd-row">
+			<div class="jd-col-12">
+				<?php echo  $this->item->schedule_description; ?>
+			<div>
+		</div>
+	<?php }?> 
 
 
 	<?php if($this->item->enable_sidebar){ ?>		
