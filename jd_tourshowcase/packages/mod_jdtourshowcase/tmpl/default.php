@@ -35,7 +35,7 @@ $button_link=$params->get('button_link','#');
 						</a>
 					</div>
 					<div class="tour-sub-title">
-						<span class="text-muted"><?php echo $tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($item->id); ?></span>
+						<span class="text-muted"><?php echo $tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($item->tour_type); ?></span>
 					</div>
 						<div class="tour-show-discount">
 							<strong>
