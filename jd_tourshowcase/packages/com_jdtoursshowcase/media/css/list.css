@@ -11,7 +11,6 @@
 
 .tour-view-img{
 	position: relative;
-	margin-bottom: 20px;
 }
 .tour-view-img .tour-discount{
 	display: -webkit-flex; /* Safari */
@@ -28,6 +27,10 @@
 	height: 80px;
 	line-height: normal;
 	border-radius: 100px;
+}
+.tour-body{
+	background: #fff;
+	padding-top: 35px;
 }
 .off_percentage,.off_fixed_amount{
 	-webkit-flex: 1; /* Safari 6.1+ */
