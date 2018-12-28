@@ -118,9 +118,22 @@ class JdtoursshowcaseModelTour extends JModelItem
 
                     
                 } 
-            }
+				}
+				
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->select('*');
+			$query->from('`#__jdtoursshowcase_tour_type` AS tour_type'); 
+		$query->where($db->quoteName('id') . ' = '. $db->quote($this->_item->tour_type));
+
+		$db->setQuery($query);
+		$results = $db->loadObjectList();
         
-            
+		if (isset($this->_item->tour_type))
+		{
+			 $this->_item->tour_type =$results[0]->title;
+		}
+		
 		// // Get the title of every option selected.
 		// $options      = get_object_vars($this->_item->tour_type);
 		// $options_text = array();
@@ -289,9 +302,18 @@ class JdtoursshowcaseModelTour extends JModelItem
 		$table = $this->getTable();
 
                 
-                    return $table->delete($id);
+      return $table->delete($id);
                 
 	}
-
+	public function getAliasFieldNameByView($view)
+	{
+		switch ($view)
+		{
+			case 'tour':
+			case 'tourform':
+				return 'alias';
+			break;
+		}
+	}
 	
 }

@@ -50,7 +50,26 @@ class JdtoursshowcaseTabletour extends JTable
 	    $date = JFactory::getDate();
 		$task = JFactory::getApplication()->input->get('task');
 	    
-
+		// Support for alias field: alias
+			if (empty($array['alias']))
+			{
+				if (empty($array['title']))
+				{
+					$array['alias'] = JFilterOutput::stringURLSafe(date('Y-m-d H:i:s'));
+				}
+				else
+				{
+					if(JFactory::getConfig()->get('unicodeslugs') == 1)
+					{
+						$array['alias'] = JFilterOutput::stringURLUnicodeSlug(trim($array['title']));
+					}
+					else
+					{
+						$array['alias'] = JFilterOutput::stringURLSafe(trim($array['title']));
+					}
+				}
+			}
+			
 		// Support for multiple field: tour_type
 		if (isset($array['tour_type']))
 		{

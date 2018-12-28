@@ -22,6 +22,6 @@ $limit = $params->get('limit', '');
 $sort = $params->get('sort', '');
 $order = $params->get('order', '');
  $tourClass  = new modJdToursrHelper();
- $tours = $tourClass->tours($tour,$limit,$sort,$order);
+ $tours = $tourClass->tours($tour,$limit,$order);
          
 require JModuleHelper::getLayoutPath('mod_jdtourshowcase', $layout);

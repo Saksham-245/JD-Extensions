@@ -23,7 +23,7 @@ $hits =	(!empty($this->item->hits)) ? $this->item->hits : 0 ;
 $hits_one = $hits+1;
 
 JdtoursshowcaseHelpersJdtoursshowcase::hits($hits_one,$this->item->id);
-$tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->tour_type);
+ 
 jimport('joomla.application.module.helper');
 ?>
 <!-- Title -->
@@ -37,7 +37,7 @@ jimport('joomla.application.module.helper');
 <div class="row tour-details pb-5 text-center">
 		<div class="col-sm-12 col-md-3 col-lg-3">
 			<p class="m-0"><?php echo JText::_( 'Tour Type' ) ?></p>
-			<p class="m-0"><strong><?php echo $tour_type; ?></strong></p>
+			<p class="m-0"><strong><?php echo $this->item->tour_type; ?></strong></p>
 		</div>
 		<div class="col-sm-12 col-md-3 col-lg-3">
 			<p class="m-0"><?php echo JText::_( 'Duration' ) ?></p>

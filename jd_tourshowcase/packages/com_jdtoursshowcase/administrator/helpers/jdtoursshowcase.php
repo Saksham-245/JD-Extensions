@@ -27,11 +27,6 @@ class JdtoursshowcaseHelper
 	public static function addSubmenu($vName = '')
 	{
 		JHtmlSidebar::addEntry(
-			JText::_('Cpanel'),
-			'index.php?option=com_jdtoursshowcase&view=cpanel',
-			$vName == 'cpanel'
-		);
-		JHtmlSidebar::addEntry(
 			JText::_('COM_JDTOURSSHOWCASE_TITLE_TOURS'),
 			'index.php?option=com_jdtoursshowcase&view=tours',
 			$vName == 'tours'

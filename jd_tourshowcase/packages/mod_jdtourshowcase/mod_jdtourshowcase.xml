@@ -78,28 +78,20 @@
            
             <field
                name="order"
-               type="radio"
+               type="list"
                label="MOD_JDTOURSHOWCASE_ORDER_LABEL"
                description="MOD_JDTOURSHOWCASE_ORDER_DESC"
                default="id"
                class="btn-group btn-group-yesno"
             >
-               <option value="id">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST</option>
-               <option value="ordering">MOD_JDTOURSHOWCASE_ORDER_OPTION_ORDERING</option>
-               <option value="title">MOD_JDTOURSHOWCASE_ORDER_OPTION_ALPHABETICALLY</option>
+               <option value="id DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_DESC</option>
+               <option value="id ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_ASC</option>
+               <option value="title DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_ALPHABETICALLY_DESC</option>
+               <option value="title ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_ALPHABETICALLY_ASC</option>
+               <option value="hits DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_HITS_DESC</option>
+               <option value="hits ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_HITS_ASC</option>
                <option value="random">MOD_JDTOURSHOWCASE_ORDER_OPTION_RANDOM</option>
-            </field>
-             <field
-               name="sort"
-               type="radio"
-               label="Sort by"
-               showon="order:id[OR]order:name"
-               description="MOD_JDTOURSHOWCASE_SORT_BY_LABEL"
-               default="ASC"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="ASC">MOD_JDTOURSHOWCASE_SORT_BY_OPTIONS_ASC</option>
-               <option value="DESC">MOD_JDTOURSHOWCASE_SORT_BY_OPTIONS_DESC</option>
+               <option value="ordering">MOD_JDTOURSHOWCASE_ORDER_OPTION_ORDERING</option>
             </field>
 
             <field

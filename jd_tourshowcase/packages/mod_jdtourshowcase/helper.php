@@ -19,7 +19,7 @@ if($params->get('load_fontawesome', 1)){
 }
 
 class modJdToursrHelper {
-    public function tours($tour,$limit,$sort,$order){
+    public function tours($tour,$limit,$order){
             $db = JFactory::getDBO();
             $query = $db->getQuery(true);
             $query->select('*');
@@ -33,7 +33,7 @@ class modJdToursrHelper {
                 $query->setLimit($limit);
             }
             else{
-                $query->order($order.' '.$sort);
+                $query->order($order);
                 $query->setLimit($limit);
             }
              $query;
