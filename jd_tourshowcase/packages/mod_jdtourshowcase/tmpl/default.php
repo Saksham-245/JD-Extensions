@@ -81,7 +81,7 @@ $button_link=$params->get('button_link','#');
 		</div>
    <?php endforeach; ?>					
 </div>
-<div class="row pt-7">
+<div class="row pt-5 pt-md-7 pt-lg-7">
 	<div class="col-12 d-flex justify-content-center">	
 		<a href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><button class="btn btn-outline-primary"><?php echo $params->get('button','See More'); ?></button></a>
 	</div>
