@@ -81,7 +81,7 @@ jimport('joomla.application.module.helper');
 <!-- End -->
 <div class="row">
 	<!-- Left Part -->
-	<div class="col-sm-12 col-md-12 col-lg-8">
+	<div class="col-sm-12 col-md-12 col-lg-<?php if($this->item->enable_sidebar){ echo '8';  }else{ echo "12"; } ?>">
 		<?php if(!empty($this->item->tour_description)) { ?>
 		<div class="tour-description pt-5">
 			<?php echo  $this->item->tour_description; ?>
@@ -149,21 +149,21 @@ jimport('joomla.application.module.helper');
 		</div>
 	</div>
 	<!-- Left Part End -->
-	<!-- Right Part -->
-	<div class="col-sm-12 col-md-12 col-lg-4">
-		<?php if($this->item->enable_sidebar){ ?>		
-			<div class="module-position">
-				<?php if(!empty($this->item->module_position)) { ?>
-					<?php
-						$outputModules = '{loadposition '.$this->item->module_position.'}';
+	<?php if($this->item->enable_sidebar){ ?>		
+		<!-- Right Part -->
+			<div class="col-sm-12 col-md-12 col-lg-4">
+				<div class="module-position">
+					<?php if(!empty($this->item->module_position)) { ?>
+						<?php
+							$outputModules = '{loadposition '.$this->item->module_position.'}';
 
-						echo JHtml::_('content.prepare', $outputModules);
-					?>
-				<?php }else{ echo "Module is not here";} ?>	
+							echo JHtml::_('content.prepare', $outputModules);
+						?>
+					<?php }else{ echo "Module is not here";} ?>	
+				</div>
 			</div>
-		<?php } ?>
-	</div>
-	<!-- Right Part End -->
+		<!-- Right Part End -->
+	<?php } ?>
 </div>
 
 <?php if($canEdit && $this->item->checked_out == 0): ?>

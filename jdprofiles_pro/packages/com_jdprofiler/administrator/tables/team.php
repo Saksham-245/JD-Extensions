@@ -27,12 +27,9 @@ class JdprofilerTableteam extends JTable
 
 	public function __construct(&$db)
 	{
+ 
+		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'JdprofilerTableteam', array('typeAlias' => 'com_jdprofiler.team'));
 		parent::__construct('#__jdprofiler_team', 'id', $db);
-
-		JTableObserverContenthistory::createObserver($this, array('typeAlias' => 'com_jdprofiler.team'));
-
-		$this->created = JFactory::getDate()->toSql();
-		$this->setColumnAlias('published', 'state');
 	}
 
 	/**

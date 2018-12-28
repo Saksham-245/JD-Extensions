@@ -333,26 +333,6 @@
             </field>
          </fieldset>
          <fieldset name="advanced">
-            <field
-               name="load_bootstrap"
-               type="hidden"
-               label="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
-               description="MOD_PROFILE_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
-               default="1"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
-
-            <field name="load_bootstrap" type="radio" label="MOD_JD_LOAD_BOOTSTRAP_LABEL" description="MOD_JD_LOAD_BOOTSTRAP_LABEL" default="0" class="btn-group btn-group-yesno">
-                <option value="1">JYES</option>
-                <option value="0">JNO</option>
-			</field>
-			<field name="load_fontawesome" type="radio" label="MOD_JD_LOAD_FONT_AWESOME_LABEL" description="MOD_JD_LOAD_BOOTSTRAP_DESC" default="0" class="btn-group btn-group-yesno">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
              <field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
          </fieldset>
       </fields>

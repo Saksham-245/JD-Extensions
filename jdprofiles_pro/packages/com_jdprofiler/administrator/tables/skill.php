@@ -26,12 +26,10 @@ class JdprofilerTableskill extends JTable
 	 */
 	public function __construct(&$db)
 	{
+		 
+		
+		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'JdprofilerTableskill', array('typeAlias' => 'com_jdprofiler.skill'));
 		parent::__construct('#__jdprofiler_skill', 'id', $db);
-
-		JTableObserverContenthistory::createObserver($this, array('typeAlias' => 'com_jdprofiler.skill'));
-
-		$this->created = JFactory::getDate()->toSql();
-		$this->setColumnAlias('published', 'state');
 	}
 
 	/**

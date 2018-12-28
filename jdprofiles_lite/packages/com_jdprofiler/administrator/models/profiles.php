@@ -147,9 +147,6 @@ class JdprofilerModelProfiles extends JModelList
 			)
 		);
 		$query->from('`#__jdprofiler_profiles` AS a');
-                
-		// Join over the tags: skills
-		$query->leftJoin($db->quoteName('#__tags', 'tags') . ' ON FIND_IN_SET(tags.id, a.skills)');
 
 		// Join over the user field 'created_by'
 		$query->select('`created_by`.name AS `created_by`');
@@ -159,14 +156,9 @@ class JdprofilerModelProfiles extends JModelList
 		$query->select('`modified_by`.name AS `modified_by`');
 		$query->join('LEFT', '#__users AS `modified_by` ON `modified_by`.id = a.`modified_by`');
 					 
-		// Join over the user field 'designation'
-		$query->select('`designation`.title AS `designation_by`');
-		$query->join('LEFT', '#__jdprofiler_designation AS `designation` ON `designation`.title = a.`designation`');
-
-
 		// Join over the user field 'team'	
 		$query->select('`team`.title AS `team_by`');
-		$query->join('LEFT', '#__jdprofiler_team AS `team` ON `team`.title = a.`team`');
+		$query->join('LEFT', '#__jdprofiler_team AS `team` ON `team`.id = a.`team`');
 		
 		// Filter by published state
 		$published = $this->getState('filter.state');
@@ -180,7 +172,7 @@ class JdprofilerModelProfiles extends JModelList
 			$query->where('(a.state IN (0, 1))');
 		}
 
-		// Filter by designation 
+		// Filter by team 
 		 $team = $this->getState('filter.team');
 		if (IS_STRING($team)){
 			$team = $db->Quote('%' . $db->escape($team, true) . '%');
@@ -188,13 +180,6 @@ class JdprofilerModelProfiles extends JModelList
 			 $query->where('a.team LIKE'.$team);
 		}
 
-		// Filter by designation 
-		$designation = $this->getState('filter.designation');
-		if (IS_STRING($designation)){
-			$designation = $db->Quote('%' . $db->escape($designation, true) . '%');
-
-			$query->where('a.designation LIKE'.$designation);
-		}
 	
 			
 		// Filter by search in title
@@ -209,7 +194,7 @@ class JdprofilerModelProfiles extends JModelList
 			else
 			{
 				$search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('( a.name LIKE ' . $search . '  OR  a.email LIKE ' . $search . '  OR  a.phone LIKE ' . $search . ' )');
+				$query->where('( a.name LIKE ' . $search . '  OR  a.email LIKE ' . $search . ' OR    a.designation LIKE ' . $search . '  OR  a.phone LIKE ' . $search . ' )');
 			}
 		}
                 

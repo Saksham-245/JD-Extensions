@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `#__jdtoursshowcase_tours` (
 `duration` VARCHAR(255)  NOT NULL ,
 `destination` VARCHAR(255)  NOT NULL ,
 `gallery` VARCHAR(255)  NOT NULL ,
-`tour_description` TEXT NOT NULL ,
+`tour_description` VARCHAR(25500)  NOT NULL,
 `facilities_description` TEXT NOT NULL ,
 `facilities_features` VARCHAR(2550)  NOT NULL ,
 `tour_schedule` VARCHAR(255)  NOT NULL ,

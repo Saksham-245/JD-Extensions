@@ -71,11 +71,9 @@ $sortFields = $this->getSortFields();
 				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILER_NAME', 'a.`name`', $listDirn, $listOrder); ?>
 				</th>
+
 				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILER_EMAIL', 'a.`email`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILER_PHONE', 'a.`phone`', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILER_TEAM', 'a.`team`', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILER_DESIGNATION', 'a.`designation`', $listDirn, $listOrder); ?>
@@ -146,14 +144,11 @@ $sortFields = $this->getSortFields();
 					<?php echo $this->escape($item->name); ?>
 				<?php endif; ?>
 
-				</td>				<td>
-
-					<?php echo $item->email; ?>
-				</td>				<td>
-
-					<?php echo $item->phone; ?>
-				</td>				<td>
-
+				</td>					
+				<td>
+					<?php echo $item->team_by; ?>
+				</td>
+				<td>
 					<?php echo $item->designation; ?>
 				</td>
 				<td>

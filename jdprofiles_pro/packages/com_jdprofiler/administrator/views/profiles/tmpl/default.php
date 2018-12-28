@@ -77,12 +77,6 @@ $sortFields = $this->getSortFields();
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILES_IMAGE', 'a.`image`', $listDirn, $listOrder); ?>
 				</th> 
 				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILES_EMAIL', 'a.`email`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILES_PHONE', 'a.`phone`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
 				<?php echo JHtml::_('searchtools.sort',  'COM_JDPROFILER_PROFILES_DESIGNATION', 'a.`designation`', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
@@ -156,15 +150,8 @@ $sortFields = $this->getSortFields();
 					 	<img width="90" src="<?php echo dirname(juri::base()).'/'.$item->image; ?>" />
 					</td>	
 				
+					
 					<td>
-
-					<?php echo $item->email; ?>
-				</td>		
-				
-						<td>
-
-					<?php echo $item->phone; ?>
-				</td>				<td>
 
 					<?php echo $item->designation; ?>
 				</td>
