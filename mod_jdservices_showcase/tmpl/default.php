@@ -6,6 +6,7 @@ $services = $params->get('services', []);
 $showReadMore = $params->get('showReadMore');
 $showReadMoreText = $params->get('showReadMoreText');
 $showReadMoreIcon = $params->get('showReadMoreIcon');
+$button_link = $params->get('button_link');
  
 
 ?>
