@@ -32,15 +32,18 @@
 	position: relative;
 	display: inline-block;
 }
-.countdown span {
+.countdown .days,.countdown .hours,.countdown .minutes,.countdown .seconds {
     display: inline-block;
-    font-size: 40px;
-    font-weight: 500;
-    padding: 15px;
-    text-align: center;
-    width: auto;
+	padding: 10px;
+	text-align: center;
 }
-
+.countdown p{
+	margin: 0px;
+}
+.countdown span{
+	font-size: 30px;
+    font-weight: 500;
+}
 /* Reponsive css */
 @media screen and (max-width:991px) {
 	.heading-count .percent span{
