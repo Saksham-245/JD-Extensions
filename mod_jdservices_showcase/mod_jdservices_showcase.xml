@@ -69,26 +69,13 @@
                 type="text" />
                 
             <field name="showReadMoreIcon"
-                label="Icon"
+                label="FontAwesome Icon"
                 required="true"
+                hint="fas fa-chevron-right"
                 showon="showReadMore:2"
                 default="fas fa-chevron-right"
                 type="text" />
-            <field name="showcase_height"
-                type="text"
-                label="MOD_JDSERVICES_SHOWCASE_OPTIONS_HEIGHT_LBL"
-                default="auto">
-            </field>
-            <field
-               name="select_view"
-               type="jdthumbnailradio"
-               label="Select View "
-               description=""
-               default="1"
-            >
-			  <option value="1">media/mod_jdservices_showcase/images/layouts/layout-1.svg|Style - 1</option>
 
-			</field>
          </fieldset>
          <fieldset name="advanced">
             <field

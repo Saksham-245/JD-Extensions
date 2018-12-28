@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 $services = $params->get('services', []);
-$showcase_height = $params->get('showcase_height', 'auto');
+ 
 $LinkOn = $params->get('LinkOn');
 $showReadMore = $params->get('showReadMore');
 $showReadMoreText = $params->get('showReadMoreText');

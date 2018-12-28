@@ -23,7 +23,7 @@ $hits =	(!empty($this->item->hits)) ? $this->item->hits : 0 ;
 $hits_one = $hits+1;
 
 JdtoursshowcaseHelpersJdtoursshowcase::hits($hits_one,$this->item->id);
-$tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->id);
+$tour_type = JdtoursshowcaseHelpersJdtoursshowcase::tour_type($this->item->tour_type);
 jimport('joomla.application.module.helper');
 ?>
 <!-- Title -->
