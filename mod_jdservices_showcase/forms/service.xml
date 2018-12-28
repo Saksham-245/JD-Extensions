@@ -24,8 +24,7 @@
         </field>
         <field name="serveices_icon_upload"
                 label="Upload Media"
-                showon="serveices_iconOption:upload[AND]switch:2"
-				
+                showon="serveices_iconOption:upload[AND]switch:2"	
                 type="media"  />
         <field name="serveices_icon_class"
                 label="MOD_JDSERVICES_SHOWCASE_ICON_CLASS"
@@ -55,13 +54,15 @@
        <field
               name="article_id"
               type="sql"
-               showon="switch:1"
+              showon="switch:1"
               default=""
               label="Select an article"
               query="SELECT id, title FROM #__content"
               key_field="id"
               value_field="title"
         />
-
+        <field name="serveices_hover_img"
+              label="Hover Image"
+              type="media"  />
    </fieldset>
 </form>

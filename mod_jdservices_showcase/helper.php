@@ -13,7 +13,7 @@
  * other free or open source software licenses.
  */
 defined('_JEXEC') or die;
-
+JLoader::register('ContentHelperRoute', JPATH_SITE . '/components/com_content/helpers/route.php');
 class modJDServicesShowcaseHelper {
 
    public static function formatGrid($services = []) {
@@ -75,6 +75,8 @@ class modJDServicesShowcaseHelper {
          $items['title']=$result->title;
          $items['intro']=$result->introtext;
          $items['images']=$result->images;
+         $items['link']=JRoute::_(ContentHelperRoute::getArticleRoute($result->id, $result->catid, $result->language));
+          
       }
       
       return $items;

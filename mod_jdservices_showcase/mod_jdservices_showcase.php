@@ -22,4 +22,5 @@ if ($params->get('load_bootstrap', 0)) {
    $document->addStyleSheet("https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css");
 }
 $document->addStyleSheet(JURI::root() . 'modules/mod_jdservices_showcase/assets/css/jdservices.css');
+$document->addStyleSheet(JURI::root() . 'modules/mod_jdservices_showcase/assets/css/jdgrid.css');
 require JModuleHelper::getLayoutPath('mod_jdservices_showcase', $layout);

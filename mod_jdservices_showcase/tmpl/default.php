@@ -5,79 +5,145 @@ $services = $params->get('services', []);
 $LinkOn = $params->get('LinkOn');
 $showReadMore = $params->get('showReadMore');
 $showReadMoreText = $params->get('showReadMoreText');
+$showReadMoreIcon = $params->get('showReadMoreIcon');
  
 
 ?>
-<div class="jd-services">
-	<div class="row">
-		<?php foreach ($services as $service) {  ?>
-			<div class="col-lg-4">
-				<?php if($service->switch=="2"){?>
-					<?php if($LinkOn =="fullBox") { ?> <a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php } ?>
-						<div class="features-box-icon-wrapper">	
+		<section class="jd-services-shocase">
+			<div class="jd-container">
+				<div class="jd-row">
+				<?php foreach ($services as $service) {  $items = modJDServicesShowcaseHelper::get_post($service->article_id,'DESC','id'); $images = json_decode($items['images']);  ?>
+						<?php if($service->switch=='2') {  ?>
+							<div class="jd-col-lg-4 jd-col-md-6 jd-col-sm-12">
+								<div class="service-box">
+									<div class="service-box-inner">
+										<div class="image-overlay">
+											<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>">
+												<div class="image">
+													<img src="<?php echo $service->serveices_icon_upload; ?>" alt="img"/>
+												</div>
+												<div class="overlay">
+													<?php if(!empty($service->serveices_hover_img)) { ?>
+														<div class="image">
+															<img src="<?php echo $service->serveices_hover_img; ?>" alt="overlay-img"/>
+														</div>
+													<?php  } ?>
+												</div>
+											</a>
+										</div>
+										<div class="content">
+											
+											<?php if(!empty($service->subtitle)){ ?>
+												<div class="title">
+													<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php echo $service->title; ?></a>
+												</div>
+											<?php }  ?>
 
-							<?php if(!empty ($service->title) or !empty($service->description)){ ?>
-								<div class="features-box-content">
-									<?php if(!empty($service->title)){ ?>
-										<h4 class="title">
-											<?php if($LinkOn    =="title" or $LinkOn  =="titleAndMedia") { ?>
-												<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>">
+											<?php if(!empty($service->subtitle)){ ?>
+												<div class="sub-title">
+													<?php echo $service->subtitle; ?>
+												</div>
+											<?php }  ?>
+
+											<?php if(!empty($service->description)){ ?>
+												<div class="description">
+													<?php echo $service->description; ?>
+												</div>
+											<?php }  ?>
+
+											<?php if(($showReadMore=="1")){ ?>
+												<div class="read-more">
+													<?php if(!empty($showReadMoreText)){ ?>
+														<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>">
+															<p class="mb-0 read-more">
+																<?php echo $showReadMoreText; ?>
+															</p>
+														</a>
+													<?php } ?>
+												</div>											
 											<?php } ?>
-													<?php echo $service->title; ?>
-											<?php if($LinkOn    =="title" or $LinkOn  =="titleAndMedia") { ?>
-												</a>
-											<?php } ?> 
-										</h4>
-									<?php } ?>
-									<?php if(!empty($service->title)){ ?>
-										<p><?php echo $service->subtitle ?></p>
-									<?php } ?>
-									<?php if(!empty($service->description)){ ?>
-										<p class="short-description"><?php echo $service->description; ?></p>
-									<?php } ?>
-									<?php if(($showReadMore)){ ?>
-										<?php if(!empty($showReadMoreText)){ ?>
-											<p class="mb-0"><?php echo $showReadMoreText; ?></p>
-										<?php } ?>
-									<?php } ?>
-								</div>
-							<?php } ?>
-						</div>
-					<?php if($LinkOn  =="fullBox") { ?></a> <?php } ?> 
-				</div>
-			<?php } ?>
 
-			<?php if($service->switch=="1"){?>
-					<div class="our-popular-services mb-4">
-						<div class="row">
-							<?php foreach ($services as $service) {  $items = modJDServicesShowcaseHelper::get_post($service->article_id,'DESC','id'); $images = json_decode($items['images']); // print_r($images);?>
-									
-									<div class="booking-section booking-section-hotel card mb-4">
-										<div class="card-img-top card-img-container">
-										<img src="<?php echo $images->image_intro; ?>" alt="<?php echo $images->image_fulltext_alt; ?>" class="img-fluid">
-										<div class="booking-section-overlay">
-												<a href="#" class="booking-hover-icon">
-													<img src="images/hover-booking-icon.png" alt="">
-												</a>
-										</div>
-										</div>
-										<div class="fbs-content card-body text-center">
-												<h5 class="card-title text-center"><?php echo $items['title']; ?></h5>
-												<p class="card-text text-center"><?php echo $items['intro']; ?></p>
-												<a href="#" class="booking-section-see-more"><b>See More <i class="fa fa-angle-right" aria-hidden="true"></i></b></a>
+											<?php if(($showReadMore=="2")){ ?>
+												<div class="read-more">
+													<?php if(!empty($showReadMoreIcon)){ ?>
+														<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>">
+															<p class="mb-0 read-more"><i class="<?php echo $showReadMoreIcon;  ?>"></i></p>
+														</a>
+													<?php } ?>
+												</div>	
+											<?php } ?>
 										</div>
 									</div>
-									
-								<?php } ?>	
+								</div>
 							</div>
-						</div>
-					</div>
+						<?php  }   ?>
+
+						<?php if($service->switch=='1') {  ?>
+							<div class="jd-col-lg-4 jd-col-md-6 jd-col-sm-12">
+								<div class="service-box">
+									<div class="service-box-inner">
+										<div class="image-overlay">
+											<a href="<?php echo $items['link']; ?>">
+												<?php if(!empty($images->image_intro)) { ?>
+													<div class="image">
+														<img src="<?php echo $images->image_intro; ?>" alt="img"/>
+													</div>
+												<?php }  ?>
+
+												<div class="overlay">
+													<?php if(!empty($service->serveices_hover_img)) { ?>
+														<div class="image">
+															<img src="<?php echo $service->serveices_hover_img; ?>" alt="overlay-img"/>
+														</div>
+													<?php  } ?>
+												</div>
+											</a>
+										</div>
+										<div class="content">
+											
+											<?php if(!empty($items['title'])){ ?>
+												<div class="title">
+													<a href="<?php echo $items['link']; ?>"><?php echo $items['title']; ?></a>
+												</div>
+											<?php }  ?>
+
+											<?php if(!empty($service->subtitle)){ ?>
+												<div class="sub-title">
+													<?php echo $service->subtitle; ?>
+												</div>
+											<?php }  ?>
+
+											<?php if(!empty($items['intro'])){ ?>
+												<div class="description">
+													<?php echo $items['intro']; ?>
+												</div>
+											<?php }  ?>
+
+											<?php if(($showReadMore=="1")){ ?>
+												<div class="read-more">
+													<?php if(!empty($showReadMoreText)){ ?>
+														<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>">
+															<p class="mb-0">
+																<?php echo $showReadMoreText; ?>
+															</p>
+														</a>
+													<?php } ?>
+												</div>											
+											<?php } ?>
+
+											<?php if(($showReadMore=="2")){ ?>
+												<?php if(!empty($showReadMoreIcon)){ ?>
+													<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>">
+														<p class="mb-0 read-more"><i class="<?php echo $showReadMoreIcon;  ?>"></i></p>
+													</a>
+												<?php } ?>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						<?php  }   ?>
+					<?php } ?>	
 				</div>
-				<?php } ?>
-		<?php } ?>
-
-
-
-
-		
-    
+			</div>
+		</section>
