@@ -2,7 +2,7 @@
 defined('_JEXEC') or die;
 $services = $params->get('services', []);
  
-$LinkOn = $params->get('LinkOn');
+// $LinkOn = $params->get('LinkOn');
 $showReadMore = $params->get('showReadMore');
 $showReadMoreText = $params->get('showReadMoreText');
 $showReadMoreIcon = $params->get('showReadMoreIcon');
@@ -144,6 +144,11 @@ $showReadMoreIcon = $params->get('showReadMoreIcon');
 							</div>
 						<?php  }   ?>
 					<?php } ?>	
+				</div>
+				<div class="row pt-5 pt-md-7 pt-lg-7">
+					<div class="col-12 d-flex justify-content-center">	
+						<a href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><button class="btn btn-outline-primary"><?php echo $params->get('button','See More'); ?></button></a>
+					</div>
 				</div>
 			</div>
 		</section>

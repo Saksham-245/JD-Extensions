@@ -39,7 +39,7 @@
          <fieldset name="Design">
             <field
                name="LinkOn"
-               type="list"
+               type="hidden"
                label="Link On"
                description=""
                default="0"
@@ -76,6 +76,21 @@
                 default="fas fa-chevron-right"
                 type="text" />
 
+            <field
+               name="button"
+               type="text"
+               filter="safehtml"
+               label="BUTTON_TEXT_LABEL"
+               description="BUTTON_TEXT_DESCRIPTION"
+               default="Get Hour"
+            />
+            <field 
+               name="button_link"
+               type="menuitem"
+               label="SELECT_A_MENU_LABEL" 
+               description="SELECT_A_MENU_DESCRIPTION" 
+            />
+
          </fieldset>
          <fieldset name="advanced">
             <field
@@ -85,18 +100,6 @@
                description="JFIELD_ALT_MODULE_LAYOUT_DESC"
                default="default"
             />
-            
-            <field
-               name="load_bootstrap"
-               type="radio"
-               label="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_LBL"
-               description="MOD_JDSERVICES_SHOWCASE_OPTIONS_LOAD_BOOTSTRAP_DESC"
-               default="0"
-               class="btn-group btn-group-yesno"
-            >
-               <option value="1">JYES</option>
-               <option value="0">JNO</option>
-            </field>
             <field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
          </fieldset>
       </fields>
