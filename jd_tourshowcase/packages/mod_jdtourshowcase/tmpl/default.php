@@ -13,7 +13,7 @@ $button_link=$params->get('button_link','#');
    <div class="col-lg-<?php echo  $params->get('grid_coloumns',1);?> d-md-flex mb-4">
 			<div class="tour-wrap">
 				<div class="tour-view-img">
-					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations">
+					<a href="<?php echo JRoute::_(JDtourRoute::getTourRoute($item->id));?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations">
 					</a>
 					<div class="tour-discount">
 						<?php
@@ -30,7 +30,7 @@ $button_link=$params->get('button_link','#');
 				</div>
 				<div class="tour-body text-center">
 					<div class="tour-title">
-						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" target="1">
+						<a href="<?php echo JDtourRoute::getTourRoute($item->id); ?>" target="1">
 							<h5><?php echo ($item->title); ?></h5>
 						</a>
 					</div>
