@@ -130,13 +130,13 @@ jimport('joomla.application.module.helper');
 			<?php  if(!empty($features)) { ?>
 				<?php  foreach($features as $feature) {?>
 					<?php  if($feature->show_img_feature == 1){ ?>
-						<div class="col-sm-12 col-md-3 col-lg-3">
+						<div class="col-sm-12 col-md-3 col-lg-3 mb-3">
 						<i class="mr-2 <?php echo $feature->icon_class; ?>"></i><span><?php echo $feature->caption; ?></span>
 						</div>
 					<?php } ?>
 
 					<?php  if($feature->show_img_feature == 2){ ?>
-					<div class="col-sm-12 col-md-3 col-lg-3">
+					<div class="col-sm-12 col-md-3 col-lg-3 mb-3">
 						<img class="mr-2" src="<?php echo $feature->icon_img; ?>"/><span><?php echo $feature->caption; ?></span>
 					</div>
 					<?php } ?>
