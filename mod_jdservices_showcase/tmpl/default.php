@@ -34,7 +34,7 @@ $button_link = $params->get('button_link');
 										</div>
 										<div class="content">
 											
-											<?php if(!empty($service->btitle)){ ?>
+											<?php if(!empty($service->title)){ ?>
 												<div class="title">
 													<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>"><?php echo $service->title; ?></a>
 												</div>
