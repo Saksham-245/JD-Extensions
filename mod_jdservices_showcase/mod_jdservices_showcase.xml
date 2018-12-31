@@ -76,9 +76,23 @@
                 default="fas fa-chevron-right"
                 type="text" />
 
+
+            <field
+               name="showReadMoreInner"
+               type="radio"
+               label="Show Read More"
+               description=""
+               default="0"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+
             <field
                name="button"
                type="text"
+               showon="showReadMoreInner:1"
                filter="safehtml"
                label="BUTTON_TEXT_LABEL"
                description="BUTTON_TEXT_DESCRIPTION"
@@ -87,6 +101,7 @@
             <field 
                name="button_link"
                type="menuitem"
+                showon="showReadMoreInner:1"
                label="SELECT_A_MENU_LABEL" 
                description="SELECT_A_MENU_DESCRIPTION" 
             />

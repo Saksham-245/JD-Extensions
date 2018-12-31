@@ -44,8 +44,34 @@ jimport('joomla.application.module.helper');
 			<p class="m-0"><strong><?php echo  $this->item->duration; ?></strong></p>
 		</div>
 		<div class="col-sm-12 col-md-3 col-lg-3">
-			<p class="m-0"><?php echo JText::_( 'Price' ) ?></p>
-			<p class="m-0"><strong><?php echo  $this->item->price; ?></strong></p>
+			<p class="m-0"><?php echo JText::_( 'Price' ) ?> /  <?php  if($this->item->discount_type=="percentage"){	
+												echo '<span>'.$this->item->percentage. '%' .'</span>&nbsp;Off';	
+												
+											}elseif($this->item->discount_type=="fixed_amount"){
+												echo '<span>Flat '.$this->item->fixed_amount.' </span>&nbsp;Off';
+											}
+											
+											?>
+			</p>
+										<p class="m-0"><strong><?php if($this->item->show_discount){
+										if($this->item->discount_type=="percentage"){
+											$percentage =  (($this->item->price*$this->item->percentage)/100);
+											echo '$'.$price =  ($this->item->price - $percentage).'&nbsp;';
+
+											echo '<strike> $'.$this->item->price.'</strike> &nbsp;';
+
+											
+												
+										}elseif($this->item->discount_type=="fixed_amount"){
+											$fixed_amount = $this->item->fixed_amount;
+											echo '$'.$price = ($this->item->price - $fixed_amount);
+
+											echo '<strike> $'.$this->item->price.'</strike>';
+
+											
+
+										}
+									} ?></strong></p>
 		</div>
 		<div class="col-sm-12 col-md-3 col-lg-3">
 			<p class="m-0"><?php echo JText::_( 'Destination' ) ?></p>

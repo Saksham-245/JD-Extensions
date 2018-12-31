@@ -199,7 +199,7 @@ class JdtoursshowcaseModelTours extends JModelList
 			else
 			{
 				$search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('( a.title LIKE ' . $search . '  OR  a.tour_type LIKE ' . $search . '  OR  a.checked_out_time LIKE ' . $search . '  OR  a.tour_image LIKE ' . $search . '  OR  a.price LIKE ' . $search . '  OR  a.discount_value LIKE ' . $search . '  OR  a.gallery LIKE ' . $search . ' )');
+				$query->where('( a.title LIKE ' . $search . '  OR  a.tour_type LIKE ' . $search . '  OR  a.checked_out_time LIKE ' . $search . '  OR  a.tour_image LIKE ' . $search . '  OR  a.price LIKE ' . $search . '  OR  a.gallery LIKE ' . $search . ' )');
 			}
 		}
                 

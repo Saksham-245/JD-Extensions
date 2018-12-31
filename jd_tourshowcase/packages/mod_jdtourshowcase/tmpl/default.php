@@ -30,7 +30,7 @@ $button_link=$params->get('button_link','#');
 				</div>
 				<div class="tour-body text-center">
 					<div class="tour-title">
-						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">
+						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" target="1">
 							<h5><?php echo ($item->title); ?></h5>
 						</a>
 					</div>
