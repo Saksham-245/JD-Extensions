@@ -15,7 +15,7 @@ $button_link = $params->get('button_link');
 				<div class="jd-row">
 				<?php foreach ($services as $service) {  $items = modJDServicesShowcaseHelper::get_post($service->article_id,'DESC','id'); $images = json_decode($items['images']);  ?>
 						<?php if($service->switch=='2') {  ?>
-							<div class="jd-col-lg-4 jd-col-md-6 jd-col-sm-12 d-md-flex">
+							<div class="jd-col-lg-4 jd-col-md-6 jd-col-sm-12 d-md-flex mb-4">
 								<div class="service-box">
 									<div class="service-box-inner">
 										<div class="image-overlay">
@@ -57,7 +57,7 @@ $button_link = $params->get('button_link');
 													<?php if(!empty($showReadMoreText)){ ?>
 														<a href="<?php echo $url = JRoute::_('index.php?Itemid=' . $service->link); ?>">
 															<p class="mb-0 read-more">
-																<?php echo $showReadMoreText; ?>
+																<?php echo $showReadMoreText; ?><i class="fa fa-angle-right pl-2" style="color: #ff2424;" aria-hidden="true"></i>
 															</p>
 														</a>
 													<?php } ?>
@@ -80,7 +80,7 @@ $button_link = $params->get('button_link');
 						<?php  }   ?>
 
 						<?php if($service->switch=='1') {  ?>
-							<div class="jd-col-lg-4 jd-col-md-6 jd-col-sm-12 d-md-flex">
+							<div class="jd-col-lg-4 jd-col-md-6 jd-col-sm-12 d-md-flex mb-4">
 								<div class="service-box">
 									<div class="service-box-inner">
 										<div class="image-overlay">
@@ -147,7 +147,7 @@ $button_link = $params->get('button_link');
 					<?php } ?>	
 				</div>
 				<?php if($params->get('showReadMoreInner', 0)) { ?>
-					<div class="row pt-5 pt-md-7 pt-lg-7">
+					<div class="row pt-5">
 						<div class="col-12 d-flex justify-content-center">	
 							<a href="<?php echo JRoute::_("index.php?Itemid={$button_link}"); ?>"><button class="btn btn-outline-primary"><?php echo $params->get('button','See More'); ?></button></a>
 						</div>

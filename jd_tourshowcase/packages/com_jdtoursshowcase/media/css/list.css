@@ -77,25 +77,24 @@
 	font-size: 18px;
 	font-weight: 600;
 }
-#touraccordion .accordion:first-child .accordion-header li,#touraccordion .accordion:last-child .accordion-header li{
+#touraccordion .accordion .accordion-header li{
 	list-style-type: none;
 	position: relative;
 }
-#touraccordion .accordion:first-child .accordion-header li:before{
-	content: "";
-	display: block;
-	background: url(icon-1.png) no-repeat;
-	width: 28px;
-	height: 28px;
-	position: absolute;
-	left: -40px;
+#touraccordion .accordion .accordion-header .accordion-list{
+	padding: 0px;
 }
-#touraccordion .accordion:last-child .accordion-header li:before{
-	content: "";
-	display: block;
-	background: url(icon-2.png) no-repeat;
-	width: 28px;
-	height: 28px;
-	position: absolute;
-	left: -40px;
+#touraccordion .accordion .accordion-header li:after{
+	color: #777777;
+    content: "-";
+    float: right;
+    font-weight: bold;
+    margin-left: 5px;
+}
+#touraccordion .accordion .accordion-header li.collapsed:after{
+	color: #777777;
+	content: "+";
+	float: right;
+    font-weight: bold;
+    margin-left: 5px;
 }
