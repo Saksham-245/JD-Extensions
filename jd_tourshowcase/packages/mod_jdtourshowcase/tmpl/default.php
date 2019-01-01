@@ -15,18 +15,20 @@ $button_link=$params->get('button_link','#');
 				<div class="tour-view-img">
 					<a href="<?php echo JRoute::_(JDtourRoute::getTourRoute($item->id));?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations">
 					</a>
-					<div class="tour-discount">
-						<?php
-							if($item->show_discount){
-								if($item->discount_type=="percentage"){	
-									echo '<div class="off_percentage"><span>'.$item->percentage. '%' .'</span> </br>Off' . '</div>';	
-									
-								}elseif($item->discount_type=="fixed_amount"){
-									echo '<div class="off_fixed_amount"> <span>Flat '.$item->fixed_amount.' </span></br>Off' .'</div>';
-								}
-							}
-						?>
-					</div>
+					<?php if($item->show_discount){ ?>
+						<div class="tour-discount">
+							<?php
+								
+									if($item->discount_type=="percentage"){	
+										echo '<div class="off_percentage"><span>'.$item->percentage. '%' .'</span> </br>Off' . '</div>';	
+										
+									}elseif($item->discount_type=="fixed_amount"){
+										echo '<div class="off_fixed_amount"> <span>Flat '.$item->fixed_amount.' </span></br>Off' .'</div>';
+									}
+								
+							?>
+						</div>
+					<?php }?> 
 				</div>
 				<div class="tour-body text-center">
 					<div class="tour-title">
