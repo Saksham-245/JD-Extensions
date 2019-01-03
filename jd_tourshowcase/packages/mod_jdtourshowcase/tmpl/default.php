@@ -75,7 +75,7 @@ $button_link=$params->get('button_link','#');
 									<?php } ?>
 							</div>
 						<?php } ?>		
-						<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>" class="tour-showcase-see-more">
+						<a href="<?php echo JDtourRoute::getTourRoute($item->id); ?>" class="tour-showcase-see-more">
 							See More <i class="fa fa-angle-right pl-2" style="color: #ff2424;" aria-hidden="true"></i>
 						</a>
 				</div>
