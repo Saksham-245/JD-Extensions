@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JDTOURSSHOWCASE_TITLE_LIST_VIEW_TOURTYPES" option="View">
+        <message>
+                        <![CDATA[COM_JDTOURSSHOWCASE_TITLE_LIST_VIEW_TOURTYPES_DESC]]>
+        </message>
+	</layout>
+
+<fields name="params">
+        <fieldset 
+            name="basic"
+            label="COM_JDTOURSSHOWCASE_FIELDSET_ITEM_ID_SELECT_LABEL">
+            <field
+                name="item_id"
+                query="SELECT * FROM #__jdtoursshowcase_tour_type ORDER BY `id`"
+                type="sql"
+                key_field="id" 
+                value_field="title"
+                label="Select the TourType"
+                require="true"
+                description="Select the TourType">
+            </field>
+            <field
+               name="grid_coloumns_global"
+               type="list"
+               label="MOD_JDTOURSHOWCASE_GRID_COLUMNS_LABEL"
+               description="MOD_JDTOURSHOWCASE_GRID_COLUMNS_DESC"
+               default="4"
+               class="btn-group btn-group-yesno"
+            >
+               <option value="global">Gobal</option>
+               <option value="12">J1</option>
+               <option value="6">J2</option>
+               <option value="4">J3</option>
+               <option value="3">J4</option>
+               <option value="2">J6</option>
+            </field>
+
+             <field
+               name="limit"
+               type="hidden"
+               min="1"
+               label="MOD_JDTOURSHOWCASE_DISPLAY_PROFILE_LABEL"
+               description="MOD_JDTOURSHOWCASE_DISPLAY_PROFILE_DESC"
+               default="1"
+               class="btn-group btn-group-yesno"
+            />
+
+              <field
+               name="order_global"
+               type="list"
+               label="MOD_JDTOURSHOWCASE_ORDER_LABEL"
+               description="MOD_JDTOURSHOWCASE_ORDER_DESC"
+               default="id"
+               class="btn-group btn-group-yesno"
+            >
+                <option value="global">Gobal</option>
+               <option value="id DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_DESC</option>
+               <option value="id ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_ASC</option>
+               <option value="title DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_ALPHABETICALLY_DESC</option>
+               <option value="title ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_ALPHABETICALLY_ASC</option>
+               <option value="hits DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_HITS_DESC</option>
+               <option value="hits ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_HITS_ASC</option>
+               <option value="ordering">MOD_JDTOURSHOWCASE_ORDER_OPTION_ORDERING</option>
+            </field>
+
+        </fieldset>
+    </fields>
+</metadata>

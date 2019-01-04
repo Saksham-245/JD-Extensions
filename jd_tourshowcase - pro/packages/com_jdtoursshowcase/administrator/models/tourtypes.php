@@ -1,10 +1,10 @@
 <?php
 
 /**
- 
+ .0
  * @package    Com_Jdtoursshowcase
  * @author     JoomDev <info@gmail.com>
- * @copyright  2018 
+ * @copyright  2018
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
@@ -16,7 +16,7 @@ jimport('joomla.application.component.modellist');
  *
  * @since  1.6
  */
-class JdtoursshowcaseModelTours extends JModelList
+class JdtoursshowcaseModelTourtypes extends JModelList
 {
     
         
@@ -34,23 +34,11 @@ class JdtoursshowcaseModelTours extends JModelList
 		{
 			$config['filter_fields'] = array(
 				'id', 'a.`id`',
-				'title', 'a.`title`',
-				'tour_type', 'a.`tour_type`',
 				'ordering', 'a.`ordering`',
 				'state', 'a.`state`',
 				'created_by', 'a.`created_by`',
 				'modified_by', 'a.`modified_by`',
-				'tour_image', 'a.`tour_image`',
-				'price', 'a.`price`',
-				'duration', 'a.`duration`',
-				'destination', 'a.`destination`',
-				'gallery', 'a.`gallery`',
-				'tour_description', 'a.`tour_description`',
-				'facilities_description', 'a.`facilities_description`',
-				'facilities_features', 'a.`facilities_features`',
-				'schedule_title', 'a.`schedule_title`',
-				'schedule_description', 'a.`schedule_description`',
-				'hits', 'a.`hits`',
+				'title', 'a.`title`',
 			);
 		}
 
@@ -84,30 +72,23 @@ class JdtoursshowcaseModelTours extends JModelList
 
 		$published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
 		$this->setState('filter.state', $published);
-		// Filtering tour_type
-		$this->setState('filter.tour_type', $app->getUserStateFromRequest($this->context.'.filter.tour_type', 'filter_tour_type', '', 'string'));
-
-		// Filtering discount_value
-		$this->setState('filter.discount_value', $app->getUserStateFromRequest($this->context.'.filter.discount_value', 'filter_discount_value', '', 'string'));
-
 
 		// Load the parameters.
 		$params = JComponentHelper::getParams('com_jdtoursshowcase');
- 
 		$this->setState('params', $params);
 
-		parent::populateState("a.id", "ASC");
+                parent::populateState("a.id", "ASC");
 
-		// $start = $app->getUserStateFromRequest($this->context . '.limitstart', 'limitstart', 0, 'int');
-		// $limit = $app->getUserStateFromRequest($this->context . '.limit', 'limit', 0, 'int');
+                $start = $app->getUserStateFromRequest($this->context . '.limitstart', 'limitstart', 0, 'int');
+                $limit = $app->getUserStateFromRequest($this->context . '.limit', 'limit', 0, 'int');
 
-		// if ($limit == 0)
-		// {
-		// 	$limit = $app->get('list_limit', 0);
-		// }
+                if ($limit == 0)
+                {
+                    $limit = $app->get('list_limit', 0);
+                }
 
-		// $this->setState('list.limit', $limit);
-		// $this->setState('list.start', $start);
+                $this->setState('list.limit', $limit);
+                $this->setState('list.start', $start);
         
 	}
 
@@ -131,7 +112,7 @@ class JdtoursshowcaseModelTours extends JModelList
 		$id .= ':' . $this->getState('filter.state');
 
                 
-      return parent::getStoreId($id);
+                    return parent::getStoreId($id);
                 
 	}
 
@@ -144,10 +125,6 @@ class JdtoursshowcaseModelTours extends JModelList
 	 */
 	protected function getListQuery()
 	{
-
-		//$params = JComponentHelper::getParams('com_jdtoursshowcase');
-		//echo $params->get ( 'test' );
-
 		// Create a new query object.
 		$db    = $this->getDbo();
 		$query = $db->getQuery(true);
@@ -158,8 +135,11 @@ class JdtoursshowcaseModelTours extends JModelList
 				'list.select', 'DISTINCT a.*'
 			)
 		);
-		$query->from('`#__jdtoursshowcase_tours` AS a');
+		$query->from('`#__jdtoursshowcase_tour_type` AS a');
                 
+		// Join over the users for the checked out user
+		$query->select("uc.name AS uEditor");
+		$query->join("LEFT", "#__users AS uc ON uc.id=a.checked_out");
 
 		// Join over the user field 'created_by'
 		$query->select('`created_by`.name AS `created_by`');
@@ -168,11 +148,7 @@ class JdtoursshowcaseModelTours extends JModelList
 		// Join over the user field 'modified_by'
 		$query->select('`modified_by`.name AS `modified_by`');
 		$query->join('LEFT', '#__users AS `modified_by` ON `modified_by`.id = a.`modified_by`');
-
-		$query->select('tour_type.title as tour_type');
-		$query->join('LEFT', '#__jdtoursshowcase_tour_type AS `tour_type` ON `tour_type`.id = a.`tour_type`');
-		//$query->join('LEFT', 'FIND_IN_SET(' . $db->quote($filter_tour_type) . ', ' . $db->quoteName('a.tour_type') . ')');
-		 
+                
 
 		// Filter by published state
 		$published = $this->getState('filter.state');
@@ -198,20 +174,10 @@ class JdtoursshowcaseModelTours extends JModelList
 			else
 			{
 				$search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('( a.title LIKE ' . $search . '  OR  a.tour_type LIKE ' . $search . '  OR  a.checked_out_time LIKE ' . $search . '  OR  a.tour_image LIKE ' . $search . '  OR  a.price LIKE ' . $search . '  OR  a.gallery LIKE ' . $search . ' )');
+				
 			}
 		}
                 
-
-		// Filtering tour_type
-		$filter_tour_type = $this->state->get("filter.tour_type");
-
-		if ($filter_tour_type !== null && (is_numeric($filter_tour_type) || !empty($filter_tour_type)))
-		{
-			$query->where('FIND_IN_SET(' . $db->quote($filter_tour_type) . ', ' . $db->quoteName('a.tour_type') . ')');
-		}
-
-		// Filtering discount_value
 		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering', "a.id");
 		$orderDirn = $this->state->get('list.direction', "ASC");
@@ -233,22 +199,6 @@ class JdtoursshowcaseModelTours extends JModelList
 	{
 		$items = parent::getItems();
                 
-		// foreach ($items as $oneItem)
-		// {
-
-		// 	// Get the title of every option selected.
-
-		// 	$options      = explode(',', $oneItem->tour_type);
-
-		// 	$options_text = array();
-
-		// 	foreach ((array) $options as $option)
-		// 	{
-		// 		$options_text[] = JText::_('COM_JDTOURSSHOWCASE_TOURS_TOUR_TYPE_OPTION_' . strtoupper($option));
-		// 	}
-
-		// 	$oneItem->tour_type = !empty($options_text) ? implode(', ', $options_text) : $oneItem->tour_type;
-		// }
 
 		return $items;
 	}

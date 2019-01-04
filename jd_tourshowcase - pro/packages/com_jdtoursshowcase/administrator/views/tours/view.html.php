@@ -24,8 +24,6 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 	protected $pagination;
 
 	protected $state;
-	
-	protected $maxTours = 50;
 
 	/**
 	 * Display the view
@@ -77,7 +75,7 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 
 		if (file_exists($formPath))
 		{	
-			if($this->get_total() < 3){
+			
 				if ($canDo->get('core.create'))
 				{
 					JToolBarHelper::addNew('tour.add', 'JTOOLBAR_NEW');
@@ -87,7 +85,7 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 						JToolbarHelper::custom('tours.duplicate', 'copy.png', 'copy_f2.png', 'JTOOLBAR_DUPLICATE', true);
 					}
 				}
-			}
+			
 
 			if ($canDo->get('core.edit') && isset($this->items[0]))
 			{
@@ -175,27 +173,4 @@ class JdtoursshowcaseViewTours extends JViewLegacy
     {
         return isset($this->state->{$state}) ? $this->state->{$state} : false;
 	 }
-    public function get_total()
-    {
-			// Get a db connection.
-			$db = JFactory::getDbo();
-
-			// Create a new query object.
-			$query = $db->getQuery(true);
-
-			// Select all records from the user profile table where key begins with "custom.".
-			// Order it by the ordering field.
-			$query->select("count(*) as total");
-			$query->from($db->quoteName('#__jdtoursshowcase_tours'));
-
-			// Reset the query using our newly populated query object.
-			$db->setQuery($query);
-
-			// Load the results as a list of stdClass objects (see later for more options on retrieving data).
-			
-		 	$results = $db->loadObject();
-		 	return  $results->total;
-			 
-	 }
-	
 }

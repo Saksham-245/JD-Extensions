@@ -1,9 +1,9 @@
 <?php
 /**
- 
+
  * @package    Com_Jdtoursshowcase
  * @author     JoomDev <info@gmail.com>
- * @copyright  2018 
+ * @copyright  2018
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -19,6 +19,7 @@ JHtml::_('formbehavior.chosen', 'select');
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'administrator/components/com_jdtoursshowcase/assets/css/jdtoursshowcase.css');
 $document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/list.css');
+$document->addStyleSheet(JUri::root() . 'media/com_jdtoursshowcase/css/jdgrid.css');
 
 $user      = JFactory::getUser();
 $userId    = $user->get('id');
@@ -26,17 +27,17 @@ $listOrder = $this->state->get('list.ordering');
 $listDirn  = $this->state->get('list.direction');
 $canOrder  = $user->authorise('core.edit.state', 'com_jdtoursshowcase');
 $saveOrder = $listOrder == 'a.`ordering`';
-$maxTours = 50;
+
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_jdtoursshowcase&task=tours.saveOrderAjax&tmpl=component';
-	JHtml::_('sortablelist.sortable', 'tourList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
+	$saveOrderingUrl = 'index.php?option=com_jdtoursshowcase&task=tourtypes.saveOrderAjax&tmpl=component';
+	JHtml::_('sortablelist.sortable', 'tourtypeList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 
 $sortFields = $this->getSortFields();
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tours'); ?>" method="post"
+<form action="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tourtypes'); ?>" method="post"
 	  name="adminForm" id="adminForm">
 	<?php if (!empty($this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
@@ -47,17 +48,10 @@ $sortFields = $this->getSortFields();
 		<div id="j-main-container">
 			<?php endif; ?>
 
-            <?php  $total = JdtoursshowcaseViewTours::get_total();  ?>
-				<?php if($total >= $maxTours) {
-					 echo JFactory::getApplication() -> enqueueMessage(JText::sprintf('COM_JDTOURSSHOWCAS_TOUR_LIMIT_ERROR',
-					$maxTours), 'error');	
-			
-				} ?>
-
-            <?php  echo JLayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
+            <?php echo JLayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
 
 			<div class="clearfix"></div>
-			<table class="table table-striped" id="tourList">
+			<table class="table table-striped" id="tourtypeList">
 				<thead>
 				<tr>
 					<?php if (isset($this->items[0]->ordering)): ?>
@@ -75,22 +69,13 @@ $sortFields = $this->getSortFields();
 </th>
 					<?php endif; ?>
 
-				
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDTOURSSHOWCASE_TOURS_TITLE', 'a.`title`', $listDirn, $listOrder); ?>
+									<th class='left'>
+				<?php echo JHtml::_('searchtools.sort',  'COM_JDTOURSSHOWCASE_TOURTYPES_ID', 'a.`id`', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDTOURSSHOWCASE_TOURS_TOUR_TYPE', 'a.`tour_type`', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('searchtools.sort',  'COM_JDTOURSSHOWCASE_TOURTYPES_TITLE', 'a.`title`', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDTOURSSHOWCASE_TOURS_CHECKED_OUT_TIME', 'a.`checked_out_time`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDTOURSSHOWCASE_TOURS_HITS', 'a.`hits`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('searchtools.sort',  'COM_JDTOURSSHOWCASE_TOURS_ID', 'a.`id`', $listDirn, $listOrder); ?>
-				</th>
+
 					
 				</tr>
 				</thead>
@@ -139,37 +124,26 @@ $sortFields = $this->getSortFields();
 						</td>
 						<?php if (isset($this->items[0]->state)): ?>
 							<td class="center">
-								<?php echo JHtml::_('jgrid.published', $item->state, $i, 'tours.', $canChange, 'cb'); ?>
+								<?php echo JHtml::_('jgrid.published', $item->state, $i, 'tourtypes.', $canChange, 'cb'); ?>
 </td>
 						<?php endif; ?>
 
-												<td>
-				
+										<td>
+
+					<?php echo $item->id; ?>
+				</td>				<td>
+				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
+					<?php echo JHtml::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'tourtypes.', $canCheckin); ?>
+				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&task=tour.edit&id='.(int) $item->id); ?>">
+					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&task=tourtype.edit&id='.(int) $item->id); ?>">
 					<?php echo $this->escape($item->title); ?></a>
 				<?php else : ?>
 					<?php echo $this->escape($item->title); ?>
 				<?php endif; ?>
 
-				</td>				<td>
-
-					<?php echo $item->tour_type; ?>
-				</td>		
-				<td>
-					<?php  $strtotime_date=strtotime($item->created_on);  echo date("d-M-y", $strtotime_date); ?>
-				</td>		
-				<td>
-					
-					<span class="badge badge-info">
-						<?php echo (!empty($item->hits)) ? $item->hits  :  0  ?>
-					</span>					
-					
 				</td>
-				<td>
 
-				<?php echo $item->id; ?>
-				</td>		
 					</tr>
 				<?php endforeach; ?>
 				</tbody>

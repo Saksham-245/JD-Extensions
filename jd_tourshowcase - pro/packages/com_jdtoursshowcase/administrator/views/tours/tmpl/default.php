@@ -26,7 +26,6 @@ $listOrder = $this->state->get('list.ordering');
 $listDirn  = $this->state->get('list.direction');
 $canOrder  = $user->authorise('core.edit.state', 'com_jdtoursshowcase');
 $saveOrder = $listOrder == 'a.`ordering`';
-$maxTours = 50;
 if ($saveOrder)
 {
 	$saveOrderingUrl = 'index.php?option=com_jdtoursshowcase&task=tours.saveOrderAjax&tmpl=component';
@@ -46,14 +45,6 @@ $sortFields = $this->getSortFields();
 		<?php else : ?>
 		<div id="j-main-container">
 			<?php endif; ?>
-
-            <?php  $total = JdtoursshowcaseViewTours::get_total();  ?>
-				<?php if($total >= $maxTours) {
-					 echo JFactory::getApplication() -> enqueueMessage(JText::sprintf('COM_JDTOURSSHOWCAS_TOUR_LIMIT_ERROR',
-					$maxTours), 'error');	
-			
-				} ?>
-
             <?php  echo JLayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
 
 			<div class="clearfix"></div>

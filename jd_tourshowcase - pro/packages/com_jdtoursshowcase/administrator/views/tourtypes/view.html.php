@@ -1,10 +1,10 @@
 <?php
 
 /**
- 
+ .0
  * @package    Com_Jdtoursshowcase
  * @author     JoomDev <info@gmail.com>
- * @copyright  2018 
+ * @copyright  2018
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access
@@ -17,15 +17,13 @@ jimport('joomla.application.component.view');
  *
  * @since  1.6
  */
-class JdtoursshowcaseViewTours extends JViewLegacy
+class JdtoursshowcaseViewTourtypes extends JViewLegacy
 {
 	protected $items;
 
 	protected $pagination;
 
 	protected $state;
-	
-	protected $maxTours = 50;
 
 	/**
 	 * Display the view
@@ -50,7 +48,7 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 			throw new Exception(implode("\n", $errors));
 		}
 
-		JdtoursshowcaseHelper::addSubmenu('tours');
+		JdtoursshowcaseHelper::addSubmenu('tourtypes');
 
 		$this->addToolbar();
 
@@ -70,28 +68,26 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 		$state = $this->get('State');
 		$canDo = JdtoursshowcaseHelper::getActions();
 
-		JToolBarHelper::title(JText::_('COM_JDTOURSSHOWCASE_TITLE_TOURS'), 'tours.png');
+		JToolBarHelper::title(JText::_('COM_JDTOURSSHOWCASE_TITLE_TOURTYPES'), 'tourtypes.png');
 
 		// Check if the form exists before showing the add/edit buttons
-		$formPath = JPATH_COMPONENT_ADMINISTRATOR . '/views/tour';
+		$formPath = JPATH_COMPONENT_ADMINISTRATOR . '/views/tourtype';
 
 		if (file_exists($formPath))
-		{	
-			if($this->get_total() < 3){
-				if ($canDo->get('core.create'))
-				{
-					JToolBarHelper::addNew('tour.add', 'JTOOLBAR_NEW');
+		{
+			if ($canDo->get('core.create'))
+			{
+				JToolBarHelper::addNew('tourtype.add', 'JTOOLBAR_NEW');
 
-					if (isset($this->items[0]))
-					{
-						JToolbarHelper::custom('tours.duplicate', 'copy.png', 'copy_f2.png', 'JTOOLBAR_DUPLICATE', true);
-					}
+				if (isset($this->items[0]))
+				{
+					JToolbarHelper::custom('tourtypes.duplicate', 'copy.png', 'copy_f2.png', 'JTOOLBAR_DUPLICATE', true);
 				}
 			}
 
 			if ($canDo->get('core.edit') && isset($this->items[0]))
 			{
-				JToolBarHelper::editList('tour.edit', 'JTOOLBAR_EDIT');
+				JToolBarHelper::editList('tourtype.edit', 'JTOOLBAR_EDIT');
 			}
 		}
 
@@ -100,24 +96,24 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 			if (isset($this->items[0]->state))
 			{
 				JToolBarHelper::divider();
-				JToolBarHelper::custom('tours.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
-				JToolBarHelper::custom('tours.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
+				JToolBarHelper::custom('tourtypes.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
+				JToolBarHelper::custom('tourtypes.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
 			}
 			elseif (isset($this->items[0]))
 			{
 				// If this component does not use state then show a direct delete button as we can not trash
-				JToolBarHelper::deleteList('', 'tours.delete', 'JTOOLBAR_DELETE');
+				JToolBarHelper::deleteList('', 'tourtypes.delete', 'JTOOLBAR_DELETE');
 			}
 
 			if (isset($this->items[0]->state))
 			{
 				JToolBarHelper::divider();
-				JToolBarHelper::archiveList('tours.archive', 'JTOOLBAR_ARCHIVE');
+				JToolBarHelper::archiveList('tourtypes.archive', 'JTOOLBAR_ARCHIVE');
 			}
 
 			if (isset($this->items[0]->checked_out))
 			{
-				JToolBarHelper::custom('tours.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
+				JToolBarHelper::custom('tourtypes.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
 			}
 		}
 
@@ -126,12 +122,12 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 		{
 			if ($state->get('filter.state') == -2 && $canDo->get('core.delete'))
 			{
-				JToolBarHelper::deleteList('', 'tours.delete', 'JTOOLBAR_EMPTY_TRASH');
+				JToolBarHelper::deleteList('', 'tourtypes.delete', 'JTOOLBAR_EMPTY_TRASH');
 				JToolBarHelper::divider();
 			}
 			elseif ($canDo->get('core.edit.state'))
 			{
-				JToolBarHelper::trash('tours.trash', 'JTOOLBAR_TRASH');
+				JToolBarHelper::trash('tourtypes.trash', 'JTOOLBAR_TRASH');
 				JToolBarHelper::divider();
 			}
 		}
@@ -142,7 +138,7 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 		}
 
 		// Set sidebar action - New in 3.0
-		JHtmlSidebar::setAction('index.php?option=com_jdtoursshowcase&view=tours');
+		JHtmlSidebar::setAction('index.php?option=com_jdtoursshowcase&view=tourtypes');
 	}
 
 	/**
@@ -154,13 +150,9 @@ class JdtoursshowcaseViewTours extends JViewLegacy
 	{
 		return array(
 			'a.`id`' => JText::_('JGRID_HEADING_ID'),
-			'a.`title`' => JText::_('COM_JDTOURSSHOWCASE_TOURS_TITLE'),
-			'a.`tour_type`' => JText::_('COM_JDTOURSSHOWCASE_TOURS_TOUR_TYPE'),
 			'a.`ordering`' => JText::_('JGRID_HEADING_ORDERING'),
 			'a.`state`' => JText::_('JSTATUS'),
-			'a.`tour_image`' => JText::_('COM_JDTOURSSHOWCASE_TOURS_TOUR_IMAGE'),
-			'a.`price`' => JText::_('COM_JDTOURSSHOWCASE_TOURS_PRICE'),
-			'a.`hits`' => JText::_('COM_JDTOURSSHOWCASE_TOURS_HITS'),
+			'a.`title`' => JText::_('COM_JDTOURSSHOWCASE_TOURTYPES_TITLE'),
 		);
 	}
 
@@ -174,28 +166,5 @@ class JdtoursshowcaseViewTours extends JViewLegacy
     public function getState($state)
     {
         return isset($this->state->{$state}) ? $this->state->{$state} : false;
-	 }
-    public function get_total()
-    {
-			// Get a db connection.
-			$db = JFactory::getDbo();
-
-			// Create a new query object.
-			$query = $db->getQuery(true);
-
-			// Select all records from the user profile table where key begins with "custom.".
-			// Order it by the ordering field.
-			$query->select("count(*) as total");
-			$query->from($db->quoteName('#__jdtoursshowcase_tours'));
-
-			// Reset the query using our newly populated query object.
-			$db->setQuery($query);
-
-			// Load the results as a list of stdClass objects (see later for more options on retrieving data).
-			
-		 	$results = $db->loadObject();
-		 	return  $results->total;
-			 
-	 }
-	
+    }
 }
