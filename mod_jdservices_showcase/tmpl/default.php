@@ -10,7 +10,7 @@ $button_link = $params->get('button_link');
  
 
 ?>
-		<section class="jd-services-shocase">
+		<section class="jd-services-showcase">
 			<div class="jd-container">
 				<div class="jd-row">
 				<?php foreach ($services as $service) {  $items = modJDServicesShowcaseHelper::get_post($service->article_id,'DESC','id'); $images = json_decode($items['images']);  ?>
