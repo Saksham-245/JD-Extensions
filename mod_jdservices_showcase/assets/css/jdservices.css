@@ -10,31 +10,31 @@
 /* Services Showcase Features box icon
 =========================== */
 
-.jd-services-shocase img {
+.jd-services-showcase img {
 	max-width: 100%;
 }
 
-.jd-services-shocase a {
+.jd-services-showcase a {
 	text-decoration: none;
 }
 
-.jd-services-shocase .service-box {
+.jd-services-showcase .service-box {
 	background-color: #fff;
 	box-shadow: 0px 0px 39px 16px rgba(245,245,245,1);
 	-webkit-box-shadow: 0px 0px 39px 16px rgba(245,245,245,1);
 	-moz-box-shadow: 0px 0px 39px 16px rgba(245,245,245,1);
 }
-.jd-services-shocase .service-box .content {
+.jd-services-showcase .service-box .content {
 	background-color: #fff;
 }
-.jd-services-shocase .service-box .image-overlay a {
+.jd-services-showcase .service-box .image-overlay a {
 	display: block;
 }
 
-.jd-services-shocase .service-box .image-overlay {
+.jd-services-showcase .service-box .image-overlay {
 	position: relative;
 }
-.jd-services-shocase .service-box .overlay {
+.jd-services-showcase .service-box .overlay {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -45,15 +45,15 @@
 	background-color: #ffe500;
 	padding: 15px;
 }
-.jd-services-shocase .service-box .image-overlay:hover .overlay {
+.jd-services-showcase .service-box .image-overlay:hover .overlay {
 	opacity: 1;
 }
-.jd-services-shocase .service-box .overlay .image {
+.jd-services-showcase .service-box .overlay .image {
 	height: 100%;
 	width: 100%;
 	border: dashed 1px #000;
 }
-.jd-services-shocase .service-box .overlay .image img {
+.jd-services-showcase .service-box .overlay .image img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -61,31 +61,31 @@
   text-align: center;
 }
 
-.jd-services-shocase .service-box .content {
+.jd-services-showcase .service-box .content {
 	padding: 30px 15px;
 	text-align: center;
 }
-.jd-services-shocase .service-box .content .title a {
+.jd-services-showcase .service-box .content .title a {
 	color: #000;
 	font-size: 24px;
 	font-weight: 600;
 }
-.jd-services-shocase .service-box .content .sub-title {
+.jd-services-showcase .service-box .content .sub-title {
 	color: #000;
 	font-size: 18px;
 	margin-top: 10px;
 }
-.jd-services-shocase .service-box .content .description {
+.jd-services-showcase .service-box .content .description {
 	color: #7c7c7c;
 	font-size: 16px;
 	margin-top: 15px;
 }
-.jd-services-shocase .service-box .content .read-more a {
+.jd-services-showcase .service-box .content .read-more a {
 	color: #000;
 	font-size: 14px;
 	margin-top: 35px;
 	display: block;
 }
-.jd-services-shocase .service-box .content .read-more a:hover {
+.jd-services-showcase .service-box .content .read-more a:hover {
 	color: #ffe500;
 }
