@@ -164,6 +164,65 @@ class JdtoursshowcaseHelpersJdtoursshowcase
 		 $result = $db->loadObjectList();
 		 return $result;
 
+	}	
+	
+	function getReviewAvg($id){
+		$state=1;
+		// Get a db connection.
+		$db = JFactory::getDbo();
+
+		// Create a new query object.
+		$query = $db->getQuery(true);
+
+
+		$query->select("avg(stars) as avg");
+		$query->from($db->quoteName('#__jdtoursshowcase_reviews'));
+		$query->where($db->quoteName('tour_id') . ' = '. $db->quote($id));
+		$query->where($db->quoteName('state') . ' = '. $db->quote($state));
+
+		$db->setQuery($query);
+
+		 $result = $db->loadResult();
+		 return $result;
+
+	}function getReviewCount($id){
+		$state=1;
+		// Get a db connection.
+		$db = JFactory::getDbo();
+
+		// Create a new query object.
+		$query = $db->getQuery(true);
+
+
+		$query->select("count(*) as count");
+		$query->from($db->quoteName('#__jdtoursshowcase_reviews'));
+		$query->where($db->quoteName('tour_id') . ' = '. $db->quote($id));
+		$query->where($db->quoteName('state') . ' = '. $db->quote($state));
+
+		$db->setQuery($query);
+
+		$result = $db->loadResult();
+		return $result;
+
+	}
+	function getReviewCountOnly(){
+		$state=1;
+		// Get a db connection.
+		$db = JFactory::getDbo();
+
+		// Create a new query object.
+		$query = $db->getQuery(true);
+
+
+		$query->select("count(*) as count");
+		$query->from($db->quoteName('#__jdtoursshowcase_reviews'));
+		$query->where($db->quoteName('state') . ' = '. $db->quote($state));
+
+		$db->setQuery($query);
+
+		$result = $db->loadResult();
+		return $result;
+
 	}
 
 }

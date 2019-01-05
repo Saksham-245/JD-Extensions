@@ -24,6 +24,10 @@ $hits_one = $hits+1;
 
 JdtoursshowcaseHelpersJdtoursshowcase::hits($hits_one,$this->item->id);
 $reviews = JdtoursshowcaseHelpersJdtoursshowcase::get_reviwes($this->item->id);
+$getReviewAvg = JdtoursshowcaseHelpersJdtoursshowcase::getReviewAvg($this->item->id);
+$getReviewCount = JdtoursshowcaseHelpersJdtoursshowcase::getReviewCount($this->item->id);
+$total = JdtoursshowcaseHelpersJdtoursshowcase::getReviewCountOnly();
+
 jimport('joomla.application.module.helper');
 ?>
 <!-- Title -->
@@ -40,6 +44,19 @@ jimport('joomla.application.module.helper');
 			<p class="m-0"><strong><?php echo $this->item->tour_type; ?></strong></p>
 		</div>
 		<div class="col-sm-12 col-md-3 col-lg-3">
+			<p class="m-0"><?php echo JText::_( 'Review Rating' ) ?></p>
+			<p class="m-0">
+				<strong><?php for($i=1; $i<=5; $i++) {
+						if($i <=  $getReviewAvg ){
+							echo '<span class="fa fa-star text-primary"></span>';
+						}else{
+							echo '<span class="fa fa-star"></span>';
+						}
+					} 
+				echo 'total reviews'.$getReviewCount.'out of'.$total;
+					?> 
+				</strong></p>
+		</div><div class="col-sm-12 col-md-3 col-lg-3">
 			<p class="m-0"><?php echo JText::_( 'Duration' ) ?></p>
 			<p class="m-0"><strong><?php echo  $this->item->duration; ?></strong></p>
 		</div>
@@ -195,40 +212,96 @@ jimport('joomla.application.module.helper');
 	<?php } ?>
 </div>
 
-
+<style>
+.load_more_content {
+    display:none;
+}
+a, a:visited {
+    color: #33739E;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+}
+a:hover {
+    text-decoration: none;
+}
+#loadMore {
+    padding: 10px;
+    text-align: center;
+    background-color: #33739E;
+    color: #fff;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    box-shadow: 0 1px 1px #ccc;
+    transition: all 600ms ease-in-out;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+    -o-transition: all 600ms ease-in-out;
+}
+#loadMore:hover {
+    background-color: #fff;
+    color: #33739E;
+}
+</style>
 <!-- Review start here -->
 <?php if(!empty($reviews)) { ?>
-	<div class="row col-12 border">
+	<div class="row border">
 		<?php foreach($reviews as $review) {?>
-			<div class="name col-4">
-				<h3><?php echo $review->name; ?></h3>
-			</div>
-			<div class="content col-4">
-				<p><?php echo $review->reivew; ?></p>
-			</div>
-			<div class="date col-4">
-				<p><?php echo $review->date; ?></p>
-			</div>
-			<div class="email col-4">
-				<p><?php echo $review->email; ?></p>
-			</div>
-			<div class="img col-4">
-				<img src="https://www.gravatar.com/avatar/<?php echo $review->email; ?>" />
-			</div>
-			<div class="stars col-4">
-				<?php for($i=1; $i<=5; $i++) {
-					if($i <=  $review->stars ){
-						echo '<span class="fa fa-star text-primary"></span>';
-					}else{
-						echo '<span class="fa fa-star"></span>';
-					}
-				} ?>
+			<div class="load_more_content border col-12" id="load_more_content">
+				<div class="name col-md-3">
+					<h3><?php echo $review->name; ?></h3>
+				</div>
+				<div class="content col-md-3">
+					<p><?php echo $review->reivew; ?></p>
+				</div>
+				<div class="date col-md-3">
+					<p><?php echo $review->date; ?></p>
+				</div>
+				<div class="email col-md-3">
+					<p><?php echo $review->email; ?></p>
+				</div>
+				<div class="img col-md-3">
+					<img src="https://www.gravatar.com/avatar/<?php echo $review->email; ?>" />
+				</div>
+				<div class="stars col-md-3">
+					<?php for($i=1; $i<=5; $i++) {
+						if($i <=  $review->stars ){
+							echo '<span class="fa fa-star text-primary"></span>';
+						}else{
+							echo '<span class="fa fa-star"></span>';
+						}
+					} ?>
+				</div>
 			</div>
 		<?php } ?>
 	</div>
+<a href="#" id="loadMore">Load More</a>
+	
 <?php }?>
 
+<script>
+	(function ($) {
+	
+		// Events
+		var docReady = function () {
+			$(".load_more_content").slice(0, 4).show();
+				$("#loadMore").on('click', function (e) {
+					e.preventDefault();
+					$(".load_more_content:hidden").slice(0, 4).slideDown();
+					if ($(".load_more_content:hidden").length == 0) {
+						$("#load").fadeOut('slow');
+					}
+					$('html,body').animate({
+						scrollTop: $(this).offset().top
+					}, 1500);
+				});
+		};
 
+		$(docReady);
+	
+	})(jQuery);
+</script>
 
 
 <?php if($canEdit && $this->item->checked_out == 0): ?>
