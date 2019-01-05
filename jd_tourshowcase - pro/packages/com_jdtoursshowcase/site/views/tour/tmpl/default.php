@@ -240,6 +240,20 @@ jimport('joomla.application.module.helper');
     <label for="tour_name">tour_name</label>
     <input type="text" name="review_tourname" value="<?php echo $this->item->title; ?>" class="form-control" id="review_tourname">
   </div>
+  <div class="form-group">
+    <label for="tour_name">Review Rating</label>
+   	    <input type="hidden" id="selected_rating" name="review_stars" value="" required="required">
+	   
+			<span class="selected-rating-html">0</span><small> / 5</small>
+	   
+	        <i class="fa fa-star btnrating" aria-hidden="true" data-attr="1" id="rating-star-1"></i>
+	        <i class="fa fa-star btnrating" aria-hidden="true" data-attr="2" id="rating-star-2"></i>
+	        <i class="fa fa-star btnrating" aria-hidden="true" data-attr="3" id="rating-star-3"></i>
+	        <i class="fa fa-star btnrating" aria-hidden="true" data-attr="4" id="rating-star-4"></i>
+	        <i class="fa fa-star btnrating" aria-hidden="true" data-attr="5" id="rating-star-5"></i>
+	    
+  </div>
+	  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
@@ -327,6 +341,32 @@ a:hover {
 						scrollTop: $(this).offset().top
 					}, 1500);
 				});
+				
+					$(".btnrating").on('click',(function(e) {
+	
+	var previous_value = $("#selected_rating").val();
+	
+	var selected_value = $(this).attr("data-attr");
+	$("#selected_rating").val(selected_value);
+	
+	$(".selected-rating").empty();
+	$(".selected-rating").val(selected_value);
+	$(".selected-rating-html").html(selected_value);
+	
+	for (i = 1; i <= selected_value; ++i) {
+	$("#rating-star-"+i).toggleClass('text-warning');
+	$("#rating-star-"+i).toggleClass('text-primary');
+	}
+	
+	for (ix = 1; ix <= previous_value; ++ix) {
+	$("#rating-star-"+ix).toggleClass('text-primary');
+	$("#rating-star-"+ix).toggleClass('text-warning');
+	}
+	
+	}));
+				
+				
+				
 		};
 
 		$(docReady);

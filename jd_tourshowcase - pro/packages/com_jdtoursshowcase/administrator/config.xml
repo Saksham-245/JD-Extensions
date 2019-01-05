@@ -40,6 +40,18 @@
                <option value="hits DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_HITS_DESC</option>
                <option value="hits ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_HITS_ASC</option>
                <option value="ordering">MOD_JDTOURSHOWCASE_ORDER_OPTION_ORDERING</option>
+            </field>      
+			
+			<field
+               name="review_autopublish"
+               type="radio"
+               label="Review Auto Publish"
+               description=" Yes to set Review Publish "
+               default="0"
+			   class="btn-group btn-group-yesno"
+            >
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
             </field>
 
     </fieldset>

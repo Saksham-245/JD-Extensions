@@ -228,11 +228,18 @@ class JdtoursshowcaseHelpersJdtoursshowcase
 		$data = JFactory::getApplication()->input->getArray($_POST);
 		print_r($data);
 		
-		
+			$app = JFactory::getApplication();
+	    $mycom_params =   $app->getParams('com_jdtoursshowcase');
+
+		$review_autopublish  =  $mycom_params->get('review_autopublish');
 		
 		// Create and populate an object.
 		$reviews = new stdClass();
 		$reviews->id = '';
+		if ($review_autopublish)
+		  {
+			$reviews->state =1;				
+		  }
 		if (array_key_exists("review_name",$data))
 		  {
 			$reviews->name = $data['review_name'] ;				
@@ -257,16 +264,18 @@ class JdtoursshowcaseHelpersJdtoursshowcase
 		  {
 			$reviews->tour_date = $data['review_tourdate'] ;				
 		  }
-		  if (array_key_exists("review_tourdate",$data))
+		  if (array_key_exists("review_stars",$data))
 		  {
-			$reviews->stars = 5;				
+			$reviews->stars = $data['review_stars'];				
 		  }
 		
-		if (array_key_exists("review_name",$data)){
+		if (array_key_exists("review_name",$data) and array_key_exists("review_stars",$data)){
 		
 			// Insert the object into the user reviews table.
 			$result = JFactory::getDbo()->insertObject('#__jdtoursshowcase_reviews', $reviews);				
 		  
+		}else{
+			echo "Please name and stars";
 		}
 	}
 

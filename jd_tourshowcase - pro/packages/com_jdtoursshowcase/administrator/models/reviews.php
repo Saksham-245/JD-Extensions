@@ -167,6 +167,14 @@ class JdtoursshowcaseModelReviews extends JModelList
 				
 			}
 		}
+		
+		// Filtering tour_type
+		$filter_tour_review = $this->state->get("filter.tour_review");
+
+		if ($filter_tour_review !== null && (is_numeric($filter_tour_review) || !empty($filter_tour_review)))
+		{
+			$query->where('FIND_IN_SET(' . $db->quote($filter_tour_review) . ', ' . $db->quoteName('a.tour_id') . ')');
+		}
                 
 		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering', "a.id");

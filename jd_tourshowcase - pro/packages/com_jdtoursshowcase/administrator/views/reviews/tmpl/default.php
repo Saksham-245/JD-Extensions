@@ -159,7 +159,10 @@ $sortFields = $this->getSortFields();
 				</td>		
 
 				<td>
-					<?php echo $item->packagename; ?>
+				
+					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&task=tour.edit&id='.(int) $item->tour_id); ?>">
+						<?php echo $this->escape($item->packagename); ?>
+					</a>
 				</td>				
 				
 				<td>
