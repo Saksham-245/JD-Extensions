@@ -177,7 +177,8 @@ $sortFields = $this->getSortFields();
 				</td>		
 
 				<td>
-					<?php echo $item->date; ?>
+					
+					<?php  echo $item->tour_date;  ?>
 				</td>
 				<td>
 					<?php echo $item->id; ?>

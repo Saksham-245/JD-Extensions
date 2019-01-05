@@ -128,8 +128,7 @@ class JdtoursshowcaseHelpersJdtoursshowcase
 		// Create a new query object.
 		$query = $db->getQuery(true);
 
-		// Select all records from the user profile table where key begins with "custom.".
-		// Order it by the ordering field.
+
 		$query->select($db->quoteName(array('title')));
 		$query->from($db->quoteName('#__jdtoursshowcase_tour_type'));
 		$query->where($db->quoteName('id') . ' = '. $db->quote($id));
@@ -223,6 +222,52 @@ class JdtoursshowcaseHelpersJdtoursshowcase
 		$result = $db->loadResult();
 		return $result;
 
+	}
+	
+	function SaveReview(){
+		$data = JFactory::getApplication()->input->getArray($_POST);
+		print_r($data);
+		
+		
+		
+		// Create and populate an object.
+		$reviews = new stdClass();
+		$reviews->id = '';
+		if (array_key_exists("review_name",$data))
+		  {
+			$reviews->name = $data['review_name'] ;				
+		  }
+		  if (array_key_exists("review_content",$data))
+		  {
+			$reviews->reivew = $data['review_content'] ;				
+		  }	
+		  if (array_key_exists("review_email",$data))
+		  {
+			$reviews->email = $data['review_email'] ;				
+		  }
+		  if (array_key_exists("review_tourname",$data))
+		  {
+			$reviews->packagename = $data['review_tourname'] ;				
+		  }
+		  if (array_key_exists("review_tourid",$data))
+		  {
+			$reviews->tour_id = $data['review_tourid'] ;				
+		  }
+		  if (array_key_exists("review_tourdate",$data))
+		  {
+			$reviews->tour_date = $data['review_tourdate'] ;				
+		  }
+		  if (array_key_exists("review_tourdate",$data))
+		  {
+			$reviews->stars = 5;				
+		  }
+		
+		if (array_key_exists("review_name",$data)){
+		
+			// Insert the object into the user reviews table.
+			$result = JFactory::getDbo()->insertObject('#__jdtoursshowcase_reviews', $reviews);				
+		  
+		}
 	}
 
 }

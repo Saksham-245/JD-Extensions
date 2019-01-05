@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `#__jdtoursshowcase_reviews` (
 `stars` VARCHAR(255)  NOT NULL ,
 `packagename` VARCHAR(255)  NOT NULL ,
 `tour_id`TINYINT(2)  NOT NULL ,
-`date` DATETIME NOT NULL ,
+`tour_date` VARCHAR(255)  NOT NULL ,
 `checked_out` INT(11)  NOT NULL ,
 `checked_out_time` DATETIME NOT NULL ,
 `created_by` INT(11)  NOT NULL ,

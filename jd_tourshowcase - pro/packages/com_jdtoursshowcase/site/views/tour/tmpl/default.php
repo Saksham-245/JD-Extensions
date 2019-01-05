@@ -27,6 +27,7 @@ $reviews = JdtoursshowcaseHelpersJdtoursshowcase::get_reviwes($this->item->id);
 $getReviewAvg = JdtoursshowcaseHelpersJdtoursshowcase::getReviewAvg($this->item->id);
 $getReviewCount = JdtoursshowcaseHelpersJdtoursshowcase::getReviewCount($this->item->id);
 $total = JdtoursshowcaseHelpersJdtoursshowcase::getReviewCountOnly();
+$SaveReview = JdtoursshowcaseHelpersJdtoursshowcase::SaveReview();
 
 jimport('joomla.application.module.helper');
 ?>
@@ -212,6 +213,36 @@ jimport('joomla.application.module.helper');
 	<?php } ?>
 </div>
 
+
+<form action="" method="POST">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" required="true" name="review_name" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="review">Review</label>
+    <input type="text" name="review_content" value="" class="form-control" id="review">
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input type="email" name="review_email"  value="" class="form-control" id="email">
+  </div>
+  <div class="form-group d-none">
+    <label for="tour_id">tour_id</label>
+    <input type="number" name="review_tourid" value="<?php echo $this->item->id; ?>" class="form-control" id="review_tourid">
+  </div>
+  <div class="form-group d-none">
+    <label for="tour_date">tour_date</label>
+    <input type="text" name="review_tourdate" value="<?php echo date("d M,Y"); ?>" class="form-control" id="review_tourid">
+  </div>
+  <div class="form-group d-none">
+    <label for="tour_name">tour_name</label>
+    <input type="text" name="review_tourname" value="<?php echo $this->item->title; ?>" class="form-control" id="review_tourname">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 <style>
 .load_more_content {
     display:none;
@@ -256,7 +287,7 @@ a:hover {
 					<p><?php echo $review->reivew; ?></p>
 				</div>
 				<div class="date col-md-3">
-					<p><?php echo $review->date; ?></p>
+					<p><?php echo $review->tour_date; ?></p>
 				</div>
 				<div class="email col-md-3">
 					<p><?php echo $review->email; ?></p>
