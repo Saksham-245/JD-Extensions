@@ -38,6 +38,12 @@ class JdtoursshowcaseHelper
 			$vName == 'tourtypes'
 		);
 
+		JHtmlSidebar::addEntry(
+			JText::_('COM_JDTOURSSHOWCASE_TITLE_REVIeWS'),
+			'index.php?option=com_jdtoursshowcase&view=reviews',
+			$vName == 'reviews'
+		);
+
 	}
 
 	/**

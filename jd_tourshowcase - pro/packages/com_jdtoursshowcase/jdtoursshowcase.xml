@@ -52,6 +52,7 @@
             
 			<menu link="option=com_jdtoursshowcase&amp;view=tours" view="tours" alt="Jdtoursshowcase/Tours">COM_JDTOURSSHOWCASE_TITLE_TOURS</menu>
             <menu link="option=com_jdtoursshowcase&amp;view=tourtypes" view="tourtypes" alt="Jdtoursshowcase/Tourtypes">COM_JDTOURSSHOWCASE_TITLE_TOURTYPES</menu>
+            <menu link="option=com_jdtoursshowcase&amp;view=reviews" view="tourtypes" alt="Jdtoursshowcase/Reviews">COM_JDTOURSSHOWCASE_TITLE_REVIEWS</menu>
 
         </submenu>
         <files folder="administrator">

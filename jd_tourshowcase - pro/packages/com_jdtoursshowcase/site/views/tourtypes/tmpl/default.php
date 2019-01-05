@@ -28,12 +28,11 @@ $app = JFactory::getApplication();
 $mycom_params =   $app->getParams('com_jdtoursshowcase');
 
 $grid_coloumns  =  $mycom_params->get('grid_coloumns');
-$grid_coloumns_global  =  $mycom_params->get('grid_coloumns_global');
 ?>
 
 <div class="row">
 	<?php foreach ($this->items as $i => $item) :  ?>
-		<div class="col-lg-<?php echo ($grid_coloumns_global == "global")  ? $grid_coloumns : $grid_coloumns_global ; ?> d-md-flex mb-4">
+		<div class="col-lg-<?php echo $grid_coloumns; ?> d-md-flex mb-4">
 			<div class="tour-wrap">
 				<div class="tour-view-img">
 					<a href="<?php echo JRoute::_('index.php?option=com_jdtoursshowcase&view=tour&id='.(int) $item->id); ?>">	<img src="<?php echo $item->tour_image; ?>" alt="top-destinations" class="card-img-top img-fluid">

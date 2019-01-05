@@ -93,12 +93,12 @@ class JdtoursshowcaseModelTourtypes extends JModelList
             $this->setState('filter.component', $parts[0]);
             $this->setState('filter.section', $parts[1]);
 		  }
-		  $app = JFactory::getApplication();
+		//   $app = JFactory::getApplication();
  
-		  $mycom_params =   $app->getParams('com_jdtoursshowcase');
+		//   $mycom_params =   $app->getParams('com_jdtoursshowcase');
 	  
-		  $limit  =  $mycom_params->get('limit');
-		  $this->setState('list.limit', $limit);
+		//   $limit  =  $mycom_params->get('limit');
+		//   $this->setState('list.limit', $limit);
 	}
 
 	/**
@@ -145,12 +145,9 @@ class JdtoursshowcaseModelTourtypes extends JModelList
 				
 		
 		$mycom_params =   $app->getParams('com_jdtoursshowcase');
-		
 	
 		$order  =  $mycom_params->get('order');
-		$order_global  =  $mycom_params->get('order_global');
 
-		
 
 	  $query->where('a.tour_type ='.$item_id);
 			      
@@ -184,14 +181,10 @@ class JdtoursshowcaseModelTourtypes extends JModelList
             //     $query->order($db->escape($orderCol . ' ' . $orderDirn));
 				// }
 				
-				if($order_global == "global"){
-					$query->order($order);
-				}else{
-					$query->order($order_global);
-				}
 				
-						
-					
+				$query->order($order);
+				
+				
             return $query;
 	}
 

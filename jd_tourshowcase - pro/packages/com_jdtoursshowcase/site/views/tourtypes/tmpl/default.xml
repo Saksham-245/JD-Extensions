@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="COM_JDTOURSSHOWCASE_TITLE_LIST_VIEW_TOURTYPES" option="View">
+	<layout title="Tour types" option="View">
         <message>
-                        <![CDATA[COM_JDTOURSSHOWCASE_TITLE_LIST_VIEW_TOURTYPES_DESC]]>
+                        <![CDATA[Show a list of Tour types from the category]]>
         </message>
 	</layout>
 
@@ -17,18 +17,17 @@
                 key_field="id" 
                 value_field="title"
                 label="Select the TourType"
-                require="true"
+                required="true"
                 description="Select the TourType">
             </field>
             <field
-               name="grid_coloumns_global"
+               name="grid_coloumns"
                type="list"
                label="MOD_JDTOURSHOWCASE_GRID_COLUMNS_LABEL"
                description="MOD_JDTOURSHOWCASE_GRID_COLUMNS_DESC"
-               default="4"
-               class="btn-group btn-group-yesno"
+               useglobal="true"
+
             >
-               <option value="global">Gobal</option>
                <option value="12">J1</option>
                <option value="6">J2</option>
                <option value="4">J3</option>
@@ -36,25 +35,23 @@
                <option value="2">J6</option>
             </field>
 
-             <field
+              <field
                name="limit"
                type="hidden"
                min="1"
                label="MOD_JDTOURSHOWCASE_DISPLAY_PROFILE_LABEL"
                description="MOD_JDTOURSHOWCASE_DISPLAY_PROFILE_DESC"
-               default="1"
-               class="btn-group btn-group-yesno"
+               useglobal="true"
+
             />
 
-              <field
-               name="order_global"
+            <field
+               name="order"
                type="list"
                label="MOD_JDTOURSHOWCASE_ORDER_LABEL"
                description="MOD_JDTOURSHOWCASE_ORDER_DESC"
-               default="id"
-               class="btn-group btn-group-yesno"
+               useglobal="true"
             >
-                <option value="global">Gobal</option>
                <option value="id DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_DESC</option>
                <option value="id ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_ASC</option>
                <option value="title DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_ALPHABETICALLY_DESC</option>

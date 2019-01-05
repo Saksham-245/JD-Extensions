@@ -8,7 +8,6 @@
                label="MOD_JDTOURSHOWCASE_GRID_COLUMNS_LABEL"
                description="MOD_JDTOURSHOWCASE_GRID_COLUMNS_DESC"
                default="4"
-               class="btn-group btn-group-yesno"
             >
                <option value="12">J1</option>
                <option value="6">J2</option>
@@ -19,7 +18,7 @@
 
              <field
                name="limit"
-               type="number"
+               type="hidden"
                min="1"
                label="MOD_JDTOURSHOWCASE_DISPLAY_PROFILE_LABEL"
                description="MOD_JDTOURSHOWCASE_DISPLAY_PROFILE_DESC"
@@ -32,8 +31,7 @@
                type="list"
                label="MOD_JDTOURSHOWCASE_ORDER_LABEL"
                description="MOD_JDTOURSHOWCASE_ORDER_DESC"
-               default="id"
-               class="btn-group btn-group-yesno"
+               default="id DESC"
             >
                <option value="id DESC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_DESC</option>
                <option value="id ASC">MOD_JDTOURSHOWCASE_ORDER_OPTION_LATEST_ASC</option>
@@ -44,7 +42,6 @@
                <option value="ordering">MOD_JDTOURSHOWCASE_ORDER_OPTION_ORDERING</option>
             </field>
 
-            
     </fieldset>
 
     <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">

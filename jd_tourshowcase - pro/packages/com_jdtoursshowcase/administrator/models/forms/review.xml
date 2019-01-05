@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="name" filter="safehtml" type="text" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_NAME" description="COM_JDTOURSSHOWCASE_FORM_DESC_REVIEW_NAME" hint="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_NAME"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="reivew" filter="safehtml" type="textarea" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_REIVEW" description="COM_JDTOURSSHOWCASE_FORM_DESC_REVIEW_REIVEW" hint="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_REIVEW"/>
+
+    <field name="email"  type="email" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_EMAIL" description="COM_JDTOURSSHOWCASE_FORM_DESC_REVIEW_EMAIL" hint="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_REIVEW"/>
+    <field name="stars"  type="number"  max="5"  min="1" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_STARS" description="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_STARS" hint=""/>
+    <field name="tour_id"  type="number"   label="COM_JDTOURSSHOWCASE_REVIEWS_TOUR_ID" description="COM_JDTOURSSHOWCASE_REVIEWS_TOUR_ID" hint=""/>
+
+    <field name="packagename" filter="safehtml" type="text" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_PACKAGENAME" description="COM_JDTOURSSHOWCASE_FORM_DESC_REVIEW_PACKAGENAME" hint="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_PACKAGENAME"/>
+    <field name="date" default="0000-00-00 00:00:00" type="calendar" class="inputbox" format="%Y-%m-%d %H:%M:%S" showtime="true" translateformat="true" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_DATE" description="COM_JDTOURSSHOWCASE_FORM_DESC_REVIEW_DATE" hint="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_DATE"/>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_CREATED_BY" description="COM_JDTOURSSHOWCASE_FORM_DESC_REVIEW_CREATED_BY" hidden="true" hint="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_MODIFIED_BY" description="COM_JDTOURSSHOWCASE_FORM_DESC_REVIEW_MODIFIED_BY" hidden="true" hint="COM_JDTOURSSHOWCASE_FORM_LBL_REVIEW_MODIFIED_BY"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+  <fieldset name="accesscontrol">
+    <field name="asset_id" type="hidden" filter="unset"/>
+    <field name="rules" type="rules" label="JFIELD_RULES_LABEL" translate_label="false" filter="rules" validate="rules" class="inputbox" component="com_jdtoursshowcase" section="review"/>
+  </fieldset>
+</form>

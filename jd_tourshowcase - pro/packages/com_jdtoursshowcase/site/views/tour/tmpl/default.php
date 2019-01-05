@@ -23,7 +23,7 @@ $hits =	(!empty($this->item->hits)) ? $this->item->hits : 0 ;
 $hits_one = $hits+1;
 
 JdtoursshowcaseHelpersJdtoursshowcase::hits($hits_one,$this->item->id);
- 
+$reviews = JdtoursshowcaseHelpersJdtoursshowcase::get_reviwes($this->item->id);
 jimport('joomla.application.module.helper');
 ?>
 <!-- Title -->
@@ -194,6 +194,42 @@ jimport('joomla.application.module.helper');
 		<!-- Right Part End -->
 	<?php } ?>
 </div>
+
+
+<!-- Review start here -->
+<?php if(!empty($reviews)) { ?>
+	<div class="row col-12 border">
+		<?php foreach($reviews as $review) {?>
+			<div class="name col-4">
+				<h3><?php echo $review->name; ?></h3>
+			</div>
+			<div class="content col-4">
+				<p><?php echo $review->reivew; ?></p>
+			</div>
+			<div class="date col-4">
+				<p><?php echo $review->date; ?></p>
+			</div>
+			<div class="email col-4">
+				<p><?php echo $review->email; ?></p>
+			</div>
+			<div class="img col-4">
+				<img src="https://www.gravatar.com/avatar/<?php echo $review->email; ?>" />
+			</div>
+			<div class="stars col-4">
+				<?php for($i=1; $i<=5; $i++) {
+					if($i <=  $review->stars ){
+						echo '<span class="fa fa-star text-primary"></span>';
+					}else{
+						echo '<span class="fa fa-star"></span>';
+					}
+				} ?>
+			</div>
+		<?php } ?>
+	</div>
+<?php }?>
+
+
+
 
 <?php if($canEdit && $this->item->checked_out == 0): ?>
 

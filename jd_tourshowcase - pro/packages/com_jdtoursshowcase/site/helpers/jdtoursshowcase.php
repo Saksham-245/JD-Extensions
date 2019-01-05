@@ -143,5 +143,27 @@ class JdtoursshowcaseHelpersJdtoursshowcase
 		 
 
 	}
-	
+	function get_reviwes($id){
+		$state = 1;
+		// Get a db connection.
+		$db = JFactory::getDbo();
+
+		// Create a new query object.
+		$query = $db->getQuery(true);
+
+
+		$query->select("*");
+		$query->from($db->quoteName('#__jdtoursshowcase_reviews'));
+		$query->where($db->quoteName('tour_id') . ' = '. $db->quote($id));
+		$query->where($db->quoteName('state') . ' = '. $db->quote($state));
+		$query->order('id DESC');
+
+
+		$db->setQuery($query);
+
+		 $result = $db->loadObjectList();
+		 return $result;
+
+	}
+
 }
