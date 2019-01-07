@@ -2,7 +2,7 @@
 /**
  * @package   JD Profiler
  * @author    JoomDev https://www.joomdev.com
- * @copyright Copyright (C) 2018 Joomdev, Inc. All rights reserved.
+ * @copyright Copyright (C)  2019 Joomdev, Inc. All rights reserved.
  * @license   GNU/GPLv2 and later
  */
 // no direct access

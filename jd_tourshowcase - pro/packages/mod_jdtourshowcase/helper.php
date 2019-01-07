@@ -4,7 +4,7 @@
  * @package	JD profiler Module
  * @subpackage  mod_jdprofiler
  * @author	JoomDev
- * @copyright	Copyright (C) 2008 - 2018 Joomdev.com. All rights reserved
+ * @copyright	Copyright (C) 2008 -  2019 Joomdev.com. All rights reserved
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
