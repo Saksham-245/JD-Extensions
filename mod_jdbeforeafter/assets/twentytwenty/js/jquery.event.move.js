@@ -46,7 +46,7 @@
 			window.mozRequestAnimationFrame ||
 			window.oRequestAnimationFrame ||
 			window.msRequestAnimationFrame ||
-			function(fn, element){
+			function(fn,){
 				return window.setTimeout(function(){
 					fn();
 				}, 25);
@@ -105,7 +105,7 @@
 		return node[eventsSymbol] || (node[eventsSymbol] = {});
 	}
 
-	function on(node, types, fn, data, selector) {
+	function on(node, types, fn, data) {
 		types = types.split(rspaces);
 
 		var events = getEvents(node);
@@ -122,7 +122,7 @@
 		}
 	}
 
-	function off(node, types, fn, selector) {
+	function off(node, types, fn) {
 		types = types.split(rspaces);
 
 		var events = getEvents(node);
